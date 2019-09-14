@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Map Buddy</title>
+
+<!-- Behavioral Meta Data -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Styles -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/styleMB.css" />
+<link rel="stylesheet" type="text/css"
+	href="//rawgit.com/mystroken/cachu-slider/master/dist/cachu-slider.min.css" />
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/build/lib/pathseg.js"></script>
+<script type="text/javascript" src="js/build/lib/three.min.js"></script>
+<script type="text/javascript" src="js/build/jsmodeler.js"></script>
+<script type="text/javascript"
+	src="js/build/jsmodeler.ext.svgtomodel.js"></script>
+<script type="text/javascript" src="js/build/jsmodeler.ext.three.js"></script>
+<script type="text/javascript" src="js/jquery.svg.js"></script>
+<script type="text/javascript">
+	var meshes, viewer;
+	var viewerSettings = {
+			cameraEyePosition : [ 0.0, 0.0, 1.5 ],
+			cameraCenterPosition : [ 0.0, 0.0, 0.0 ],
+			cameraUpVector : [ 0.0, 1.0, 0.0 ]
+		};	
+	function Load3DLogo() {
+		viewer = new JSM.ThreeViewer();
+		viewer.Start(document.getElementById('3DLogoCanvas'), viewerSettings);
+		var svgObject = document.getElementById('SVGTMPLogo');
+		var model = JSM.SvgToModel(svgObject, 3, 3, null);
+		meshes = JSM.ConvertModelToThreeMeshes(model);
+		viewer.navigation.EnableZoom(false);
+		viewer.navigation.EnablePan(false);
+
+		viewer.AddMeshes(meshes);
+		viewer.FitInWindow();
+		viewer.renderer.setClearAlpha(true);
+		viewer.renderer.setClearColor(0xf9fcff, 1);
+		viewer.Draw();
+	}
+	function MouseMove(event) {
+		var currentPos = [ event.clientX, event.clientY ];
+		var ratio = 0.005;
+		var diff = currentPos[0] - mouseLastPos[0];
+		meshes.rotation.z += diff * ratio;
+		mouseLastPos = currentPos;
+		renderer.render(scene, camera);
+	}
+	
+	function ViewTo ()
+	{
+		var center = boundingSphere.GetCenter ();
+			var eye = center.Clone ();
+			eye.Add (new JSM.Coord (0.0, -1.0, 0.0));
+			viewer.cameraMove.Set (
+				eye,
+				center,
+				new JSM.Coord (0.0, 0.0, 1.0)
+			);
+		viewer.navigation.FitInWindow (center, boundingSphere.GetRadius ());
+		viewer.Draw ();
+	}
+</script>
+</head>
+<body>
+	<!-- 	<script -->
+	<!-- 		src="//cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
+	<div data-role="page" id="mainBodyDiv">
+		<div class="ui-grid-a" id="pageHeader">
+			<div class="ui-block-a" style="text-align: right;">
+				<div id="logoIconContainerTMP" style="display: none;"></div>
+				<canvas id="3DLogoCanvas" width="222" height="222"></canvas>
+			</div>
+			<div class="ui-block-b" id="mapBuddySVGFrame"
+				style="text-align: left;">
+				<span>MAP BUDDY</span>
+			</div>
+		</div>
+		<div data-role="tabs" id="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#one" data-ajax="false">Features</a></li>
+					<li><a href="#two" data-ajax="false">Industries</a></li>
+					<li><a href="ajax-content.html" data-ajax="false">Services</a></li>
+				</ul>
+			</div>
+			<div id="one" class="ui-body-d ui-content">
+				<div class="ui-block-solo">
+					<div class="cachu__container">
+						<div id="scrolling" class="cachu__sections">
+							<section class="cachu__section" id="digitisingEnv">
+								<div class="ui-block-solo">
+									<h1>Digitalising Environments</h1>
+								</div>
+								<div class="ui-block-solo">
+									<div class="ui-grid-a">
+										<div class="ui-block-a content-expl" id="building123Content">
+											<ul>
+												<li>Presenting Indoor and Outdoor Environments in an
+													Advanced Manner <br /> <br />
+													<div class="ui-grid-c ui-block-solo"
+														id="devicesPresentation">
+														<div class="ui-block-a"
+															style="background-image: url(img/smartwatch.svg)"></div>
+														<div class="ui-block-b"
+															style="background-image: url(img/mobile-phone.svg)"></div>
+														<div class="ui-block-c"
+															style="background-image: url(img/computer-tablet.svg)"></div>
+														<div class="ui-block-d"
+															style="background-image: url(img/desktop-monitor.svg)"></div>
+													</div> <!-- 											<div class="ui-block-solo"> --> <br>
+													<span>Cross-Browser Compatibility and Responsive</span><br>
+													<!-- 											</div> -->
+													<div class="ui-block-solo" style="text-align: center;">
+														<img alt="" src="img/browsers.png">
+													</div>
+												</li>
+											</ul>
+
+										</div>
+										<div class="ui-block-b" id="building123"></div>
+									</div>
+								</div>
+							</section>
+							<section class="cachu__section" id="pizza" data-hue="-40">
+								<div class="ui-block-solo">
+									<h1>Digitalising Environments</h1>
+								</div>
+								<div class="ui-block-solo">
+									<div class="ui-grid-a">
+										<div class="ui-block-a content-expl" id="building123Content">
+											<ul>
+												<li>Presenting Indoor and Outdoor Environments in an
+													Advanced Manner
+													<div class="ui-grid-c ui-block-solo"
+														id="devicesPresentation">
+														<div class="ui-block-a"
+															style="background-image: url(img/smartwatch.svg)"></div>
+														<div class="ui-block-b"
+															style="background-image: url(img/mobile-phone.svg)"></div>
+														<div class="ui-block-c"
+															style="background-image: url(img/computer-tablet.svg)"></div>
+														<div class="ui-block-d"
+															style="background-image: url(img/desktop-monitor.svg)"></div>
+													</div>
+													<div class="ui-block-solo"></div>
+												</li>
+												<li>Increasing the Efficiency of Management of the
+													Building Components</li>
+												<li>Giving Interactive Capability to the Building
+													Components</li>
+												<li>Attaching Extra Information to the Building
+													Components <br /> <span>There are many ways indoor
+														digitization can benefit buildings. Digital recording of
+														interior spaces serves multiple customer requirements,
+														such as easy orientation, efficient management of
+														buildings, and connection of digitized processes and
+														information with building structures, interior attributes
+														and building facilities</span>
+												</li>
+											</ul>
+
+										</div>
+										<div class="ui-block-b" id="building123"></div>
+									</div>
+								</div>
+							</section>
+							<section class="cachu__section" id="sandwich" data-hue="-99">
+								<div class="ui-block-solo">
+									<h1>Openning New Marketing Opportunities</h1>
+								</div>
+								<div class="ui-block-solo">
+									<div class="ui-grid-a">
+										<div class="ui-block-a content-expl" id="building123Content">
+											<ul>
+												<li>Presenting Indoor and Outdoor Environments in an
+													Advanced Manner
+													<div class="ui-grid-c ui-block-solo"
+														id="devicesPresentation">
+														<div class="ui-block-a"
+															style="background-image: url(img/smartwatch.svg)"></div>
+														<div class="ui-block-b"
+															style="background-image: url(img/mobile-phone.svg)"></div>
+														<div class="ui-block-c"
+															style="background-image: url(img/computer-tablet.svg)"></div>
+														<div class="ui-block-d"
+															style="background-image: url(img/desktop-monitor.svg)"></div>
+													</div>
+													<div class="ui-block-solo"></div>
+												</li>
+												<li>Increasing the Efficiency of Management of the
+													Building Components</li>
+												<li>Giving Interactive Capability to the Building
+													Components</li>
+												<li>Attaching Extra Information to the Building
+													Components <br /> <span>There are many ways indoor
+														digitization can benefit buildings. Digital recording of
+														interior spaces serves multiple customer requirements,
+														such as easy orientation, efficient management of
+														buildings, and connection of digitized processes and
+														information with building structures, interior attributes
+														and building facilities</span>
+												</li>
+											</ul>
+
+										</div>
+										<div class="ui-block-b" id="building123"></div>
+									</div>
+								</div>
+							</section>
+							<section class="cachu__section" id="water" data-hue="-180">4</section>
+							<section class="cachu__section" id="stew" data-hue="72">5</section>
+							<section class="cachu__section" id="salad" data-hue="39">6</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="two">
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#">Acura</a></li>
+					<li><a href="#">Audi</a></li>
+					<li><a href="#">BMW</a></li>
+					<li><a href="#">Cadillac</a></li>
+					<li><a href="#">Ferrari</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script src="js/cachu-slider.min.js"></script>
+	<script type="text/javascript">
+		var eventsHandler;
+		var wheelStarted = false;
+		eventsHandler = {
+			haltEventListeners : [ 'touchstart', 'touchend', 'touchmove',
+					'touchleave', 'touchcancel' ],
+			init : function(options) {
+				var instance = options.instance, initialScale = 1, pannedX = 0, pannedY = 0
+
+				this.listeners = {
+					wheel : function(e) {
+//						$(".divSVGIconLT, .divSVGIconCommonAssets, tspan").css("opacity", ".01")
+					e.preventDefault();
+					}
+				}
+				for ( var eventName in this.listeners) {
+					options.svgElement.addEventListener(eventName,
+							this.listeners[eventName])
+				}
+
+				// Init Hammer
+				// Listen only for pointer and touch events
+				this.hammer = Hammer(options.svgElement, {
+					inputClass : Hammer.SUPPORT_TOUCH ? Hammer.TouchInput
+							: Hammer.TouchMouseInput
+				})
+				this.hammer.on('pinchend', function(ev) {
+					// On pinch start remember initial zoom
+					instance.zoomAtPoint(initialScale * ev.scale, {
+						x : ev.center.x,
+						y : ev.center.y
+					})
+				});
+				this.hammer.on('panend', function(ev) {
+					// Pan only the difference
+					instance.panBy({
+						x : ev.deltaX - pannedX,
+						y : ev.deltaY - pannedY
+					})
+					pannedX = ev.deltaX
+					pannedY = ev.deltaY
+				})
+				// Enable pinch
+				this.hammer.get('pinch').set({
+					enable : true
+				})
+
+				// Handle double tap
+				var clickedItem = this;
+				this.hammer.on('tap', function(ev) {
+					// instance.zoomIn()
+					if($(ev.target).attr("ams:locationid") == null || $(ev.target).attr("ams:locationid").length <= 0)
+						return
+					openCalendarPopup($(ev.target).attr("ams:locationid"));
+				})
+
+				// Handle pan
+				this.hammer.on('panstart panmove', function(ev) {
+					// On pan start reset panned variables
+					if (ev.type === 'panstart') {
+						pannedX = 0
+						pannedY = 0
+//						$(".divSVGIconLT, .divSVGIconCommonAssets, tspan").css("opacity", ".01")
+					}
+					// Pan only the difference
+					instance.panBy({
+						x : ev.deltaX - pannedX,
+						y : ev.deltaY - pannedY
+					})
+					pannedX = ev.deltaX
+					pannedY = ev.deltaY
+				})
+
+				// Handle pinch
+				this.hammer.on('pinchstart pinchmove', function(ev) {
+					// On pinch start remember initial zoom
+					if (ev.type === 'pinchstart') {
+						initialScale = instance.getZoom()
+						instance.zoomAtPoint(initialScale * ev.scale, {
+							x : ev.center.x,
+							y : ev.center.y
+						})
+//						$(".divSVGIconLT, .divSVGIconCommonAssets, tspan").css("opacity", ".01")
+					}
+					instance.zoomAtPoint(initialScale * ev.scale, {
+						x : ev.center.x,
+						y : ev.center.y
+					})
+				})
+
+				// Prevent moving the page on some devices when panning over SVG
+				options.svgElement.addEventListener('touchmove', function(e) {
+					e.preventDefault();
+				});
+
+			},
+			destroy : function() {
+				this.hammer.destroy()
+			}
+		};
+		$(document).ready(function() {
+			$("#mainBodyDiv").width($(window).width())
+			$("#mainBodyDiv").height($(window).height())
+			$(".cachu__section").each(function(){
+				$(this).height($(window).height() - $("#pageHeader").height())
+			})
+			var options = {
+				disableMouseEvents : true, // Disable mousewheel event listening.
+				disableKeyboardEvents : false, // Disable keyboard event listening.
+				disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
+				scrollingSpeed : 1333, // The speed of the transition.
+				scrollingLoop : false, // Loop after reaching the end.
+				navigationEnabled : true, // Enable navigation buttons
+				navigationPosition : 'left' // The Navigation's position
+			};
+			var slider = new Cachu(document.querySelector('.cachu__container'),
+					options);
+			slider.run();
+			$.ajax({
+				type : "GET",
+				url : "img/MBLogoSingle.svg",
+				dataType : 'html',
+				beforeSend : function() {
+					console.log('loading')
+				},
+				success : function(data) {
+					$("#logoIconContainerTMP").html(data);
+					Load3DLogo();
+				}
+			});
+			$("#building123").load('img/maps/123.svg',function(){
+				$("#building123").find("svg").attr("id","123BuildingSVG")
+				$("#building123").height($(window).height() - $("#pageHeader").height())
+				$("#building123").css("max-height",$("#building123Content").height())
+				})
+		});
+		$(window).bind("load", function() {
+			$("#mainBodyDiv").width($(window).width())
+			$("#mainBodyDiv").height($(window).height())
+				var svgElement = document.getElementById('123BuildingSVG');
+				window.panZoom = svgPanZoom(svgElement, {
+					zoomEnabled : true,
+					center : true,
+					fit : true,
+					panEnabled : true,
+					minZoom : 0.1,
+					customEventsHandler : eventsHandler
+				});
+			if (window.panZoom != null) {
+				window.panZoom.reset();
+				window.panZoom.resize();
+				window.panZoom.fit();
+				window.panZoom.center();
+			}
+		});
+		
+		$(window).bind("resize", function() {
+		});
+	</script>
+	<script type="text/javascript" src="js/svg.pan.zoom.js"></script>
+	<script type="text/javascript" src="js/hammer.js"></script>
+</body>
+</html>

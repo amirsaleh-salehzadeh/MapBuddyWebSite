@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Ambrosia Restaurant Management System</title>
+
+<!-- Behavioral Meta Data -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- <meta name="viewport" -->
+<!-- 	content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+
+<!-- Styles -->
+<link rel="stylesheet"
+	href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/styleAmbrosia.css" />
+<link rel="stylesheet" type="text/css" href="css/styleGallery.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/styleAmbrosiaCalendar.css" />
+<link rel="stylesheet" type="text/css"
+	href="//rawgit.com/mystroken/cachu-slider/master/dist/cachu-slider.min.css" />
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/build/lib/pathseg.js"></script>
+<script type="text/javascript" src="js/build/lib/three.min.js"></script>
+<script type="text/javascript" src="js/build/jsmodeler.js"></script>
+<script type="text/javascript"
+	src="js/build/jsmodeler.ext.svgtomodel.js"></script>
+<script type="text/javascript" src="js/build/jsmodeler.ext.three.js"></script>
+</head>
+<body>
+	<!-- 	<script -->
+	<!-- 		src="//cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script> -->
+	<script type="text/javascript" src="js/ambrosiaApp.js"></script>
+	<div data-role="page" id="mainBodyDiv">
+		<div id="loginSection"></div>
+		<!-- 		<div class="wrapperTooltip"> -->
+		<!-- 			<button class="btn" id="button" data-toggle="tooltip" -->
+		<!-- 				data-placement="top" title="it delays!"> -->
+		<!-- 				hey, get <strong><em>hover</em></strong> here! -->
+		<!-- 			</button> -->
+		<!-- 		</div> -->
+		<div id="divBackground">
+			<!-- 			<div class="blurred-box"> -->
+			<!-- 				<div class="user-login-box"> -->
+			<!-- 					<span class="user-icon"></span> -->
+			<!-- 					<div class="user-name">Gilfoyle</div> -->
+			<!-- 					<input class="user-password" type="text" /> -->
+			<!-- 				</div> -->
+			<!-- 			</div> -->
+		</div>
+		<div class="cachu__container">
+			<div id="scrolling" class="cachu__sections">
+				<section class="cachu__section" id="burger">
+					<div class="ui-grid-b ui-block-solo">
+						<div class="ui-block-a">
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/beefBurger1.png">
+								<p>Double Beef Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/chickenBurger1.png">
+								<p>Chicken Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+						</div>
+						<div class="ui-block-b"></div>
+						<div class="ui-block-c">
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/chickenBurger2.png">
+								<p>Chicken Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/veggieBurger1.png">
+								<p>Veggie Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="cachu__section" id="pizza" data-hue="-40">
+					<div class="ui-grid-b ui-block-solo">
+						<div class="ui-block-a">
+							<div class="ui-block-solo foodContainer">
+								<img src="https://mymidici.com/devsite/wp-content/uploads/2017/12/NP-Ortolana.png">
+								<p>PIZZA NUMBER 1</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/chickenBurger1.png">
+								<p>Chicken Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+						</div>
+						<div class="ui-block-b"></div>
+						<div class="ui-block-c">
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/chickenBurger2.png">
+								<p>Chicken Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+							<div class="ui-block-solo foodContainer">
+								<img src="img/ambrosia/burgers/veggieBurger1.png">
+								<p>Veggie Burger</p>
+								<span>200g beef patty, lettuce, tomato, onion, pickles,
+									BBQ and Ambrosia’s pink sauce</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="cachu__section" id="sandwich" data-hue="-99"></section>
+				<section class="cachu__section" id="water" data-hue="-180"></section>
+				<section class="cachu__section" id="stew" data-hue="72"></section>
+				<section class="cachu__section" id="salad" data-hue="39"></section>
+			</div>
+		</div>
+		<div id="logoContainer">
+			<div id="logoIconContainerTMP" style="display: none;"></div>
+			<canvas id="3DLogoCanvas" width="111" height="111"
+				style="background: transparent; background-color: transparent;"></canvas>
+			<img alt="" src="img/ambrosia/ambrosiaLogoText.svg" height="111px">
+		</div>
+		<div class="post" id="calendarBTN">
+			<p class="calendarSmall">
+				<em></em>
+			</p>
+		</div>
+	</div>
+	<div id="calendarHolder">
+		<div id="calendarHolderBG"></div>
+		<div class="dayReport"></div>
+		<div class="box">
+			<div class="title">
+				<div class="day" id="today">20</div>
+				<div class="detail">
+					<p id="month">Setember</p>
+					<p id="year">2018</p>
+				</div>
+			</div>
+			<div class="calendar">
+				<table>
+					<tr>
+						<th>SUN</th>
+						<th>MON</th>
+						<th>TUE</th>
+						<th>WED</th>
+						<th>THU</th>
+						<th>FRI</th>
+						<th>SAT</th>
+					</tr>
+
+					<tr>
+						<td id="day-1">01</td>
+						<td id="day-2">02</td>
+						<td id="day-3">03</td>
+						<td id="day-4">04</td>
+						<td id="day-5">05</td>
+						<td id="day-6">06</td>
+						<td id="day-7">07</td>
+					</tr>
+
+					<tr>
+						<td id="day-8">08</td>
+						<td id="day-9">09</td>
+						<td id="day-10">10</td>
+						<td id="day-11">11</td>
+						<td id="day-12">12</td>
+						<td id="day-13">13</td>
+						<td id="day-14">14</td>
+					</tr>
+
+					<tr>
+						<td id="day-15">15</td>
+						<td id="day-16">16</td>
+						<td id="day-17">17</td>
+						<td id="day-18">18</td>
+						<td id="day-19">19</td>
+						<td id="day-20">20</td>
+						<td id="day-21">21</td>
+					</tr>
+
+					<tr>
+						<td id="day-22">22</td>
+						<td id="day-23">23</td>
+						<td id="day-24">24</td>
+						<td id="day-25">25</td>
+						<td id="day-26">26</td>
+						<td id="day-27">27</td>
+						<td id="day-28">28</td>
+					</tr>
+
+					<tr>
+						<td id="day-29">29</td>
+						<td id="day-30">30</td>
+						<td id="day-31">31</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script src="js/cachu-slider.min.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+			var options = {
+				disableMouseEvents : false, // Disable mousewheel event listening.
+				disableKeyboardEvents : false, // Disable keyboard event listening.
+				disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
+				scrollingSpeed : 1333, // The speed of the transition.
+				scrollingLoop : true, // Loop after reaching the end.
+				navigationEnabled : true, // Enable navigation buttons
+				navigationPosition : 'left' // The Navigation's position
+			};
+			var slider = new Cachu(document.querySelector('.cachu__container'),
+					options);
+			slider.run();
+
+		});
+	</script>
+</body>
+</html>

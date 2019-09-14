@@ -1,0 +1,107 @@
+<style>
+/* .feature-icons img { */
+/* 	width: 28px; */
+/* 	height: 10%; */
+/* 	padding: 11px; */
+/* } */
+
+/* .feature-icons { */
+/* 	list-style: none; */
+/* 	margin: 0; */
+/* } */
+
+/* ul.feature-icons li { */
+/* 	display: block; */
+/* } */
+
+/* ul.feature-icons li a { */
+/* 	text-decoration: none; */
+/* 	display: none; */
+/* 	color: black; */
+/* 	padding: 11px; */
+/* } */
+
+/* .feature-content-title { */
+/* 	font-size: 22px; */
+/* 	position: absolute; */
+/* 	left: 50%; */
+/* } */
+/* ul.feature-icons li :hover+a { */
+/* 	display: inline; */
+/* } */
+</style>
+<link rel="stylesheet" type="text/css"
+	href="//rawgit.com/mystroken/cachu-slider/master/dist/cachu-slider.min.css" />
+<script type="text/javascript">
+	// 	$(".feature-icons li").on("click, mouseover", function() {
+	// 		$(".feature-icons li").find("img").css("width", "28px");
+	// 		$(this).find("img").css("width", "44px");
+	// 		$(".feature-content-title").html($(this).find("a").html())
+	// 	})
+</script>
+
+<div class="cachu__container" style="background-color: yellow;">
+	<div id="scrolling" class="cachu__sections">
+		<section class="cachu__section" id="digitisation">1</section>
+		<section class="cachu__section" id="usermanagement">2</section>
+		<section class="cachu__section" id="software">3</section>
+		<section class="cachu__section" id="services">4</section>
+	</div>
+</div>
+
+<!-- <div class="ui-grid-a"> -->
+<!-- 	<div class="ui-block-a" style="width: 13%;"> -->
+<!-- 		<ul class="feature-icons"> -->
+<!-- 			<li><img alt="" src="img/icons/fence.svg"><a href="#">Geo-Fencing</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/position.svg"><a href="#">Positioning</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/road.svg"><a href="#">Road -->
+<!-- 					Management</a></li> -->
+
+<!-- 			<li><img alt="" src="img/icons/users.svg"><a href="#">User -->
+<!-- 					Management</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/ar.svg"><a href="#">User -->
+<!-- 					Interaction</a></li> -->
+
+<!-- 			<li><img alt="" src="img/icons/locations.svg"><a href="#">Location-Based -->
+<!-- 					Services</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/tracking.svg"><a href="#">Tracking</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/space.svg"><a href="#">Space -->
+<!-- 					Management</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/navigation.svg"><a href="#">Navigation</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/event.svg"><a href="#">Booking -->
+<!-- 					& Events</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/report.svg"><a href="#">Location-Based -->
+<!-- 					Reporting</a></li> -->
+
+<!-- 			<li><img alt="" src="img/icons/responsive.svg"><a href="#">Cross-Browser</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/language.svg"><a href="#">Localisation</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/cloud.svg"><a href="#">Cloud</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/security.svg"><a href="#">Security -->
+<!-- 					& Privacy</a></li> -->
+<!-- 			<li><img alt="" src="img/icons/api.svg"><a href="#">API</a></li> -->
+<!-- 		</ul> -->
+<!-- 	</div> -->
+<!-- 	<div class="ui-block-b" style="width: 87%; text-align: center;"> -->
+<!-- 		<span class="feature-content-title"></span> -->
+<!-- 	</div> -->
+<!-- </div> -->
+<script src="js/cachu-slider.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var options = {
+			disableMouseEvents : false, // Disable mousewheel event listening.
+			disableKeyboardEvents : false, // Disable keyboard event listening.
+			disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
+			scrollingSpeed : 1333, // The speed of the transition.
+			scrollingLoop : true, // Loop after reaching the end.
+			navigationEnabled : true, // Enable navigation buttons
+			navigationPosition : 'right' // The Navigation's position
+		};
+		var slider = new Cachu(document.querySelector('.cachu__container'),
+				options);
+		slider.run();
+		$(".page-contents").css({
+			'margin-left' : $(".main-menu-buttons").width()  + "px" /* 24 = drop shadow right + shadow*/
+		})
+	});
+</script>

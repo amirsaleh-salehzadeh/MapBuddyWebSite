@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Hospitality Management</title>
+
+<!-- Behavioral Meta Data -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="//fonts.googleapis.com/css?family=Ubuntu">
+</head>
+
+<!-- Styles -->
+<link rel="stylesheet"
+	href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script
+	src="//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=1899"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$("#mapBuddySVGFrame div")
+								.load(
+										"img/MB.svg",
+										function() {
+											var tl = new TimelineLite();
+											// 			tl.staggerTo("#darkBlueMarker", 2, {
+											// 				yPercent : '-3%',
+											// 				repeat : -1,
+											// 				yoyo : true,
+											// 				ease : Linear.easeNone
+											// 			}, 0);
+											var tween, opacity = false, motionPath = MorphSVGPlugin
+													.pathDataToBezier(
+															"#bluePath",
+															{
+																align : "#darkBlueMarker"
+															});
+
+											//offest the balloon by hafl width and half height to make it appear centered on path
+											TweenLite.set("#darkBlueMarker", {
+												xPercent : -50,
+												yPercent : -53
+											});
+
+											tween = TweenLite
+													.to(
+															"#darkBlueMarker",
+															22,
+															{
+																bezier : {
+																	values : motionPath,
+																	type : "cubic"
+																},
+																repeat : -1,
+																yoyo : true,
+															});
+										});
+
+					});
+</script>
+</head>
+
+<body>
+	<div class="ui-grid-a">
+		<div class="ui-block-a" id="mapBuddySVGFrame">
+			<span>MAP BUDDY</span>
+			<div></div>
+		</div>
+		<div class="ui-block-b" id="mainBodyFrame">aa</div>
+	</div>
+</body>
+</html>

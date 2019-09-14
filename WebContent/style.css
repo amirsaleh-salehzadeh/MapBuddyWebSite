@@ -1,0 +1,116 @@
+.ui-page {
+	background-color: rgb(249, 252, 255) !important;
+	background-image: linear-gradient(to bottom, #190b42, #4285e9);
+	height: 100%;
+	width: 100%;
+	text-shadow: none;
+}
+
+#mainBodyFrame {
+	/* 	background-image: linear-gradient(to top, #0b1621, rgb(22, 99, 133)); */
+	background-color: #f5f9ff;
+}
+
+.main-menu-buttons {
+	position: absolute;
+	padding: 22px;
+	filter: drop-shadow(7px 3px 5px #110b2c);
+	border-radius: 22px 22px 0 0;
+	background-image: linear-gradient(to top, #110b2c, #4285e9);
+	bottom: 0;
+	top: -22px;
+	text-align: right;
+}
+
+.main-menu-buttons div {
+	text-align: left;
+	height: 10%;
+	color: white;
+	cursor: pointer;
+	margin-bottom: 10%;
+	display: table;
+	border-radius: 33px;
+	box-shadow: 0 1px 2px #f5f9ff, /*bottom external highlight*/ 0 -1px 1px
+		#666, /*top external shadow*/ inset 0 -1px 1px rgba(0, 0, 0, 0.5),
+		/*bottom internal shadow*/ inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.main-menu-buttons object {
+	width: 50%;
+	vertical-align: middle;
+	margin-right: 11px;
+	float: left;
+	height: 100%;
+	display: table-cell;
+	margin-left: 22px;
+}
+
+.main-menu-buttons div span {
+	display: table-cell;
+	width: 66%;
+	vertical-align: middle;
+}
+
+.main-menu-buttons div.active {
+	background-color: #f5f9ff;
+	filter: drop-shadow(2px 4px 6px #190b42);
+}
+
+.main-menu-buttons div.active span, .main-menu-buttons div.active object
+	{
+	font-weight: bold;
+	filter: drop-shadow(1px 2px 3px #190b42);
+}
+
+.main-menu-buttons div:first-child {
+	margin-top: 50%;
+}
+
+span.title-logo {
+	color: #f5f9ff;
+	position: absolute;
+	font-size: 33px;
+	padding-left: 0;
+	font-weight: bold;
+	top: 22px;
+	right: 11px;
+}
+
+.compass-logo {
+	color: rgb(3, 6, 9);
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 222px;
+	height: 222px;
+	position: fixed;
+	z-index: 11;
+}
+
+.compass-logo svg {
+	width: 100%;
+	height: auto;
+}
+
+#mainBodyFrame {
+	height: 87%;
+	width: 80%;
+	margin: auto;
+	border-radius: 22px 22px 0 0;
+	filter: drop-shadow(4px 4px 4px #190b42);
+}
+
+.page-contents {
+	padding: 22px;
+	margin-left: 262px;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	overflow: hidden;
+	right: 0;
+	left: 0;
+}
+
+.a-page-content {
+	overflow-y: scroll;
+	height: 100%;
+}
