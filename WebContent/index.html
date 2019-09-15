@@ -32,7 +32,7 @@
 <body>
 	<div class="compass-logo"></div>
 	<div id="mainBodyFrame">
-		<div class="main-menu-buttons" style="width: 22%;">
+		<div class="main-menu-buttons" style="width: 17%;">
 			<div class="ui-block-solo">
 				<object data="img/icons/features.svg" type="image/svg+xml"></object>
 				<span>Features</span>
@@ -53,6 +53,8 @@
 		</div>
 		<div class="page-contents">
 			<div id="features-page" class="a-page-content"></div>
+			<div class="story-lines">
+			</div>
 		</div>
 	</div>
 </body>
@@ -65,7 +67,7 @@
 		})
 		$(".compass-logo").load("img/maps/compass.svg", function() {
 			$(".main-menu-buttons div").on("click", function() {
-				$(".active").removeClass("active");
+				$(".main-menu-buttons div.active").removeClass("active");
 				$(this).addClass("active");
 				var element = $(".compass-logo")
 				tmpAnimation = tmpAnimation + 90;
@@ -105,18 +107,31 @@
 		}, 100)
 	}
 
-	$(window).bind("load", function() {
-		windowResized()
-		console.log(1)
-		var items = [{id: "digitisation", icon: "img/icons/locations.svg"},
-			{id: "services", icon: "img/icons/tracking.svg"},
-			{id: "usermanagement", icon: "img/icons/ar.svg"},
-			{id: "software", icon: "img/icons/cloud.svg"}]
-		console.log(items[2].icon)
-		$(".cachu__nav__item").each(function(l,k){
-			$(this).append("<div class='navigator-li-icon' style='width: 22px; height: 22px; background-image: url("+items[l].icon+")'></div>")
-		})
-	});
+	$(window).bind(
+			"load",
+			function() {
+				windowResized()
+				var items = [ {
+					id : "Georeferencing",
+					icon : "img/icons/locations.svg"
+				}, {
+					id : "Services",
+					icon : "img/icons/tracking.svg"
+				}, {
+					id : "Interaction",
+					icon : "img/icons/ar.svg"
+				}, {
+					id : "Technology",
+					icon : "img/icons/cloud.svg"
+				} ]
+				$(".cachu__nav__item").each(
+						function(l, k) {
+							$(this).find("a").css("background-image",
+									"url(" + items[l].icon + ")")
+							$(this).find("span").html(items[l].id)
+							// 			$(this).append("<div class='navigator-li-icon' style='width: 22px; height: 22px; background-image: url("+items[l].icon+")'></div>")
+						})
+			});
 
 	$(window).bind("resize", function() {
 		windowResized()

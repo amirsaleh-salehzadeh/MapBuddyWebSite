@@ -1,107 +1,140 @@
-<style>
-/* .feature-icons img { */
-/* 	width: 28px; */
-/* 	height: 10%; */
-/* 	padding: 11px; */
-/* } */
-
-/* .feature-icons { */
-/* 	list-style: none; */
-/* 	margin: 0; */
-/* } */
-
-/* ul.feature-icons li { */
-/* 	display: block; */
-/* } */
-
-/* ul.feature-icons li a { */
-/* 	text-decoration: none; */
-/* 	display: none; */
-/* 	color: black; */
-/* 	padding: 11px; */
-/* } */
-
-/* .feature-content-title { */
-/* 	font-size: 22px; */
-/* 	position: absolute; */
-/* 	left: 50%; */
-/* } */
-/* ul.feature-icons li :hover+a { */
-/* 	display: inline; */
-/* } */
-</style>
 <link rel="stylesheet" type="text/css"
 	href="//rawgit.com/mystroken/cachu-slider/master/dist/cachu-slider.min.css" />
+<link rel="stylesheet" type="text/css" href="css/features-style.css" />
+<link rel="stylesheet" type="text/css" href="css/horizontal-slider.css" />
 <script type="text/javascript">
 	// 	$(".feature-icons li").on("click, mouseover", function() {
 	// 		$(".feature-icons li").find("img").css("width", "28px");
 	// 		$(this).find("img").css("width", "44px");
-	// 		$(".feature-content-title").html($(this).find("a").html())
 	// 	})
 </script>
 
-<div class="cachu__container" style="background-color: yellow;">
+<div class="cachu__container">
 	<div id="scrolling" class="cachu__sections">
-		<section class="cachu__section" id="digitisation">1</section>
-		<section class="cachu__section" id="usermanagement">2</section>
-		<section class="cachu__section" id="software">3</section>
-		<section class="cachu__section" id="services">4</section>
+		<section class="cachu__section" id="digitisation">
+			<!-- 			<div class="ui-grid-a"> -->
+			<div class="ui-block-solo">
+				<ul class="feature-icons">
+					<li class="active"><img alt="" src="img/icons/fence.svg"><a
+						href="#">Geo-Fencing</a></li>
+					<li><img alt="" src="img/icons/position.svg"><a href="#">Positioning</a></li>
+					<li><img alt="" src="img/icons/road.svg"><a href="#">Road
+							Management</a></li>
+				</ul>
+				<ul class="tab__content">
+					<li class="active">
+						<div class="content__wrapper">
+							<div class="ui-block-solo">
+								<h2 class="text-color">Geo-Fencing</h2>
+							</div>
+							<div class="csslider infinity" id="slider1">
+								<input type="radio" name="slides" id="slides_1" /> <input
+									type="radio" name="slides" checked="checked" id="slides_2" />
+								<input type="radio" name="slides" id="slides_3" />
+								<ul>
+									<li>A geo-fence is a virtual perimeter for a real-world
+										geographic area. A geo-fence could be dynamically generated as
+										in a radius around a point location, or a geo-fence can be a
+										predefined set of boundaries (such as school zones or
+										neighborhood boundaries)
+										<div class="ui-block-solo" id="geofenceimg"></div>
+									</li>
+									<li>Allocating a type to a geo-fence
+										<div class="ui-block-solo" id="locationtype"></div>
+									</li>
+									<li>indoor</li>
+								</ul>
+								<div class="arrows">
+									<label for="slides_1"></label> <label for="slides_2"></label> <label
+										for="slides_3"></label>
+								</div>
+								<div class="navigation">
+									<div>
+										<label for="slides_1"></label> <label for="slides_2"></label>
+										<label for="slides_3"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="content__wrapper">
+							<h2 class="text-color">Her</h2>
+
+						</div>
+					</li>
+					<li>
+						<div class="content__wrapper">
+							<h2 class="text-color">About</h2>
+
+							<p>
+								Created by <a class="text-color" href="http://lewihussey.com"
+									target="_blank">Lewi Hussey</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 				<div class="ui-block-b" style="width: 87%; text-align: center;"> -->
+			<span class="feature-content-title"></span>
+			<!-- 				</div> -->
+			<!-- 			</div> -->
+		</section>
+		<section class="cachu__section" id="services">
+			<ul class="feature-icons">
+				<li><img alt="" src="img/icons/tracking.svg"><a href="#">Tracking</a></li>
+				<li><img alt="" src="img/icons/space.svg"><a href="#">Space
+						Management</a></li>
+				<li><img alt="" src="img/icons/navigation.svg"><a
+					href="#">Navigation</a></li>
+				<li><img alt="" src="img/icons/event.svg"><a href="#">Booking
+						& Events</a></li>
+				<li><img alt="" src="img/icons/report.svg"><a href="#">Reporting</a></li>
+			</ul>
+		</section>
+
+		<section class="cachu__section" id="usermanagement">
+			<ul class="feature-icons">
+				<li><img alt="" src="img/icons/users.svg"><a href="#">User
+						Management</a></li>
+				<li><img alt="" src="img/icons/ar.svg"><a href="#">User
+						Interaction</a></li>
+			</ul>
+		</section>
+		<section class="cachu__section" id="software">
+			<ul class="feature-icons">
+				<li><img alt="" src="img/icons/responsive.svg"><a
+					href="#">Cross-Browser</a></li>
+				<li><img alt="" src="img/icons/language.svg"><a href="#">Localisation</a></li>
+				<li><img alt="" src="img/icons/cloud.svg"><a href="#">Cloud</a></li>
+				<li><img alt="" src="img/icons/security.svg"><a href="#">Security
+						& Privacy</a></li>
+				<li><img alt="" src="img/icons/api.svg"><a href="#">API</a></li>
+			</ul>
+		</section>
 	</div>
 </div>
 
-<!-- <div class="ui-grid-a"> -->
-<!-- 	<div class="ui-block-a" style="width: 13%;"> -->
-<!-- 		<ul class="feature-icons"> -->
-<!-- 			<li><img alt="" src="img/icons/fence.svg"><a href="#">Geo-Fencing</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/position.svg"><a href="#">Positioning</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/road.svg"><a href="#">Road -->
-<!-- 					Management</a></li> -->
-
-<!-- 			<li><img alt="" src="img/icons/users.svg"><a href="#">User -->
-<!-- 					Management</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/ar.svg"><a href="#">User -->
-<!-- 					Interaction</a></li> -->
-
-<!-- 			<li><img alt="" src="img/icons/locations.svg"><a href="#">Location-Based -->
-<!-- 					Services</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/tracking.svg"><a href="#">Tracking</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/space.svg"><a href="#">Space -->
-<!-- 					Management</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/navigation.svg"><a href="#">Navigation</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/event.svg"><a href="#">Booking -->
-<!-- 					& Events</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/report.svg"><a href="#">Location-Based -->
-<!-- 					Reporting</a></li> -->
-
-<!-- 			<li><img alt="" src="img/icons/responsive.svg"><a href="#">Cross-Browser</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/language.svg"><a href="#">Localisation</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/cloud.svg"><a href="#">Cloud</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/security.svg"><a href="#">Security -->
-<!-- 					& Privacy</a></li> -->
-<!-- 			<li><img alt="" src="img/icons/api.svg"><a href="#">API</a></li> -->
-<!-- 		</ul> -->
-<!-- 	</div> -->
-<!-- 	<div class="ui-block-b" style="width: 87%; text-align: center;"> -->
-<!-- 		<span class="feature-content-title"></span> -->
-<!-- 	</div> -->
-<!-- </div> -->
 <script src="js/cachu-slider.min.js"></script>
+<script src="js/features.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		var options = {
-			disableMouseEvents : false, // Disable mousewheel event listening.
-			disableKeyboardEvents : false, // Disable keyboard event listening.
-			disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
-			scrollingSpeed : 1333, // The speed of the transition.
-			scrollingLoop : true, // Loop after reaching the end.
-			navigationEnabled : true, // Enable navigation buttons
-			navigationPosition : 'right' // The Navigation's position
-		};
-		var slider = new Cachu(document.querySelector('.cachu__container'),
-				options);
-		slider.run();
-		$(".page-contents").css({
-			'margin-left' : $(".main-menu-buttons").width()  + "px" /* 24 = drop shadow right + shadow*/
-		})
-	});
+	$(document).ready(
+			function() {
+				var options = {
+					disableMouseEvents : false, // Disable mousewheel event listening.
+					disableKeyboardEvents : false, // Disable keyboard event listening.
+					disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
+					scrollingSpeed : 1333, // The speed of the transition.
+					scrollingLoop : false, // Loop after reaching the end.
+					navigationEnabled : true, // Enable navigation buttons
+					navigationPosition : 'left' // The Navigation's position
+				};
+				var slider = new Cachu(document
+						.querySelector('.cachu__container'), options);
+				slider.run();
+				$(".page-contents").css({
+					'margin-left' : $(".main-menu-buttons").width() + "px" /* 24 = drop shadow right + shadow*/
+				})
+				$("#geofenceimg").load("img/maps/streetmap.svg")
+			});
 </script>
