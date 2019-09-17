@@ -35,9 +35,6 @@
 	margin-bottom: 10%;
 	display: table;
 	border-radius: 33px;
-	box-shadow: 0 1px 2px #f5f9ff, /*bottom external highlight*/ 0 -1px 1px
-		#666, /*top external shadow*/ inset 0 -1px 1px rgba(0, 0, 0, 0.5),
-		/*bottom internal shadow*/ inset 0 1px 1px rgba(255, 255, 255, 0.8);
 	cursor: pointer;
 }
 
@@ -59,7 +56,9 @@
 
 .main-menu-buttons div.active {
 	background-color: #f5f9ff;
-    filter: drop-shadow(3px 3px 2px #190b42);
+	box-shadow: 0 1px 2px #f5f9ff, 0 -1px 1px #666, inset 0 -1px 1px
+		rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+	filter: drop-shadow(3px 3px 2px #190b42);
 }
 
 .main-menu-buttons div.active span, .main-menu-buttons div.active object
