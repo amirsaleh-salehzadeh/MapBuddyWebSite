@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=500" />
+<meta name="keywords"
+	content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax" />
+<meta name="author" content="Jan Paepke (www.janpaepke.de)" />
+<title>Bezier Path Animation - Examples - ScrollMagic</title>
+
+<link rel="stylesheet" href="../../assets/css/normalize.css"
+	type="text/css">
+<link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="../../assets/css/examples.css"
+	type="text/css">
+<link rel="shortcut icon" href="../../assets/img/favicon.ico"
+	type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/custom-style.css">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="../../assets/css/default-assets/classy-nav.css">
+<script type="text/javascript" src="../../assets/js/lib/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../assets/js/lib/highlight.pack.js"></script>
+<script type="text/javascript"
+	src="../../assets/js/lib/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="../../assets/js/examples.js"></script>
+
+<script type="text/javascript"
+	src="../../assets/js/lib/greensock/TweenMax.min.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#description").load('../../assets/img/creatingOppu.svg', function(){
+		var demo = document.getElementById("demo");
+		var tl = new TimelineMax({repeat:-1});
+		var ease = Linear.easeNone;
+
+		TweenMax.set(demo, {autoAlpha:1});
+		TweenMax.set("path", {drawSVG:0, stroke:"#42a6e0"});
+		TweenMax.set("ellipse", {autoAlpha:0, fill:"#42a6e0"});
+
+		tl.to("#hPipe", 0.35, {drawSVG:true, ease:ease});
+		tl.to("#hBody", 0.75, {drawSVG:true, ease:ease});
+		tl.to("#mainPath", 5, {drawSVG:true, ease:ease});
+		tl.to("#dot2", 0.15, {autoAlpha:1});
+		tl.to("#dot1", 0.15, {autoAlpha:1});
+		tl.to("#tCross", 0.25, {drawSVG:true, ease:ease});
+		tl.to("path, ellipse", 0.75, {autoAlpha:0}, "+=1");
+	})
+})
+	
+</script>
+<style type="text/css">
+#background-logo {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: -1;
+	background-color: white;
+	background-image: url("../../assets/img/core-img/logo.svg");
+	background-size: 33%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: .07;
+}
+
+.arrow {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	background-image: url("//image.flaticon.com/icons/svg/25/25629.svg");
+	background-size: contain;
+}
+
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+}
+
+#description svg {
+width: 100%;
+}
+svg path {
+  fill: white;
+  stroke: #000;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 666;
+  stroke-dashoffset: 666;
+  -webkit-animation: dash 11s linear forwards;
+  animation: dash 11s linear forwards;
+}
+@-webkit-keyframes dash {
+  to {
+  	fill: #00597d;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+  	fill: #00597d;
+    stroke-dashoffset: 0;
+  }
+}
+</style>
+
+</head>
+<body>
+	<div id="background-logo"></div>
+	<header class="header-area">
+		<!-- Main Header Start -->
+		<div class="main-header-area">
+			<div class="classy-nav-container breakpoint-off">
+				<div class="container">
+					<!-- Classy Menu -->
+					<nav class="classy-navbar justify-content-between" id="razoNav">
+						<!-- Logo -->
+						<a class="nav-brand" href="index.html"><img
+							src="../../assets/img/core-img/logo.svg" id="umpLogoImg" alt=""></a>
+						<div class="nav-brand" style="max-width: 200px;">UNIVERSITY
+							OF MPUMALANGA</div>
+						<!-- Navbar Toggler -->
+						<div class="classy-navbar-toggler">
+							<span class="navbarToggler"><span></span><span></span><span></span></span>
+						</div>
+
+						<!-- Menu -->
+						<div class="classy-menu">
+							<!-- Menu Close Button -->
+							<div class="classycloseIcon">
+								<div class="cross-wrap">
+									<span class="top"></span><span class="bottom"></span>
+								</div>
+							</div>
+
+							<!-- Nav Start -->
+							<div class="classynav">
+								<ul id="nav">
+									<li><a href="#"><img alt="" class="svgMenu"
+											src="../../assets/img/icons/courses.svg">Programs</a>
+										<div class="megamenu">
+											<ul class="single-mega cn-col-2">
+												<li class="title"><a href="./index.html">Teaching
+														And Learning</a></li>
+												<li><a href="./charts.html">Faculties</a></li>
+												<li><a href="./single-charts.html">Departments</a></li>
+												<li><a href="./podcast.html">Undergrad Studies</a></li>
+												<li><a href="./podcast.html">Postgrad Studies</a></li>
+											</ul>
+											<ul class="single-mega cn-col-2">
+												<li class="title"><a href="./index.html">Research</a></li>
+												<li><a href="">Research Themes</a></li>
+												<li><a href="#">Researchers</a></li>
+												<li><a href="#">Research Partners</a></li>
+												<li><a href="#">Engagement </a></li>
+											</ul>
+										</div></li>
+									<li><a href="#"><img alt=""
+											src="../../assets/img/icons/apply.svg" class="svgMenu">Apply</a>
+										<ul class="dropdown">
+											<li><a href="./index.html">Home</a></li>
+											<li><a href="./charts.html">Charts</a></li>
+											<li><a href="./single-charts.html">Charts Details</a></li>
+											<li><a href="./podcast.html">Podcast</a></li>
+											<li><a href="./single-podcast.html">Podcast Details</a></li>
+										</ul></li>
+									<li><a href="#"><img alt="" class="svgMenu"
+											src="../../assets/img/icons/university.svg">At UMP</a>
+										<div class="megamenu">
+											<ul class="single-mega cn-col-4">
+												<li class="title"><a href="./index.html">NEWS</a></li>
+												<li class="title"><a href="./charts.html">Evenets</a></li>
+											</ul>
+											<ul class="single-mega cn-col-4">
+												<li class="title"><a href="./show.html">People</a></li>
+												<li><a href="#">Leadership And Governance</a></li>
+												<li><a href="#">Management Committee</a></li>
+												<li><a href="#">Our History</a></li>
+												<li><a href="#">Alumni</a></li>
+											</ul>
+											<ul class="single-mega cn-col-4">
+												<li><a href="./charts.html">Charts</a></li>
+												<li><a href="./single-charts.html">Charts Details</a></li>
+												<li><a href="./podcast.html">Podcast</a></li>
+												<li><a href="./single-podcast.html">Podcast Details</a></li>
+												<li><a href="./show.html">Show</a></li>
+											</ul>
+											<ul class="single-mega cn-col-4">
+												<li><a href="./show.html">Show</a></li>
+												<li><a href="./events.html">Event</a></li>
+												<li><a href="./blog.html">Blog</a></li>
+												<li><a href="./single-blog.html">Blog Details</a></li>
+												<li><a href="./index.html">Home</a></li>
+											</ul>
+										</div></li>
+									<li><a href=""><img alt="" class="svgMenu"
+											src="../../assets/img/icons/contact.svg">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="arrow bounce"></div>
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section id="titlechart">
+					<div id="description" style="width: 50%; height: auto;"></div>
+				</section>
+				<section class="demo" id="bezier">
+<!-- 					<div class="spacer s2"></div> -->
+					<div class="spacer s0" id="trigger"></div>
+					<div id="target">
+						<img id="plane"
+							src="//pluspng.com/img-png/graduation-hat-png-cap-diploma-doctorate-education-graduate-graduation-university-fx-physics-449.png" />
+					</div>
+					<div class="spacer s2"></div>
+					<script>
+						$(function() { // wait for document ready
+							var flightpath = {
+									entry : {
+										curviness : 1.25,
+										autoRotate : true,
+										values : [ {
+											y : 100,
+											x : -20
+										}, {
+											y : 300,
+											x : 10
+										} ]
+									},
+									looping : {
+										curviness : 1.25,
+										autoRotate : true,
+										values : [ {
+											x : 510,
+											y : 60
+										}, {
+											x : 620,
+											y : -60
+										}, {
+											x : 500,
+											y : -100
+										}, {
+											x : 380,
+											y : 20
+										}, {
+											x : 500,
+											y : 60
+										}, {
+											x : 580,
+											y : 20
+										}, {
+											x : 620,
+											y : 15
+										} ]
+									},
+									leave : {
+										curviness : 1.25,
+										autoRotate : true,
+										values : [ {
+											x : 660,
+											y : 20
+										}, {
+											x : 800,
+											y : 130
+										}, {
+											x : $(window).width() + 300,
+											y : -100
+										}, ]
+									}
+							};
+							// init controller
+							var controller = new ScrollMagic.Controller();
+
+							// create tween
+							var tween = new TimelineMax().add(
+									TweenMax.to($("#plane"), 1.2, {
+										css : {
+											bezier : flightpath.entry
+										},
+										ease : Power1.easeInOut
+									})).add(TweenMax.to($("#plane"), 2, {
+								css : {
+									bezier : flightpath.looping
+								},
+								ease : Power1.easeInOut
+							})).add(TweenMax.to($("#plane"), 1, {
+								css : {
+									bezier : flightpath.leave
+								},
+								ease : Power1.easeInOut
+							}));
+
+							// build scene
+							var scene = new ScrollMagic.Scene({
+								triggerElement : "#trigger",
+								duration : 1000,
+								offset : 100
+							}).setPin("#target").setTween(tween)
+									.addIndicators() // add indicators (requires plugin)
+									.addTo(controller);
+						})
+					</script>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
