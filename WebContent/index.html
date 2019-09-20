@@ -29,6 +29,10 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js">
+</script>
+<script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/127738/OBJLoader.js">
+</script>
 </head>
 <body>
 	<div class="compass-logo"></div>
@@ -131,7 +135,8 @@
 							$(this).find("span").html(items[l].id)
 							// 			$(this).append("<div class='navigator-li-icon' style='width: 22px; height: 22px; background-image: url("+items[l].icon+")'></div>")
 						})
-			});
+						init3D();	
+	});
 
 	$(window).bind("resize", function() {
 		windowResized()
