@@ -11,6 +11,8 @@
 
 <link rel="stylesheet" href="../../assets/css/normalize.css"
 	type="text/css">
+<link rel="stylesheet" href="../../assets/css/animate.css"
+	type="text/css">
 <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
 <link rel="stylesheet" href="../../assets/css/examples.css"
 	type="text/css">
@@ -38,26 +40,9 @@
 	src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
 <script src="../../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-	$("#description").load('../../assets/img/creatingOppu.svg', function(){
-		var demo = document.getElementById("demo");
-		var tl = new TimelineMax({repeat:-1});
-		var ease = Linear.easeNone;
-
-		TweenMax.set(demo, {autoAlpha:1});
-		TweenMax.set("path", {drawSVG:0, stroke:"#42a6e0"});
-		TweenMax.set("ellipse", {autoAlpha:0, fill:"#42a6e0"});
-
-		tl.to("#hPipe", 0.35, {drawSVG:true, ease:ease});
-		tl.to("#hBody", 0.75, {drawSVG:true, ease:ease});
-		tl.to("#mainPath", 5, {drawSVG:true, ease:ease});
-		tl.to("#dot2", 0.15, {autoAlpha:1});
-		tl.to("#dot1", 0.15, {autoAlpha:1});
-		tl.to("#tCross", 0.25, {drawSVG:true, ease:ease});
-		tl.to("path, ellipse", 0.75, {autoAlpha:0}, "+=1");
+	$(document).ready(function() {
+		$("#description").load('../../assets/img/creatingOppu.svg')
 	})
-})
-	
 </script>
 <style type="text/css">
 #background-logo {
@@ -93,30 +78,28 @@ $(document).ready(function() {
 }
 
 #description svg {
-width: 100%;
+	width: 100%;
 }
+
+.panel {
+	height: 100%;
+	width: 100%;
+}
+
+.panel.green {
+	margin-bottom: 400px
+}
+
 svg path {
-  fill: white;
-  stroke: #000;
-  stroke-width: 7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 666;
-  stroke-dashoffset: 666;
-  -webkit-animation: dash 11s linear forwards;
-  animation: dash 11s linear forwards;
-}
-@-webkit-keyframes dash {
-  to {
-  	fill: #00597d;
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes dash {
-  to {
-  	fill: #00597d;
-    stroke-dashoffset: 0;
-  }
+	fill: white;
+	stroke: #00597d;
+	stroke-width: 7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 666;
+	stroke-dashoffset: 666;
+	-webkit-animation: dash 11s linear forwards;
+	animation: dash 11s linear forwards;
 }
 </style>
 
@@ -226,8 +209,8 @@ svg path {
 				<section id="titlechart">
 					<div id="description" style="width: 50%; height: auto;"></div>
 				</section>
-				<section class="demo" id="bezier">
-<!-- 					<div class="spacer s2"></div> -->
+				<section id="bezier">
+					<!-- 					<div class="spacer s2"></div> -->
 					<div class="spacer s0" id="trigger"></div>
 					<div id="target">
 						<img id="plane"
@@ -237,57 +220,57 @@ svg path {
 					<script>
 						$(function() { // wait for document ready
 							var flightpath = {
-									entry : {
-										curviness : 1.25,
-										autoRotate : true,
-										values : [ {
-											y : 100,
-											x : -20
-										}, {
-											y : 300,
-											x : 10
-										} ]
-									},
-									looping : {
-										curviness : 1.25,
-										autoRotate : true,
-										values : [ {
-											x : 510,
-											y : 60
-										}, {
-											x : 620,
-											y : -60
-										}, {
-											x : 500,
-											y : -100
-										}, {
-											x : 380,
-											y : 20
-										}, {
-											x : 500,
-											y : 60
-										}, {
-											x : 580,
-											y : 20
-										}, {
-											x : 620,
-											y : 15
-										} ]
-									},
-									leave : {
-										curviness : 1.25,
-										autoRotate : true,
-										values : [ {
-											x : 660,
-											y : 20
-										}, {
-											x : 800,
-											y : 130
-										}, {
-											x : $(window).width() + 300,
-											y : -100
-										}, ]
-									}
+								entry : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : 0,
+										y : -20
+									}, {
+										x : 100,
+										y : 10
+									} ]
+								},
+								looping : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : $(window).width() * .8,
+										y : 60
+									}, {
+										x : $(window).width() * .9,
+										y : -60
+									}, {
+										x : $(window).width() * .8,
+										y : -100
+									}, {
+										x : $(window).width() * .7,
+										y : 20
+									}, {
+										x : $(window).width() * .6,
+										y : 60
+									}, {
+										x : $(window).width() * .7,
+										y : 20
+									}, {
+										x : $(window).width() * .9,
+										y : 15
+									} ]
+								},
+								leave : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : $(window).width() + 660,
+										y : 20
+									}, {
+										x : $(window).width() + 800,
+										y : 130
+									}, {
+										x : $(window).width() + 300,
+										y : -100
+									}, ]
+								}
 							};
 							// init controller
 							var controller = new ScrollMagic.Controller();
@@ -319,6 +302,7 @@ svg path {
 							}).setPin("#target").setTween(tween)
 									.addIndicators() // add indicators (requires plugin)
 									.addTo(controller);
+
 						})
 					</script>
 				</section>

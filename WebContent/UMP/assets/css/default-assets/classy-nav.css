@@ -71,7 +71,7 @@ img {
   align-items: center;
 }
 .classy-navbar .nav-brand {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 500;
   color: #00597d;
   display: inline-block;
@@ -105,8 +105,9 @@ img {
   padding: 0 12px;
   display: block;
   height: 35px;
-  font-size: 14px;
+  font-size: 19px;
   line-height: 34px;
+  color: #00597d;
 }
 .classynav ul li .megamenu li a {
   padding: 0 12px;

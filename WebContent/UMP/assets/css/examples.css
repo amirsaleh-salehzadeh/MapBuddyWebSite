@@ -975,7 +975,8 @@ a.viewsource:before {
 }
 #bezier #plane {
 	position: absolute;
-	left: -100px;
+    left: -222px;
+    width: 222px;
 }
 #bezier a.viewsource {
 	margin: 100px;

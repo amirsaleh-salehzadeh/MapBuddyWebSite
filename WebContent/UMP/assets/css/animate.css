@@ -2742,3 +2742,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: rollOut;
   animation-name: rollOut;
 }
+
+@-webkit-keyframes dash {
+	to { 
+		fill:#00597d;
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes dash {
+	to { 
+		fill:#00597d;
+		stroke-dashoffset: 0;
+	}
+}

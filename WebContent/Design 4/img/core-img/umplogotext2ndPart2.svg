@@ -1,0 +1,41 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	  xml:space="preserve" width="122" height="22">
+  <defs>
+    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+      <path fill="#95d5ef" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+    </pattern>
+    <text id="text" transform="translate(1,13)" >
+	    <tspan x="0" dy="1" style="font-family: 'Brandon Grotesque Regular'">MPUMALANGA</tspan>
+    </text>
+    <mask id="text-mask">
+      <use x="0" y="0" xlink:href="#text" opacity="1" fill="#fff"/>
+    </mask>
+    
+    <g id="eff">
+      <use x="0" y="0" xlink:href="#text" fill="#00597d"/>
+  
+  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-300" y="9" width="1800" height="11" opacity="0.5">
+    <animate attributeType="xml" attributeName="x" from="-300" to="0" repeatCount="indefinite" dur="2s"/>
+  </rect>
+  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="9" width="1500" height="29" opacity="0.5">
+    <animate attributeType="xml" attributeName="x" from="-400" to="0" repeatCount="indefinite" dur="3s"/>
+  </rect>
+   <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="13" width="1500" height="9" opacity="0.7">
+    <animate attributeType="xml" attributeName="x" from="-400" to="0" repeatCount="indefinite" dur="3s"/>
+  </rect>
+      
+  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="27" width="2200" height="25" opacity="0.6">
+    <animate attributeType="xml" attributeName="x" from="-200" to="0" repeatCount="indefinite" dur="1.4s"/>
+  </rect>
+      <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="31" width="1900" height="19" opacity="0.7">
+    <animate attributeType="xml" attributeName="x" from="-500" to="0" repeatCount="indefinite" dur="2.8s"/>
+  </rect>
+  <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="29" width="1900" height="19" opacity="0.2">
+    <animate attributeType="xml" attributeName="x" from="-500" to="0" repeatCount="indefinite" dur="2.8s"/>
+  </rect>
+    </g>
+  </defs>
+ 
+	  <use xlink:href="#eff" opacity="0.9" style="mix-blend-mode:color-burn"/>
+
+</svg>

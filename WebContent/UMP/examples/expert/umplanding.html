@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=500" />
+<meta name="keywords"
+	content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax" />
+<meta name="author" content="Jan Paepke (www.janpaepke.de)" />
+<title>Bezier Path Animation - Examples - ScrollMagic</title>
+
+<link rel="stylesheet" href="../../assets/css/normalize.css"
+	type="text/css">
+<link rel="stylesheet" href="../../assets/css/animate.css"
+	type="text/css">
+<link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+<link rel="stylesheet" href="../../assets/css/examples.css"
+	type="text/css">
+<link rel="shortcut icon" href="../../assets/img/favicon.ico"
+	type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/custom-style.css">
+<link rel="stylesheet" href="../../assets/css/temp-style.css">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../../assets/css/default-assets/classy-nav.css">
+<script type="text/javascript" src="../../assets/js/lib/jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../assets/js/lib/highlight.pack.js"></script>
+<script type="text/javascript"
+	src="../../assets/js/lib/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="../../assets/js/examples.js"></script>
+
+<script type="text/javascript"
+	src="../../assets/js/lib/greensock/TweenMax.min.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<script type="text/javascript"
+	src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$("#description").load('../../assets/img/creatingOppu.svg')
+				$(function() {
+					$('.material-card > .mc-btn-action').click(
+							function() {
+								var card = $(this).parent('.material-card');
+								var icon = $(this).children('i');
+								icon.addClass('fa-spin-fast');
+
+								if (card.hasClass('mc-active')) {
+									card.removeClass('mc-active');
+
+									window.setTimeout(function() {
+										icon.removeClass('fa-arrow-left')
+												.removeClass('fa-spin-fast')
+												.addClass('fa-bars');
+
+									}, 800);
+								} else {
+									card.addClass('mc-active');
+
+									window.setTimeout(function() {
+										icon.removeClass('fa-bars')
+												.removeClass('fa-spin-fast')
+												.addClass('fa-arrow-left');
+
+									}, 800);
+								}
+							});
+				});
+			})
+</script>
+<style type="text/css">
+#background-logo {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: -1;
+	background-color: white;
+	background-image: url("../../assets/img/core-img/logo.svg");
+	background-size: 33%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: .07;
+}
+
+.arrow {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	background-image: url("//image.flaticon.com/icons/svg/25/25629.svg");
+	background-size: contain;
+}
+
+.bounce {
+	-moz-animation: bounce 2s infinite;
+	-webkit-animation: bounce 2s infinite;
+	animation: bounce 2s infinite;
+}
+
+#description svg {
+	width: 100%;
+}
+
+.panel {
+	height: 100%;
+	width: 100%;
+}
+
+.panel.green {
+	margin-bottom: 400px
+}
+
+svg path {
+	fill: white;
+	stroke: #00597d;
+	stroke-width: 7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 333;
+	stroke-dashoffset: 333;
+	-webkit-animation: dash 5s linear forwards;
+	animation: dash 5s linear forwards;
+}
+
+.content-grid-holder {
+	position: absolute;
+	top: 66px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: block;
+	z-index: 1;
+}
+
+#bezier {
+	background-color: #ffffff;
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23ffffff' cx='50' cy='0' r='50'/%3E%3Cg fill='%23f6fafd' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23edf5fb' cx='50' cy='100' r='50'/%3E%3Cg fill='%23e4f0f9' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23dbebf7' cx='50' cy='200' r='50'/%3E%3Cg fill='%23d2e7f5' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c9e2f3' cx='50' cy='300' r='50'/%3E%3Cg fill='%23c0ddf1' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b6d8ef' cx='50' cy='400' r='50'/%3E%3Cg fill='%23add3ed' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a3cfeb' cx='50' cy='500' r='50'/%3E%3Cg fill='%2399cae9' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%238fc5e7' cx='50' cy='600' r='50'/%3E%3Cg fill='%2384c0e5' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%2379bce3' cx='50' cy='700' r='50'/%3E%3Cg fill='%236db7e0' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%2360b2de' cx='50' cy='800' r='50'/%3E%3Cg fill='%2352aedc' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%2342a9da' cx='50' cy='900' r='50'/%3E%3Cg fill='%232da5d8' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%2300a0d6' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: contain;
+}
+
+.content-grid-holder>div {
+	margin: 11px;
+	display: inline-block;
+	background-color: white;
+	border-radius: 22px;
+	border: 1px solid white;
+	filter: drop-shadow(1px 2px 3px black);
+}
+
+.section-title {
+	font-size: 33px;
+	font-weight: 600;
+}
+
+/* .event-title { */
+/* 	font-size: 33px; */
+/* 	font-weight: 100; */
+/* 	position: absolute; */
+/* 	left: 0; */
+/* 	width: 100%; */
+/* } */
+.landing-section {
+	position: relative;
+	height: 100%;
+	margin: 22px;
+}
+
+.event-section {
+	background-color: #ffffff;
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23ffffff' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23d8cee3' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23b19ec8' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%238b71ad' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23644592' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%233b1b77' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.footer-section {
+	background-color: #f29e03;
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='46' height='46' fill-opacity='0.6' fill='%23ffa61d'/%3E%3C/svg%3E");
+}
+
+.img-container img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.fa {
+	color: white;
+}
+
+.spacer {
+	background: none;
+}
+</style>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</head>
+<body>
+	<div id="background-logo"></div>
+	<!-- Main Header Start -->
+	<div class="main-header-area">
+		<div class="container" style="height: 100%">
+			<!-- Classy Menu -->
+			<nav class="classy-navbar justify-content-between" id="razoNav">
+				<!-- Logo -->
+				<a class="nav-brand" href="index.html"><img
+					src="../../assets/img/core-img/logo.svg" id="umpLogoImg" alt=""></a>
+				<div class="nav-brand"
+					style="max-width: 200px; position: absolute; left: 300px; top: 0">UNIVERSITY
+					OF MPUMALANGA</div>
+				<!-- Navbar Toggler -->
+				<div class="classy-navbar-toggler">
+					<span class="navbarToggler"><span></span><span></span><span></span></span>
+				</div>
+
+				<!-- Menu -->
+				<div class="classy-menu">
+					<!-- Menu Close Button -->
+					<div class="classycloseIcon">
+						<div class="cross-wrap">
+							<span class="top"></span><span class="bottom"></span>
+						</div>
+					</div>
+
+					<!-- Nav Start -->
+					<div class="classynav">
+						<ul id="nav">
+							<li><a href="#"><img alt="" class="svgMenu"
+									src="../../assets/img/icons/courses.svg">Programs</a></li>
+							<li><a href="#"><img alt=""
+									src="../../assets/img/icons/apply.svg" class="svgMenu">Apply</a>
+							</li>
+							<li><a href="#"><img alt="" class="svgMenu"
+									src="../../assets/img/icons/university.svg">At UMP</a></li>
+							<li><a href=""><img alt="" class="svgMenu"
+									src="../../assets/img/icons/contact.svg">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="arrow bounce"></div>
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section id="titlechart">
+					<div id="description" style="width: 50%; height: auto;"></div>
+				</section>
+				<section class="demo" id="section-wipes">
+					<section id="bezier">
+						<span class="section-title">Study With Us</span>
+						<div id="sceneParallax" class="row content-grid-holder">
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<article class="material-card Brown">
+									<h2>
+										<span>School of Agriculture</span> <strong> <i
+											class="fa fa-fw fa-star"></i> To Protect Food Industry
+										</strong>
+									</h2>
+									<div class="mc-content">
+										<div class="img-container">
+											<img alt="" src="../../assets/img/farm.svg">
+										</div>
+										<div class="mc-description">Artists express thoughts,
+											feelings and ideas by creating paintings or drawings. They
+											put ideas or images into concrete presentations. Some artists
+											teach art in schools or other educational institutions or
+											give lessons at home or in a studio.</div>
+									</div>
+									<a class="mc-btn-action"> <i class="fa fa-bars"></i>
+									</a>
+									<div class="mc-footer">
+										<a class="fa fa-fw fa-facebook"></a> <a
+											class="fa fa-fw fa-twitter"></a> <a
+											class="fa fa-fw fa-linkedin"></a> <a
+											class="fa fa-fw fa-google-plus"></a>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<article class="material-card Indigo">
+									<h2>
+										<span>School of Business</span> <strong> <i
+											class="fa fa-fw fa-star"></i> To Manage a Business
+										</strong>
+									</h2>
+									<div class="mc-content">
+										<div class="img-container">
+											<img alt="" src="../../assets/img/businessman.svg">
+										</div>
+										<div class="mc-description">Artists express thoughts,
+											feelings and ideas by creating paintings or drawings. They
+											put ideas or images into concrete presentations. Some artists
+											teach art in schools or other educational institutions or
+											give lessons at home or in a studio.</div>
+									</div>
+									<a class="mc-btn-action"> <i class="fa fa-bars"></i>
+									</a>
+									<div class="mc-footer">
+
+										<a class="fa fa-fw fa-facebook"></a> <a
+											class="fa fa-fw fa-twitter"></a> <a
+											class="fa fa-fw fa-linkedin"></a> <a
+											class="fa fa-fw fa-google-plus"></a>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<article class="material-card Lime">
+									<h2>
+										<span>School of Art</span> <strong> <i
+											class="fa fa-fw fa-star"></i> To Become an Artist
+										</strong>
+									</h2>
+									<div class="mc-content">
+										<div class="img-container">
+											<img alt="" src="../../assets/img/africanwoman.svg">
+										</div>
+										<div class="mc-description">Artists express thoughts,
+											feelings and ideas by creating paintings or drawings. They
+											put ideas or images into concrete presentations. Some artists
+											teach art in schools or other educational institutions or
+											give lessons at home or in a studio.</div>
+									</div>
+									<a class="mc-btn-action"> <i class="fa fa-bars"></i>
+									</a>
+									<div class="mc-footer">
+
+										<a class="fa fa-fw fa-facebook"></a> <a
+											class="fa fa-fw fa-twitter"></a> <a
+											class="fa fa-fw fa-linkedin"></a> <a
+											class="fa fa-fw fa-google-plus"></a>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<article class="material-card Green">
+									<h2>
+										<span>School of Hospitality Management</span> <strong>
+											<i class="fa fa-fw fa-star"></i> To Become a Hotel Manager
+										</strong>
+									</h2>
+									<div class="mc-content">
+										<div class="img-container">
+											<img alt="" src="../../assets/img/hotel.svg">
+										</div>
+										<div class="mc-description">Artists express thoughts,
+											feelings and ideas by creating paintings or drawings. They
+											put ideas or images into concrete presentations. Some artists
+											teach art in schools or other educational institutions or
+											give lessons at home or in a studio.</div>
+									</div>
+									<a class="mc-btn-action"> <i class="fa fa-bars"></i>
+									</a>
+									<div class="mc-footer">
+
+										<a class="fa fa-fw fa-facebook"></a> <a
+											class="fa fa-fw fa-twitter"></a> <a
+											class="fa fa-fw fa-linkedin"></a> <a
+											class="fa fa-fw fa-google-plus"></a>
+									</div>
+								</article>
+								<!-- 								https://codepen.io/marlenesco/pen/NqOozj -->
+							</div>
+						</div>
+						<div class="spacer s0" id="trigger"></div>
+						<div id="target" style="z-index: 10;">
+							<img id="plane"
+								src="//pluspng.com/img-png/graduation-hat-png-cap-diploma-doctorate-education-graduate-graduation-university-fx-physics-449.png" />
+						</div>
+						<div class="spacer s1"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 section-title"
+								style="font-size: 33px;">Create Your Future at the UMP</div>
+						</div>
+						<div class="spacer s1"></div>
+					</section>
+					<section class="event-section">
+						<span class="section-title" style="color: white">What is
+							Happening at the UMP</span>
+						<div class="spacer s1"></div>
+						<!-- 						https://codepen.io/web-tiki/pen/HhCyd -->
+						<ul id="categories" class="clr">
+							<li class="pusher"></li>
+							<li>
+								<div>
+									<img
+										src="//www.brandsouthafrica.com/wp-content/uploads/2004/05/Capture.jpg"
+										alt="" />
+									<h1>Event 1</h1>
+									<p>Some sample text about the article this hexagon leads to</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="//www.irsociety.co.za/sites/irsociety.co.za/files/styles/image_849x480/public/events/conference-1155x770v1.jpg"
+										alt="" />
+									<h1>Event 2</h1>
+									<p>Some sample text about the article this hexagon leads to</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="//cdn.londonandpartners.com/visit/london-organisations/alexandra-palace/92923-640x360-alexandra-palace-gig-640.jpg"
+										alt="" />
+									<h1>Event 3</h1>
+									<p>Some sample text about the article this hexagon leads to</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img
+										src="//www.news.uct.ac.za/images/userfiles/images/researchoffice/2017/opinions/November/HIVStory/DNA-double-helix.jpg"
+										alt="" />
+									<h1>Event 4</h1>
+									<p>Some sample text about the article this hexagon leads to</p>
+								</div>
+							</li>
+						</ul>
+						<div class="spacer s2"></div>
+					</section>
+					<section class="footer-section">
+						<div class="spacer s2"></div>
+						<div class="main-footer-area section-padding-80-0">
+							<div class="container">
+								<div class="row justify-content-between">
+
+									<!-- Single Footer Widget -->
+									<div class="col-12 col-sm-6 col-md-4 col-xl-3">
+										<div class="single-footer-widget mb-80">
+											<!-- Footer Logo -->
+											<a href="#" class="footer-logo"><img
+												src="../../assets/img/core-img/logo.svg" width="133px" alt=""></a>
+
+											<p class="mb-30">University of Mpumalanga</p>
+
+											<!-- Footer Content -->
+											<div class="footer-content">
+
+												<!-- Single Contact Info -->
+												<div class="single-contact-info d-flex">
+													<div class="icon">
+														<i class="icon_pin"></i>
+													</div>
+													<div class="text">
+														<p>24 No. Amazing Valley, Aewsome St. Nelspriut, South
+															Africa</p>
+													</div>
+												</div>
+
+												<!-- Single Contact Info -->
+												<div class="single-contact-info d-flex">
+													<div class="icon">
+														<i class="icon_phone"></i>
+													</div>
+													<div class="text">
+														<p>+27 123 4567890</p>
+													</div>
+												</div>
+
+												<!-- Single Contact Info -->
+												<div class="single-contact-info d-flex">
+													<div class="icon">
+														<i class="icon_mail_alt"></i>
+													</div>
+													<div class="text">
+														<p>ams.slz@gmail.com</p>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<!-- Single Footer Widget -->
+									<div class="col-12 col-sm-6 col-md-4 col-xl-3">
+										<div class="single-footer-widget mb-80">
+
+											<!-- Widget Title -->
+											<h4 class="widget-title">Twitter Feed</h4>
+
+											<!-- Single Twitter Feed -->
+											<div class="single-twitter-feed d-flex">
+												<div class="tweet-icon">
+													<i class="fa fa-twitter"></i>
+												</div>
+												<div class="tweet">
+													<p>
+														<a href="#">Kerem Suer</a> @kerem American conducts it
+														first ever done strike Qaeda
+													</p>
+												</div>
+											</div>
+
+											<!-- Single Twitter Feed -->
+											<div class="single-twitter-feed d-flex">
+												<div class="tweet-icon">
+													<i class="fa fa-twitter"></i>
+												</div>
+												<div class="tweet">
+													<p>
+														<a href="#">Axel Hervelle</a> @axel_hervelle Tens of
+														thousands attend rallies held in D.C.
+													</p>
+												</div>
+											</div>
+
+											<!-- Single Twitter Feed -->
+											<div class="single-twitter-feed d-flex">
+												<div class="tweet-icon">
+													<i class="fa fa-twitter"></i>
+												</div>
+												<div class="tweet">
+													<p>
+														<a href="#">Chris Pratt</a> @chris_pratt Hundreds of
+														protesters shut down meeting.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Single Footer Widget -->
+									<div class="col-12 col-md-4 col-xl-3">
+										<div class="single-footer-widget mb-80">
+											<!-- Widget Title -->
+											<h4 class="widget-title">Instagram</h4>
+
+											<!-- Instagram Area -->
+											<div class="razo-instagram-area d-flex flex-wrap">
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/2.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/3.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/4.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/5.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/6.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/7.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/8.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/9.jpg" alt=""></a>
+												</div>
+
+												<!-- Single Instagram Feed -->
+												<div class="single-instagram-feed">
+													<a href="#"><img src="../../assets/img/bg-img/10.jpg" alt=""></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Main Footer Area End -->
+
+						<!-- Copywrite Text -->
+						<div class="copywrite-area"
+							style="background-color: rgba(0, 89, 125, .33)">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<!-- Copywrite Text -->
+										<div class="copywrite-text">
+											<p>
+												<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+												Copyright &copy;
+												<script>
+													document.write(new Date()
+															.getFullYear());
+												</script>
+												All rights reserved | This template is made with <i
+													class="fa fa-heart-o" aria-hidden="true"></i> by <a
+													href="https://colorlib.com" target="_blank">Planet
+													Print</a>
+												<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="spacer s1"></div>
+					</section>
+					<section>
+						<b>FOUR</b>
+					</section>
+					<script
+						src="//cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js">
+						
+					</script>
+					<script
+						src="//s3-us-west-2.amazonaws.com/s.cdpn.io/127738/OBJLoader.js">
+						
+					</script>
+					<script>
+						$(function() { // wait for document ready
+							var flightpath = {
+								entry : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : 0,
+										y : -20
+									}, {
+										x : 100,
+										y : 10
+									} ]
+								},
+								looping : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : $(window).width() * .8,
+										y : 60
+									}, {
+										x : $(window).width() * .9,
+										y : -60
+									}, {
+										x : $(window).width() * .8,
+										y : -100
+									}, {
+										x : $(window).width() * .7,
+										y : 20
+									}, {
+										x : $(window).width() * .6,
+										y : 60
+									}, {
+										x : $(window).width() * .7,
+										y : 20
+									}, {
+										x : $(window).width() * .9,
+										y : 15
+									} ]
+								},
+								leave : {
+									curviness : 1.25,
+									autoRotate : true,
+									values : [ {
+										x : $(window).width() + 660,
+										y : 20
+									}, {
+										x : $(window).width() + 800,
+										y : 130
+									}, {
+										x : $(window).width() + 300,
+										y : -100
+									}, ]
+								}
+							};
+							// init controller
+							var controller = new ScrollMagic.Controller();
+
+							// create tween
+							var tween = new TimelineMax().add(
+									TweenMax.to($("#plane"), 1.2, {
+										css : {
+											bezier : flightpath.entry
+										},
+										ease : Power1.easeInOut
+									})).add(TweenMax.to($("#plane"), 2, {
+								css : {
+									bezier : flightpath.looping
+								},
+								ease : Power1.easeInOut
+							})).add(TweenMax.to($("#plane"), 1, {
+								css : {
+									bezier : flightpath.leave
+								},
+								ease : Power1.easeInOut
+							}));
+
+							var scene = new ScrollMagic.Scene({
+								triggerElement : "#trigger",
+								duration : 1000,
+								offset : 100
+							}).setPin("#target").setTween(tween).addTo(
+									controller);
+							// 							var sceneParallax = document
+							// 									.getElementById('sceneParallax');
+							// 							var parallaxInstance = new Parallax(sceneParallax);
+							// 							init3D()
+						});
+						var renderer, scene, camera, banana;
+
+						// 						var ww = $(window).width(), wh = $(window).height();
+						// 						function loadOBJ() {
+
+						// 							//Manager from ThreeJs to track a loader and its status
+						// 							var manager = new THREE.LoadingManager();
+						// 							//Loader for Obj from Three.js
+						// 							var loader = new THREE.OBJLoader(manager);
+
+						// 							//Launch loading of the obj file, addBananaInScene is the callback when it's ready 
+						// 							loader
+						// 									.load(
+						// 											'../../assets/objects/eb_house_plant_01.obj',
+						// 											addBananaInScene);
+
+						// 						};
+						// 						function init3D() {
+
+						// 							renderer = new THREE.WebGLRenderer({
+						// 								canvas : document.getElementById('scene3D'),
+						// 								alpha : true
+						// 							});
+						// 							renderer.setSize(ww, wh);
+
+						// 							scene = new THREE.Scene();
+
+						// 							camera = new THREE.PerspectiveCamera(50, ww / wh,
+						// 									0.1, 10000);
+						// 							camera.position.set(0, 0, 200);
+						// 							scene.add(camera);
+
+						// 							//Add a light in the scene
+						// 							directionalLight = new THREE.DirectionalLight(
+						// 									0xe8f1fd, 0.8);
+						// 							directionalLight.position.set(0, 0, 350);
+						// 							directionalLight.lookAt(new THREE.Vector3(0, 0, 0));
+						// 							scene.add(directionalLight);
+
+						// 							//Load the obj file
+						// 							loadOBJ();
+						// 						}
+
+						// 						var addBananaInScene = function(object) {
+						// 							banana = object;
+						// 							//Move the banana in the scene
+						// 							banana.rotation.x = 0;//Math.PI / 2
+						// 							banana.position.y = 0;
+						// 							banana.position.z = 0;
+						// 							//Go through all children of the loaded object and search for a Mesh
+						// 							object.traverse(function(child) {
+						// 								//								This allow us to check if the children is an instance of the Mesh constructor
+						// 								if (child instanceof THREE.Mesh) {
+						// 									child.material.color = new THREE.Color(
+						// 											0X025463);
+						// 									//									Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
+						// 									child.geometry.computeVertexNormals();
+						// 								}
+						// 							});
+						// 							//Add the 3D object in the scene
+						// 							scene.add(banana);
+						// 							render();
+						// 						};
+
+						// 						var render = function() {
+						// 							requestAnimationFrame(render);
+
+						// 							//Turn the banana
+						// 							banana.rotation.y += .01;
+
+						// 							renderer.render(scene, camera);
+						// 						};
+					</script>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
