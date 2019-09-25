@@ -147,6 +147,9 @@ ul.feature-icons li a {
 	background-color: transparent;
 	position: relative;
 	border-radius: 5px;
+	color: white;
+	width: 66%;
+	margin: auto;
 }
 
 .tab__content>li {
@@ -156,6 +159,7 @@ ul.feature-icons li a {
 	left: 0;
 	display: none;
 	list-style: none;
+    text-align: justify;
 }
 
 .tab__content>li.active {
@@ -198,9 +202,16 @@ ul.feature-icons li a {
     stroke-dasharray: 5 !important;
 }
 
+#geofenceimg {
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
 #geofenceimg svg{
-width: 100%;
-height: auto;
+	width: 100%;
+	height: auto;
 }
 
 @-webkit-keyframes trolley-path-move {

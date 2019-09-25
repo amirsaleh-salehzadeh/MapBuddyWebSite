@@ -27,18 +27,19 @@
 	src="//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=1899"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css" />
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js">
-</script>
-<script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/127738/OBJLoader.js">
-</script>
+<!-- <script -->
+<!-- 	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r63/three.min.js"> -->
+<!-- </script> -->
+<!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/127738/OBJLoader.js"> -->
+<!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/orbitcontrols.js"> -->
+<!-- </script> -->
 </head>
 <body>
 	<div class="compass-logo"></div>
 	<div id="mainBodyFrame">
 		<div class="main-menu-buttons" style="width: 17%;">
-			<div class="ui-block-solo">
+			<div class="ui-block-solo active">
 				<object data="img/icons/features.svg" type="image/svg+xml"></object>
 				<span>Features</span>
 			</div>
@@ -116,7 +117,7 @@
 			function() {
 				windowResized()
 				var items = [ {
-					id : "Georeferencing",
+					id : "Geocoding",
 					icon : "img/icons/locations.svg"
 				}, {
 					id : "Services",
@@ -135,7 +136,14 @@
 							$(this).find("span").html(items[l].id)
 							// 			$(this).append("<div class='navigator-li-icon' style='width: 22px; height: 22px; background-image: url("+items[l].icon+")'></div>")
 						})
-						init3D();	
+				$("#geofenceimg").load(
+						"img/maps/streetmap.svg",
+						function() {
+							$("#geofenceimg").css(
+									"top",
+									$("#mainBodyFrame").height()
+											- ($("#geofenceimg svg").height()))
+						})
 	});
 
 	$(window).bind("resize", function() {
