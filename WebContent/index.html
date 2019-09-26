@@ -121,20 +121,19 @@
 					icon : "img/icons/locations.svg"
 				}, {
 					id : "Services",
-					icon : "img/icons/tracking.svg"
+					icon : "img/icons/tracking-b.svg"
 				}, {
 					id : "Interaction",
-					icon : "img/icons/ar.svg"
+					icon : "img/icons/ar-b.svg"
 				}, {
 					id : "Technology",
-					icon : "img/icons/cloud.svg"
+					icon : "img/icons/cloud-b.svg"
 				} ]
 				$(".cachu__nav__item").each(
 						function(l, k) {
 							$(this).find("a").css("background-image",
 									"url(" + items[l].icon + ")")
 							$(this).find("span").html(items[l].id)
-							// 			$(this).append("<div class='navigator-li-icon' style='width: 22px; height: 22px; background-image: url("+items[l].icon+")'></div>")
 						})
 				$("#geofenceimg").load(
 						"img/maps/streetmap.svg",
