@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#f1fffe">
+<meta name="theme-color" content="#f1fffe">
 <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=Ubuntu">
 <link rel="stylesheet" type="text/css"
@@ -27,6 +27,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="site.style.css" />
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-143257713-2');
+</script>
 </head>
 <body>
 	<div class="compass-logo"></div>
@@ -35,11 +46,14 @@
 		<div class="main-menu-buttons">
 			<div class="title-logo"></div>
 			<ul>
-				<li class="active"><div id="solitionsIcn"></div>
-					<span>Solutions</span></li>
-				<li><div id="productsIcn"></div> <span>Industries</span></li>
-				<li><div id="servicesIcn"></div> <span>Services</span></li>
-				<li><div id="contactsIcn"></div> <span>Contact</span></li>
+				<li class="active" onclick="loadPage('products.html')"><div
+						id="solitionsIcn"></div> <span>Solutions</span></li>
+				<li onclick="loadPage('industries.html')"><div id="productsIcn"></div>
+					<span>Industries</span></li>
+				<li onclick="loadPage('services.html')"><div id="servicesIcn"></div>
+					<span>Services</span></li>
+				<li onclick="loadPage('contact.html')"><div id="contactsIcn"></div>
+					<span>Contact</span></li>
 			</ul>
 		</div>
 		<div class="page-contents">
@@ -68,21 +82,22 @@
 				}
 			});
 		})
-		$("#features-page").load("products.html")
+		loadPage('products.html')
 		$("#productsIcn").load("img/icons/features.svg")
 		$("#servicesIcn").load("img/icons/services.svg")
 		$("#contactsIcn").load("img/icons/contact.svg")
 		$("#solitionsIcn").load("img/icons/solutions.svg")
 	});
+	function loadPage(pageAddress) {
+		$("#features-page").load(pageAddress)
+	}
 	function windowResized() {
 		var transformTop = ($(window).height() - $("#mainBodyFrame").height())
 	}
 
-	$(window).bind(
-			"load",
-			function() {
-				windowResized()
-			});
+	$(window).bind("load", function() {
+		windowResized()
+	});
 
 	$(window).bind("resize", function() {
 		windowResized()

@@ -1,0 +1,28 @@
+.foodContainer img {
+	width: 33%;
+	float: left;
+	margin-right: 3px;
+}
+
+.foodContainer p {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	color: #f8b624;
+}
+
+.foodContainer span {
+	font-size: 16px;
+	color: #f8b624;
+	text-align: left;
+	display: block;
+}
+
+.foodContainer {
+	padding-bottom: 22px;
+}
+
+.cachu__section div.ui-grid-b {
+	margin: 7%;
+	margin-top: 11%;
+}

@@ -10,7 +10,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#f1fffe">
 <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=Ubuntu">
 <link rel="stylesheet" type="text/css"
@@ -22,28 +21,40 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
+<!-- <script -->
+<!-- 	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
+<!-- <script -->
+<!-- 	src="//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=1899"></script> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="site.style.css" />
+<!-- <script -->
+<!-- 	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r63/three.min.js"> -->
+<!-- </script> -->
+<!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/127738/OBJLoader.js"> -->
+<!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/orbitcontrols.js"> -->
+<!-- </script> -->
 </head>
 <body>
 	<div class="compass-logo"></div>
 	<div id="mainBodyFrame">
 		<div class="page-contents-background"></div>
 		<div class="main-menu-buttons">
-			<div class="title-logo"></div>
 			<ul>
-				<li class="active"><div id="solitionsIcn"></div>
-					<span>Solutions</span></li>
-				<li><div id="productsIcn"></div> <span>Industries</span></li>
+				<li class="active"><div id="productsIcn"></div>
+					<span>Products</span></li>
+				<li><div id="solitionsIcn"></div> <span>Industries</span></li>
 				<li><div id="servicesIcn"></div> <span>Services</span></li>
-				<li><div id="contactsIcn"></div> <span>Contact</span></li>
+				<li><div id="contactsIcn"></div> <span>Contact Us</span></li>
 			</ul>
+			<div class="title-logo" st></div>
 		</div>
 		<div class="page-contents">
 			<div id="features-page" class="a-page-content"></div>
+			<div class="story-lines"></div>
 		</div>
 	</div>
 </body>
@@ -82,6 +93,33 @@
 			"load",
 			function() {
 				windowResized()
+				var items = [ {
+					id : "Geocoding",
+					icon : "img/icons/locations.svg"
+				}, {
+					id : "Services",
+					icon : "img/icons/tracking-b.svg"
+				}, {
+					id : "Interaction",
+					icon : "img/icons/ar-b.svg"
+				}, {
+					id : "Technology",
+					icon : "img/icons/cloud-b.svg"
+				} ]
+				$(".cachu__nav__item").each(
+						function(l, k) {
+							$(this).find("a").css("background-image",
+									"url(" + items[l].icon + ")")
+							$(this).find("span").html(items[l].id)
+						})
+				// 				$("#geofenceimg").load(
+				// 						"img/maps/streetmap.svg",
+				// 						function() {
+				// 							$("#geofenceimg").css(
+				// 									"top",
+				// 									$("#mainBodyFrame").height()
+				// 											- ($("#geofenceimg svg").height()))
+				// 						})
 			});
 
 	$(window).bind("resize", function() {

@@ -1,0 +1,98 @@
+.hover-description {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	padding: 11px;
+	border-radius: 22px;
+	background-color: rgba(222, 222, 222, .3);
+	border-radius: 22px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.hover-description ul {
+	list-style: none;
+}
+
+.sub-functions li {
+	margin: 11px;
+	background-color: #001f35;
+	color: white;
+	border-radius: 11px;
+	cursor: pointer;
+	padding: 7px;
+}
+
+.sub-functions li span {
+	font-size: 13px;
+	font-weight: 500;
+	margin: 33px;
+}
+
+.sub-functions li div.collapse span {
+	font-size: 13px;
+	font-weight: 100;
+	display: inline;
+}
+
+.sub-functions li img {
+	width: 44px;
+	height: 44px;
+	margin-left: 11px;
+}
+
+.sub-functions li div.collapse {
+	background-color: #d4e7ff;
+	color: #001f35;
+	border-radius: 0 0 11px 11px;
+}
+
+.sub-functions li div.collapse img {
+	width: 80%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	padding-top: 11px;
+}
+
+@media ( max-width : 700px) {
+	.material-card .img-container svg {
+		width: 66%;
+	}
+	.hover-description {
+		position: fixed;
+		width: 100%;
+		height: 50%;
+		right: 0;
+		bottom: 0;
+		z-index: 10000;
+		padding: 11px;
+		border-radius: 22px;
+		background-color: rgba(12, 60, 95, .8);
+		border-radius: 22px 22px 0 0;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		display: none;
+		top: unset;
+	}
+	.sub-functions li {
+		margin: 7px;
+	}
+	.sub-functions li img {
+		width: 33px;
+		height: 33px;
+		margin-left: 7px;
+	}
+	.sub-functions li span {
+		font-size: 13px;
+		font-weight: 500;
+		margin: 13px;
+	}
+	.row {
+		padding: 0 66px 0 66px;
+		margin: 0;
+	}
+}
