@@ -47,6 +47,7 @@
 }
 .material-card h2 span {
   display: block;
+text-align: center;
 }
 .material-card h2 strong {
   font-weight: 400;
@@ -216,31 +217,7 @@
   -o-transition: all 0.9s;
   transition: all 0.9s;
 }
-.material-card .img-container {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-}
 
-.material-card .img-container svg {
-    width: 42%;
-    height: auto;
-    padding-top: 33px;
-}
-
-.material-card .img-container svg path {
-  fill: #001d33; !important;
-}
 
 .material-card.mc-active .img-container {
   -webkit-border-radius: 50%;

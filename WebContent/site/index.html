@@ -40,20 +40,23 @@
 </script>
 </head>
 <body>
-	<div class="compass-logo"></div>
 	<div id="mainBodyFrame">
-		<div class="page-contents-background"></div>
 		<div class="main-menu-buttons">
 			<div class="title-logo"></div>
+			<div class="menu-bar-icon">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 			<ul>
-				<li class="active" onclick="loadPage('products.html')"><div
+				<li class="active" onclick="loadPage('products.html', this)"><div
 						id="solitionsIcn"></div> <span>Solutions</span></li>
-				<li onclick="loadPage('industries.html')"><div id="productsIcn"></div>
-					<span>Industries</span></li>
-				<li onclick="loadPage('services.html')"><div id="servicesIcn"></div>
-					<span>Services</span></li>
-				<li onclick="loadPage('contact.html')"><div id="contactsIcn"></div>
-					<span>Contact</span></li>
+				<li onclick="loadPage('industries.html', this)"><div
+						id="productsIcn"></div> <span>Industries</span></li>
+				<li onclick="loadPage('services.html', this)"><div
+						id="servicesIcn"></div> <span>Services</span></li>
+				<li onclick="loadPage('contact.html', this)"><div
+						id="contactsIcn"></div> <span>Contact</span></li>
 			</ul>
 		</div>
 		<div class="page-contents">
@@ -67,28 +70,42 @@
 		$(".main-menu-buttons ul li").on("click", function() {
 			$(".main-menu-buttons ul li.active").removeClass("active");
 			$(this).addClass("active");
-			var element = $(".page-contents-background")
-			tmpAnimation = tmpAnimation + 90;
-			$({
-				degrees : tmpAnimation - 90
-			}).animate({
-				degrees : tmpAnimation
-			}, {
-				duration : 1000,
-				step : function(now) {
-					element.css({
-						transform : 'rotateZ(' + now + 'deg)'
-					});
-				}
-			});
 		})
-		loadPage('products.html')
+		$(".main-menu-buttons ul li.active").trigger("click");
+		setOnMenuBTNClick()
 		$("#productsIcn").load("img/icons/features.svg")
 		$("#servicesIcn").load("img/icons/services.svg")
 		$("#contactsIcn").load("img/icons/contact.svg")
 		$("#solitionsIcn").load("img/icons/solutions.svg")
 	});
-	function loadPage(pageAddress) {
+	function setOnMenuBTNClick() {
+		$(".menu-bar-icon").click(
+				function() {
+					$(".main-menu-buttons ul li").each(
+							function() {
+								if ($(this).hasClass("active"))
+									return true
+								if ($(this).css("display") == "none") {
+									$(".main-menu-buttons ul li").css(
+											"display", "inline-block")
+								} else {
+									$(".main-menu-buttons ul li").css(
+											"display", "none")
+									$(".main-menu-buttons ul li.active").css(
+											"display", "inline-block")
+								}
+								return false
+							})
+				})
+
+	}
+	function loadPage(pageAddress, liItem) {
+		if ($(".menu-bar-icon").css("display") != "none") {
+			$(".main-menu-buttons ul li").removeClass("active")
+			$(".main-menu-buttons ul li").css("display", "none")
+			$(liItem).addClass("active")
+			$(".main-menu-buttons ul li.active").css("display", "block")
+		}
 		$("#features-page").load(pageAddress)
 	}
 	function windowResized() {
