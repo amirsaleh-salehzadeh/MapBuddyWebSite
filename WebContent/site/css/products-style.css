@@ -1,34 +1,112 @@
-.hover-description {
+.hover-description-container {
 	position: absolute;
 	width: 50%;
 	height: 100%;
 	right: 0;
 	top: 0;
+	z-index: 0;
+}
+
+.chevron {
+	position: absolute;
+	width: 70%;
+	height: 33px;
+	opacity: 0;
+	left: 15%;
+	transform: scale3d(0.5, 0.5, 0.5);
+	animation: move 3s ease-out infinite;
+	bottom: 25%;
+}
+
+.chevron:first-child {
+	animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+	animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before, .chevron:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	background: #62bcff;
+}
+
+.chevron:before {
+	left: 0;
+	transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+	right: 0;
+	width: 50%;
+	transform: skew(0deg, -30deg);
+}
+
+.hover-description {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	top: 0;
 	z-index: 1;
-	padding: 11px;
+	padding: 0;
 	border-radius: 22px;
 	border-radius: 22px;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	text-align: center;
+}
+
+.hover-description span {
+	filter: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 35px;
+	top: 0;
+	background-color: #0c3c5f;
+	color: white;
 }
 
 .hover-description ul {
 	list-style: none;
+	padding: 0;
+}
+
+.sub-functions li.show {
+	opacity: 1;
+	transform: none;
+	transition: all 1s cubic-bezier(.36, -0.64, .34, 1.76);
+	box-shadow: rgb(2, 91, 117) 7px 7px 7px;
 }
 
 .sub-functions li {
 	margin: 11px;
-	background-color: #001f35;
-	color: white;
+	color: #001f35;
 	border-radius: 11px;
 	cursor: pointer;
 	padding: 7px;
+	opacity: 0;
+	transform: rotateY(-90deg);
+	margin-bottom: 33px;
+	height: 99px;
+	text-align: left;
 }
 
 .sub-functions li span {
-	font-size: 13px;
-	font-weight: 500;
-	margin: 33px;
+	font-size: 14px;
+	font-weight: 600;
+	padding-left: 88px;
+	text-align: left;
+	display: block;
+	margin-top: 22px;
+	position: unset;
+	color: #001f35;
+	background-color: transparent;
 }
 
 .sub-functions li div.collapse span {
@@ -38,9 +116,17 @@
 }
 
 .sub-functions li img {
-	width: 44px;
-	height: 44px;
+	width: 66px;
+	height: 66px;
 	margin-left: 11px;
+	position: absolute;
+}
+
+.ai-icon {
+	background-image:
+		url('//static1.squarespace.com/static/5b4ea1492714e599a1286b97/t/5b50b6c4352f53b1c1fb0383/1532016325929/20691436-0-AiLogo-1.png');
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .sub-functions li div.collapse {
@@ -66,11 +152,11 @@
 	height: 100%;
 	padding: 7px;
 	z-index: 3;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+	-webkit-transition: scale 0.3s, filter 0.3s;
+	-moz-transition: scale 0.3s, filter 0.3s;
+	-ms-transition: scale 0.3s, filter 0.3s;
+	-o-transition: scale 0.3s, filter 0.3s;
+	transition: scale 0.3s, filter 0.3s;
 	text-align: center;
 }
 
@@ -81,8 +167,6 @@
 
 .material-card .img-container svg path {
 	fill: #001d33;
-	!
-	important;
 }
 
 .material-card {
@@ -100,15 +184,15 @@
 	width: 100%;
 	padding: 10px 16px;
 	color: #fff;
-	font-size: .8em;
+	font-size: 14px;
 	line-height: 1.3em;
 	margin: 0;
 	z-index: 10;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+	-webkit-transition: box-shadow 0.3s;
+	-moz-transition: box-shadow 0.3s;
+	-ms-transition: box-shadow 0.3s;
+	-o-transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s;
 	border-radius: 0 0 22px 0;
 }
 
@@ -122,6 +206,7 @@
 
 .col-md-2 {
 	transition: all .4s ease-in-out;
+	filter: grayscale(.66);
 }
 
 .material-card h2:before, .material-card h2:after {
@@ -131,18 +216,18 @@
 	top: -16px;
 	width: 0;
 	border: 8px solid;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
+	-webkit-transition: box-shadow 0.3s, opacity .3s, filter .3s;
+	-moz-transition: box-shadow 0.3s, opacity .3s, filter .3s;
+	-ms-transition: box-shadow 0.3s, opacity .3s, filter .3s;
+	-o-transition: box-shadow 0.3s, opacity .3s, filter .3s;
+	transition: box-shadow 0.3s, opacity .3s, filter .3s;
 }
 
 .material-card h2:after {
 	top: auto;
 	bottom: 0;
-	border-top-color: #001e34;
-	border-right-color: #001e34;
+	border-top-color: transparent;
+	border-right-color: transparent;
 	border-bottom-color: transparent;
 	border-left-color: transparent;
 }
@@ -156,11 +241,6 @@
 	position: absolute;
 	right: 16%;
 	top: 16%;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
 	border-color: #001d33;
 	border-radius: 22px;
 	border: 2px solid #001d33;
@@ -177,48 +257,104 @@
 	overflow: hidden;
 	opacity: 0;
 	filter: alpha(opacity = 0);
-	-webkit-transition: all 1.2s;
-	-moz-transition: all 1.2s;
-	-ms-transition: all 1.2s;
-	-o-transition: all 1.2s;
-	transition: all 1.2s;
 }
 
 @media ( max-width : 700px) {
 	.material-card .img-container svg {
 		width: 66%;
 	}
-	.hover-description {
+	.hover-description-container {
 		position: fixed;
 		width: 100%;
-		height: 50%;
+		height: calc(100% - 88px);
 		right: 0;
-		bottom: 0;
+		bottom: -100%;
 		z-index: 10000;
 		padding: 11px;
 		border-radius: 22px;
-		background-color: rgba(12, 60, 95, .8);
+		background-color: rgba(12, 60, 95, .5);
 		border-radius: 22px 22px 0 0;
 		overflow-y: scroll;
 		overflow-x: hidden;
-		display: none;
+		display: block;
 		top: unset;
+		transition: all 1s cubic-bezier(.36, -0.64, .34, 1.76);
+		background-image:
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23bddbff'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%2388bbf2' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%2388bbf2' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+		background-attachment: fixed;
+		background-size: cover;
+		border: 2px solid;
+		border-bottom: none;
+		box-shadow: rgb(12, 60, 95) -6px 12px 52px;
+		overflow: hidden;
 	}
 	.sub-functions li {
 		margin: 7px;
+		height: 100%;
+		min-height: 55px;
 	}
 	.sub-functions li img {
-		width: 33px;
-		height: 33px;
+		width: 44px;
+		height: 44px;
 		margin-left: 7px;
 	}
 	.sub-functions li span {
 		font-size: 13px;
 		font-weight: 500;
 		margin: 13px;
+		margin-top: 0;
 	}
 	.row {
-		padding: 0 33px 0 33px;
+		padding: 0;
 		margin: 0;
+	}
+	.col-md-2 {
+		width: 33%;
+		padding-right: 7px;
+		padding-left: 7px;
+		width: 50%;
+	}
+	.material-card h2 {
+		padding: 3px;
+		top: calc(100% - 33px);
+	}
+	.material-card .mc-content {
+		position: absolute;
+		right: 16%;
+		top: 16%;
+		border-radius: 11px;
+		border: 1px solid #001d33;
+		width: 66%;
+		height: 66%;
+	}
+	.material-card .img-container {
+		padding: 3px;
+	}
+	.material-card {
+		margin-bottom: 1.6em;
+	}
+	#close {
+		display: inline-block !important;
+		padding: 11px;
+		width: 100%;
+		background: #0c3c5f;
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		font-size: 35px;
+		line-height: 22px;
+		filter: drop-shadow(2px 4px 3px #cce3ff);
+		color: white;
+		z-index: 11;
+		right: 0;
+	}
+	.hover-description ul {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 4rem;
+		margin-top: 3rem;
+	}
+	.sub-functions li span {
+		padding-left: 50px;
 	}
 }
