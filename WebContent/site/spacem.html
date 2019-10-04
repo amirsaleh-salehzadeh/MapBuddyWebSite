@@ -1,21 +1,24 @@
-<link rel="stylesheet" type="text/css"
-	href="//rawgit.com/mystroken/cachu-slider/master/dist/cachu-slider.min.css" />
+<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
 <link rel="stylesheet" type="text/css" href="css/features-style.css" />
-<link rel="stylesheet" type="text/css" href="css/horizontal-slider.css" />
-<link rel="stylesheet" type="text/css" href="css/icon-colors.css" />
 
 <div class="cachu__container">
 	<div id="scrolling" class="cachu__sections">
 		<section class="cachu__section" id="digitisation">
-			<div class="ui-block-solo" style="color: white; padding: 11px">
-				<img alt="" src="img/icons/fence.svg" width="48px"><strong>Geo-Fencing</strong>
-				<br>
-				A geo-fence is a virtual perimeter for a real-world geographic area.
-				A geo-fence could be dynamically generated as in a radius around a
-				point location, or a geo-fence can be a predefined set of boundaries
-				<div id="geofenceimg"></div>
+			<div class="ui-block-solo content-section-header"
+				style="color: white; padding: 11px">
+				<img alt="" src="img/icons/fence.svg" width="48px"><span
+					class="page-section-description-title">Geo-Fencing</span>
 			</div>
-			<span class="feature-content-title"></span>
+			<div class="ui-grid-a" style="color: white; padding: 11px">
+				<div class="ui-block-a page-section-description"
+					style="color: white; padding: 11px">
+					<span> A geo-fence is a virtual perimeter for a real-world
+						geographic area. A geo-fence could be dynamically generated as in
+						a radius around a point location, or a geo-fence can be a
+						predefined set of boundaries </span>
+				</div>
+				<div class="ui-block-b" id="geofenceimg"></div>
+			</div>
 		</section>
 		<section class="cachu__section" id="services">
 			<ul class="feature-icons">
@@ -67,6 +70,8 @@
 				var slider = new Cachu(document
 						.querySelector('.cachu__container'), options);
 				slider.run();
-				$("#geofenceimg").load("img/maps/streetmap.svg")
+				$("#geofenceimg").load("img/maps/streetmap.svg");
+				$(".cachu__section").css("cssText", "max-height",
+						$(".cachu__container").height() + "px !important");
 			});
 </script>

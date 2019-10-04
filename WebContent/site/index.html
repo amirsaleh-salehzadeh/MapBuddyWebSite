@@ -28,14 +28,15 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <!-- Styles -->
-<link rel="stylesheet"
-	href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" type="text/css" href="css/site.style.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/page.contents.style.css" />
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="site.style.css" />
 <script async
 	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
 <script>
@@ -76,10 +77,14 @@
 	</div>
 	<div id="page-load-container">
 		<div id="header">
-			<img src="img/icons/close.png" width="48px" height="48px" class="new-page-close-button"
+			<img src="img/icons/close.png" width="48px" height="48px"
+				class="new-page-close-button"
 				onclick="$('#page-load-container').removeClass('show')">
 		</div>
 		<div id="page-load-content" class="mainBodyFrame"></div>
+		<div class="page-load-container title-logo"></div>
+		<span class="page-load-container logo-text">Planet</span> <span
+			class="page-load-container logo-text small-text">Smart Solutions</span>
 	</div>
 </body>
 <script type="text/javascript">
