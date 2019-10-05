@@ -87,7 +87,6 @@
 	font-weight: bold;
 	top: -40px;
 	left: 0;
-	background-image: url(../img/logo.svg);
 	width: 122px;
 	height: 122px;
 	background-repeat: no-repeat;
@@ -95,7 +94,10 @@
 	margin: 0;
 	margin-left: -62px;
 }
-
+.title-logo svg{
+	width: 100%;
+	height: auto;
+}
 .logo-text {
 	color: #001d33;
 	position: absolute;

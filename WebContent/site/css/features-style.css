@@ -128,24 +128,14 @@ ul.feature-icons li a {
     stroke: #001d33 !important;
     stroke-linecap: round !important;
     stroke-linejoin: round !important;
-    stroke-width: 2px !important;
-    -webkit-animation: trolley-path-move 30s linear infinite;
-    animation: trolley-path-move 30s linear infinite;
+    stroke-width: 4px !important;
+    -webkit-animation: path-move 30s linear infinite;
+    animation: path-move 30s linear infinite;
     stroke-dasharray: 5 !important;
 }
 
-.geofenceimg {
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
 
-.geofenceimg svg{
-	width: 100%;
-	height: auto;
-}
-
-@-webkit-keyframes trolley-path-move {
+@-webkit-keyframes path-move {
   to {
     stroke-dashoffset: 100%;
   }

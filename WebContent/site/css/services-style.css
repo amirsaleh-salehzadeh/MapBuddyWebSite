@@ -18,6 +18,43 @@
 	bottom: 25%;
 }
 
+.mainBodyFrame {
+	background-color: #ffffff;
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23b7eb9d'/%3E%3Cstop offset='1' stop-color='%23ffffff'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23009800' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23009800' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
+	filter: drop-shadow(22px 22px 11px rgba(0, 51, 9, 0.3));
+}
+
+.logo-text {
+	color: #090f0c;
+	position: absolute;
+	font-size: 27px;
+	padding-left: 0;
+	font-weight: bolder;
+	margin-top: 11px;
+	left: 0;
+	margin: 0;
+	margin-left: 66px;
+	line-height: 22px;
+}
+
+.title-logo svg {
+	width: 100%;
+	height: auto;
+	fill: #090f0c;
+}
+
+.title-logo svg path {
+	fill: #090f0c !important;
+}
+
+.title-logo svg path#liner {
+	fill: #0eaf0e !important;
+}
+
+
 .chevron:first-child {
 	animation: move 3s ease-out 1s infinite;
 }
@@ -180,7 +217,7 @@
 }
 
 .material-card h2 {
-	background-image: linear-gradient(to right, #001e34, #2698a7);
+	background-image: linear-gradient(to right, #001109, #009800);
 	position: absolute;
 	top: calc(100% - 16px);
 	left: 0;
@@ -201,10 +238,10 @@
 
 .material-card.Indigo h2:before {
 	border-top-color: transparent;
-	border-right-color: #008cf3;
-	border-bottom-color: #008cf3;
+	border-right-color: #009800;
+	border-bottom-color: #009800;
 	border-left-color: transparent;
-	border-bottom-color: #008cf3;
+	border-bottom-color: #009800;
 }
 
 .col-md-2 {

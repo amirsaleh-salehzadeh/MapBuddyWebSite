@@ -1,34 +1,157 @@
-hotels<br>
-malls and shopping centres<br>
-hospitals<br>
-Warehouses<br>
-green houses<br>
-sport clubs<br>
-airports<br>
-university and schools<br>
-farms<br>
-zoo and game resorts<br>
-parkings<br>
-Industries
-Automotive
-Autonomous driving is the next frontier for car manufacturers.
+<link rel="stylesheet" type="text/css" href="css/industries-style.css" />
+<link rel="stylesheet" type="text/css" href="css/animation.css" />
+<script type="text/javascript">
+	// 	$(".feature-icons li").on("click, mouseover", function() {
+	// 		$(".feature-icons li").find("img").css("width", "28px");
+	// 		$(this).find("img").css("width", "44px");
+	// 	})
+</script>
+<div class="hover-description-container">
+	<div class="chevron"></div>
+	<div class="chevron"></div>
+	<div class="chevron"></div>
+	<div class="hover-description"></div>
+	<span id='close' style="display: none"
+		onclick='$(".hover-description-container").css({bottom : "-100%"})'>x</span>
 
-Retail
-Leverages IoT for insights into shopper engagements to improve customer experience.
-
-Logistics
-Technology that brings end-to-end visibility for transport goods.
-
-Smart Cities
-Transform cities to be more responsive to events and changes.
-
-Smart Spaces
-Modernize indoor space operations using IoT devices to realize significant savings.
-
-Smart Homes
-The power of home automation through always-on IoT devices.
-
-Healthcare
-Improve healthcare with proactive, and advanced treatment solutions.
-
-https://www.arm.com/glossary/iot-solutions
+</div>
+<div id="sceneParallax" class="row content-grid-holder">
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Warehouses</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="warehouse"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Logistics & Transportation</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="transport"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Manufacturing Plants</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="manufacture"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Hospitals & Healthcare</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="hospital"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Shopping Centres & Malls</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="mall"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Hotels</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="hotel"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Educational Institutions</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="education"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Farms & Greenhouses</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="greenhouse"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Museum & Exhibition Salons</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="museum"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Game Resort & Zoos</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="zoos"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Gym & Sport Centres</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="gym"></div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<h2>
+				<span>Parking Areas</span>
+			</h2>
+			<div class="mc-content">
+				<div class="img-container" id="parking"></div>
+			</div>
+		</article>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#business-process").load("img/icons/process.svg")
+		$("#gym").load("img/icons/gym.svg")
+		$("#zoos").load("img/icons/zoo.svg")
+		$("#warehouse").load("img/icons/warehouse.svg")
+		$("#manufacture").load("img/icons/manufacture.svg")
+		$("#greenhouse").load("img/icons/greenhouse.svg")
+		$("#hospital").load("img/icons/hospital.svg")
+		$("#transport").load("img/icons/transport.svg")
+		$("#museum").load("img/icons/museum.svg")
+		$("#hotel").load("img/icons/hotel.svg")
+		$("#parking").load("img/icons/parking.svg")
+		$("#education").load("img/icons/education.svg")
+		$("#mall").load("img/icons/mall.svg")
+		$(".chevron").hide()
+	});
+</script>

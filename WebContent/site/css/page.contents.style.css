@@ -50,6 +50,12 @@
 	text-justify: inter-word;
 	display: block;
 	padding: 33px;
+	color: white;
+}
+
+.page-section-description div {
+	height: inherit;
+	margin-bottom: 11px;
 }
 
 .page-load-container.title-logo {
@@ -83,4 +89,14 @@
 	text-align: center;
 	padding: 55px;
 	color: white;
+}
+
+.ui-block-b svg {
+	width: 80%;
+	height: 80%;
+	filter: drop-shadow(2px 15px 22px black);
+}
+
+.page-section-description div.ui-block-b {
+	text-align: center;
 }

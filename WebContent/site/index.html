@@ -62,11 +62,11 @@
 			</div>
 			<ul>
 				<li class="active" onclick="loadPage('products.html', this)"><div
-						id="solitionsIcn"></div> <span>Solutions</span></li>
-				<li onclick="loadPage('industries.html', this)"><div
-						id="productsIcn"></div> <span>Industries</span></li>
+						id="solitionsIcn"></div> <span>Products</span></li>
 				<li onclick="loadPage('services.html', this)"><div
 						id="servicesIcn"></div> <span>Services</span></li>
+				<li onclick="loadPage('industries.html', this)"><div
+						id="productsIcn"></div> <span>Industries</span></li>
 				<li onclick="loadPage('contact.html', this)"><div
 						id="contactsIcn"></div> <span>Contact</span></li>
 			</ul>
@@ -101,6 +101,7 @@
 		$("#servicesIcn").load("img/icons/services.svg")
 		$("#contactsIcn").load("img/icons/contact.svg")
 		$("#solitionsIcn").load("img/icons/solutions.svg")
+		$(".title-logo").load("img/logo.svg")
 	});
 	function setOnMenuBTNClick() {
 		$(".menu-bar-icon").click(
@@ -161,6 +162,17 @@
 					var slider = new Cachu(document
 							.querySelector('.cachu__container'), options);
 					slider.run();
+					$(".content-section-container").css({
+						height : $(".mainBodyFrame").height(),
+						'max-height' : $(".mainBodyFrame").height()
+					})
+					$(".page-section-description").css(
+							{
+								height : $(".mainBodyFrame").height()
+										- $(".content-section-header").height()
+										- $(".page-load-container.logo-text")
+												.height() - 110 - 11
+							})//110 is the bottom and top paddings of content-section-header & 11 is the height - (line-height) of the logo-text
 				})
 	}
 </script>

@@ -4,51 +4,60 @@
 <div class="cachu__container">
 	<div id="scrolling" class="cachu__sections">
 		<section class="cachu__section" id="geofencing-section">
-			<div class="ui-block-solo content-section-header">
-				<img alt="" src="img/icons/fence.svg" width="48px"><span
-					class="page-section-description-title">Geofencing</span>
-			</div>
-			<div class="ui-grid-a page-section-description">
-				<div class="ui-block-a" style="color: white; padding: 11px">
-					<span>Manage the virtual perimeter of a geographic area.<br>Manage
-						a geofence by generating the radius around a space dynamically. <br>Edit
-						the boundaries of a space.
-					</span>
+			<div class="ui-block-solo content-section-container">
+				<div class="ui-block-solo content-section-header">
+					<img alt="" src="img/icons/fence.svg" width="48px"><span
+						class="page-section-description-title">Geofencing</span>
 				</div>
-				<div class="ui-block-b geofenceimg"></div>
+				<div class="ui-grid-a page-section-description">
+					<div class="ui-block-a">
+						<span>Manage the virtual perimeter of a geographic area.<br><br>Manage
+							a geofence by generating the radius around a space dynamically. <br><br>Edit
+							the boundaries of a space.
+						</span>
+					</div>
+					<div class="ui-block-b geofenceimg"></div>
+				</div>
 			</div>
 		</section>
 		<section class="cachu__section" id="digitisation-section">
-			<div class="ui-block-solo content-section-header">
-				<img alt="" src="img/icons/fence.svg" width="48px"><span
-					class="page-section-description-title">Geocoding Outdoor &
-					Indoor Spaces</span>
-			</div>
-			<div class="ui-block-solo page-section-description"
-				style="color: white; padding: 11px">
-				<span> Geocoding is the process of converting addresses (like
-					a street address) into geographic coordinates (like latitude and
-					longitude), which you can use to place markers on a map, or
-					position the map. Reverse geocoding is the process of converting
-					geographic coordinates into a human-readable address.</span>
-			</div>
-			<div class="ui-grid-a">
-				<div class="ui-block-a indoorimg"></div>
-				<div class="ui-block-b geofenceimg"></div>
+			<div class="ui-block-solo content-section-container">
+				<div class="ui-block-solo content-section-header">
+					<img alt="" src="img/icons/fence.svg" width="48px"><span
+						class="page-section-description-title">Geocoding Spaces</span>
+				</div>
+				<div class="ui-block-solo page-section-description">
+					<div class="ui-grid-a ui-block-solo">
+						<div class="ui-block-a">
+							<span> Geocoding the spaces to convert addresses
+								into geographic coordinates (i.e. latitude and longitude).<br><br>
+								Hereby, you can place markers on a map, or position the
+								map. <br><br> Reversely, convert the geographic coordinates
+								into a human-readable address.
+							</span>
+						</div>
+						<div class="ui-block-b geofenceimg"></div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section class="cachu__section" id="transparency-section">
-			<div class="ui-block-solo content-section-header">
-				<img alt="" src="img/icons/fence.svg" width="48px"><span
-					class="page-section-description-title">Transparency of the
-					Occupant Capacity of Spaces</span>
-			</div>
-			<div class="ui-grid-a" style="color: white; padding: 11px">
-				<div class="ui-block-a page-section-description"
-					style="color: white; padding: 11px">
-					<span></span>
+		<section class="cachu__section">
+			<div class="ui-block-solo content-section-container">
+				<div class="ui-block-solo content-section-header">
+					<img alt="" src="img/icons/fence.svg" width="48px"><span
+						class="page-section-description-title">Transparency of the
+					Occupant Capacity of Spaces
+					</span>
 				</div>
-				<div class="ui-block-b" id="geofenceimg"></div>
+				<div class="ui-block-solo page-section-description">
+					<div class="ui-grid-a ui-block-solo">
+						<div class="ui-block-a">Geocoding indoor
+						spaces by placing a digital map of a space on the map.<br><br>
+						Allocate a type to the components of a building.<br><br>
+						Indicate the type of occupancy of an indoor space.</div>
+						<div class="ui-block-b indoorimg"></div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="cachu__section" id="geospatial-section">
@@ -62,7 +71,7 @@
 					style="color: white; padding: 11px">
 					<span></span>
 				</div>
-				<div class="ui-block-b" id="geofenceimg"></div>
+				<div class="ui-block-b" id="geofenceim"></div>
 			</div>
 		</section>
 		<section class="cachu__section" id="space-optimisation-section">
@@ -97,10 +106,6 @@
 </div>
 <script src="js/cachu-slider.min.js"></script>
 <script type="text/javascript">
-	var locationNames = [ "Parking", "Warehouse", "Building", "Library",
-			"Clinique", "Information" ];
-	var min = 0;
-	var max = locationNames.length;
 	$(document)
 			.ready(
 					function() {
@@ -126,16 +131,6 @@
 																		showHideItems,
 																		100)// your event handler
 															});
-											setInterval(
-													function() {
-														$("tspan")
-																.html(
-																		locationNames[Math
-																				.floor(Math
-																						.random()
-																						* (+max - +min))
-																				+ +min])
-													}, 3000)
 										});
 						$(".indoorimg").load('img/maps/123.svg')
 					});
