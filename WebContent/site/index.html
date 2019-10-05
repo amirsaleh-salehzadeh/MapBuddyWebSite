@@ -84,7 +84,8 @@
 		<div id="page-load-content" class="mainBodyFrame"></div>
 		<div class="page-load-container title-logo"></div>
 		<span class="page-load-container logo-text">Planet</span> <span
-			class="page-load-container logo-text small-text">Smart Solutions</span>
+			class="page-load-container logo-text small-text">Smart
+			Solutions</span>
 	</div>
 </body>
 <script type="text/javascript">
@@ -144,9 +145,23 @@
 	});
 
 	function loadaPage(address) {
-		$("#page-load-content").load(address, function() {
-			$("#page-load-container").addClass("show")
-		})
+		$("#page-load-content").load(
+				address,
+				function() {
+					$("#page-load-container").addClass("show")
+					var options = {
+						disableMouseEvents : false, // Disable mousewheel event listening.
+						disableKeyboardEvents : false, // Disable keyboard event listening.
+						disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
+						scrollingSpeed : 1333, // The speed of the transition.
+						scrollingLoop : true, // Loop after reaching the end.
+						navigationEnabled : true, // Enable navigation buttons
+						navigationPosition : 'left' // The Navigation's position
+					};
+					var slider = new Cachu(document
+							.querySelector('.cachu__container'), options);
+					slider.run();
+				})
 	}
 </script>
 </html>

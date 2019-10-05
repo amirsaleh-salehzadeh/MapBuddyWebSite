@@ -27,10 +27,10 @@
 					<span>Digitising Space</span>
 					<ul class="sub-functions">
 						<li onclick="loadaPage('spacem.html')"><img
-							src="//carmonik.com/wp-content/uploads/2018/10/Geo-Fencing-Icon.png"><span>Geo-fencing
+							src="//carmonik.com/wp-content/uploads/2018/10/Geo-Fencing-Icon.png"><span>Geofencing
 								Spaces</span></li>
 						<li onclick="loadaPage('spacem.html')"><img
-							src="//pcooksonmaintenance.b-cdn.net/wp-content/uploads/sites/176/2018/03/floor-plans-icon.png"><span>Digitising
+							src="//pcooksonmaintenance.b-cdn.net/wp-content/uploads/sites/176/2018/03/floor-plans-icon.png"><span>Geocoding
 								Outdoor & Indoor Spaces</span></li>
 						<li onclick="loadaPage('spacem.html')"><img
 							src="//cdn1.iconfinder.com/data/icons/location-and-navigation-color-filled/128/location_and_nav_color-14-512.png"><span>Transparency
@@ -41,8 +41,9 @@
 						<li onclick="loadaPage('spacem.html')"><img
 							src="//getnimblex.com/wp-content/uploads/2018/11/Clipboard-with-Tick-Icon-Standardisation.png"><span>Establishing,
 								Standardising & Optimising Location-based Operations</span></li>
-						<li onclick="loadaPage('spacem.html')"><img alt="" src="" class="ai-icon"><span>Location
-								Intelligence Analytics & Geospatial Data Visualisation</span></li>
+						<li onclick="loadaPage('spacem.html')"><img alt="" src=""
+							class="ai-icon"><span>Location Intelligence
+								Analytics & Geospatial Data Visualisation</span></li>
 					</ul>
 				</div>
 			</div>
@@ -135,8 +136,7 @@
 						<li><img
 							src="//www.vippng.com/png/full/0-391_facebook-fb-globe-notification-icon-logo-png-push.png"><span>Notification
 								System</span></li>
-						<li><img
-							src="img/icons/videocall.png"><span>Establishing
+						<li><img src="img/icons/videocall.png"><span>Establishing
 								Communication Between the People and Things</span></li>
 						<li><img
 							src="//www.oitc.ca/wp-content/uploads/2016/03/side-ondemand.png"><span>Just-in-Time
@@ -144,11 +144,9 @@
 						<li><img
 							src="//www.tatateleservices.com/Theme/Business/default/meet4solutions/img/main_img.png"><span>Voice
 								Calls over the Internet & Video Conferencing</span></li>
-						<li><img
-							src="img/icons/taskmanagement.png"><span>Task
+						<li><img src="img/icons/taskmanagement.png"><span>Task
 								Management & Sharing the Geolocation</span></li>
-						<li><img
-							src="img/icons/maintenance.png"><span>Just-in-Time
+						<li><img src="img/icons/maintenance.png"><span>Just-in-Time
 								Maintenance & Services</span></li>
 					</ul>
 				</div>
@@ -215,22 +213,22 @@
 		$(".col-md-2").click(
 				function() {
 					$(".col-md-2").removeClass("clickedColumn")
-					$(".col-md-2").each(function() {
-						$(this).css({
-							'-webkit-transform' : 'scale(.8)',
-							'-moz-transform' : 'scale(.8)',
-							'-ms-transform' : 'scale(.8)',
-							'-o-transform' : 'scale(.8)',
-							'transform' : 'scale(.8)',
-							'filter' : 'grayscale(.66)'
-						})
-						$(this).find("h2").css({
-							'box-shadow' : 'none'
-						})
-						$(this).find("span").css({
-							'filter' : 'none'
-						})
+					// 					$(".col-md-2").each(function() {
+					$(".col-md-2").css({
+						'-webkit-transform' : 'scale(.8)',
+						'-moz-transform' : 'scale(.8)',
+						'-ms-transform' : 'scale(.8)',
+						'-o-transform' : 'scale(.8)',
+						'transform' : 'scale(.8)',
+						'filter' : 'grayscale(.66)'
 					})
+					$(".col-md-2").find("h2").css({
+						'box-shadow' : 'none'
+					})
+					$(".col-md-2").find("span").css({
+						'filter' : 'none'
+					})
+					// 					})
 					$(this).addClass("clickedColumn")
 					$(this).css({
 						'-webkit-transform' : 'scale(1)',
@@ -256,9 +254,6 @@
 							$(".chevron").show()
 						else
 							$(".chevron").hide()
-						$(".hover-description-container").css({
-							bottom : 0
-						})
 					}, 10);
 				})
 	}

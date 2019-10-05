@@ -134,13 +134,13 @@ ul.feature-icons li a {
     stroke-dasharray: 5 !important;
 }
 
-#geofenceimg {
+.geofenceimg {
     bottom: 0;
     right: 0;
     left: 0;
 }
 
-#geofenceimg svg{
+.geofenceimg svg{
 	width: 100%;
 	height: auto;
 }

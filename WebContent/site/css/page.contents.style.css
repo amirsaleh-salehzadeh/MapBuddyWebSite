@@ -49,6 +49,7 @@
 	text-align: justify;
 	text-justify: inter-word;
 	display: block;
+	padding: 33px;
 }
 
 .page-load-container.title-logo {
@@ -80,4 +81,6 @@
 
 .content-section-header {
 	text-align: center;
+	padding: 55px;
+	color: white;
 }
