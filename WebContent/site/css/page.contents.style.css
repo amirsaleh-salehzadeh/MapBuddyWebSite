@@ -100,3 +100,55 @@
 .page-section-description div.ui-block-b {
 	text-align: center;
 }
+
+@media ( max-width : 700px) {
+	.page-load-container.logo-text {
+		color: #001d3f;
+		font-size: 19px;
+		margin-left: 37px;
+		bottom: 5%;
+		height: 11px;
+		top: unset;
+	}
+	.page-load-container.logo-text.small-text {
+		font-size: 15px;
+		top: unset;
+		bottom: calc(9% - 43px);
+	}
+	.page-load-container.title-logo {
+		bottom: 2%;
+		left: 10%;
+		width: 66px;
+		height: 66px;
+		margin-left: -9%;
+		top: unset;
+		filter: drop-shadow(0px 8px 5px #eff7fd);
+	}
+	#page-load-content {
+		top: 3%;
+	}
+	.new-page-close-button {
+		right: 5%;
+		top: 3%;
+		width: 33px;
+		height: 33px;
+	}
+	.cachu__section {
+		padding-left: .5rem;
+		padding-right: .5rem;
+	}
+	.cachu__nav {
+		left: .5rem;
+	}
+	.content-section-header {
+		text-align: center;
+		padding: 11px;
+		color: white;
+	}
+	.content-section-header img {
+		width: 32px;
+	}
+	.page-section-description-title {
+		font-size: 19px;
+	}
+}
