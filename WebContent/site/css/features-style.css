@@ -128,10 +128,10 @@ ul.feature-icons li a {
     stroke: #001d33 !important;
     stroke-linecap: round !important;
     stroke-linejoin: round !important;
-    stroke-width: 4px !important;
+    stroke-width: 3px !important;
     -webkit-animation: path-move 30s linear infinite;
     animation: path-move 30s linear infinite;
-    stroke-dasharray: 5 !important;
+    stroke-dasharray: 11 !important;
 }
 
 

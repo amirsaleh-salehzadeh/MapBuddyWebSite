@@ -13,7 +13,6 @@
 	<div class="hover-description"></div>
 	<span id='close' style="display: none"
 		onclick='$(".hover-description-container").css({bottom : "-100%"})'>x</span>
-
 </div>
 <div id="sceneParallax" class="row content-grid-holder">
 	<div class="col-md-2 col-sm-6 col-xs-12">
@@ -179,7 +178,8 @@
 		$(document).ready(function() {
 			$("#business-process").load("img/icons/process.svg")
 			$("#software-design").load("img/icons/software.svg")
-			$("#web-design").load("img/icons/domain.svg", function() {
+			$("#web-design").load("img/icons/domain.svg")
+			$("#integration").load("img/icons/solution.svg", function() {
 				if ($(window).width() <= 700) {
 					$(".second-column").find("div").each(function() {
 						var htmltmp = $(this)[0].outerHTML
@@ -192,7 +192,6 @@
 					})
 				}
 			})
-			$("#integration").load("img/icons/solution.svg")
 			$("#data-science").load("img/icons/data-science.svg")
 			$("#neuro-solution").load("img/icons/neuron.svg")
 			$(".chevron").hide()

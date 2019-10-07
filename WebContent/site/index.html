@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="utf-8">
-
 <title>Map Buddy</title>
 
 <!-- Behavioral Meta Data -->
@@ -16,27 +14,24 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta name="theme-color" content="#f1fffe">
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" type="text/css"
-	href="//fonts.googleapis.com/css?family=Ubuntu">
-<link rel="stylesheet" type="text/css"
-	href="//fonts.googleapis.com/css?family=Tangerine" />
-<link rel="stylesheet"
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="//fonts.googleapis.com/css?family=Ubuntu"> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="//fonts.googleapis.com/css?family=Tangerine" /> -->
+<!-- <link rel="stylesheet" -->
+<!-- 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <meta http-equiv="Cache-Control"
 	content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Styles -->
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" type="text/css" href="css/site.style.css" />
 <link rel="stylesheet" type="text/css"
 	href="css/page.contents.style.css" />
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <script async
 	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
 <script>
@@ -50,6 +45,27 @@
 </script>
 </head>
 <body>
+	<div class="frameLoding">
+		<div class="frame">
+			<div class="center">
+				<div class="dot-1"></div>
+				<div class="dot-2"></div>
+				<div class="dot-3"></div>
+				<div class="loading">
+					<div class="loading-text">
+						<span class="loading-text-words">L</span> <span
+							class="loading-text-words">O</span> <span
+							class="loading-text-words">A</span> <span
+							class="loading-text-words">D</span> <span
+							class="loading-text-words">I</span> <span
+							class="loading-text-words">N</span> <span
+							class="loading-text-words">G</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<div class="mainBodyFrame">
 		<div class="main-menu-buttons">
 			<div class="title-logo"></div>
@@ -61,14 +77,15 @@
 				<div></div>
 			</div>
 			<ul>
-				<li class="active" onclick="loadPage('products.html', this)"><div
-						id="solitionsIcn"></div> <span>Products</span></li>
+				<li class="active"
+					onclick="loadPage('pages/products/products.html', this)"><div
+						class="solitionsIcn"></div> <span>Products</span></li>
 				<li onclick="loadPage('services.html', this)"><div
-						id="servicesIcn"></div> <span>Services</span></li>
-				<li onclick="loadPage('industries.html', this)"><div
-						id="productsIcn"></div> <span>Industries</span></li>
+						class="servicesIcn"></div> <span>Services</span></li>
+				<li onclick="loadPage('pages/industries/industries.html', this)"><div
+						class="productsIcn"></div> <span>Industries</span></li>
 				<li onclick="loadPage('contact.html', this)"><div
-						id="contactsIcn"></div> <span>Contact</span></li>
+						class="contactsIcn"></div> <span>Contact</span></li>
 			</ul>
 		</div>
 		<div class="page-contents">
@@ -88,6 +105,10 @@
 			Solutions</span>
 	</div>
 </body>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/cachu-slider.min.js"></script>
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var tmpAnimation = 0;
@@ -97,10 +118,10 @@
 		})
 		$(".main-menu-buttons ul li.active").trigger("click");
 		setOnMenuBTNClick()
-		$("#productsIcn").load("img/icons/features.svg")
-		$("#servicesIcn").load("img/icons/services.svg")
-		$("#contactsIcn").load("img/icons/contact.svg")
-		$("#solitionsIcn").load("img/icons/solutions.svg")
+		$(".productsIcn").load("img/icons/features.svg")
+		$(".servicesIcn").load("img/icons/services.svg")
+		$(".contactsIcn").load("img/icons/contact.svg")
+		$(".solitionsIcn").load("img/icons/solutions.svg")
 		$(".title-logo").load("img/logo.svg")
 	});
 	function setOnMenuBTNClick() {
@@ -131,6 +152,7 @@
 			$(liItem).addClass("active")
 			$(".main-menu-buttons ul li.active").css("display", "block")
 		}
+		$("#page-load-content").html("")
 		$("#features-page").load(pageAddress)
 	}
 	function windowResized() {
@@ -139,6 +161,7 @@
 
 	$(window).bind("load", function() {
 		windowResized()
+		$(".frameLoding").fadeOut(2000)
 	});
 
 	$(window).bind("resize", function() {
@@ -162,17 +185,6 @@
 					var slider = new Cachu(document
 							.querySelector('.cachu__container'), options);
 					slider.run();
-					$(".content-section-container").css({
-						height : $(".mainBodyFrame").height(),
-						'max-height' : $(".mainBodyFrame").height()
-					})
-					$(".page-section-description").css(
-							{
-								height : $(".mainBodyFrame").height()
-										- $(".content-section-header").height()
-										- $(".page-load-container.logo-text")
-												.height() - 110 - 11
-							})//110 is the bottom and top paddings of content-section-header & 11 is the height - (line-height) of the logo-text
 				})
 	}
 </script>

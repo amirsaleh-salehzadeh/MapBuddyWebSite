@@ -8,14 +8,6 @@
 	transition: bottom .2s linear;
 }
 
-#page-load-content {
-	background-color: #001f35;
-	background-image:
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23002743' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23002f51' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%2300375f' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%2300406c' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%2300487a' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23005088' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23005896' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
-	background-attachment: fixed;
-	background-size: cover;
-}
-
 .new-page-close-button {
 	position: absolute;
 	right: 10%;
@@ -144,11 +136,27 @@
 		text-align: center;
 		padding: 11px;
 		color: white;
+		padding-right: 40px;
 	}
 	.content-section-header img {
 		width: 32px;
 	}
 	.page-section-description-title {
 		font-size: 19px;
+		padding-left: 11px;
+	}
+	.page-section-description {
+		padding: 7px;
+		padding-left: 22px;
+		font-size: 14px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	.page-section-description .ui-block-a, .page-section-description .ui-block-b
+		{
+		width: 100%;
+		float: none;
+		height: unset;
+		margin-bottom: 22px;
 	}
 }
