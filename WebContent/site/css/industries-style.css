@@ -7,19 +7,21 @@
 }
 
 .page-load-container.logo-text {
-    color: #e20000;
-    font-size: 44px;
-    margin-left: 92px;
-    bottom: 12%;
-    left: 10%;
+	color: #e20000;
+	font-size: 44px;
+	margin-left: 92px;
+	bottom: 12%;
+	left: 10%;
 }
 
-.page-load-container.logo-text.small-text{
+.page-load-container.logo-text.small-text {
 	color: #1c0000;
 }
+
 .new-page-close-button {
-    filter: hue-rotate(133deg);
+	filter: hue-rotate(133deg);
 }
+
 .hover-description-container {
 	position: absolute;
 	width: 50%;
@@ -56,34 +58,6 @@
 	fill: #ad0303 !important
 }
 
-.chevron:first-child {
-	animation: move 3s ease-out 1s infinite;
-}
-
-.chevron:nth-child(2) {
-	animation: move 3s ease-out 2s infinite;
-}
-
-.chevron:before, .chevron:after {
-	content: ' ';
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	background: #62bcff;
-}
-
-.chevron:before {
-	left: 0;
-	transform: skew(0deg, 30deg);
-}
-
-.chevron:after {
-	right: 0;
-	width: 50%;
-	transform: skew(0deg, -30deg);
-}
-
 .hover-description {
 	position: absolute;
 	width: 100%;
@@ -113,85 +87,13 @@
 	font-size: 17px
 }
 
-.hover-description ul {
-	list-style: none;
-	padding: 0;
-	margin-top: 47px;
-}
-
-.sub-functions li.show {
-	opacity: 1;
-	transform: none;
-	-webkit-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	-moz-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	-ms-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	-o-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	box-shadow: rgb(2, 91, 117) 7px 7px 7px;
-}
-
-.sub-functions li {
-	margin: 11px;
-	color: #001f35;
-	border-radius: 11px;
-	cursor: pointer;
-	padding: 7px;
-	opacity: 0;
-	transform: rotateY(-90deg);
-	margin-bottom: 33px;
-	height: 99px;
-	text-align: left;
-}
-
-.sub-functions li span {
-	font-size: 14px;
-	font-weight: 600;
-	padding-left: 88px;
-	text-align: left;
-	display: block;
-	margin-top: 22px;
-	position: unset;
-	color: #001f35;
-	background-color: transparent;
-}
-
-.sub-functions li div.collapse span {
-	font-size: 13px;
-	font-weight: 100;
-	display: inline;
-}
-
-.sub-functions li img {
-	width: 66px;
-	height: 66px;
-	margin-left: 11px;
-	position: absolute;
-}
-
-.sub-functions li div.collapse {
-	background-color: #d4e7ff;
-	color: #001f35;
-	border-radius: 0 0 11px 11px;
-}
-
-.sub-functions li div.collapse img {
-	width: 80%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
-	padding-top: 11px;
-}
-
 .material-card .img-container {
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+	width: 111px;
 	padding: 7px;
-	z-index: 3;
 	text-align: center;
+	border-radius: 22px;
+	margin: auto;
+	transition: box-shadow .4s, background-color .4s;
 }
 
 .material-card .img-container svg {
@@ -207,34 +109,17 @@
 	position: relative;
 	height: 0;
 	padding-bottom: calc(100% - 16px);
-	margin-bottom: 3.6em;
+	margin-bottom: 2.6em;
 }
 
 .material-card h2 {
-	background-image: linear-gradient(to right, #310c00, #b56400);
-	position: absolute;
-	top: calc(100% - 16px);
-	left: 0;
 	width: 100%;
 	padding: 10px 16px;
-	color: #fff;
-	font-size: 14px;
+	color: #310c00;
+	font-size: 16px;
 	line-height: 1.3em;
 	margin: 0;
 	z-index: 10;
-	-webkit-transition: box-shadow 0.4s;
-	-moz-transition: box-shadow 0.4s;
-	-ms-transition: box-shadow 0.4s;
-	-o-transition: box-shadow 0.4s;
-	transition: box-shadow 0.4s;
-	border-radius: 0 0 22px 0;
-}
-
-.material-card.Indigo h2:before {
-	border-top-color: transparent;
-	border-right-color: #FF910A;
-	border-left-color: transparent;
-	border-bottom-color: #FF910A;
 }
 
 .col-md-2 {
@@ -242,49 +127,9 @@
 	filter: grayscale(.66);
 }
 
-.material-card h2:before, .material-card h2:after {
-	content: ' ';
-	position: absolute;
-	left: 0;
-	top: -16px;
-	width: 0;
-	border: 8px solid;
-}
-
-.material-card h2:after {
-	top: auto;
-	bottom: 0;
-	border-top-color: transparent;
-	border-right-color: transparent;
-	border-bottom-color: transparent;
-	border-left-color: transparent;
-}
-
 .material-card h2 span {
 	display: block;
 	text-align: center;
-}
-
-.material-card .mc-content {
-	position: absolute;
-	right: 16%;
-	top: 16%;
-	border-color: #3c0f00;
-	border-radius: 22px;
-	border: 2px solid #3c0f00;
-	width: 66%;
-	height: 66%;
-}
-
-.material-card .mc-description {
-	position: absolute;
-	top: 100%;
-	right: 30px;
-	left: 30px;
-	bottom: 54px;
-	overflow: hidden;
-	opacity: 0;
-	filter: alpha(opacity = 0);
 }
 
 @media ( max-width : 700px) {
