@@ -6,13 +6,17 @@
 	background-size: cover;
 }
 
+.main-menu-buttons {
+	border-bottom: 1px solid #86e0f3;
+}
+
 .hover-description-container {
-	position: absolute;
-	width: 50%;
-	height: 100%;
-	right: 0;
-	top: 0;
-	z-index: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 22px;
+    z-index: 0;
 }
 
 .chevron {
@@ -159,68 +163,13 @@
 	border-radius: 22px;
 }
 
-.material-card .img-container {
-	width: 111px;
-	padding: 7px;
-	text-align: center;
-	border-radius: 22px;
-	margin: auto;
-	transition: box-shadow .4s, background-color .4s;
-}
-
-.material-card .img-container svg {
-	width: 90%;
-	height: auto;
-}
-
 .material-card .img-container svg path {
 	fill: #001d33 !important;
 	transition: fill .4s;
 }
 
-.clickedColumn .material-card .img-container svg path {
-	fill: white !important;
-}
-
-.material-card {
-	position: relative;
-	height: 0;
-	padding-bottom: calc(100% - 16px);
-	margin-bottom: 2.6em;
-}
-
 .material-card h2 {
-	width: 100%;
-	padding: 10px 16px;
 	color: #001d33;
-	font-size: 16px;
-	line-height: 1.3em;
-	margin: 0;
-	z-index: 10;
-}
-
-.col-md-2 {
-	transition: transform .4s ease-in-out;
-}
-
-.material-card h2 span {
-	display: block;
-	text-align: center;
-}
-
-.material-card .mc-description {
-	position: absolute;
-	top: 100%;
-	right: 30px;
-	left: 30px;
-	bottom: 54px;
-	overflow: hidden;
-	opacity: 0;
-	filter: alpha(opacity = 0);
-}
-
-.page-section-description .ui-block-b {
-	text-align: center;
 }
 
 @media ( max-width : 700px) {
@@ -265,30 +214,7 @@
 		padding-left: 50px;
 		line-height: 17px;
 	}
-	.row {
-		padding: 22px 0px 0px 0px;
-		margin: 0;
-	}
-	.col-md-2 {
-		width: 33%;
-		padding-right: 7px;
-		padding-left: 7px;
-		width: 50%;
-	}
-	.material-card h2 {
-		padding: 3px;
-		top: calc(100% - 33px);
-	}
-	.material-card .img-container {
-		padding: 3px;
-		width: 77px;
-	}
-	.clickedColumn .material-card .img-container {
-		width: 77px;
-	}
-	.material-card {
-		margin-bottom: 1.6em;
-	}
+	
 	#close {
 		display: inline-block !important;
 		padding: 11px;

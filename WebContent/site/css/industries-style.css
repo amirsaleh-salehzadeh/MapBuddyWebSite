@@ -8,10 +8,6 @@
 
 .page-load-container.logo-text {
 	color: #e20000;
-	font-size: 44px;
-	margin-left: 92px;
-	bottom: 12%;
-	left: 10%;
 }
 
 .page-load-container.logo-text.small-text {
@@ -39,7 +35,9 @@
 	background-size: cover;
 	filter: drop-shadow(22px 22px 11px rgba(49, 12, 0, 0.3));
 }
-
+.main-menu-buttons {
+    border-bottom: 1px solid #ffe1e1;
+}
 .logo-text {
 	color: #3c0f00;
 }
@@ -73,67 +71,14 @@
 	text-align: center;
 }
 
-.hover-description span {
-	filter: none;
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 35px;
-	top: 0;
-	background-color: #0c3c5f;
-	color: white;
-	line-height: 37px;
-	font-weight: bold;
-	font-size: 17px
-}
-
-.material-card .img-container {
-	width: 111px;
-	padding: 7px;
-	text-align: center;
-	border-radius: 22px;
-	margin: auto;
-	transition: box-shadow .4s, background-color .4s;
-}
-
-.material-card .img-container svg {
-	width: 90%;
-	height: auto;
-}
 
 .material-card .img-container svg path {
 	fill: #3c0f00 !important;
 }
 
-.material-card {
-	position: relative;
-	height: 0;
-	padding-bottom: calc(100% - 16px);
-	margin-bottom: 2.6em;
-}
 
 .material-card h2 {
-	width: 100%;
-	padding: 10px 16px;
 	color: #310c00;
-	font-size: 16px;
-	line-height: 1.3em;
-	margin: 0;
-	z-index: 10;
-}
-
-.col-md-2 {
-	transition: transform .4s ease-in-out;
-	filter: grayscale(.66);
-}
-
-.material-card h2 span {
-	display: block;
-	text-align: center;
-}
-
-.page-section-description .ui-block-b {
-	text-align: center;
 }
 
 .page-section-description div img {
@@ -142,9 +87,6 @@
 }
 
 @media ( max-width : 700px) {
-	.material-card .img-container svg {
-		width: 66%;
-	}
 	.hover-description-container {
 		position: fixed;
 		width: 100%;
@@ -188,20 +130,7 @@
 		padding-left: 50px;
 		line-height: 17px;
 	}
-	.row {
-		padding: 0;
-		margin: 0;
-	}
-	.col-md-2 {
-		width: 33%;
-		padding-right: 7px;
-		padding-left: 7px;
-		width: 50%;
-	}
-	.material-card h2 {
-		padding: 3px;
-		top: calc(100% - 33px);
-	}
+	
 	.material-card .mc-content {
 		position: absolute;
 		right: 16%;
@@ -210,12 +139,6 @@
 		border: 1px solid #3c0f00;
 		width: 66%;
 		height: 66%;
-	}
-	.material-card .img-container {
-		padding: 3px;
-	}
-	.material-card {
-		margin-bottom: 1.6em;
 	}
 	#close {
 		display: inline-block !important;

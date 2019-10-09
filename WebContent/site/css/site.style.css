@@ -318,13 +318,12 @@
 .page-contents {
 	position: absolute;
 	bottom: 0;
-	top: 99px;
+	top: 66px;
 	overflow: hidden;
 	right: 0;
 	left: 0;
 	z-index: 3;
-	padding: 11px;
-	padding-bottom: 22px;
+	padding: 22px 11px;
 	margin: 0 auto;
 	bottom: 0;
 	/*     height: calc(100% - 99px); */
@@ -368,12 +367,12 @@
 }
 
 .p-benefits {
-	color: white;
-	border-radius: 11px;
-	border: 1px solid white;
-	padding: 11px;
-	background-color: rgba(255, 255, 255, 0.1);
-	font-weight: bold;
+    color: white;
+    border-radius: 11px;
+    border: 2px solid #04e014;
+    padding: 7px;
+    background-color: rgb(0, 58, 4);
+    font-weight: bold;
 }
 
 .p-explanation {
@@ -406,17 +405,15 @@
 		filter: none;
 	}
 	.main-menu-buttons ul {
-		width: fit-content;
 		margin: auto;
 		border-radius: 0 0 0 22px;
 		position: absolute;
-		top: 0;
 		display: grid;
-		/* filter: none; */
 		right: 0;
-		top: 80px;
+		top: 66px;
 		background-color: white;
 		padding: 0;
+		z-index: 100000;
 	}
 	div.title-logo {
 		position: absolute;
@@ -434,7 +431,7 @@
 	}
 	.small-text {
 		font-size: 17px;
-		top: 7px;
+		top: 0;
 	}
 	.main-menu-buttons ul li div {
 		width: 22px;
@@ -450,7 +447,7 @@
 	}
 	.main-menu-buttons ul li span {
 		display: block;
-		padding-left: 44px;
+		padding-left: 33px;
 		font-size: 14px;
 	}
 	.page-contents {
@@ -463,19 +460,25 @@
 	}
 	.main-menu-buttons ul li.active {
 		position: fixed;
-		top: 40px;
+		top: 28px;
 		right: 66px;
 		padding: 0;
 	}
 	.main-menu-buttons ul li.active div {
-		width: 30px;
+		width: 22px;
 		height: 33px;
-		padding-top: 5px;
+		padding-top: 1px;
 	}
 	.main-menu-buttons ul li.active span {
-		line-height: 44px;
+		line-height: 27px;
 	}
 	.menu-bar-icon {
 		display: block;
+	}
+	.coming-soon {
+		font-size: 33px;
+	}
+	.main-menu-buttons ul li.active {
+		border-top: 2px solid #001d33;
 	}
 }

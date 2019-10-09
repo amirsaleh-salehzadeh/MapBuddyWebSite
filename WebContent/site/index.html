@@ -29,10 +29,11 @@
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" type="text/css" href="css/site.style.css" />
 <link rel="stylesheet" type="text/css" href="css/animation.css" />
-<link rel="stylesheet" type="text/css"
-	href="css/page.contents.style.css" />
+
 <link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/page.contents.style.css" />
 <script async
 	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
 <script>
@@ -81,7 +82,8 @@
 				<li class="active"
 					onclick="loadPage('pages/products/products.html', this)"><div
 						class="solitionsIcn"></div> <span>Products</span></li>
-				<li onclick="loadPage('services.html', this); $('.coming-soon').css('display','block')"><div
+				<li
+					onclick="loadPage('services.html', this); $('.coming-soon').css('display','block')"><div
 						class="servicesIcn"></div> <span>Services</span></li>
 				<li onclick="loadPage('pages/industries/industries.html', this)"><div
 						class="productsIcn"></div> <span>Industries</span></li>
@@ -90,7 +92,9 @@
 			</ul>
 		</div>
 		<div class="page-contents">
-			<div class="coming-soon"><span>Coming Soon</span></div>
+			<div class="coming-soon">
+				<span>Coming Soon</span>
+			</div>
 			<div id="features-page" class="a-page-content"></div>
 		</div>
 	</div>
@@ -154,7 +158,7 @@
 			$(".main-menu-buttons ul li.active").css("display", "block")
 		}
 		$("#page-load-content").html("")
-		$('.coming-soon').css('display','none')
+		$('.coming-soon').css('display', 'none')
 		$("#features-page").load(pageAddress)
 	}
 	function windowResized() {
