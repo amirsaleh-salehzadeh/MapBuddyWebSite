@@ -107,20 +107,29 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#business-process").load("img/icons/process.svg")
-		$("#gym").load("img/icons/gym.svg")
-		$("#zoos").load("img/icons/zoo.svg")
-		$("#warehouse").load("img/icons/warehouse.svg")
-		$("#manufacture").load("img/icons/manufacture.svg")
-		$("#greenhouse").load("img/icons/greenhouse.svg")
-		$("#hospital").load("img/icons/hospital.svg")
-		$("#transport").load("img/icons/transport.svg")
-		$("#museum").load("img/icons/museum.svg")
-		$("#hotel").load("img/icons/hotel.svg")
-		$("#parking").load("img/icons/parking.svg")
-		$("#education").load("img/icons/education.svg")
-		$("#mall").load("img/icons/mall.svg")
-		$(".chevron").hide()
-	});
+	$(document)
+			.ready(
+					function() {
+						$("#business-process").load("img/icons/process.svg")
+						$("#gym").load("img/icons/gym.svg")
+						$("#zoos").load("img/icons/zoo.svg")
+						$("#warehouse").load("img/icons/warehouse.svg")
+						$("#manufacture").load("img/icons/manufacture.svg")
+						$("#greenhouse").load("img/icons/greenhouse.svg")
+						$("#hospital").load("img/icons/hospital.svg")
+						$("#transport").load("img/icons/transport.svg")
+						$("#museum").load("img/icons/museum.svg")
+						$("#hotel").load("img/icons/hotel.svg")
+						$("#parking").load("img/icons/parking.svg")
+						$("#education").load("img/icons/education.svg")
+						$("#mall").load("img/icons/mall.svg")
+						$(".chevron").hide()
+						$(".col-md-2")
+								.each(
+										function() {
+											$(this)
+													.append(
+															'<div class="coming-soon"><span>Coming Soon</span></div>')
+										})
+					});
 </script>

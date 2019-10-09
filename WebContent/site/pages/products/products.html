@@ -26,11 +26,11 @@
 								Positioning</span></li>
 						<li><img src="img/products/locfind.png"><span>Finding
 								People & Services</span></li>
-						<li><img src="img/products/earth-149499_960_720.png"><span>Collecting & Visualising
-								Geospatial Data</span></li>
-<!-- 						<li><img -->
-<!-- 							src="img/products/Clipboard-with-Tick-Icon-Standardisation.png"><span>Establishing, -->
-<!-- 								Standardising & Optimising Location-based Operations</span></li> -->
+						<li><img src="img/products/earth-149499_960_720.png"><span>Collecting
+								& Visualising Geospatial Data</span></li>
+						<!-- 						<li><img -->
+						<!-- 							src="img/products/Clipboard-with-Tick-Icon-Standardisation.png"><span>Establishing, -->
+						<!-- 								Standardising & Optimising Location-based Operations</span></li> -->
 						<li><img alt="" src="" class="ai-icon"><span>Location
 								Intelligence Analytics & Geospatial Data Virtualisation</span></li>
 					</ul>
@@ -53,7 +53,8 @@
 								the Paths</span></li>
 						<li><img src="img/products/transport.png"><span>Customising
 								the Path Types, based on Transport Mode</span></li>
-						<li><img src="img/products/route-optimization-icon.png"><span>Outdoor & Indoor Navigation</span></li>
+						<li><img src="img/products/route-optimization-icon.png"><span>Outdoor
+								& Indoor Navigation</span></li>
 						<li><img src="img/products/track-icon-blue_05.png"><span>Tracking
 								& Collecting Movement Data</span></li>
 						<li><img src="img/products/png-tracking-8.png"><span>LiveStream
@@ -71,13 +72,13 @@
 	</div>
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
-			<div class="img-container" id="things-digitiser"></div>
+			<div class="img-container" id="asset-digitiser"></div>
 			<h2>
-				<span>Digitise & Digitalise Things</span>
+				<span>Asset Digitisation</span>
 			</h2>
 			<div class="mc-content">
 				<div class="mc-description">
-					<span>Digitise & Digitalise Things</span>
+					<span>Asset Digitisation</span>
 					<ul class="sub-functions">
 						<li><img src="img/products/Geo-Fencing-Icon.png"><span>Geolocating
 								the Assets, Sensors and Things</span></li>
@@ -103,7 +104,7 @@
 <div class="row second-column">
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
-			<div class="img-container" id="asset-digitiser"></div>
+			<div class="img-container" id="cloud-communication"></div>
 			<h2>
 				<span>Digital Communication</span>
 			</h2>
@@ -124,6 +125,36 @@
 								Management & Sharing the Geolocation</span></li>
 						<li><img src="img/icons/maintenance.png"><span>Just-in-Time
 								Maintenance & Services</span></li>
+					</ul>
+				</div>
+			</div>
+		</article>
+	</div>
+	<div class="col-md-2 col-sm-6 col-xs-12">
+		<article class="material-card Indigo">
+			<div class="img-container" id="things-digitiser"></div>
+			<h2>
+				<span>Internet of Things</span>
+			</h2>
+			<div class="mc-content">
+				<div class="mc-description">
+					<span>Internet of Things</span>
+					<ul class="sub-functions">
+						<li><img src="img/products/Geo-Fencing-Icon.png"><span>Geolocating
+								the Assets, Sensors and Things</span></li>
+						<li><img src="img/products/png-tracking-8.png"><span>Tracking
+								the Assets and Things Just-in-Time</span></li>
+						<li><img src="img/products/artista_iot_logo_orange.png"><span>Integrating
+								Sensors to Collect Different Types of Information</span></li>
+						<li><img src="img/products/t-f.png"><span>Visualising
+								the Spatio-Temporal Sensor Data Just-in-Time</span></li>
+						<li><img alt="" src="" class="ai-icon"><span>Consutructing
+								Predictive Models of the Sensor Data</span></li>
+						<li><img
+							src="img/products/81231-graphic-natural-point-environment-sustainability-design-friendly.png"><span>Optimising
+								the Energy and Resource Consumption</span></li>
+						<li><img src="img/products/security.png"><span>Privacy
+								and Security</span></li>
 					</ul>
 				</div>
 			</div>
@@ -172,8 +203,9 @@
 															})
 										})
 						$("#route-digitiser").load("img/icons/road.svg")
-						$("#asset-digitiser")
-								.load("img/icons/cloud.svg",
+						$("#cloud-communication")
+								.load(
+										"img/icons/cloud.svg",
 										function() {
 											if ($(window).width() <= 700) {
 												$(".second-column")
@@ -198,6 +230,7 @@
 											onColumnClicks()
 										})
 						$("#things-digitiser").load("img/icons/iot.svg")
+						$("#asset-digitiser").load("img/icons/inventory.svg")
 						$("#fleet-tracker").load("img/icons/tracking.svg")
 						$("#event-organiser").load("img/icons/event.svg")
 						$(".chevron").hide()
