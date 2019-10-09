@@ -28,6 +28,7 @@
 <!-- Styles -->
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" type="text/css" href="css/site.style.css" />
+<link rel="stylesheet" type="text/css" href="css/animation.css" />
 <link rel="stylesheet" type="text/css"
 	href="css/page.contents.style.css" />
 <link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
@@ -80,7 +81,7 @@
 				<li class="active"
 					onclick="loadPage('pages/products/products.html', this)"><div
 						class="solitionsIcn"></div> <span>Products</span></li>
-				<li onclick="loadPage('services.html', this)"><div
+				<li onclick="loadPage('services.html', this); $('.coming-soon').css('display','block')"><div
 						class="servicesIcn"></div> <span>Services</span></li>
 				<li onclick="loadPage('pages/industries/industries.html', this)"><div
 						class="productsIcn"></div> <span>Industries</span></li>
@@ -89,6 +90,7 @@
 			</ul>
 		</div>
 		<div class="page-contents">
+			<div class="coming-soon"><span>Coming Soon</span></div>
 			<div id="features-page" class="a-page-content"></div>
 		</div>
 	</div>
@@ -107,7 +109,6 @@
 </body>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/cachu-slider.min.js"></script>
 <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -153,6 +154,7 @@
 			$(".main-menu-buttons ul li.active").css("display", "block")
 		}
 		$("#page-load-content").html("")
+		$('.coming-soon').css('display','none')
 		$("#features-page").load(pageAddress)
 	}
 	function windowResized() {
@@ -169,6 +171,7 @@
 	});
 
 	function loadaPage(address) {
+		$("#page-load-content").html("")
 		$("#page-load-content").load(
 				address,
 				function() {
@@ -177,7 +180,7 @@
 						disableMouseEvents : false, // Disable mousewheel event listening.
 						disableKeyboardEvents : false, // Disable keyboard event listening.
 						disableTouchEvents : false, // Disable event listening on touchable device (Swipe).
-						scrollingSpeed : 1333, // The speed of the transition.
+						scrollingSpeed : 1111, // The speed of the transition.
 						scrollingLoop : true, // Loop after reaching the end.
 						navigationEnabled : true, // Enable navigation buttons
 						navigationPosition : 'left' // The Navigation's position

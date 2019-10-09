@@ -1,5 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/services-style.css" />
-<link rel="stylesheet" type="text/css" href="css/animation.css" />
+<link rel="stylesheet" type="text/css" href="css/products-style.css" />
 <script type="text/javascript">
 	// 	$(".feature-icons li").on("click, mouseover", function() {
 	// 		$(".feature-icons li").find("img").css("width", "28px");
@@ -17,11 +16,11 @@
 <div id="sceneParallax" class="row content-grid-holder">
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="business-process"></div>
 			<h2>
 				<span>Business Process Optimisation</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="business-process"></div>
 				<div class="mc-description">
 					<span>Business Process Optimisation</span>
 					<ul class="sub-functions">
@@ -44,11 +43,11 @@
 	</div>
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="software-design"></div>
 			<h2>
 				<span>Information System & Smart Solution Design</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="software-design"></div>
 				<div class="mc-description">
 					<span>Digitising Movement</span>
 					<ul class="sub-functions">
@@ -81,11 +80,11 @@
 	</div>
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="web-design"></div>
 			<h2>
 				<span>Website & User-Experience Design</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="web-design"></div>
 				<div class="mc-description">
 					<span>Digitising & Digitalising Things</span>
 					<ul class="sub-functions">
@@ -118,11 +117,11 @@
 <div class="row second-column">
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="integration"></div>
 			<h2>
 				<span>Integration</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="integration"></div>
 				<div class="mc-description">
 					<span>Digitalising Communication</span>
 					<ul class="sub-functions">
@@ -148,11 +147,11 @@
 	</div>
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="data-science"></div>
 			<h2>
 				<span>Data Science</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="data-science"></div>
 				<div class="mc-description">
 					<span>Data Science</span> <img alt="" width="100%"
 						src="//www.enterrasolutions.com/wp-content/uploads/2015/11/Cog-Computing-and-the-future-clear.png">
@@ -162,11 +161,11 @@
 	</div>
 	<div class="col-md-2 col-sm-6 col-xs-12">
 		<article class="material-card Indigo">
+			<div class="img-container" id="neuro-solution"></div>
 			<h2>
 				<span>Neuroleadership & Neuromarketing</span>
 			</h2>
 			<div class="mc-content">
-				<div class="img-container" id="neuro-solution"></div>
 				<div class="mc-description">
 					<span>Data Science</span> <img alt="" width="100%"
 						src="//www.enterrasolutions.com/wp-content/uploads/2015/11/Cog-Computing-and-the-future-clear.png">
@@ -174,26 +173,27 @@
 			</div>
 		</article>
 	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#business-process").load("img/icons/process.svg")
-			$("#software-design").load("img/icons/software.svg")
-			$("#web-design").load("img/icons/domain.svg")
-			$("#integration").load("img/icons/solution.svg", function() {
-				if ($(window).width() <= 700) {
-					$(".second-column").find("div").each(function() {
-						var htmltmp = $(this)[0].outerHTML
-						$(this).remove()
-						$(".row").each(function() {
-							$(this).append(htmltmp)
-							return false
-						})
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#business-process").load("img/icons/process.svg")
+		$("#software-design").load("img/icons/software.svg")
+		$("#web-design").load("img/icons/domain.svg")
+		$("#integration").load("img/icons/solution.svg", function() {
+			if ($(window).width() <= 700) {
+				$(".second-column").find("div").each(function() {
+					var htmltmp = $(this)[0].outerHTML
+					$(this).remove()
+					$(".row").each(function() {
+						$(this).append(htmltmp)
 						return false
 					})
-				}
-			})
-			$("#data-science").load("img/icons/data-science.svg")
-			$("#neuro-solution").load("img/icons/neuron.svg")
-			$(".chevron").hide()
-		});
-	</script>
+					return false
+				})
+			}
+		})
+		$("#data-science").load("img/icons/data-science.svg")
+		$("#neuro-solution").load("img/icons/neuron.svg")
+		$(".chevron").hide()
+	});
+</script>

@@ -132,6 +132,15 @@
 	text-align: center;
 }
 
+.page-section-description .ui-block-b {
+	text-align: center;
+}
+
+.page-section-description div img {
+	border-radius: 22px;
+	width: 333px;
+}
+
 @media ( max-width : 700px) {
 	.material-card .img-container svg {
 		width: 66%;
