@@ -11,12 +11,12 @@
 }
 
 .hover-description-container {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    right: 0;
-    top: 22px;
-    z-index: 0;
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	right: 0;
+	top: 22px;
+	z-index: 0;
 }
 
 .chevron {
@@ -214,7 +214,6 @@
 		padding-left: 50px;
 		line-height: 17px;
 	}
-	
 	#close {
 		display: inline-block !important;
 		padding: 11px;

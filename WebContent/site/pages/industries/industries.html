@@ -126,10 +126,11 @@
 						$(".chevron").hide()
 						$(".col-md-2")
 								.each(
-										function() {
-											$(this)
-													.append(
-															'<div class="coming-soon"><span>Coming Soon</span></div>')
+										function(k, j) {
+											if (k > 0)
+												$(this)
+														.append(
+																'<div class="coming-soon"><span>Coming Soon</span></div>')
 										})
 					});
 </script>

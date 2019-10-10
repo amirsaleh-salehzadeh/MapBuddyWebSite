@@ -14,6 +14,7 @@
 	top: 10%;
 	z-index: 11;
 	margin: 11px;
+	cursor: pointer;
 }
 
 #page-load-container.show {
@@ -31,9 +32,9 @@
 
 .page-section-description-title {
 	vertical-align: middle;
-	font-size: 33px;
+	font-size: 24px;
 	font-weight: bold;
-	padding-left: 22px;
+	padding-left: 11px;
 	margin-top: 13px;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .content-section-header {
-	text-align: center;
+	text-align: left;
 	padding: 22px;
 	color: white;
 }
