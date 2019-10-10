@@ -95,7 +95,7 @@
 /* } */
 
 .main-menu-buttons {
-	border-bottom: 1px solid #ffe1e1;
+	border-bottom: 1px solid #dff3ff;
 }
 
 /* .logo-text { */
@@ -131,12 +131,14 @@
 	text-align: center;
 }
 
+
 .material-card .img-container svg path {
-	fill: #3c0f00 !important;
+	fill: #001d33 !important;
+	transition: fill .4s;
 }
 
 .material-card h2 {
-	color: #310c00;
+	color: #001d33;
 }
 
 .page-section-description div img {
