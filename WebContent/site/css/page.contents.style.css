@@ -164,18 +164,23 @@
 #MSvideoContainer {
 	width: 375px;
 	height: 667px;
-	top: -10%;
-	right: 32px;
-	background: url("../img/iphone.png") center center no-repeat;
+	top: calc(10% - 48px);
+	right: calc(10% + 32px);
+	background: url(../img/iphone.png) center center no-repeat;
 	background-size: cover;
 	position: absolute;
 	z-index: 1;
+	/*     display: none; */
 }
 
 #MSvideoContent {
 	padding-top: 105px;
 	text-align: center;
 	overflow: hidden;
+}
+
+#MSvideoContent iframe {
+	display: block;
 }
 
 .page-section-description div img {
@@ -208,6 +213,10 @@ li.cachu__nav__item {
 	border: none;
 	background-size: contain;
 	border-radius: 0;
+}
+
+.iframes-class {
+	display: none;
 }
 
 @media ( max-width : 700px) {

@@ -103,6 +103,9 @@
 				class="new-page-close-button"
 				onclick="$('#page-load-container').removeClass('show')">
 		</div>
+		<div id="MSvideoContainer">
+			<div id="MSvideoContent"></div>
+		</div>
 		<div id="page-load-content" class="mainBodyFrame"></div>
 		<div class="page-load-container title-logo"></div>
 		<span class="page-load-container logo-text">Planet</span> <span
@@ -191,25 +194,24 @@
 					var slider = new Cachu(document
 							.querySelector('.cachu__container'), options);
 					slider.run();
-					// 					$(".cachu__nav__item").each(function(j, k){
-					// 						console.log(j)
-					// 						$(this).append($(".section-icon").eq(j).clone()).html();  
-
-					// 					})
 					setTimeout(loadIcons, 500)
+					$(".cachu__sections").on(
+							'transitionend webkitTransitionEnd oTransitionEnd',
+							function() {
+// 								alert($(this).find("iframe")[0].outerHTML)
+								$("#MSvideoContent").html($(this).find("iframe")[0].outerHTML)
+							});
 				})
 	}
 	function loadIcons() {
 		$(".cachu__nav__item").each(
 				function(l, k) {
-					console.log(l)
 					$(this).find("a")
 							.css(
 									"background-image",
 									"url("
 											+ $(".section-icon").eq(l).attr(
 													"src") + ")")
-					// 					$(this).append($(".section-icon").eq(l).clone()).html()
 				})
 	}
 </script>
