@@ -1,5 +1,5 @@
 #parallax1 div {
-	background-size: 50%;
+	background-size: 22%;
 }
 
 .parallaxParent div {
@@ -7,8 +7,114 @@
 	background-position: center;
 }
 
+.parallaxParent {
+	height: 100vh;
+	overflow: hidden;
+}
+
+.parallaxParent>div {
+	height: 150%;
+	position: relative;
+	top: -100%;
+	-webkit-transition: transform .1s ease-in-out;
+	-moz-transition: transform .1s ease-in-out;
+	-ms-transition: transform .1s ease-in-out;
+	-o-transition: transform .1s ease-in-out;
+	transition: transform .1s ease-in-out;
+}
+
+#reveal1, #reveal2 {
+	opacity: 0;
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	transform: scale(0.9);
+	-webkit-transition: transform 1s ease-in-out;
+	-moz-transition: transform 1s ease-in-out;
+	-ms-transition: transform 1s ease-in-out;
+	-o-transition: transform 1s ease-in-out;
+	transition: transform 1s ease-in-out;
+}
+
+#reveal1.visible, #reveal2.visible {
+	opacity: 1;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+
+.main-sentence {
+	margin: 44px;
+	top: 66%;
+	height: fit-content;
+}
+
 .large-text {
 	font-size: 29px !important;
 	color: #001d33 !important;
 	font-weight: 600;
+	z-index: 11;
+}
+
+.bike {
+	top: -40px;
+	left: -20px;
+	width: 120px;
+	height: 240px;
+	z-index: -2;
+	transform: rotate(0);
+	will-change: auto;
+}
+
+.bike__marker {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1px;
+	height: 1px;
+}
+
+#bm {
+	position: relative;
+}
+
+.bike svg {
+	z-index: 20;
+	position: relative;
+	will-change: auto;
+}
+
+.umbrella-animation {
+	position: absolute;
+	top: -12px;
+	left: calc(50% + 2px);
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 10;
+}
+
+.light {
+	position: absolute;
+	top: 18px;
+	left: 30px;
+	width: 0;
+	z-index: 10;
+	height: 10px;
+	background:
+		url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/light.png) 0 0
+		no-repeat;
+	background-size: 22px 10px;
+	transition: width 0s 0.3s, opacity 0.3s;
+	transform-origin: center left;
+	opacity: 0;
+}
+
+.light--active {
+	width: 22px;
+	transition: width 0.2s, opacity 0s;
+	opacity: 0.6;
 }

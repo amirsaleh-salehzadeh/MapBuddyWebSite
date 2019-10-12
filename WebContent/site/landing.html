@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
 <script type="text/javascript" src="assets/js/lib/highlight.pack.js"></script>
 <script type="text/javascript"
 	src="assets/js/lib/modernizr.custom.min.js"></script>
@@ -10,8 +9,6 @@
 	src="scrollmagic/uncompressed/ScrollMagic.js"></script>
 <script type="text/javascript"
 	src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-<script type="text/javascript"
-	src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
 <link rel="stylesheet" href="css/landing.page.style.css" type="text/css">
 <div class="page">
 	<!-- 	<section id="hero-1"> -->
@@ -21,58 +18,18 @@
 		<div id="example-wrapper">
 			<div class="scrollContent">
 				<section class="section">
-					<style type="text/css">
-.parallaxParent {
-	height: 100vh;
-	overflow: hidden;
-}
-
-.parallaxParent>* {
-	height: 170%;
-	position: relative;
-	top: -100%;
-	-webkit-transition: transform .2s ease-in-out;
-	-moz-transition: transform .2s ease-in-out;
-	-ms-transition: transform .2s ease-in-out;
-	-o-transition: transform .2s ease-in-out;
-	transition: transform .2s ease-in-out;
-}
-
-#reveal1, #reveal2 {
-	opacity: 0;
-	-webkit-transform: scale(0.9);
-	-moz-transform: scale(0.9);
-	-ms-transform: scale(0.9);
-	-o-transform: scale(0.9);
-	transform: scale(0.9);
-	-webkit-transition: transform 1s ease-in-out;
-	-moz-transition: transform 1s ease-in-out;
-	-ms-transition: transform 1s ease-in-out;
-	-o-transition: transform 1s ease-in-out;
-	transition: transform 1s ease-in-out;
-}
-
-#reveal1.visible, #reveal2.visible {
-	opacity: 1;
-	-webkit-transform: none;
-	-moz-transform: none;
-	-ms-transform: none;
-	-o-transform: none;
-	transform: none;
-}
-
-.main-sentence {
-	position: absolute;
-	top: 0;
-}
-</style>
 					<div id="parallax1" class="parallaxParent">
-						<div class="main-sentence large-text" style="left: 33px;">Digitise
-							Spaces & Movements</div>
-						<div class="main-sentence large-text"
-							style="top: -200px; right: 33px">Provide Location-Based
-							Services in Realtime</div>
-						<div style="background-image: url(img/maps/worlmap.svg);"></div>
+						<div style="background-image: url(img/logomb.svg); opacity: .11;"></div>
+						<span class="main-sentence large-text" style="margin: 44px; position: absolute;">Smart
+							Location-Aware Intelligent Agent</span>
+					</div>
+					<div id="parallax2" class="parallaxParent">
+						<span class="main-sentence large-text" style="left: 33px;">Digitise
+							Spaces & Movements</span> <span class="main-sentence large-text"
+							style="top: 20px; right: 33px">Provide Location-Based
+							Services in Realtime</span>
+						<div
+							style="background-image: url(img/maps/floorplan.svg); opacity: .4;"></div>
 					</div>
 					<div id="trigger1" class="spacer s0"></div>
 					<div id="reveal1" class="large-text">
@@ -108,19 +65,23 @@
 						.addTo(controller);
 					</script>
 					<div class="spacer s0"></div>
-					<div id="parallax2" class="parallaxParent">
-						<div style="background-image: url(img/maps/iot.svg);"></div>
-					</div>
 					<div class="spacer s1">
 						<div class="box2 blue">
-							<p>Content 2</p>
-							<a href="#" class="viewsource">view source</a>
+							<div class="planet">
+								<div class="path-wrapper">
+									<div class="bike">
+										<div id="bm">
+											<div class="umbrella-animation"></div>
+											<div class="bike__marker"></div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="spacer s0"></div>
 					<div id="parallax3" class="parallaxParent">
-						<div
-							style="background-image: url(assets/img/example_parallax_bg3.png);"></div>
+						<div style="background-image: url(img/maps/iot.svg);"></div>
 					</div>
 					<div class="spacer s2"></div>
 					<script>
@@ -147,6 +108,39 @@
 							y : "80%",
 							ease : Linear.easeNone
 						}).addTo(controller);
+						const bike = document.querySelector('.bike');
+						const bmContainer = document.querySelector('#bm');
+
+						// ------------------------
+						// Bodymovin bike animation
+						// ------------------------
+
+						var animation = bodymovin
+								.loadAnimation({
+									container : bmContainer,
+									renderer : 'svg',
+									loop : true,
+									autoplay : true,
+									path : '//s3-us-west-2.amazonaws.com/s.cdpn.io/49240/bike.json',
+								});
+
+						animation.setSpeed(1);
+
+						// ------------------------------
+						// Anime.js animation around path
+						// ------------------------------
+
+						const bikeMarker = document
+								.querySelector('.bike__marker');
+						const cloudBoundaryMarker = document
+								.querySelector('.cloud-boundary__marker');
+
+						const step = function() {
+
+							window.requestAnimationFrame(step);
+						};
+
+						window.requestAnimationFrame(step);
 					</script>
 				</section>
 				<div class="spacer s_viewport"></div>
