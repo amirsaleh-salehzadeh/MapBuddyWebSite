@@ -369,25 +369,6 @@
 	background-color: #001f35;
 }
 
-.p-benefits {
-	color: white;
-	border-radius: 11px;
-	border: 2px solid #04e014;
-	padding: 7px;
-	background-color: rgb(0, 58, 4);
-	font-weight: bold;
-}
-
-.p-explanation {
-	color: white;
-	padding: 0 11px;
-}
-
-.p-examples {
-	font-style: italic;
-	padding: 0 11px;
-}
-
 @media ( max-width : 700px) {
 	.mainBodyFrame {
 		height: 90%;

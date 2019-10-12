@@ -6,7 +6,6 @@
 	background-size: cover;
 }
 
-
 .hover-description-container {
 	position: absolute;
 	width: 50%;
@@ -14,16 +13,6 @@
 	right: 0;
 	top: 0;
 	z-index: 0;
-}
-
-.p-benefits {
-	color: white;
-	border-radius: 11px;
-	border: 2px solid #008fe28a;
-	padding: 7px;
-	background-color: rgb(0, 31, 53, .66);
-	font-weight: 500;
-	filter: drop-shadow(2px 4px 4px black);
 }
 
 .coming-soon {

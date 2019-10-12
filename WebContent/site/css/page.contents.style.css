@@ -22,7 +22,7 @@
 }
 
 .cachu__nav {
-	left: 1.5rem;
+	left: 1rem;
 }
 
 .cachu__section {
@@ -125,10 +125,6 @@
 	filter: alpha(opacity = 0);
 }
 
-.page-section-description .ui-block-b {
-	text-align: center;
-}
-
 .material-card .img-container {
 	width: 111px;
 	padding: 7px;
@@ -137,7 +133,6 @@
 	border: 2px solid;
 	margin: auto;
 	transition: box-shadow .4s, background-color .4s;
-	margin: auto;
 }
 
 .material-card .img-container svg {
@@ -173,14 +168,30 @@
 	/*     display: none; */
 }
 
+.iframes-class {
+	display: none;
+}
+
 #MSvideoContent {
-	padding-top: 105px;
+	padding: 104px 0 0 55px;
 	text-align: center;
 	overflow: hidden;
 }
 
-#MSvideoContent iframe {
+#MSvideoContent iframe, #MSvideoContent div {
 	display: block;
+	width: 266px;
+	height: 471px;
+}
+
+#MSvideoContent div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#MSvideoContent div svg {
+	width: 100%;
+	height: auto;
 }
 
 .page-section-description div img {
@@ -190,7 +201,7 @@
 
 .page-section-description {
 	width: calc(100% - 346px);
-	padding: 0 22px;
+	padding: 0 22px 0 11px;
 }
 
 li.cachu__nav__item {
@@ -201,6 +212,7 @@ li.cachu__nav__item {
 
 .cachu__nav__button {
 	border-radius: 0px;
+	margin-top: .1rem;
 }
 
 .cachu__nav__item img {
@@ -210,13 +222,52 @@ li.cachu__nav__item {
 
 .cachu__nav__item a {
 	background-color: transparent;
-	border: none;
-	background-size: contain;
-	border-radius: 0;
+	border: 1px solid white;
+	background-size: 66%;
+	left: -11px;
+	right: -11px;
+	top: -11px;
+	bottom: -11px;
+	border-radius: 11px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
-.iframes-class {
-	display: none;
+.cachu__nav__items {
+	display: inline-table;
+	padding: 11px 0 11px 0;
+	border-radius: 11px;
+	background: #001f35;
+}
+
+.active .cachu__nav__button {
+	background-color: #014371;
+	border-radius: 22px;
+	background-size: 66%;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: drop-shadow(-2px 0px 2px #b0dbf95f);
+	border: none;
+}
+
+.p-benefits {
+	color: white;
+	border-radius: 11px;
+	border: 2px solid #008fe28a;
+	padding: 7px;
+	background-color: rgb(0, 31, 53, .66);
+	font-weight: 500;
+	filter: drop-shadow(2px 2px 2px black);
+}
+
+.p-explanation {
+	color: white;
+	padding: 0 11px;
+}
+
+.p-examples {
+	font-style: italic;
+	padding: 0 11px;
 }
 
 @media ( max-width : 700px) {

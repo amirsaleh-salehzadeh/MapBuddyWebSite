@@ -169,39 +169,50 @@
 
 	$(window).bind("load", function() {
 		windowResized()
-		$(".frameLoding").fadeOut(2000)
+		$(".frameLoding").fadeOut(1000)
+		setTimeout(removeLoading, 1040)
 	});
 
 	$(window).bind("resize", function() {
 		windowResized()
 	});
-
+	function removeLoading() {
+		$(".frameLoding").remove()
+	}
 	function loadaPage(address) {
 		$("#page-load-content").html("")
-		$("#page-load-content").load(
-				address,
-				function() {
-					$("#page-load-container").addClass("show")
-					var options = {
-						disableMouseEvents : true, // Disable mousewheel event listening.
-						disableKeyboardEvents : false, // Disable keyboard event listening.
-						disableTouchEvents : true, // Disable event listening on touchable device (Swipe).
-						scrollingSpeed : 1111, // The speed of the transition.
-						scrollingLoop : false, // Loop after reaching the end.
-						navigationEnabled : true, // Enable navigation buttons
-						navigationPosition : 'left' // The Navigation's position
-					};
-					var slider = new Cachu(document
-							.querySelector('.cachu__container'), options);
-					slider.run();
-					setTimeout(loadIcons, 500)
-					$(".cachu__sections").on(
-							'transitionend webkitTransitionEnd oTransitionEnd',
-							function() {
-// 								alert($(this).find("iframe")[0].outerHTML)
-								$("#MSvideoContent").html($(this).find("iframe")[0].outerHTML)
-							});
-				})
+		$("#page-load-content")
+				.load(
+						address,
+						function() {
+							$("#page-load-container").addClass("show")
+							var options = {
+								disableMouseEvents : true, // Disable mousewheel event listening.
+								disableKeyboardEvents : false, // Disable keyboard event listening.
+								disableTouchEvents : true, // Disable event listening on touchable device (Swipe).
+								scrollingSpeed : 1111, // The speed of the transition.
+								scrollingLoop : false, // Loop after reaching the end.
+								navigationEnabled : true, // Enable navigation buttons
+								navigationPosition : 'left' // The Navigation's position
+							};
+							var slider = new Cachu(document
+									.querySelector('.cachu__container'),
+									options);
+							slider.run();
+							setTimeout(loadIcons, 500)
+							$(".cachu__sections")
+									.on(
+											'transitionend webkitTransitionEnd oTransitionEnd',
+											function() {
+												$(".cachu__section")
+														.each(function() {
+															if ($(this).css("visibility") == "visible") {
+																$("#MSvideoContent")
+																		.html($(this).find(".iframes-class")[0].outerHTML)
+															}
+														})
+											});
+						})
 	}
 	function loadIcons() {
 		$(".cachu__nav__item").each(
