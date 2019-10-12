@@ -1,0 +1,14 @@
+#parallax1 div {
+	background-size: 50%;
+}
+
+.parallaxParent div {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.large-text {
+	font-size: 29px !important;
+	color: #001d33 !important;
+	font-weight: 600;
+}

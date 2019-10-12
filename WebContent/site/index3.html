@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Map Buddy</title>
+<title>Planet Smart Solutions</title>
 
 <!-- Behavioral Meta Data -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,38 +14,24 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta name="theme-color" content="#f1fffe">
 <link rel="shortcut icon" href="favicon.ico">
-<!-- <link rel="stylesheet" type="text/css" -->
-<!-- 	href="//fonts.googleapis.com/css?family=Ubuntu"> -->
-<!-- <link rel="stylesheet" type="text/css" -->
-<!-- 	href="//fonts.googleapis.com/css?family=Tangerine" /> -->
-<!-- <link rel="stylesheet" -->
-<!-- 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<meta http-equiv="Cache-Control"
-	content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+<link rel="stylesheet" type="text/css"
+	href="//fonts.googleapis.com/css?family=Ubuntu">
+<link rel="stylesheet" type="text/css"
+	href="//fonts.googleapis.com/css?family=Tangerine" />
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Styles -->
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 <link rel="stylesheet" type="text/css" href="css/site.style.css" />
 <link rel="stylesheet" type="text/css" href="css/animation.css" />
-
 <link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
 	href="css/page.contents.style.css" />
-<script async
-	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-143257713-2');
-</script>
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="pater/pater.css" />
 </head>
-<body>
+<body class="demo-3">
 	<div class="frameLoding">
 		<div class="frame">
 			<div class="center">
@@ -65,32 +51,29 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
-	<div class="mainBodyFrame">
-		<div class="main-menu-buttons">
-			<div onclick="loadPage('landing.html', null)" style="cursor: pointer">
-				<div class="title-logo"></div>
-				<span class="logo-text">Planet</span> <span
-					class="logo-text small-text">Smart Solutions</span>
+	<div class="mainBodyFrame content--demo-3">
+		<div onclick="loadPage('landing.html');" style="cursor: pointer">
+			<div class="title-logo"></div>
+			<span class="logo-text">MAP BUDDY</span> <span
+				class="logo-text small-text"></span>
+		</div>
+		<div class="hamburger hamburger--demo-3 js-hover">
+			<div class="hamburger__line hamburger__line--01">
+				<div class="hamburger__line-in hamburger__line-in--01"></div>
 			</div>
-			<div class="menu-bar-icon">
-				<div></div>
-				<div></div>
-				<div></div>
+			<div class="hamburger__line hamburger__line--02">
+				<div class="hamburger__line-in hamburger__line-in--02"></div>
 			</div>
-			<ul>
-				<li class="active"
-					onclick="loadPage('pages/products/products.html', this)"><div
-						class="solitionsIcn"></div> <span>Products</span></li>
-				<li
-					onclick="loadPage('services.html', this); $('.coming-soon').css('display','block')"><div
-						class="servicesIcn"></div> <span>Services</span></li>
-				<li onclick="loadPage('pages/industries/industries.html', this)"><div
-						class="productsIcn"></div> <span>Industries</span></li>
-				<li onclick="loadPage('contact.html', this)"><div
-						class="contactsIcn"></div> <span>Contact</span></li>
-			</ul>
+			<div class="hamburger__line hamburger__line--03">
+				<div class="hamburger__line-in hamburger__line-in--03"></div>
+			</div>
+			<div class="hamburger__line hamburger__line--cross01">
+				<div class="hamburger__line-in hamburger__line-in--cross01"></div>
+			</div>
+			<div class="hamburger__line hamburger__line--cross02">
+				<div class="hamburger__line-in hamburger__line-in--cross02"></div>
+			</div>
 		</div>
 		<div class="page-contents">
 			<div class="coming-soon">
@@ -114,75 +97,66 @@
 			class="page-load-container logo-text small-text">Smart
 			Solutions</span>
 	</div>
+	<div class="global-menu">
+		<div class="global-menu__wrap main-menu-buttons">
+			<ul>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/products/products.html')"><div
+						class="solitionsIcn"></div> <a href="#"><span>Products</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('services.html'); $('.coming-soon').css('display','block')"><div
+						class="servicesIcn"></div> <a href="#"><span>Services</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/industries/industries.html')"><div
+						class="productsIcn"></div> <a href="#"><span>Industries</span></a></li>
+				<li onclick="loadPage('contact.html')"
+					class="global-menu__item global-menu__item--demo-3"><div
+						class="contactsIcn"></div> <a href="#"><span>Contact</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<svg class="shape-overlays" viewBox="0 0 100 100"
+		preserveAspectRatio="none">
+					<path class="shape-overlays__path"></path>
+					<path class="shape-overlays__path"></path>
+					<path class="shape-overlays__path"></path>
+				</svg>
+				<div class="footer-copyright">© 2019 Planet Smart Solutions  </div>
 </body>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/easings.js"></script>
+<script src="js/demo3.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var tmpAnimation = 0;
-		$(".main-menu-buttons ul li").on("click", function() {
-			$(".main-menu-buttons ul li.active").removeClass("active");
-			$(this).addClass("active");
-		})
-		// 		$(".main-menu-buttons ul li.active").trigger("click");
-		setOnMenuBTNClick()
 		$(".productsIcn").load("img/icons/features.svg")
 		$(".servicesIcn").load("img/icons/services.svg")
 		$(".contactsIcn").load("img/icons/contact.svg")
 		$(".solitionsIcn").load("img/icons/solutions.svg")
-		$(".title-logo").load("img/logo.svg")
+		$(".title-logo").load("img/logomb.svg")
+		$("#page-load-content").html("")
+		$('.coming-soon').css('display', 'none')
+		$("#features-page").load("landing.html")
 	});
-	function setOnMenuBTNClick() {
-		$(".menu-bar-icon").click(
-				function() {
-					$(".main-menu-buttons ul li").each(
-							function() {
-								if ($(this).hasClass("active"))
-									return true
-								if ($(this).css("display") == "none") {
-									$(".main-menu-buttons ul li").css(
-											"display", "inline-block")
-								} else {
-									$(".main-menu-buttons ul li").css(
-											"display", "none")
-									$(".main-menu-buttons ul li.active").css(
-											"display", "inline-block")
-								}
-								return false
-							})
-				})
-
-	}
-	function loadPage(pageAddress, liItem) {
-		// 		if ($(".menu-bar-icon").css("display") != "none") {
-		// 			$(".main-menu-buttons ul li").removeClass("active")
-		// 			$(".main-menu-buttons ul li").css("display", "none")
-		// 			$(liItem).addClass("active")
-		// 			$(".main-menu-buttons ul li.active").css("display", "block")
-		// 		}
-		// 		if (liItem == null) {
-		// 			$(".main-menu-buttons ul li").removeClass("active")
-		// 		}
+	function loadPage(pageAddress) {
+		if (pageAddress.indexOf("landing") < 0)
+			$(".hamburger").trigger("click");
 		$("#page-load-content").html("")
 		$('.coming-soon').css('display', 'none')
 		$("#features-page").load(pageAddress)
 	}
-	function windowResized() {
-		var transformTop = ($(window).height() - $("#mainBodyFrame").height())
-	}
 
-	$(window).bind("load", function() {
-		windowResized()
-		$(".frameLoding").fadeOut(1000)
+	$(window).load(function() {
+		$(".frameLoding").fadeOut();
 		setTimeout(removeLoading, 1040)
 	});
 
-	$(window).bind("resize", function() {
-		windowResized()
-	});
 	function removeLoading() {
 		$(".frameLoding").remove()
+		$('.large-text').fadeIn(2000)
 	}
 	function loadaPage(address) {
 		$("#page-load-content").html("")

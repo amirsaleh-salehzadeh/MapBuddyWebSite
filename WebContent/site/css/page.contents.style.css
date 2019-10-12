@@ -5,7 +5,8 @@
 	right: 0;
 	bottom: -100%;
 	background-color: white;
-	transition: bottom .2s linear;
+	transition: bottom .5s linear;
+	z-index: 1000;
 }
 
 .new-page-close-button {
@@ -68,8 +69,9 @@
 	color: #79d1fb;
 	font-size: 33px;
 	margin-left: 48px;
-	bottom: 11%;
+	bottom: calc(10% + 11px);
 	left: 10%;
+	top: unset;
 }
 
 .page-load-container.logo-text.small-text {

@@ -93,7 +93,7 @@
 	-ms-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
 	-o-transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
 	transition: box-shadow .6s cubic-bezier(.36, -0.64, .34, 1.76);
-	box-shadow: rgb(2, 91, 117) 0px 0px 14px -7px;
+	box-shadow: rgb(2, 91, 117) 0px 0px 14px -9px;
 }
 
 .sub-functions li {
