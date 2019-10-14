@@ -1,21 +1,55 @@
-#parallax1 div {
-	background-size: 22%;
+.section {
+	box-shadow: 0px 8px 11px -11px #002142;
 }
 
-.parallaxParent div {
+#parallax1 div.parallax-bg {
+	background-size: 66%;
+	background-image: url(../img/maps/floorplan.svg);
+	opacity: .88;
+}
+
+#parallax2 div.parallax-bg {
+	background-size: 55%;
+	background-image: url(../img/maps/Geofence2.png);
+	opacity: .33;
+	height: 180%;
+	top: -100%;
+	background-position: right;
+	filter: sepia(1) hue-rotate(-166deg);
+}
+
+#parallax3 div.parallax-bg {
+	background-size: 44%;
+	background-image: url(../img/maps/Geofence.png);
+	opacity: .44;
+	height: 200%;
+	top: -100%;
+	filter: sepia(1) hue-rotate(-166deg);
+}
+
+#parallax4 div.parallax-bg {
+	background-size: 44%;
+	background-image: url(../img/maps/movementstroke.svg);
+	opacity: .44;
+	height: 150%;
+	top: -100%;
+}
+
+.parallaxParent div.parallax-bg {
 	background-repeat: no-repeat;
 	background-position: center;
+	z-index: 0;
 }
 
 .parallaxParent {
-	height: 100vh;
+	height: 80vh;
 	overflow: hidden;
 }
 
-.parallaxParent>div {
+.parallaxParent>div.parallax-bg {
 	height: 150%;
 	position: relative;
-	top: -100%;
+	top: -75%;
 	-webkit-transition: transform .1s ease-in-out;
 	-moz-transition: transform .1s ease-in-out;
 	-ms-transition: transform .1s ease-in-out;
@@ -23,13 +57,13 @@
 	transition: transform .1s ease-in-out;
 }
 
-#reveal1, #reveal2 {
+#reveal1, #reveal2, #reveal3, .large-text {
 	opacity: 0;
-	-webkit-transform: scale(0.9);
-	-moz-transform: scale(0.9);
-	-ms-transform: scale(0.9);
-	-o-transform: scale(0.9);
-	transform: scale(0.9);
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
 	-webkit-transition: transform 1s ease-in-out;
 	-moz-transition: transform 1s ease-in-out;
 	-ms-transition: transform 1s ease-in-out;
@@ -37,7 +71,16 @@
 	transition: transform 1s ease-in-out;
 }
 
-#reveal1.visible, #reveal2.visible {
+#reveal1, #reveal2, #reveal3, .large-text {
+	opacity: 0;
+	-webkit-transform: rotate(40deg) scale(0.5);
+	-moz-transform: rotate(40deg) scale(0.5);
+	-ms-transform: rotate(40deg) scale(0.5);
+	-o-transform: rotate(40deg) scale(0.5);
+	transform: rotate(40deg) scale(0.5);
+}
+
+#reveal1.visible, #reveal2.visible, #reveal3.visible, .large-text.visible {
 	opacity: 1;
 	-webkit-transform: none;
 	-moz-transform: none;
@@ -46,17 +89,10 @@
 	transform: none;
 }
 
-.main-sentence {
-	margin: 44px;
-	top: 66%;
-	height: fit-content;
-}
-
-.large-text {
-	font-size: 29px !important;
-	color: #001d33 !important;
-	font-weight: 600;
-	z-index: 11;
+#reveal-elements {
+	position: absolute;
+	left: 22%;
+	z-index: 1;
 }
 
 .bike {
@@ -67,6 +103,16 @@
 	z-index: -2;
 	transform: rotate(0);
 	will-change: auto;
+}
+
+.planet {
+	transition: transform .1s;
+	animation: nudge 10s linear infinite;
+	position: absolute;
+	top: 250%;
+	left: -20%;
+	right: 120%;
+	width: 100%;
 }
 
 .bike__marker {
@@ -88,6 +134,11 @@
 	will-change: auto;
 }
 
+.bike svg * {
+	fill: rgb(0, 33, 66) !important;
+	stroke: rgb(0, 33, 66) !important;
+}
+
 .umbrella-animation {
 	position: absolute;
 	top: -12px;
@@ -97,24 +148,42 @@
 	z-index: 10;
 }
 
-.light {
+.numbering {
+	color: #006a7c;
+	line-height: 30px !important;
+	font-size: 2.5rem !important;
 	position: absolute;
-	top: 18px;
-	left: 30px;
-	width: 0;
-	z-index: 10;
-	height: 10px;
-	background:
-		url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/light.png) 0 0
-		no-repeat;
-	background-size: 22px 10px;
-	transition: width 0s 0.3s, opacity 0.3s;
-	transform-origin: center left;
-	opacity: 0;
 }
 
-.light--active {
-	width: 22px;
-	transition: width 0.2s, opacity 0s;
-	opacity: 0.6;
+.numbering span {
+	left: 22px;
+	border-radius: 50%;
+	background-color: rgb(0, 33, 66);
+	padding: 7px;
+	color: white !important;
+	text-align: center;
+	width: 44px;
+	height: 44px;
+	display: inline-block;
+}
+
+.large-text {
+	font-weight: 100;
+	font-size: 1.1rem;
+	max-width: 444px;
+	margin-top: 33px;
+	color: #002142;
+	line-height: 1.8rem;
+	color: #002142;
+}
+
+.largest-text {
+	margin: 11px;
+	position: absolute;
+	font-size: 2.6rem;
+	max-width: 444px;
+	line-height: 3rem;
+	color: #006a7c;
+	font-weight: 600;
+	z-index: 11;
 }
