@@ -53,47 +53,7 @@
 				<div class="title-logo"></div>
 				<span class="logo-text">MapBuddy</span>
 			</div>
-			<div class="hamburger hamburger--demo-3 js-hover">
-				<div class="hamburger__line hamburger__line--01">
-					<div class="hamburger__line-in hamburger__line-in--01"></div>
-				</div>
-				<div class="hamburger__line hamburger__line--02">
-					<div class="hamburger__line-in hamburger__line-in--02"></div>
-				</div>
-				<div class="hamburger__line hamburger__line--03">
-					<div class="hamburger__line-in hamburger__line-in--03"></div>
-				</div>
-				<div class="hamburger__line hamburger__line--cross01">
-					<div class="hamburger__line-in hamburger__line-in--cross01"></div>
-				</div>
-				<div class="hamburger__line hamburger__line--cross02">
-					<div class="hamburger__line-in hamburger__line-in--cross02"></div>
-				</div>
-			</div>
-			<div class="global-menu">
-				<div class="global-menu__wrap">
-					<ul>
-						<li class="global-menu__item global-menu__item--demo-3"
-							onclick="loadPage('pages/products/products.html')"><div
-								class="solitionsIcn"></div> <a href="#"><span>Products</span></a></li>
-						<li class="global-menu__item global-menu__item--demo-3"
-							onclick="loadPage('services.html'); $('.coming-soon').css('display','block')"><div
-								class="servicesIcn"></div> <a href="#"><span>Services</span></a></li>
-						<li class="global-menu__item global-menu__item--demo-3"
-							onclick="loadPage('pages/industries/industries.html')"><div
-								class="productsIcn"></div> <a href="#"><span>Industries</span></a></li>
-						<li onclick="loadPage('contact.html')"
-							class="global-menu__item global-menu__item--demo-3"><div
-								class="contactsIcn"></div> <a href="#"><span>Contact</span></a></li>
-					</ul>
-				</div>
-			</div>
-			<svg class="shape-overlays" viewBox="0 0 100 100"
-				preserveAspectRatio="none">
-					<path class="shape-overlays__path"></path>
-					<path class="shape-overlays__path"></path>
-					<path class="shape-overlays__path"></path>
-				</svg>
+
 		</div>
 		<div class="page-contents">
 			<div class="coming-soon">
@@ -117,7 +77,56 @@
 			class="page-load-container logo-text small-text">Smart
 			Solutions</span>
 	</div>
+	<div class="hamburger hamburger--demo-3 js-hover invisible">
+		<div class="hamburger__line hamburger__line--01">
+			<div class="hamburger__line-in hamburger__line-in--01"></div>
+		</div>
+		<div class="hamburger__line hamburger__line--02">
+			<div class="hamburger__line-in hamburger__line-in--02"></div>
+		</div>
+		<div class="hamburger__line hamburger__line--03">
+			<div class="hamburger__line-in hamburger__line-in--03"></div>
+		</div>
+		<div class="hamburger__line hamburger__line--cross01">
+			<div class="hamburger__line-in hamburger__line-in--cross01"></div>
+		</div>
+		<div class="hamburger__line hamburger__line--cross02">
+			<div class="hamburger__line-in hamburger__line-in--cross02"></div>
+		</div>
+	</div>
+	<div class="global-menu">
+		<div class="global-menu__wrap">
+			<ul>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/products/products.html')"><div
+						class="solitionsIcn"></div> <a href="#"><span>Products</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('services.html'); $('.coming-soon').css('display','block')"><div
+						class="servicesIcn"></div> <a href="#"><span>Services</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/industries/industries.html')"><div
+						class="productsIcn"></div> <a href="#"><span>Industries</span></a></li>
+				<li onclick="loadPage('contact.html')"
+					class="global-menu__item global-menu__item--demo-3"><div
+						class="contactsIcn"></div> <a href="#"><span>Contact</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="page-background">
+		<svg class="triangles">
+    <polygon class="triangle-a" />
+  </svg>
+		<svg class="triangles">
+        <polygon class="triangle-b" />
+  </svg>
+	</div>
 
+	<svg class="shape-overlays" viewBox="0 0 100 100"
+		preserveAspectRatio="none">
+					<path class="shape-overlays__path"></path>
+					<path class="shape-overlays__path"></path>
+					<path class="shape-overlays__path"></path>
+				</svg>
 	<div class="footer-copyright">© 2019 Planet Smart Solutions</div>
 </body>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -132,8 +141,24 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 <script type="text/javascript">
+function drawBackgroundSvg () {
+	  var width = $(document).width();
+	  var height = $(document).height();
+	  $('.triangles').css('width','100%');
+	  $('.triangles').css('height','100%');
+	  var pointsA = '0,0 '
+	      + width / 2+','+height /2 + ' ' 
+	  +  '0,' + height;
+	  var pointsB = width + ',0 '
+	      + width / 2+','+height /2 + ' ' 
+	      + width +  ',' + height;
+	  $('.triangle-a').attr('points',pointsA);
+	  $('.triangle-b').attr('points',pointsB);
+	}
+
 	$(document).ready(function() {
 		var tmpAnimation = 0;
+		drawBackgroundSvg () 
 		$(".productsIcn").load("img/icons/features.svg")
 		$(".servicesIcn").load("img/icons/services.svg")
 		$(".contactsIcn").load("img/icons/contact.svg")
@@ -153,13 +178,13 @@
 
 	$(window).load(function() {
 		$(".frameLoding").fadeOut();
-		setTimeout(removeLoading, 1040)
+		setTimeout(removeLoading, 800)
 	});
 
 	function removeLoading() {
+		$('.invisible').removeClass("invisible")
 		$(".frameLoding").remove()
 		$('.large-text').fadeIn(2000)
-		$('.mainBodyFrame').removeClass("invisible")
 	}
 	function loadaPage(address) {
 		$("#page-load-content").html("")

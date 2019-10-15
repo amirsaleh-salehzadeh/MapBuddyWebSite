@@ -1,5 +1,5 @@
 .section {
-	box-shadow: 0px 7px 7px -7px #002142;
+	/* 	box-shadow: 0px 7px 7px -7px #002142; */
 	border-radius: 0 0 22px 22px;
 }
 
@@ -7,6 +7,7 @@
 	background-size: 55%;
 	background-image: url(../img/maps/floorplan.svg);
 	opacity: 1;
+	background-position-x: 99%;
 }
 
 #parallax2 div.parallax-bg {
@@ -14,12 +15,14 @@
 	background-image: url(../img/maps/geofence.svg);
 	filter: sepia(1) hue-rotate(-166deg);
 	background-position-x: 77%;
+	opacity: .33;
 }
 
 #parallax3 div.parallax-bg {
 	background-size: 33%;
 	background-image: url(../img/maps/movementstroke.svg);
 	background-position-x: 66%;
+	opacity: .33;
 }
 
 #parallax4 div.parallax-bg {
@@ -27,32 +30,27 @@
 	background-image: url(../img/maps/iot.svg);
 }
 
-.parallaxParent div.parallax-bg {
-	background-repeat: no-repeat;
-	background-position: center;
-	z-index: 0;
-	background-position-x: 99%;
-	height: 150%;
-	top: -100%;
-}
-
 .parallaxParent {
-	height: 80vh;
+	height: 90vh;
 	overflow: hidden;
 }
 
 .parallaxParent>div.parallax-bg {
 	height: 150%;
 	position: relative;
-	top: -75%;
+	top: -90%;
+	background-repeat: no-repeat;
+	z-index: 0;
+	background-position-x: 99%;
 	-webkit-transform: translateZ(0);
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
-	-webkit-transition: transform .1s;
-	-moz-transition: transform .1s;
-	-ms-transition: transform .1s;
-	-o-transition: transform .1s;
-	transition: transform .1s;
+	-webkit-transition: transform .3s;
+	-moz-transition: transform .3s;
+	-ms-transition: transform .3s;
+	-o-transition: transform .3s;
+	transition: transform .3s;
+	background-position: center;
 }
 
 #reveal1, #reveal2, #reveal3, .normal-text {
@@ -69,15 +67,14 @@
 	transition: transform 1s ease-in-out;
 }
 
-#reveal1, #reveal2, #reveal3, .normal-text {
-	opacity: 0;
-	-webkit-transform: rotate(40deg) scale(0.5);
-	-moz-transform: rotate(40deg) scale(0.5);
-	-ms-transform: rotate(40deg) scale(0.5);
-	-o-transform: rotate(40deg) scale(0.5);
-	transform: rotate(40deg) scale(0.5);
-}
-
+/* #reveal1, #reveal2, #reveal3, .normal-text { */
+/* 	opacity: 0; */
+/* 	-webkit-transform: rotate(11deg) scale(0.5); */
+/* 	-moz-transform: rotate(11deg) scale(0.5); */
+/* 	-ms-transform: rotate(11deg) scale(0.5); */
+/* 	-o-transform: rotate(11deg) scale(0.5); */
+/* 	transform: rotate(11deg) scale(0.5); */
+/* } */
 #reveal1.visible, #reveal2.visible, #reveal3.visible, .normal-text.visible
 	{
 	opacity: 1;
@@ -107,6 +104,7 @@
 	color: #006a7c;
 	line-height: 30px !important;
 	font-size: 33px !important;
+	left: 11px;
 }
 
 .numbering span {
@@ -124,7 +122,7 @@
 .normal-text {
 	font-weight: 100;
 	font-size: 16px;
-	margin-top: 22px;
+	margin-top: 33px;
 	line-height: 22px;
 	color: #002142;
 }
@@ -147,7 +145,7 @@
 }
 
 .planet {
-	transition: transform .1s;
+	transition: transform .2s;
 	animation: nudge 10s linear infinite;
 	position: absolute;
 	top: 250%;
@@ -193,11 +191,13 @@
 	position: absolute;
 	margin: auto;
 	padding-left: 55px;
-	font-size: 33px;
-	font-weight: bold; left : 11px;
+	font-size: 27px;
+	font-weight: bold;
+	left: 11px;
 	bottom: 11px;
 	color: #002142;
 	left: 11px;
+	z-index: 1;
 }
 
 #arrow-down::before {
@@ -214,4 +214,72 @@
 	left: 11px;
 	animation-timing-function: ease;
 	margin: auto;
+}
+
+@media ( max-width : 700px) {
+	.landing-page-content-container {
+		font-size: 22px;
+		max-width: unset;
+		left: 7px;
+		right: 7px;
+		text-align: center;
+	}
+	.largest-text {
+		font-size: 22px;
+		line-height: 27px;
+	}
+	#first-section-content {
+		top: 5% !important;
+	}
+	.normal-text {
+		font-size: 14px;
+		width: 100%;
+		max-width: 100%;
+		left: 7px;
+		right: 7px;
+		margin-top: 11%;
+		line-height: 19px;
+		font-weight: normal;
+	}
+	.parallaxParent>div.parallax-bg {
+		background-size: 100% !important;
+		background-position-y: 75% !important;
+	}
+/* 	#parallax1 div.parallax-bg { */
+/* 		background-size: 100%; */
+/* 		background-position-y: 75%; */
+/* 	} */
+	#arrow-down {
+		position: absolute;
+		margin: auto;
+		padding-left: 33px;
+		font-size: 22px;
+		font-weight: bold;
+		bottom: 0px;
+		color: #002142;
+		right: 7px;
+		left: unset;
+		color: #002142;
+	}
+	#arrow-down::before {
+		width: 22px;
+		height: 22px;
+		left: 7px;
+	}
+	.numbering span {
+		left: 22px;
+		border-radius: 50%;
+		background-color: rgb(0, 33, 66);
+		padding: 3px;
+		color: white !important;
+		text-align: center;
+		width: 33px;
+		height: 33px;
+		display: inline-block;
+	}
+	.numbering {
+		line-height: 30px !important;
+		font-size: 22px !important;
+		left: 11px;
+	}
 }

@@ -20,13 +20,14 @@
 				<section class="section">
 					<div id="parallax1" class="parallaxParent">
 						<div class="parallax-bg"></div>
-						<div class="landing-page-content-container" style="top: 33%;">
-							<span class="largest-text">Train a location-aware
+						<div class="landing-page-content-container"
+							id="first-section-content" style="top: 33%;">
+							<span class="largest-text">A location-aware
 								intelligent agent</span> <span class="normal-text"> Transforming
 								customer experience through indoor navigation & location-based
-								services</span> <a href="#" data-role="button"
+								services</span> <a href="#" data-role="none"
 								class="ui-btn ui-btn-green"
-								style="background-image: url(img/icons/improve.svg); margin-top: 22px;">Free
+								style="background-image: url(img/icons/improve.svg);">Free
 								Consult</a>
 						</div>
 					</div>
@@ -43,8 +44,7 @@
 				<section class="section">
 					<div class="landing-page-content-container">
 						<div id="trigger1" class="spacer s2"></div>
-						<div id="reveal1" class="normal-text numbering"
-							style="left: 11px;">
+						<div id="reveal1" class="normal-text numbering">
 							<span>1</span>&nbsp;&nbsp;&nbsp;Digitise Space
 						</div>
 						<div id="reveal-elements" style="top: 122%">
@@ -59,7 +59,7 @@
 							style="background-image: url(img/icons/space.svg); margin-top: 22px;">Read
 							More</a>
 					</div>
-					<div id="parallax2" class="parallaxParent" style="height: 55vh;">
+					<div id="parallax2" class="parallaxParent">
 						<div class="parallax-bg"></div>
 					</div>
 					<script>
@@ -68,7 +68,7 @@
 						for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
 							new ScrollMagic.Scene({
 								triggerElement : revealElements[i], // y value not modified, so we can use element as trigger as well
-								offset : 50, // start a little later
+								offset : 90, // start a little later
 								triggerHook : 0.9,
 							}).setClassToggle(revealElements[i], "visible") // add class toggle
 							.addTo(controller);
@@ -84,8 +84,7 @@
 				</section>
 				<section class="section">
 					<div class="landing-page-content-container">
-						<div id="reveal3" class="normal-text numbering"
-							style="left: 11px; font-size: 1.5rem;">
+						<div id="reveal3" class="normal-text numbering">
 							<span>2</span>&nbsp;&nbsp;&nbsp;Digitise Movement
 						</div>
 						<div id="reveal-elements" style="top: 122%">
@@ -114,8 +113,7 @@
 				</section>
 				<section class="section">
 					<div class="landing-page-content-container">
-						<div id="reveal3" class="normal-text numbering"
-							style="left: 11px; font-size: 1.5rem;">
+						<div id="reveal3" class="normal-text numbering">
 							<span>3</span>&nbsp;&nbsp;&nbsp;Digitalise Things
 						</div>
 						<div id="reveal-elements" style="top: 122%">
@@ -136,8 +134,7 @@
 				</section>
 				<section class="section">
 					<div class="landing-page-content-container">
-						<div id="reveal3" class="normal-text numbering"
-							style="left: 11px; font-size: 1.5rem;">
+						<div id="reveal3" class="normal-text numbering">
 							<span>4</span>&nbsp;&nbsp;&nbsp;Digitise Assets & Services
 						</div>
 						<div id="reveal-elements" style="top: 122%">
@@ -151,7 +148,7 @@
 							More</a>
 					</div>
 					<div id="parallax5" class="parallaxParent">
-						<div class="parallax-bg" ></div>
+						<div class="parallax-bg"></div>
 					</div>
 					<div class="spacer s2"></div>
 				</section>
