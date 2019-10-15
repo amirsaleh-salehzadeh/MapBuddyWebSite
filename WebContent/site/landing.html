@@ -9,25 +9,26 @@
 <script type="text/javascript"
 	src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 <link rel="stylesheet" href="css/landing.page.style.css" type="text/css">
+<div id="arrow-down">Workflow</div>
 <div class="page">
 	<!-- 	<section id="hero-1"> -->
 	<!-- 		<div class="container-parallax"></div> -->
 	<!-- 	</section> -->
-	<a href="#" data-role="button" class="ui-btn ui-btn-green"
-		style="bottom: calc(5% + 11px); right: calc(10% + 22px); background-image: url(img/icons/improve.svg); position: fixed; z-index: 100; background-image: url('img/icons/improve.svg');">Request
-		Free Consult</a>
 	<div id="content-wrapper">
 		<div id="example-wrapper">
 			<div class="scrollContent">
 				<section class="section">
 					<div id="parallax1" class="parallaxParent">
 						<div class="parallax-bg"></div>
-						<span class="main-sentence largest-text" style="top: 22%;">Train
-							a location-aware intelligent agent</span> <span
-							class="main-sentence large-text"
-							style="top: 66%; right: 11px; position: absolute;">
-							Transforming customer experience through indoor navigation &
-							location-based services</span>
+						<div class="landing-page-content-container" style="top: 33%;">
+							<span class="largest-text">Train a location-aware
+								intelligent agent</span> <span class="normal-text"> Transforming
+								customer experience through indoor navigation & location-based
+								services</span> <a href="#" data-role="button"
+								class="ui-btn ui-btn-green"
+								style="background-image: url(img/icons/improve.svg); margin-top: 22px;">Free
+								Consult</a>
+						</div>
 					</div>
 				</section>
 				<script>
@@ -40,27 +41,30 @@
 					});
 				</script>
 				<section class="section">
-					<div id="trigger1" class="spacer s2"></div>
-					<div id="reveal1" class="large-text numbering"
-						style="left: 11px; font-size: 1.5rem;">
-						<span>1</span>&nbsp;&nbsp;&nbsp;Geofence
+					<div class="landing-page-content-container">
+						<div id="trigger1" class="spacer s2"></div>
+						<div id="reveal1" class="normal-text numbering"
+							style="left: 11px;">
+							<span>1</span>&nbsp;&nbsp;&nbsp;Digitise Space
+						</div>
+						<div id="reveal-elements" style="top: 122%">
+							<div class="normal-text">Convert outdoor and indoor floor
+								plans into a digital format.</div>
+							<div class="normal-text">Show buildings and space
+								utilisation type.</div>
+							<div class="normal-text">Give customers the opportunity of
+								finding locations quickly.</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/space.svg); margin-top: 22px;">Read
+							More</a>
 					</div>
-					<div id="reveal-elements" style="top: 122%">
-						<div class="large-text">
-							<p>Indicate the boundary of spaces</p>
-						</div>
-						<div class="large-text" style="left: 11px;">
-							<p>Show location-based services on the map</p>
-						</div>
-						<div class="large-text">
-							<p>Give customers the opportunity of finding locations
-								quickly</p>
-						</div>
+					<div id="parallax2" class="parallaxParent" style="height: 55vh;">
+						<div class="parallax-bg"></div>
 					</div>
-					<div class="spacer s2"></div>
 					<script>
 						var revealElements = document
-								.getElementsByClassName("large-text");
+								.getElementsByClassName("normal-text");
 						for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
 							new ScrollMagic.Scene({
 								triggerElement : revealElements[i], // y value not modified, so we can use element as trigger as well
@@ -69,51 +73,30 @@
 							}).setClassToggle(revealElements[i], "visible") // add class toggle
 							.addTo(controller);
 						}
+						new ScrollMagic.Scene({
+							triggerElement : "#trigger1",
+							triggerHook : 0.3, // show, when scrolled 10% into view
+							duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
+							offset : 90
+						}).setClassToggle("#reveal1", "visible") // add class to reveal
+						.addTo(controller);
 					</script>
-					<div id="parallax2" class="parallaxParent" style="height: 60vh;">
-						<div class="parallax-bg"></div>
-					</div>
 				</section>
-				<script>
-					new ScrollMagic.Scene({
-						triggerElement : "#trigger1",
-						triggerHook : 0.3, // show, when scrolled 10% into view
-						duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
-						offset : 90
-					}).setClassToggle("#reveal1", "visible") // add class to reveal
-					.addTo(controller);
-				</script>
 				<section class="section">
-					<div class="spacer s1"></div>
-					<div id="trigger2" class="spacer s0"></div>
-					<div id="reveal2" class="large-text numbering"
-						style="left: 11px; font-size: 1.5rem;">
-						<span>2</span>&nbsp;&nbsp;&nbsp;Geolocate
-					</div>
-					<div id="parallax3" class="parallaxParent" style="height: 60vh;">
-						<div class="parallax-bg"></div>
-					</div>
-				</section>
-				<script>
-					new ScrollMagic.Scene({
-						triggerElement : "#trigger2",
-						triggerHook : 0.3, // show, when scrolled 10% into view
-						duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
-						offset : 90
-					}).setClassToggle("#reveal2", "visible") // add class to reveal
-					.addTo(controller);
-				</script>
-				<section class="section">
-					<div id="reveal3" class="large-text numbering"
-						style="left: 11px; font-size: 1.5rem;">
-						<span>1</span>&nbsp;&nbsp;&nbsp;Create Paths
-					</div>
-					<div class="spacer s1"></div>
-					<div class="large-text" style="left: 11px; font-size: 1.5rem;">Customise
-						path types</div>
-					<div class="spacer s1"></div>
-					<div class="large-text" style="font-size: 1.5rem; right: 11px;">
-						<br> <br> <br>Optimise movements & route selection
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering"
+							style="left: 11px; font-size: 1.5rem;">
+							<span>2</span>&nbsp;&nbsp;&nbsp;Digitise Movement
+						</div>
+						<div id="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
 					</div>
 					<div class="planet">
 						<div class="path-wrapper">
@@ -125,30 +108,50 @@
 							</div>
 						</div>
 					</div>
-					<div id="parallax4" class="parallaxParent">
+					<div id="parallax3" class="parallaxParent">
 						<div class="parallax-bg"></div>
 					</div>
 				</section>
-				<script>
-					// 					new ScrollMagic.Scene({
-					// 						triggerElement : "#trigger3",
-					// 						triggerHook : 0.3, // show, when scrolled 10% into view
-					// 						duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
-					// 						offset : 90
-					// 					}).setClassToggle("#reveal3", "visible") // add class to reveal
-					// 					.addTo(controller);
-					// 					new ScrollMagic.Scene({
-					// 						triggerElement : "#trigger4",
-					// 						triggerHook : 0.3, // show, when scrolled 10% into view
-					// 						duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
-					// 						offset : 90
-					// 					}).setClassToggle("#reveal4", "visible") // add class to reveal
-					// 					.addTo(controller);
-				</script>
 				<section class="section">
-					<div id="parallax5" class="parallaxParent">
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering"
+							style="left: 11px; font-size: 1.5rem;">
+							<span>3</span>&nbsp;&nbsp;&nbsp;Digitalise Things
+						</div>
+						<div id="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
+					</div>
+					<div id="parallax4" class="parallaxParent">
 						<div class="parallax-bg"
 							style="background-image: url(img/maps/iot.svg);"></div>
+					</div>
+					<div class="spacer s2"></div>
+				</section>
+				<section class="section">
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering"
+							style="left: 11px; font-size: 1.5rem;">
+							<span>4</span>&nbsp;&nbsp;&nbsp;Digitise Assets & Services
+						</div>
+						<div id="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
+					</div>
+					<div id="parallax5" class="parallaxParent">
+						<div class="parallax-bg" ></div>
 					</div>
 					<div class="spacer s2"></div>
 				</section>
@@ -182,7 +185,7 @@
 					}).addTo(controller);
 					new ScrollMagic.Scene({
 						triggerElement : "#parallax5"
-					}).setTween("#parallax4 > div.parallax-bg", {
+					}).setTween("#parallax5 > div.parallax-bg", {
 						y : "80%",
 						ease : Linear.easeNone
 					}).addTo(controller);
@@ -211,132 +214,5 @@
 			</div>
 		</div>
 	</div>
-	<!-- 	<section class="dati-session-info">hi</section> -->
-	<!-- 	<section class="location outdoor-location"> -->
-	<!-- 		<h2>Localisation GPS</h2> -->
-	<!-- 		<span class="last-position">Dernière position connue -->
-	<!-- 			(04/09/2017 à 10:57) : <a href="geo:47.349274,0.662189">47.349274,0.662189</a> -->
-	<!-- 		</span> <img class="outdoor-map" -->
-	<!-- 			src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/static/geojson(%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%22stroke%22%3A%22%23ffc107%22%2C%22stroke-opacity%22%3A0.8%2C%22fill%22%3A%22%23ffc107%22%2C%22fill-opacity%22%3A0.2%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B0.6932%2C47.42000932611364%5D%2C%5B0.6930625512453518%2C47.4199970822911%5D%2C%5B0.6929344695772297%2C47.41996118523612%5D%2C%5B0.6928244836821822%2C47.41990408131853%5D%2C%5B0.6927400889657039%2C47.4198296621372%5D%2C%5B0.6926870367397413%2C47.419742999297576%5D%2C%5B0.6926689422932879%2C47.41964999877383%5D%2C%5B0.6926870385519274%2C47.419556998414365%5D%2C%5B0.6927400921045023%2C47.41947033602355%5D%2C%5B0.6928244873065545%2C47.4193959174553%5D%2C%5B0.6929344727160283%2C47.419338814150805%5D%2C%5B0.6930625530575378%2C47.419302917544634%5D%2C%5B0.6932%2C47.41929067388636%5D%2C%5B0.6933374469424622%2C47.419302917544634%5D%2C%5B0.6934655272839718%2C47.419338814150805%5D%2C%5B0.6935755126934456%2C47.4193959174553%5D%2C%5B0.6936599078954978%2C47.41947033602355%5D%2C%5B0.6937129614480727%2C47.419556998414365%5D%2C%5B0.6937310577067124%2C47.41964999877383%5D%2C%5B0.6937129632602589%2C47.419742999297576%5D%2C%5B0.6936599110342964%2C47.4198296621372%5D%2C%5B0.6935755163178179%2C47.41990408131853%5D%2C%5B0.6934655304227704%2C47.41996118523612%5D%2C%5B0.6933374487546484%2C47.4199970822911%5D%2C%5B0.6932%2C47.42000932611364%5D%5D%5D%7D%7D),geojson(%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%22stroke%22%3A%22%23e74c3c%22%2C%22stroke-opacity%22%3A0.8%2C%22fill%22%3A%22%23e74c3c%22%2C%22fill-opacity%22%3A0.2%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B0.69337%2C47.41996766305682%5D%2C%5B0.6933012756690682%2C47.41996154116608%5D%2C%5B0.6932372348329774%2C47.419943592694686%5D%2C%5B0.6931822418020075%2C47.41991504081253%5D%2C%5B0.6931400442724658%2C47.41987783129851%5D%2C%5B0.6931135179241282%2C47.419834499934794%5D%2C%5B0.693104470450664%2C47.419787999693455%5D%2C%5B0.6931135183771782%2C47.419741499493185%5D%2C%5B0.6931400450571713%2C47.41969816824168%5D%2C%5B0.6931822427081074%2C47.41966095888092%5D%2C%5B0.693237235617683%2C47.41963240715204%5D%2C%5B0.6933012761221181%2C47.41961445879285%5D%2C%5B0.69337%2C47.41960833694318%5D%2C%5B0.693438723877882%2C47.41961445879285%5D%2C%5B0.6935027643823172%2C47.41963240715204%5D%2C%5B0.6935577572918927%2C47.41966095888092%5D%2C%5B0.6935999549428289%2C47.41969816824168%5D%2C%5B0.6936264816228219%2C47.419741499493185%5D%2C%5B0.693635529549336%2C47.419787999693455%5D%2C%5B0.6936264820758719%2C47.419834499934794%5D%2C%5B0.6935999557275343%2C47.41987783129851%5D%2C%5B0.6935577581979927%2C47.41991504081253%5D%2C%5B0.6935027651670227%2C47.419943592694686%5D%2C%5B0.6934387243309319%2C47.41996154116608%5D%2C%5B0.69337%2C47.41996766305682%5D%5D%5D%7D%7D),geojson(%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%22stroke%22%3A%22%23e74c3c%22%2C%22stroke-opacity%22%3A0.8%2C%22fill%22%3A%22%23e74c3c%22%2C%22fill-opacity%22%3A0.2%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B0.693244%2C47.41992666305683%5D%2C%5B0.6931752757225863%2C47.41992054116609%5D%2C%5B0.6931112349363663%2C47.419902592694704%5D%2C%5B0.6930562419482214%2C47.419874040812545%5D%2C%5B0.6930140444515401%2C47.41983683129852%5D%2C%5B0.6929875181238593%2C47.41979349993481%5D%2C%5B0.6929784706574402%2C47.419746999693466%5D%2C%5B0.6929875185769082%2C47.41970049949319%5D%2C%5B0.693014045236244%2C47.4196571682417%5D%2C%5B0.6930562428543192%2C47.419619958880936%5D%2C%5B0.69311123572107%2C47.41959140715204%5D%2C%5B0.6931752761756352%2C47.41957345879286%5D%2C%5B0.693244%2C47.41956733694319%5D%2C%5B0.6933127238243648%2C47.41957345879286%5D%2C%5B0.6933767642789299%2C47.41959140715204%5D%2C%5B0.693431757145681%2C47.419619958880936%5D%2C%5B0.6934739547637563%2C47.4196571682417%5D%2C%5B0.6935004814230918%2C47.41970049949319%5D%2C%5B0.6935095293425598%2C47.419746999693466%5D%2C%5B0.6935004818761408%2C47.41979349993481%5D%2C%5B0.69347395554846%2C47.41983683129852%5D%2C%5B0.6934317580517787%2C47.419874040812545%5D%2C%5B0.6933767650636338%2C47.419902592694704%5D%2C%5B0.6933127242774137%2C47.41992054116609%5D%2C%5B0.693244%2C47.41992666305683%5D%5D%5D%7D%7D),geojson(%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%22stroke%22%3A%22%23e74c3c%22%2C%22stroke-opacity%22%3A0.8%2C%22fill%22%3A%22%23e74c3c%22%2C%22fill-opacity%22%3A0.2%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B0.6932370000000001%2C47.41982166305682%5D%2C%5B0.6931682758596445%2C47.41981554116609%5D%2C%5B0.6931042352011422%2C47.4197975926947%5D%2C%5B0.6930492423226702%2C47.41976904081254%5D%2C%5B0.6930070449101434%2C47.41973183129851%5D%2C%5B0.6929805186353636%2C47.4196884999348%5D%2C%5B0.6929714711869872%2C47.41964199969347%5D%2C%5B0.6929805190884099%2C47.41959549949319%5D%2C%5B0.6930070456948427%2C47.41955216824169%5D%2C%5B0.6930492432287628%2C47.41951495888093%5D%2C%5B0.6931042359858414%2C47.41948640715204%5D%2C%5B0.6931682763126908%2C47.41946845879285%5D%2C%5B0.6932370000000001%2C47.419462336943184%5D%2C%5B0.6933057236873092%2C47.41946845879285%5D%2C%5B0.6933697640141587%2C47.41948640715204%5D%2C%5B0.6934247567712374%2C47.41951495888093%5D%2C%5B0.6934669543051575%2C47.41955216824169%5D%2C%5B0.6934934809115902%2C47.41959549949319%5D%2C%5B0.6935025288130131%2C47.41964199969347%5D%2C%5B0.6934934813646366%2C47.4196884999348%5D%2C%5B0.6934669550898567%2C47.41973183129851%5D%2C%5B0.69342475767733%2C47.41976904081254%5D%2C%5B0.693369764798858%2C47.4197975926947%5D%2C%5B0.6933057241403556%2C47.41981554116609%5D%2C%5B0.6932370000000001%2C47.41982166305682%5D%5D%5D%7D%7D),geojson(%7B%22type%22%3A%22Feature%22%2C%22properties%22%3A%7B%22stroke%22%3A%22%23e74c3c%22%2C%22stroke-opacity%22%3A0.8%2C%22fill%22%3A%22%23e74c3c%22%2C%22fill-opacity%22%3A0.2%7D%2C%22geometry%22%3A%7B%22type%22%3A%22Polygon%22%2C%22coordinates%22%3A%5B%5B%5B0.693227%2C47.41973166305683%5D%2C%5B0.6931582759771222%2C47.41972554116609%5D%2C%5B0.6930942354280916%2C47.41970759269471%5D%2C%5B0.6930392426436245%2C47.41967904081255%5D%2C%5B0.6929970453032299%2C47.41964183129851%5D%2C%5B0.6929705190737935%2C47.4195984999348%5D%2C%5B0.6929614716408821%2C47.41955199969346%5D%2C%5B0.6929705195268376%2C47.4195054994932%5D%2C%5B0.6929970460879253%2C47.41946216824169%5D%2C%5B0.6930392435497128%2C47.41942495888093%5D%2C%5B0.693094236212787%2C47.41939640715205%5D%2C%5B0.6931582764301664%2C47.419378458792856%5D%2C%5B0.693227%2C47.41937233694318%5D%2C%5B0.6932957235698338%2C47.419378458792856%5D%2C%5B0.6933597637872133%2C47.41939640715205%5D%2C%5B0.6934147564502874%2C47.41942495888093%5D%2C%5B0.6934569539120748%2C47.41946216824169%5D%2C%5B0.6934834804731626%2C47.4195054994932%5D%2C%5B0.6934925283591181%2C47.41955199969346%5D%2C%5B0.6934834809262067%2C47.4195984999348%5D%2C%5B0.6934569546967703%2C47.41964183129851%5D%2C%5B0.6934147573563756%2C47.41967904081255%5D%2C%5B0.6933597645719087%2C47.41970759269471%5D%2C%5B0.693295724022878%2C47.41972554116609%5D%2C%5B0.693227%2C47.41973166305683%5D%5D%5D%7D%7D),pin-s-1+e74c3c(0.69337,47.419788),pin-s-2+e74c3c(0.693244,47.419747),pin-s-3+e74c3c(0.693237,47.419642),pin-s-4+e74c3c(0.693227,47.419552),pin-l-o+ffc107(0.6932,47.41965)/auto/1280x800?access_token=pk.eyJ1Ijoic3VpdmlkZWZsb3R0ZSIsImEiOiJjajNjeGU3cDIwMDB3MndxZWdzYWF0NXRyIn0.Iprcn2cLeTk1z9sCMGOiAA" /> -->
-	<!-- 	</section> -->
-
-	<!-- 	<section class="location indoor-location"> -->
-	<!-- 		<h2>Localisation intérieure</h2> -->
-	<!-- 		<span class="last-position">Dernièr signal intérieur reçu -->
-	<!-- 			(04/09/2017 à 10:59)</span> -->
-	<!-- 		<nav class="tabs"> -->
-	<!-- 			<a href="#choice1" class="active">RDC<span class="badge">66%</span></a> -->
-	<!-- 			<span class="separator"><span>ou</span></span> <a href="#choice2">1er -->
-	<!-- 				étage<span class="badge">33%</span> -->
-	<!-- 			</a> -->
-	<!-- 		</nav> -->
-	<!-- 		<div class="tab-content" id="choice1"> -->
-	<!-- 			<div class="indoor-plan-container"> -->
-	<!-- 				<img class="indoor-plan" -->
-	<!-- 					src="http://www.conceptdraw.com/solution-park/resource/images/solutions/office-layout-plans/Building-Plans-Office-Layout-Plan-Office-floor-plan.png" /> -->
-	<!-- 				<div class="marker-container" -->
-	<!-- 					style="top: 20px; left: 150px; width: 100px; height: 100px;"> -->
-	<!-- 					<div class="marker">A</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="marker-container" -->
-	<!-- 					style="top: 50px; left: 200px; width: 60px; height: 60px;"> -->
-	<!-- 					<div class="marker">B</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="marker-container" -->
-	<!-- 					style="top: 100px; left: 145px; width: 100px; height: 100px;"> -->
-	<!-- 					<div class="marker">C</div> -->
-	<!-- 				</div> -->
-	<!-- 			</div> -->
-	<!-- 			<div class="indoor-info"> -->
-	<!-- 				<div class="row"> -->
-	<!-- 					<div class="col-left"> -->
-	<!-- 						<i class="fa fa-globe"></i> site -->
-	<!-- 					</div> -->
-	<!-- 					<div class="col-right"> -->
-	<!-- 						<span>TOURS</span> <span class="address"> 176, Avenue André -->
-	<!-- 							Maginot,<br>37100 TOURS -->
-	<!-- 						</span> -->
-	<!-- 					</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="row"> -->
-	<!-- 					<div class="col-left"> -->
-	<!-- 						<i class="fa fa-building"></i> bâtiment -->
-	<!-- 					</div> -->
-	<!-- 					<div class="col-right"> -->
-	<!-- 						<span>Bâtiment principal</span> -->
-	<!-- 					</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="row"> -->
-	<!-- 					<div class="col-left"> -->
-	<!-- 						<i class="fa fa-bars"></i> étage -->
-	<!-- 					</div> -->
-	<!-- 					<div class="col-right"> -->
-	<!-- 						<span>RDC</span> -->
-	<!-- 					</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="row"> -->
-	<!-- 					<div class="col-left"> -->
-	<!-- 						<i class="fa fa-folder"></i> service -->
-	<!-- 					</div> -->
-	<!-- 					<div class="col-right"> -->
-	<!-- 						<span>Développement</span> -->
-	<!-- 					</div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="row"> -->
-	<!-- 					<div class="col-left"> -->
-	<!-- 						<i class="fa fa-map-marker"></i> actionpoints -->
-	<!-- 					</div> -->
-	<!-- 					<div class="col-right"></div> -->
-	<!-- 				</div> -->
-	<!-- 				<div class="actionpoints"> -->
-	<!-- 					<div class="actionpoint"> -->
-	<!-- 						<div class="img-container"> -->
-	<!-- 							<div class="img-mask" -->
-	<!-- 								style="background-image: url(https://www.delightoffice.com/wp-content/uploads/2015/08/open-office-space.jpg)"> -->
-	<!-- 								<span class="marker">a</span> -->
-	<!-- 							</div> -->
-	<!-- 						</div> -->
-	<!-- 						<div class="text-container"> -->
-	<!-- 							<h3>Open-space Développement</h3> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
-	<!-- 								In sollicitudin semper nisl ac vestibulum. Donec ut arcu eu -->
-	<!-- 								risus ullamcorper varius sed eu nisl. Maecenas laoreet elit -->
-	<!-- 								lobortis, sollicitudin ante quis, finibus metus. Ut suscipit -->
-	<!-- 								hendrerit velit vitae consectetur. Nullam posuere libero in -->
-	<!-- 								nulla varius, a commodo est mattis. Lorem ipsum dolor sit amet, -->
-	<!-- 								consectetur adipiscing elit. Donec elementum velit eu placerat -->
-	<!-- 								iaculis. Nam in pulvinar lectus. Nulla facilisi. Phasellus eget -->
-	<!-- 								risus est. Nulla metus.</p> -->
-	<!-- 						</div> -->
-	<!-- 					</div> -->
-	<!-- 					<div class="actionpoint"> -->
-	<!-- 						<div class="img-container"> -->
-	<!-- 							<div class="img-mask" -->
-	<!-- 								style="background-image: url(https://www.delightoffice.com/wp-content/uploads/2015/08/open-office-space.jpg)"> -->
-	<!-- 								<span class="marker">b</span> -->
-	<!-- 							</div> -->
-	<!-- 						</div> -->
-	<!-- 						<div class="text-container"> -->
-	<!-- 							<h3>Salle de réunion HUB</h3> -->
-	<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-	<!-- 						</div> -->
-	<!-- 					</div> -->
-	<!-- 					<div class="actionpoint"> -->
-	<!-- 						<div class="img-container"> -->
-	<!-- 							<div class="img-mask" -->
-	<!-- 								style="background-image: url(https://www.delightoffice.com/wp-content/uploads/2015/08/open-office-space.jpg)"> -->
-	<!-- 								<span class="marker">c</span> -->
-	<!-- 							</div> -->
-	<!-- 						</div> -->
-	<!-- 						<div class="text-container"> -->
-	<!-- 							<h3>Patio</h3> -->
-	<!-- 							<p></p> -->
-	<!-- 						</div> -->
-	<!-- 					</div> -->
-	<!-- 				</div> -->
-	<!-- 			</div> -->
-	<!-- 		</div> -->
-	<!-- 		<div class="tab-content" id="choice2">CONTENT 2</div> -->
-	<!-- 	</section> -->
 	<script type="text/javascript" src="assets/js/tracking.js"></script>
 </div>

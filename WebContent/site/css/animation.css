@@ -126,3 +126,13 @@
     transform: translate(120%, 0);
   }
 }
+
+@keyframes arrow-down {
+      0% {
+        bottom: 33px;
+      }
+      100% {
+        bottom: 0px;
+        opacity: 0;
+      }
+    }

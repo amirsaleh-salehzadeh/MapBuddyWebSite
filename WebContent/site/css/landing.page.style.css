@@ -1,44 +1,39 @@
 .section {
-	box-shadow: 0px 8px 11px -11px #002142;
+	box-shadow: 0px 7px 7px -7px #002142;
+	border-radius: 0 0 22px 22px;
 }
 
 #parallax1 div.parallax-bg {
-	background-size: 66%;
+	background-size: 55%;
 	background-image: url(../img/maps/floorplan.svg);
-	opacity: .88;
+	opacity: 1;
 }
 
 #parallax2 div.parallax-bg {
-	background-size: 55%;
-	background-image: url(../img/maps/Geofence2.png);
-	opacity: .33;
-	height: 180%;
-	top: -100%;
-	background-position: right;
+	background-size: 33%;
+	background-image: url(../img/maps/geofence.svg);
 	filter: sepia(1) hue-rotate(-166deg);
+	background-position-x: 77%;
 }
 
 #parallax3 div.parallax-bg {
-	background-size: 44%;
-	background-image: url(../img/maps/Geofence.png);
-	opacity: .44;
-	height: 200%;
-	top: -100%;
-	filter: sepia(1) hue-rotate(-166deg);
+	background-size: 33%;
+	background-image: url(../img/maps/movementstroke.svg);
+	background-position-x: 66%;
 }
 
 #parallax4 div.parallax-bg {
-	background-size: 44%;
-	background-image: url(../img/maps/movementstroke.svg);
-	opacity: .44;
-	height: 150%;
-	top: -100%;
+	background-size: 33%;
+	background-image: url(../img/maps/iot.svg);
 }
 
 .parallaxParent div.parallax-bg {
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 0;
+	background-position-x: 99%;
+	height: 150%;
+	top: -100%;
 }
 
 .parallaxParent {
@@ -50,14 +45,17 @@
 	height: 150%;
 	position: relative;
 	top: -75%;
-	-webkit-transition: transform .1s ease-in-out;
-	-moz-transition: transform .1s ease-in-out;
-	-ms-transition: transform .1s ease-in-out;
-	-o-transition: transform .1s ease-in-out;
-	transition: transform .1s ease-in-out;
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	-webkit-transition: transform .1s;
+	-moz-transition: transform .1s;
+	-ms-transition: transform .1s;
+	-o-transition: transform .1s;
+	transition: transform .1s;
 }
 
-#reveal1, #reveal2, #reveal3, .large-text {
+#reveal1, #reveal2, #reveal3, .normal-text {
 	opacity: 0;
 	-webkit-transform: scale(0.7);
 	-moz-transform: scale(0.7);
@@ -71,7 +69,7 @@
 	transition: transform 1s ease-in-out;
 }
 
-#reveal1, #reveal2, #reveal3, .large-text {
+#reveal1, #reveal2, #reveal3, .normal-text {
 	opacity: 0;
 	-webkit-transform: rotate(40deg) scale(0.5);
 	-moz-transform: rotate(40deg) scale(0.5);
@@ -80,7 +78,8 @@
 	transform: rotate(40deg) scale(0.5);
 }
 
-#reveal1.visible, #reveal2.visible, #reveal3.visible, .large-text.visible {
+#reveal1.visible, #reveal2.visible, #reveal3.visible, .normal-text.visible
+	{
 	opacity: 1;
 	-webkit-transform: none;
 	-moz-transform: none;
@@ -90,9 +89,51 @@
 }
 
 #reveal-elements {
-	position: absolute;
-	left: 22%;
 	z-index: 1;
+}
+
+.landing-page-content-container {
+	position: absolute;
+	max-width: 33%;
+	z-index: 1;
+	left: 33px;
+}
+
+.landing-page-content-container span {
+	display: inline-block;
+}
+
+.numbering {
+	color: #006a7c;
+	line-height: 30px !important;
+	font-size: 33px !important;
+}
+
+.numbering span {
+	left: 22px;
+	border-radius: 50%;
+	background-color: rgb(0, 33, 66);
+	padding: 7px;
+	color: white !important;
+	text-align: center;
+	width: 44px;
+	height: 44px;
+	display: inline-block;
+}
+
+.normal-text {
+	font-weight: 100;
+	font-size: 16px;
+	margin-top: 22px;
+	line-height: 22px;
+	color: #002142;
+}
+
+.largest-text {
+	font-size: 33px;
+	line-height: 33px;
+	color: #006a7c;
+	font-weight: 600;
 }
 
 .bike {
@@ -148,42 +189,29 @@
 	z-index: 10;
 }
 
-.numbering {
-	color: #006a7c;
-	line-height: 30px !important;
-	font-size: 2.5rem !important;
+#arrow-down {
 	position: absolute;
-}
-
-.numbering span {
-	left: 22px;
-	border-radius: 50%;
-	background-color: rgb(0, 33, 66);
-	padding: 7px;
-	color: white !important;
-	text-align: center;
-	width: 44px;
-	height: 44px;
-	display: inline-block;
-}
-
-.large-text {
-	font-weight: 100;
-	font-size: 1.1rem;
-	max-width: 444px;
-	margin-top: 33px;
+	margin: auto;
+	padding-left: 55px;
+	font-size: 33px;
+	font-weight: bold; left : 11px;
+	bottom: 11px;
 	color: #002142;
-	line-height: 1.8rem;
-	color: #002142;
+	left: 11px;
 }
 
-.largest-text {
-	margin: 11px;
+#arrow-down::before {
+	animation-name: arrow-down;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	width: 33px;
+	height: 33px;
+	background: url("../img/icons/D_b.svg");
 	position: absolute;
-	font-size: 2.6rem;
-	max-width: 444px;
-	line-height: 3rem;
-	color: #006a7c;
-	font-weight: 600;
-	z-index: 11;
+	content: ' ';
+	background-repeat: no-repeat;
+	margin: auto;
+	left: 11px;
+	animation-timing-function: ease;
+	margin: auto;
 }
