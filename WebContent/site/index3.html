@@ -72,10 +72,10 @@
 			<div id="MSvideoContent"></div>
 		</div>
 		<div id="page-load-content" class="mainBodyFrame"></div>
-<!-- 		<div class="page-load-container title-logo"></div> -->
-<!-- 		<span class="page-load-container logo-text">Planet</span> <span -->
-<!-- 			class="page-load-container logo-text small-text">Smart -->
-<!-- 			Solutions</span> -->
+		<!-- 		<div class="page-load-container title-logo"></div> -->
+		<!-- 		<span class="page-load-container logo-text">Planet</span> <span -->
+		<!-- 			class="page-load-container logo-text small-text">Smart -->
+		<!-- 			Solutions</span> -->
 	</div>
 	<div class="hamburger hamburger--demo-3 js-hover invisible">
 		<div class="hamburger__line hamburger__line--01">
@@ -135,15 +135,13 @@
 <script src="js/demo.js"></script>
 <script src="js/easings.js"></script>
 <script src="js/demo3.js"></script>
-<script type="text/javascript"
-	src="//cdnjs.cloudflare.com/ajax/libs/bodymovin/4.10.2/bodymovin.min.js"></script>
-<script type="text/javascript"
-	src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script type="text/javascript" src="js/bodymovin.min.js"></script>
+<script type="text/javascript" src="js/anime.min.js"></script>
 
 <script type="text/javascript">
 function drawBackgroundSvg () {
 	  var width = $(document).width();
-	  var height = $(document).height();
+	  var height = $(document).height()* .8;
 	  $('.triangles').css('width','100%');
 	  $('.triangles').css('height','100%');
 	  var pointsA = '0,0 '
@@ -175,7 +173,9 @@ function drawBackgroundSvg () {
 		$('.coming-soon').css('display', 'none')
 		$("#features-page").load(pageAddress)
 	}
-
+	$(window).bind("resize", function() {
+		drawBackgroundSvg ()	
+		});
 	$(window).load(function() {
 		$(".frameLoding").fadeOut();
 		setTimeout(removeLoading, 800)

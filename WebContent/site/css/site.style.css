@@ -10,8 +10,8 @@ html {
 	height: 100%;
 	width: 100%;
 	text-shadow: none;
-	background-image: linear-gradient(to left, #025c88, rgb(0, 56, 70));
-	background-image: linear-gradient(to left, #c4e9fc, rgb(224, 248, 254));
+/* 	background-image: linear-gradient(to left, #c4e9fc, rgb(224, 248, 254)); */
+	    background-image: linear-gradient(to left, #00a6b1, #00214d, #00a6b1);
 	overflow: hidden !important;
 }
 
@@ -410,8 +410,9 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 .page-background {
 	position: absolute;
 	z-index: 0;
-	height: 100vh;
+	height: 80vh;
 	width: 100vw;
+	top: 10%;
 }
 
 .page-background svg {
