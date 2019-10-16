@@ -148,10 +148,11 @@
 	transition: transform .2s;
 	animation: nudge 10s linear infinite;
 	position: absolute;
-	top: 300%;
+	top: 290%;
 	left: -20%;
 	right: 120%;
 	width: 100%;
+	opacity: .33;
 }
 
 .bike__marker {
@@ -229,7 +230,7 @@
 		line-height: 27px;
 	}
 	#first-section-content {
-		top: 5% !important;
+		top: 11% !important;
 	}
 	.normal-text {
 		font-size: 14px;
@@ -245,10 +246,10 @@
 		background-size: 100% !important;
 		background-position-y: 75% !important;
 	}
-/* 	#parallax1 div.parallax-bg { */
-/* 		background-size: 100%; */
-/* 		background-position-y: 75%; */
-/* 	} */
+	/* 	#parallax1 div.parallax-bg { */
+	/* 		background-size: 100%; */
+	/* 		background-position-y: 75%; */
+	/* 	} */
 	#arrow-down {
 		position: absolute;
 		margin: auto;

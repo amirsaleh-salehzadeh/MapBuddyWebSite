@@ -295,21 +295,19 @@ li.cachu__nav__item {
 		top: unset;
 		filter: drop-shadow(0px 8px 5px #eff7fd);
 	}
-	#page-load-content {
-		top: 3%;
-	}
 	.new-page-close-button {
-		right: 5%;
-		top: 3%;
-		width: 33px;
-		height: 33px;
+		right: 0px;
+		top: 0;
+		width: 44px;
+		height: 44px;
 	}
 	.cachu__section {
 		padding-left: .5rem;
 		padding-right: .5rem;
 	}
 	.cachu__nav {
-		left: .5rem;
+		right: 2.5rem;
+		left: unset;
 	}
 	.content-section-header {
 		text-align: center;
@@ -321,15 +319,16 @@ li.cachu__nav__item {
 		width: 32px;
 	}
 	.page-section-description-title {
-		font-size: 19px;
-		padding-left: 11px;
+		font-size: 17px;
+		padding-left: 7px;
 	}
 	.page-section-description {
 		padding: 7px;
-		padding-left: 22px;
+		/* padding-left: 22px; */
 		font-size: 14px;
 		overflow-x: hidden;
 		overflow-y: scroll;
+		width: calc(100% - 66px);
 	}
 	.page-section-description .ui-block-a, .page-section-description .ui-block-b
 		{
