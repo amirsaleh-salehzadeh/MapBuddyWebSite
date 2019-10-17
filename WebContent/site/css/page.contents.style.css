@@ -180,7 +180,7 @@
 	overflow: hidden;
 }
 
-#MSvideoContent iframe, #MSvideoContent div {
+#MSvideoContent div iframe, #MSvideoContent div {
 	display: block;
 	width: 266px;
 	height: 471px;
@@ -272,6 +272,10 @@ li.cachu__nav__item {
 	padding: 0 11px;
 }
 
+.demo-button {
+	display: none;
+}
+
 @media ( max-width : 700px) {
 	.page-load-container.logo-text {
 		color: #001d3f;
@@ -304,68 +308,121 @@ li.cachu__nav__item {
 	.cachu__section {
 		padding-left: .5rem;
 		padding-right: .5rem;
+		overflow-x: hidden;
+		overflow-y: scroll;
 	}
 	.cachu__nav {
 		right: 2.5rem;
 		left: unset;
 	}
-	.content-section-header {
-		text-align: center;
-		padding: 11px;
+	.active .cachu__nav__button {
+		background-size: 55%;
+		left: -3px;
+		right: -3px;
+		bottom: -3px;
+		top: -3px;
+		border: 1px solid white;
+		border-radius: 11px;
+	}
+	.demo-button {
+		display: block;
+		width: 122px;
+		height: 35px;
+		position: absolute;
+		bottom: 7px;
+		right: 7px;
+		z-index: 10;
+		border: 1px solid white;
+		background: linear-gradient(to bottom, #003559, #054b7b, #003559);
+		padding: 3px;
+		border-radius: 7px;
 		color: white;
-		padding-right: 40px;
 	}
-	.content-section-header img {
-		width: 32px;
+	.demo-button span {
+		padding-left: 5px;
 	}
-	.page-section-description-title {
-		font-size: 17px;
-		padding-left: 7px;
-	}
-	.page-section-description {
-		padding: 7px;
-		/* padding-left: 22px; */
-		font-size: 14px;
-		overflow-x: hidden;
-		overflow-y: scroll;
-		width: calc(100% - 66px);
-	}
-	.page-section-description .ui-block-a, .page-section-description .ui-block-b
-		{
-		width: 100%;
-		float: none;
-		height: unset;
-		margin-bottom: 22px;
-	}
-	.main-menu-buttons {
-		border: none !important;
-	}
-	.material-card .img-container {
-		padding: 3px;
-		width: 77px;
-	}
-	.clickedColumn .material-card .img-container {
-		width: 77px;
-	}
-	.material-card {
-		margin-bottom: 1.6em;
-	}
-	.row {
-		padding: 22px 0px 0px 0px;
-		margin: 0;
-	}
-	.col-md-2 {
-		width: 33%;
-		padding-right: 7px;
-		padding-left: 7px;
-		width: 50%;
-	}
-	.material-card h2 {
-		padding: 3px;
-		top: calc(100% - 33px);
-		font-size: 14px;
+	.demo-button svg {
+		height: 22px;
 	}
 	#MSvideoContainer {
-		display: none;
+		transition: width 1s, display 1s;
 	}
+	#MSvideoContainer.show {
+		height: 94%;
+		width: 90%;
+		top: 3%;
+		left: 5%;
+		display: block;
+		transition: width 1s;
+		background: none;
+	}
+	#MSvideoContainer.show #MSvideoContent {
+		padding: 0;
+	}
+	.page-section-description {
+		padding: 0;
+		font-size: 14px;
+		width: calc(100% - 50px);
+		margin-bottom: 22px;
+	}
+}
+
+.content-section-header {
+	text-align: center;
+	padding: 3px;
+	color: white;
+	padding-right: 40px;
+}
+
+.content-section-header img {
+	width: 32px;
+}
+
+.page-section-description-title {
+	font-size: 17px;
+	padding-left: 7px;
+}
+
+.material-card .img-container {
+	padding: 3px;
+	width: 77px;
+}
+
+.clickedColumn .material-card .img-container {
+	width: 77px;
+}
+
+.material-card {
+	margin-bottom: 1.6em;
+}
+
+.row {
+	padding: 22px 0px 0px 0px;
+	margin: 0;
+}
+
+.col-md-2 {
+	width: 33%;
+	padding-right: 7px;
+	padding-left: 7px;
+	width: 50%;
+}
+
+.material-card h2 {
+	padding: 3px;
+	top: calc(100% - 33px);
+	font-size: 14px;
+}
+
+#MSvideoContainer {
+	display: none;
+}
+
+.p-explanation, .p-examples, .p-benefits {
+	padding: 0;
+}
+
+.p-benefits {
+	padding: 7px;
+	border: 1px solid #008fe28a
 }

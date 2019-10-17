@@ -10,8 +10,8 @@ html {
 	height: 100%;
 	width: 100%;
 	text-shadow: none;
-/* 	background-image: linear-gradient(to left, #c4e9fc, rgb(224, 248, 254)); */
-	    background-image: linear-gradient(to left, #00a6b1, #00214d, #00a6b1);
+	/* 	background-image: linear-gradient(to left, #c4e9fc, rgb(224, 248, 254)); */
+	background-image: linear-gradient(to left, #00b4e3, #0098ba, #00b4e3);
 	overflow: hidden !important;
 }
 
@@ -262,15 +262,6 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 	line-height: 22px;
 	color: #001d33 !important;
 	text-decoration: none;
-	transition: transform .4s;
-}
-
-.global-menu__wrap ul li a:hover {
-	transform: scale(1.1);
-}
-
-.global-menu__wrap ul li div svg {
-	scale: 1;
 }
 
 .global-menu__wrap ul li.active div svg {
@@ -417,7 +408,7 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 
 .page-background svg {
 	position: absolute;
-	fill: white;
+	fill: #00214d;
 }
 
 .page-background svg polygon {
@@ -446,7 +437,7 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 		font-weight: normal;
 	}
 	.global-menu__wrap ul li div svg {
-		scale: 0.7;
+		transform: scale(0.7);
 	}
 	div.title-logo {
 		position: absolute;
