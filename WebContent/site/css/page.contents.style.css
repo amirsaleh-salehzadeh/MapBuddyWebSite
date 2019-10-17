@@ -346,6 +346,7 @@ li.cachu__nav__item {
 	}
 	#MSvideoContainer {
 		transition: width 1s, display 1s;
+		background: none;
 	}
 	#MSvideoContainer.show {
 		height: 94%;
@@ -412,10 +413,6 @@ li.cachu__nav__item {
 	padding: 3px;
 	top: calc(100% - 33px);
 	font-size: 14px;
-}
-
-#MSvideoContainer {
-	display: none;
 }
 
 .p-explanation, .p-examples, .p-benefits {
