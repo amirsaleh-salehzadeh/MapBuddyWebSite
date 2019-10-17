@@ -12,7 +12,7 @@
 .new-page-close-button {
 	position: absolute;
 	right: 10%;
-	top: 10%;
+	top: 5%;
 	z-index: 11;
 	margin: 11px;
 	cursor: pointer;
@@ -180,8 +180,8 @@
 	overflow: hidden;
 }
 
-#MSvideoContent div iframe, #MSvideoContent div {
-	display: block;
+#MSvideoContent, #MSvideoContent * {
+	display: block !important;
 	width: 266px;
 	height: 471px;
 }

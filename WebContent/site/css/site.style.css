@@ -472,9 +472,10 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 		font-size: 33px;
 	}
 	.hamburger {
-		top: calc(5% + 1px);
-		right: calc(5% + 0px);
+		top: 2%;
+		right: 3%;
 	}
+}
 	.ui-btn-green, .ui-btn-blue {
 		padding: 8px;
 		box-shadow: 0px 8px 4px -6px #040f1f;

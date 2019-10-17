@@ -77,15 +77,15 @@ function loadIcons() {
 					function() {
 						$(".cachu__section")
 								.each(function() {
-									if($(this).css("visibility") != "visible")
-										return true
-									if ($(window).width()>700) {
-										$("#MSvideoContent")
-												.html($(this).find(".iframes-class")[0].outerHTML)
-									}else {
+// if($(this).css("visibility") != "visible")
+// return true
+// if ($(window).width()>700) {
+// $("#MSvideoContent")
+// .html()
+// }else {
 										$("#MSvideoContent").
-										find("iframe").attr("src",$(this).find(".iframes-class").attr("src"))
-									}
+										find("iframe").attr("src",$(this).find(".iframes-class").html())
+// }
 								})
 					});
 }
