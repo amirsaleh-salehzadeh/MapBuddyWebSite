@@ -114,6 +114,10 @@
 .col-md-2 {
 	transition: transform .4s ease-in-out;
 	filter: grayscale(.66);
+	width: 33%;
+	padding-right: 7px;
+	padding-left: 7px;
+	width: 50%;
 }
 
 .material-card .mc-description {
@@ -182,8 +186,8 @@
 
 #MSvideoContent, #MSvideoContent * {
 	display: block !important;
-	width: 266px;
-	height: 471px;
+	width: 321px;
+	height: 577px;
 }
 
 #MSvideoContent div {
@@ -398,15 +402,8 @@ li.cachu__nav__item {
 }
 
 .row {
-	padding: 22px 0px 0px 0px;
+	padding: 122px 0px 0px 0px;
 	margin: 0;
-}
-
-.col-md-2 {
-	width: 33%;
-	padding-right: 7px;
-	padding-left: 7px;
-	width: 50%;
 }
 
 .material-card h2 {

@@ -18,18 +18,18 @@
 .coming-soon {
 	position: absolute;
 	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
+	right: 55px;
+	left: 55px;
+	bottom: 120px;
 	background-color: rgba(66, 66, 66, .6);
 	z-index: 1;
 	color: white;
 	margin: auto;
 	text-align: center;
-	font-size: 19px;
+	font-size: 17px;
 	font-weight: bold;
 	border-radius: 22px;
-	padding-top: 74px;
+	padding-top: 11px;
 	display: block;
 	margin: 0 7px 7px 7px;
 }

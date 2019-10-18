@@ -83,8 +83,8 @@ function loadIcons() {
 // $("#MSvideoContent")
 // .html()
 // }else {
-										$("#MSvideoContent").
-										find("iframe").attr("src",$(this).find(".iframes-class").html())
+									if($(this).css("visibility") != "visible")
+										$("#MSvideoContent").html($(this).find(".iframes-class")[0].outerHTML)
 // }
 								})
 					});
