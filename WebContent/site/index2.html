@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Map Buddy</title>
+
+<!-- Behavioral Meta Data -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="theme-color" content="#f1fffe">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="//fonts.googleapis.com/css?family=Ubuntu"> -->
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="//fonts.googleapis.com/css?family=Tangerine" /> -->
+<!-- <link rel="stylesheet" -->
+<!-- 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- Styles -->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" type="text/css" href="css/site.style.css" />
+<link rel="stylesheet" type="text/css" href="css/animation.css" />
+
+<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/page.contents.style.css" />
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=UA-143257713-2"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-143257713-2');
+</script>
+</head>
+<body>
+	<div class="frameLoding">
+		<div class="frame">
+			<div class="center">
+				<div class="dot-1"></div>
+				<div class="dot-2"></div>
+				<div class="dot-3"></div>
+				<div class="loading">
+					<div class="loading-text">
+						<span class="loading-text-words">L</span> <span
+							class="loading-text-words">O</span> <span
+							class="loading-text-words">A</span> <span
+							class="loading-text-words">D</span> <span
+							class="loading-text-words">I</span> <span
+							class="loading-text-words">N</span> <span
+							class="loading-text-words">G</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="mainBodyFrame">
+		<div class="main-menu-buttons">
+			<div onclick="loadPage('landing.html', null)" style="cursor: pointer">
+				<div class="title-logo"></div>
+				<span class="logo-text">Planet</span> <span
+					class="logo-text small-text">Smart Solutions</span>
+			</div>
+			<div class="menu-bar-icon">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<ul>
+				<li class="active"
+					onclick="loadPage('pages/products/products.html', this)"><div
+						class="solitionsIcn"></div> <span>Products</span></li>
+				<li
+					onclick="loadPage('services.html', this); $('.coming-soon').css('display','block')"><div
+						class="servicesIcn"></div> <span>Services</span></li>
+				<li onclick="loadPage('pages/industries/industries.html', this)"><div
+						class="productsIcn"></div> <span>Industries</span></li>
+				<li onclick="loadPage('contact.html', this)"><div
+						class="contactsIcn"></div> <span>Contact</span></li>
+			</ul>
+		</div>
+		<div class="page-contents">
+			<div class="coming-soon">
+				<span>Coming Soon</span>
+			</div>
+			<div id="features-page" class="a-page-content"></div>
+		</div>
+	</div>
+	<div id="page-load-container">
+		<div id="header">
+			<img src="img/icons/close.png" width="48px" height="48px"
+				class="new-page-close-button"
+				onclick="$('#page-load-container').removeClass('show')">
+		</div>
+		<div id="MSvideoContainer">
+			<div id="MSvideoContent"></div>
+		</div>
+		<div id="page-load-content" class="mainBodyFrame"></div>
+		<div class="page-load-container title-logo"></div>
+		<span class="page-load-container logo-text">Planet</span> <span
+			class="page-load-container logo-text small-text">Smart
+			Solutions</span>
+	</div>
+</body>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var tmpAnimation = 0;
+		$(".main-menu-buttons ul li").on("click", function() {
+			$(".main-menu-buttons ul li.active").removeClass("active");
+			$(this).addClass("active");
+		})
+		// 		$(".main-menu-buttons ul li.active").trigger("click");
+		setOnMenuBTNClick()
+		$(".productsIcn").load("img/icons/features.svg")
+		$(".servicesIcn").load("img/icons/services.svg")
+		$(".contactsIcn").load("img/icons/contact.svg")
+		$(".solitionsIcn").load("img/icons/solutions.svg")
+		$(".title-logo").load("img/logo.svg")
+	});
+	function setOnMenuBTNClick() {
+		$(".menu-bar-icon").click(
+				function() {
+					$(".main-menu-buttons ul li").each(
+							function() {
+								if ($(this).hasClass("active"))
+									return true
+								if ($(this).css("display") == "none") {
+									$(".main-menu-buttons ul li").css(
+											"display", "inline-block")
+								} else {
+									$(".main-menu-buttons ul li").css(
+											"display", "none")
+									$(".main-menu-buttons ul li.active").css(
+											"display", "inline-block")
+								}
+								return false
+							})
+				})
+
+	}
+	function loadPage(pageAddress, liItem) {
+		// 		if ($(".menu-bar-icon").css("display") != "none") {
+		// 			$(".main-menu-buttons ul li").removeClass("active")
+		// 			$(".main-menu-buttons ul li").css("display", "none")
+		// 			$(liItem).addClass("active")
+		// 			$(".main-menu-buttons ul li.active").css("display", "block")
+		// 		}
+		// 		if (liItem == null) {
+		// 			$(".main-menu-buttons ul li").removeClass("active")
+		// 		}
+		$("#page-load-content").html("")
+		$('.coming-soon').css('display', 'none')
+		$("#features-page").load(pageAddress)
+	}
+	function windowResized() {
+		var transformTop = ($(window).height() - $("#mainBodyFrame").height())
+	}
+
+	$(window).bind("load", function() {
+		windowResized()
+		$(".frameLoding").fadeOut(1000)
+		setTimeout(removeLoading, 1040)
+	});
+
+	$(window).bind("resize", function() {
+		windowResized()
+	});
+	function removeLoading() {
+		$(".frameLoding").remove()
+	}
+	function loadaPage(address) {
+		$("#page-load-content").html("")
+		$("#page-load-content")
+				.load(
+						address,
+						function() {
+							$("#page-load-container").addClass("show")
+							var options = {
+								disableMouseEvents : true, // Disable mousewheel event listening.
+								disableKeyboardEvents : false, // Disable keyboard event listening.
+								disableTouchEvents : true, // Disable event listening on touchable device (Swipe).
+								scrollingSpeed : 1111, // The speed of the transition.
+								scrollingLoop : false, // Loop after reaching the end.
+								navigationEnabled : true, // Enable navigation buttons
+								navigationPosition : 'left' // The Navigation's position
+							};
+							var slider = new Cachu(document
+									.querySelector('.cachu__container'),
+									options);
+							slider.run();
+							setTimeout(loadIcons, 500)
+							$(".cachu__sections")
+									.on(
+											'transitionend webkitTransitionEnd oTransitionEnd',
+											function() {
+												$(".cachu__section")
+														.each(
+																function() {
+																	if ($(this)
+																			.css(
+																					"visibility") == "visible") {
+																		$(
+																				"#MSvideoContent")
+																				.html(
+																						$(
+																								this)
+																								.find(
+																										".iframes-class")[0].outerHTML)
+																	}
+																})
+											});
+						})
+	}
+	function loadIcons() {
+		$(".cachu__nav__item").each(
+				function(l, k) {
+					$(this).find("a")
+							.css(
+									"background-image",
+									"url("
+											+ $(".section-icon").eq(l).attr(
+													"src") + ")")
+				})
+	}
+</script>
+</html>
