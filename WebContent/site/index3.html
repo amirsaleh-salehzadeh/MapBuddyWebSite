@@ -70,10 +70,15 @@
 		</div>
 		<div id="MSvideoContainer">
 			<div id="MSvideoContent">
-				<iframe width="100%" height="100%" src="index.html" style="border: none;" frameborder="0" webkitallowfullscreen
-				class="iframes-class" mozallowfullscreen allowfullscreen
-				id="externallinkmb"></iframe>
+				<iframe width="100%" height="100%" src="index.html"
+					style="border: none;" frameborder="0" webkitallowfullscreen
+					class="iframes-class" mozallowfullscreen allowfullscreen
+					id="externallinkmb"></iframe>
 			</div>
+			<img src="img/icons/return.png" width="48px" height="48px"
+				class="new-page-close-button"
+				onclick="$('#MSvideoContainer').removeClass('show');"
+				style="display: none; z-index: 1000;">
 		</div>
 		<div class="demo-button" onclick="showMobileViewDemo()">View
 			Demo</div>
@@ -104,14 +109,17 @@
 		<div class="global-menu__wrap">
 			<ul>
 				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('landing.html'); $('.hamburger').trigger('click');"><div
+						class="homeIcn"></div> <a href="#"><span>Home</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
 					onclick="loadPage('pages/products/products.html')"><div
-						class="solitionsIcn"></div> <a href="#"><span>Products</span></a></li>
+						class="solitionsIcn"></div> <a href="#"><span>Features</span></a></li>
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/industries/industries.html')"><div
+						class="productsIcn"></div> <a href="#"><span>Solutions</span></a></li>
 				<li class="global-menu__item global-menu__item--demo-3"
 					onclick="loadPage('services.html'); $('.coming-soon').css('display','block')"><div
 						class="servicesIcn"></div> <a href="#"><span>Services</span></a></li>
-				<li class="global-menu__item global-menu__item--demo-3"
-					onclick="loadPage('pages/industries/industries.html')"><div
-						class="productsIcn"></div> <a href="#"><span>Industries</span></a></li>
 				<li onclick="loadPage('contact.html')"
 					class="global-menu__item global-menu__item--demo-3"><div
 						class="contactsIcn"></div> <a href="#"><span>Contact</span></a></li>
@@ -146,31 +154,28 @@
 <script type="text/javascript" src="js/anime.min.js"></script>
 
 <script type="text/javascript">
-
-
 	$(document).ready(function() {
 		var tmpAnimation = 0;
 		$(".productsIcn").load("img/icons/features.svg")
 		$(".servicesIcn").load("img/icons/services.svg")
 		$(".contactsIcn").load("img/icons/contact.svg")
 		$(".solitionsIcn").load("img/icons/solutions.svg")
+		$(".homeIcn").load("img/icons/home.svg")
 		$(".title-logo").load("img/logoiot.svg")
 		$("#page-load-content").html("")
 		$('.coming-soon').css('display', 'none')
 		$("#features-page").load("landing.html")
-		$(".demo-button").load("img/icons/demo.svg", function(){
+		$(".demo-button").load("img/icons/demo.svg", function() {
 			$(this).append("<span>View Demo</span>")
 		})
 	});
 	$(window).bind("resize", function() {
-		drawBackgroundSvg ()	
+		drawBackgroundSvg()
 	});
 	$(window).load(function() {
 		$(".frameLoding").fadeOut(2000);
-		drawBackgroundSvg() 
+		drawBackgroundSvg()
 		setTimeout(removeLoading, 800)
 	});
-
-	
 </script>
 </html>

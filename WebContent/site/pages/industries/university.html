@@ -1,13 +1,14 @@
 <div class="cachu__container">
 	<div id="scrolling" class="cachu__sections">
 		<section class="cachu__section" id="geofencing-section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/fence.svg"><span
+					class="page-section-description-title">Geofencing
+					Educational Facilities</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
 				<div class="page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/fence.svg"><span
-							class="page-section-description-title">Geofencing
-							Educational Facilities</span>
-					</div>
+
 					<p class="p-explanation">
 						Demonstrate the virtual perimeter of the spaces belonging to the
 						institution. Map Buddy allows for managing a geofence by
@@ -34,13 +35,13 @@
 				src="https://findme-sc.mandela.ac.za/MapBuddyApp/t_MapBuddyApp.do?qr=1&destinationId=1633"></iframe>
 		</section>
 		<section class="cachu__section" id="digitisation-section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/position.svg"><span
+					class="page-section-description-title">Positioning Indoor
+					Facilities</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
 				<div class="ui-block-solo page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/position.svg"><span
-							class="page-section-description-title">Positioning Indoor
-							Facilities</span>
-					</div>
 					<p class="p-explanation">
 						Scale and digitise the floor plans of buildings & facilities. Keep
 						the information about the floor plan components uptodate & present
@@ -67,13 +68,13 @@
 				src="https://findme-sc.mandela.ac.za/MapBuddyApp/t_MapBuddyApp.do?qr=1&destinationId=1634"></iframe>
 		</section>
 		<section class="cachu__section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/navigation.svg"><span
+					class="page-section-description-title">Indoor & Outdoor
+					Navigation</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
 				<div class="ui-block-solo page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/navigation.svg"><span
-							class="page-section-description-title">Indoor & Outdoor
-							Navigation</span>
-					</div>
 					<p class="p-explanation">Digitise and manage the paths between
 						the components of your space enables measuring the distance and
 						navigating the students to a destination based on the transport
@@ -93,14 +94,13 @@
 			</div>
 		</section>
 		<section class="cachu__section" id="geospatial-section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/tracking.svg"><span
+					class="page-section-description-title">Tracking Users &
+					Collecting Movement Data</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
-
 				<div class="ui-block-a page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/tracking.svg"><span
-							class="page-section-description-title">Tracking Users &
-							Collecting Movement Data</span>
-					</div>
 					<p class="p-explanation">Map Buddy uses the GPS to track the
 						users and movable items within the outdoor areas and uses QR codes
 						to enable tracking through the indoor areas.</p>
@@ -120,13 +120,12 @@
 			</div>
 		</section>
 		<section class="cachu__section" id="space-optimisation-section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/road-white.svg"><span
+					class="page-section-description-title">Lift Sharing</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
-
 				<div class="ui-block-a page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/road-white.svg"><span
-							class="page-section-description-title">Lift Sharing</span>
-					</div>
 					<p class="p-explanation">Map Buddy uses the GPS technology to
 						track the transport services of an institution and share this
 						information with the users. The reservation system enables the
@@ -144,13 +143,13 @@
 			</div>
 		</section>
 		<section class="cachu__section" id="space-optimisation-section">
+			<div class="ui-block-solo content-section-header">
+				<img class="section-icon" alt="" src="img/icons/ar.svg"><span
+					class="page-section-description-title">Digitising &
+					Digitalising Things</span>
+			</div>
 			<div class="ui-block-solo content-section-container">
 				<div class="ui-block-a page-section-description">
-					<div class="ui-block-solo content-section-header">
-						<img class="section-icon" alt="" src="img/icons/ar.svg"><span
-							class="page-section-description-title">Digitising &
-							Digitalising Things</span>
-					</div>
 					<p class="p-explanation">By digitising the assets, the position
 						& information of an asset can be shown and monitored on the map in
 						real-time. Digitalising the assets enables involving them in the
@@ -176,7 +175,7 @@
 						cognitive & emotional states can be tracked & monitored. This can
 						incredibly improve the quality of student's learning & stress
 						level.</p>
-						<p class="p-explanation">By digitising the assets, the position
+					<p class="p-explanation">By digitising the assets, the position
 						& information of an asset can be shown and monitored on the map in
 						real-time. Digitalising the assets enables involving them in the
 						business process of your institution. The information from ambient
@@ -316,32 +315,25 @@
 </div>
 <script src="js/cachu-slider.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$(".page-section-description").each(function(){
-			$(this).find(".content-section-header").css({
-				"max-width" : $(this).width(),
-				"width" : $(this).width()
-			})
-			$(this).find(".content-section-container")
-						.css("margin-top",
-							$(this).find(".page-section-description-title").height() + 77)
-		})
-		// 		$(".geofenceimg").load("img/maps/streetmap.svg");
-		// 		$(".geocodingimg").load("img/maps/streetmap23.svg");
-		// 		$(".indoorimg").load('img/maps/123.svg')
-		// 		$("#decisions").load('img/maps/decisions.svg')
-		// 				$("#MSvideoContainer").height($(".cachu__container").height())
+	$(document)
+			.ready(
+					function() {
+						// 		$(".geofenceimg").load("img/maps/streetmap.svg");
+						// 		$(".geocodingimg").load("img/maps/streetmap23.svg");
+						// 		$(".indoorimg").load('img/maps/123.svg')
+						// 		$("#decisions").load('img/maps/decisions.svg')
+						// 				$("#MSvideoContainer").height($(".cachu__container").height())
 
-		// 								- $(".content-section-header").height()
-		// 				$("#MSvideoContainer").width(
-		// 						$("#MSvideoContainer").height() / 1.85)
-		// 				$("#externallinkmb").width(
-		// 						$("#MSvideoContainer").width() / 1.44)
-		// 				$("#externallinkmb").height(
-		// 						$("#MSvideoContainer").height() / 1.48)
-		// 				$("#externallinkmb").css("top",
-		// 						$("#MSvideoContainer").height() / 5.79)
-		// 				$("#MSvideoContent").css("padding-top",
-		// 						$("#MSvideoContainer").height() / 5.79)
-	});
+						// 								- $(".content-section-header").height()
+						// 				$("#MSvideoContainer").width(
+						// 						$("#MSvideoContainer").height() / 1.85)
+						// 				$("#externallinkmb").width(
+						// 						$("#MSvideoContainer").width() / 1.44)
+						// 				$("#externallinkmb").height(
+						// 						$("#MSvideoContainer").height() / 1.48)
+						// 				$("#externallinkmb").css("top",
+						// 						$("#MSvideoContainer").height() / 5.79)
+						// 				$("#MSvideoContent").css("padding-top",
+						// 						$("#MSvideoContainer").height() / 5.79)
+					});
 </script>
