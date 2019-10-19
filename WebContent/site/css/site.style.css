@@ -209,11 +209,11 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 }
 
 .mainBodyFrame {
-	height: 90%;
+	height: 80%;
 	width: 80%;
 	margin: auto;
 	border-radius: 11px;
-	top: 5%;
+	top: 10%;
 	position: absolute;
 	left: 10%;
 	background-color: #ffffff;
@@ -225,7 +225,7 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 }
 
 .hamburger {
-	top: calc(5% + 11px);
+	top: calc(10% + 11px);
 	right: calc(10% + 22px);
 	transform: scale(1);
 	transition: transform 2s ease;
@@ -262,6 +262,7 @@ body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 	line-height: 22px;
 	color: #001d33 !important;
 	text-decoration: none;
+	font-weight: normal;
 }
 
 .global-menu__wrap ul li.active div svg {
