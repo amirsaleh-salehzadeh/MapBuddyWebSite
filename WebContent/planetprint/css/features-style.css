@@ -1,0 +1,147 @@
+.feature-icons img {
+	width: 44px;
+	height: 100%;
+}
+
+.feature-icons {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.feature-icons li {
+	display: inline-block;
+	text-align: center;
+}
+
+ul.feature-icons li a {
+	text-decoration: none;
+	display: block;
+	color: white !important;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+
+.feature-icons {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	-webkit-transform: translateY(5px);
+	transform: translateY(5px);
+}
+
+.feature-icons>li {
+	display: table-cell;
+	list-style: none;
+	text-align: center;
+	padding: 10px 10px 13px 10px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.feature-icons>li:before {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 120%;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition-duration: .25s;
+	border-radius: 5px 5px 0 0;
+}
+
+.feature-icons>li:hover:before {
+	-webkit-transform: translateY(70%);
+	transform: translateY(70%);
+}
+
+.feature-icons>li.active {
+	border-radius: 22px 22px 0 0;
+	color: #001d33 !important;
+	border: 2px solid white;
+	border-bottom: none;
+	font-weight: bold;
+}
+
+.feature-icons>li.active:before {
+	background-color: transparent;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.tab__content {
+	background-color: transparent;
+	position: relative;
+	border-radius: 5px;
+	color: white;
+	width: 66%;
+	margin: auto;
+}
+
+.tab__content>li {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	list-style: none;
+    text-align: justify;
+}
+
+.tab__content>li.active {
+	display: list-item;
+}
+
+.tab__content>li .content__wrapper {
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 11px;
+    text-align: justify;
+    color: white;
+}
+
+.tab__content>li .content__wrapper > div {
+    padding: 7px;
+}
+
+.content__wrapper h2 {
+	width: 100%;
+	text-align: center;
+	font-weight: 300;
+}
+
+.content__wrapper img {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+#geofencepath{
+	fill: transparent !important;
+    stroke: #001d33 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    stroke-width: 3px !important;
+    -webkit-animation: path-move 30s linear infinite;
+    animation: path-move 30s linear infinite;
+    stroke-dasharray: 11 !important;
+}
+
+
+@-webkit-keyframes path-move {
+  to {
+    stroke-dashoffset: 100%;
+  }
+}
+@keyframes trolley-path-move {
+  to {
+    stroke-dashoffset: 100%;
+  }
+}

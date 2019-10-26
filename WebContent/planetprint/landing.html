@@ -1,0 +1,217 @@
+<script type="text/javascript" src="assets/js/lib/highlight.pack.js"></script>
+<script type="text/javascript"
+	src="assets/js/lib/modernizr.custom.min.js"></script>
+
+<script type="text/javascript"
+	src="assets/js/lib/greensock/TweenMax.min.js"></script>
+<script type="text/javascript"
+	src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script type="text/javascript"
+	src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<link rel="stylesheet" href="css/landing.page.style.css" type="text/css">
+<!-- <link rel="stylesheet" href="assets/css/examples.css" type="text/css"> -->
+<div id="arrow-down">Workflow</div>
+<div class="page">
+	<!-- 	<section id="hero-1"> -->
+	<!-- 		<div class="container-parallax"></div> -->
+	<!-- 	</section> -->
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+				<section class="section">
+					<div id="parallax1" class="parallaxParent">
+						<div class="parallax-bg"></div>
+						<div class="landing-page-content-container"
+							id="first-section-content" style="top: 33%;">
+							<span class="largest-text">A Location-Aware Intelligent
+								Agent System</span> <span class="normal-text"> Transforming
+								customer experience through navigation & location-based service
+								management</span> <a href="#" data-role="none"
+								class="ui-btn ui-btn-green"
+								style="background-image: url(img/icons/improve.svg);">Free
+								Consult</a>
+						</div>
+					</div>
+				</section>
+				<script>
+					var controller = new ScrollMagic.Controller({
+						globalSceneOptions : {
+							triggerHook : "onEnter",
+							duration : "200%",
+							refreshInterval : 0
+						}
+					});
+				</script>
+				<section class="section">
+					<div class="spacer s0"></div>
+					<div id="parallax2" class="parallaxParent">
+						<div class="landing-page-content-container">
+							<div id="trigger1" class="spacer s0"></div>
+							<div id="reveal1" class="normal-text numbering">
+								<span>1</span>&nbsp;&nbsp;&nbsp;Digitise Space
+							</div>
+							<div class="reveal-elements" style="top: 122%">
+								<div class="normal-text">Convert outdoor and indoor floor
+									plans into a digital format.</div>
+								<div class="normal-text">Show buildings and space
+									utilisation type.</div>
+								<div class="normal-text">Give users the opportunity of
+									searching for location-based services just-in-time.</div>
+							</div>
+							<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+								style="background-image: url(img/icons/space.svg); margin-top: 22px;">Read
+								More</a>
+						</div>
+						<div class="parallax-bg"></div>
+					</div>
+					<script>
+						var revealElements = document
+								.getElementsByClassName("normal-text");
+						for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
+							new ScrollMagic.Scene({
+								triggerElement : revealElements[i], // y value not modified, so we can use element as trigger as well
+								offset : 90, // start a little later
+								triggerHook : 0.9,
+							}).setClassToggle(revealElements[i], "visible") // add class toggle
+							.addTo(controller);
+						}
+						new ScrollMagic.Scene({
+							triggerElement : "#trigger1",
+							triggerHook : 0.3, // show, when scrolled 10% into view
+							duration : "100%", // hide 10% before exiting view (80% + 10% from bottom)
+							offset : 90
+						}).setClassToggle("#reveal1", "visible") // add class to reveal
+						.addTo(controller);
+					</script>
+				</section>
+				<section class="section">
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering">
+							<span>2</span>&nbsp;&nbsp;&nbsp;Digitise Movement
+						</div>
+						<div class="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
+					</div>
+					<div class="planet">
+						<div class="path-wrapper">
+							<div class="bike">
+								<div id="bm">
+									<div class="umbrella-animation"></div>
+									<div class="bike__marker"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="parallax3" class="parallaxParent">
+						<div class="parallax-bg"></div>
+					</div>
+				</section>
+				<section class="section">
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering">
+							<span>3</span>&nbsp;&nbsp;&nbsp;Digitalise Things
+						</div>
+						<div class="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
+					</div>
+					<div id="parallax4" class="parallaxParent">
+						<div class="parallax-bg"
+							style="background-image: url(img/maps/iot.svg);"></div>
+					</div>
+					<div class="spacer s2"></div>
+				</section>
+				<section class="section">
+					<div class="landing-page-content-container">
+						<div id="reveal3" class="normal-text numbering">
+							<span>4</span>&nbsp;&nbsp;&nbsp;Digitise Assets & Services
+						</div>
+						<div class="reveal-elements" style="top: 122%">
+							<div class="normal-text">Capture the paths between the
+								spaces.</div>
+							<div class="normal-text">Optimise movements & route
+								selection</div>
+						</div>
+						<a href="#" data-role="button" class="ui-btn ui-btn-blue"
+							style="background-image: url(img/icons/road.svg); margin-top: 22px;">Read
+							More</a>
+					</div>
+					<div id="parallax5" class="parallaxParent">
+						<div class="parallax-bg"></div>
+					</div>
+					<div class="spacer s2"></div>
+				</section>
+				<script>
+					new ScrollMagic.Scene({
+						triggerElement : "#parallax1"
+					}).setTween("#parallax1 > div.parallax-bg", {
+						y : "80%",
+						ease : Linear.easeNone
+					}).addTo(controller);
+
+					new ScrollMagic.Scene({
+						triggerElement : "#parallax2"
+					}).setTween("#parallax2 > div.parallax-bg", {
+						y : "80%",
+						ease : Linear.easeNone
+					}).addTo(controller);
+
+					new ScrollMagic.Scene({
+						triggerElement : "#parallax3"
+					}).setTween("#parallax3 > div.parallax-bg", {
+						y : "80%",
+						ease : Linear.easeNone
+					}).addTo(controller);
+
+					new ScrollMagic.Scene({
+						triggerElement : "#parallax4"
+					}).setTween("#parallax4 > div.parallax-bg", {
+						y : "80%",
+						ease : Linear.easeNone
+					}).addTo(controller);
+					new ScrollMagic.Scene({
+						triggerElement : "#parallax5"
+					}).setTween("#parallax5 > div.parallax-bg", {
+						y : "80%",
+						ease : Linear.easeNone
+					}).addTo(controller);
+					const bike = document.querySelector('.bike');
+					const bmContainer = document.querySelector('#bm');
+
+					var animation = bodymovin
+							.loadAnimation({
+								container : bmContainer,
+								renderer : 'svg',
+								loop : true,
+								autoplay : true,
+								path : 'js/bike.json',
+							});
+
+					animation.setSpeed(1);
+					const bikeMarker = document.querySelector('.bike__marker');
+					const step = function() {
+
+						window.requestAnimationFrame(step);
+					};
+
+					window.requestAnimationFrame(step);
+				</script>
+				<div class="spacer s_viewport"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/tracking.js"></script>
+</div>
