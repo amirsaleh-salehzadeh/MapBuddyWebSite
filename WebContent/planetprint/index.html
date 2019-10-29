@@ -16,13 +16,14 @@
 <link rel="shortcut icon" href="favicon.ico">
 <!-- Styles -->
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" type="text/css" href="css/animation.css" />
 <link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
 	href="css/page.contents.style.css" />
 <link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/keyframes.css" />
 <link rel="stylesheet" type="text/css" href="css/sphere.css" />
+<link rel="stylesheet" type="text/css" href="css/3d.print.css" />
 <link rel="stylesheet" type="text/css" href="pater/pater.css" />
 <link rel="stylesheet" type="text/css" href="css/site.style.css" />
 </head>
@@ -48,9 +49,12 @@
 		</div>
 	</div>
 	<div class="mainBodyFrame content--demo-3 invisible">
-		<div class="sphere">
-		</div>
-		<div class="title-logo">
+		<!-- 		<div class="sphere"></div> -->
+		<div class="title-logo"></div>
+		<span class="logo-text">Planet Print</span>
+		<div class="container-planet-print">
+			<!-- 			<div class="printerbase"></div> -->
+			<!-- 			<div id="circle"></div> -->
 		</div>
 	</div>
 	<div id="page-load-container">
@@ -73,7 +77,7 @@
 		</div>
 		<div class="demo-button" onclick="showMobileViewDemo()">View
 			Demo</div>
-		<div id="page-load-content" class="mainBodyFrame"></div>
+		<div id="page-load-content" class="mainBodyFrame">https://codepen.io/JacobStone420/pen/dyEvl</div>
 		<!-- 		<div class="page-load-container title-logo"></div> -->
 		<!-- 		<span class="page-load-container logo-text">Planet</span> <span -->
 		<!-- 			class="page-load-container logo-text small-text">Smart -->
@@ -139,11 +143,12 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/demo.js"></script>
 <script src="js/easings.js"></script>
-<script src="js/demo3.js"></script>
+<script src="js/demo5.js"></script>
 <script src="js/site.js"></script>
-<script type="text/javascript" src="js/bodymovin.min.js"></script>
-<script type="text/javascript" src="js/anime.min.js"></script>
-
+<script type="text/javascript"
+	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<script type="text/javascript"
+	src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var tmpAnimation = 0;
@@ -153,14 +158,16 @@
 		$(".solitionsIcn").load("img/icons/solutions.svg")
 		$(".homeIcn").load("img/icons/home.svg")
 		$(".title-logo").load("img/logoBG.svg")
-		$("#page-load-content").html("")
+// 		$("#page-load-content").html("")
 		$('.coming-soon').css('display', 'none')
+		// 		$(".printerbase").load("img/planetPrint.svg")
 		$(".demo-button").load("img/icons/demo.svg", function() {
 			$(this).append("<span>View Demo</span>")
 		})
-		for (var i = 0; i < 40; i++) {
-			$(".sphere").append("<div></div>")
-		}
+
+		// 		for (var i = 0; i < 40; i++) {
+		// 			$(".sphere").append("<div></div>")
+		// 		}
 	});
 	$(window).bind("resize", function() {
 		// 		drawBackgroundSvg()
@@ -169,6 +176,26 @@
 		$(".frameLoding").fadeOut(2000);
 		// 		drawBackgroundSvg()
 		setTimeout(removeLoading, 800)
+		var $printerbase = $(".printerbase");
+		var svg = $printerbase.html();
+
+		for (i = 2; i < 13; i++) {
+			$(svg).attr("id", "path" + i).appendTo($printerbase);
+		}
+		drawSVG(0)
+		for (i = 1; i < 13; i++)
+			setTimeout(drawSVG, i * 2 * 1000, i)
 	});
+	function drawSVG(no) {
+		var paths = $("#path" + no + " path");
+		var tl = new TimelineMax();
+		paths.each(function(i, e) {
+			e.style.strokeDasharray = e.style.strokeDashoffset = e
+					.getTotalLength();
+		});
+		tl.staggerTo(paths, 30, {
+			strokeDashoffset : 0
+		}, 3);
+	}
 </script>
 </html>

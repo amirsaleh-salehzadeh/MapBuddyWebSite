@@ -1,0 +1,151 @@
+.container-planet-print {
+	position: absolute;
+	top: 5%;
+	left: 7%;
+}
+
+.printerbase {
+	-webkit-transform: rotate(0deg) skew(30deg);
+	transform: rotate(0deg) skew(30deg);
+}
+
+.printerbase svg {
+	background: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 333px;
+	height: auto;
+	-webkit-transform: translate(-100%, -100%);
+	transform: translate(-100%, -100%);
+	overflow: visible;
+	-webkit-filter: drop-shadow(-5px 2px 1px rgba(0, 0, 0, 0.1));
+	filter: drop-shadow(-5px 2px 1px rgba(0, 0, 0, 0.1));
+}
+
+.printerbase svg path {
+	fill: none !important;
+	stroke: rgb(255, 38, 0) !important;
+	stroke-width: 1px;
+	opacity: 1;
+	stroke-dashoffset: 1002;
+	stroke-dasharray: 1001;
+}
+
+.printerbase svg:nth-child(1) {
+	left: 224px;
+	top: 101px;
+}
+
+.printerbase svg:nth-child(1) path {
+	stroke: rgb(150, 33, 146) !important;
+}
+
+.printerbase svg:nth-child(2) {
+	left: 222px;
+	top: 103px;
+}
+
+.printerbase svg:nth-child(2) path {
+	stroke: rgb(143, 11, 155) !important;
+}
+
+.printerbase svg:nth-child(3) {
+	left: 220px;
+	top: 105px;
+}
+
+.printerbase svg:nth-child(3) path {
+	stroke: rgb(82, 40, 204) !important;
+}
+
+.printerbase svg:nth-child(4) {
+	left: 218px;
+	top: 107px;
+	stroke: rgb(4, 51, 244) !important;
+}
+
+.printerbase svg:nth-child(4) path {
+	stroke: rgb(4, 51, 244) !important;
+}
+
+.printerbase svg:nth-child(5) {
+	left: 216px;
+	top: 109px;
+}
+
+.printerbase svg:nth-child(5) path {
+	stroke: rgb(0, 146, 146) !important;
+}
+
+.printerbase svg:nth-child(6) {
+	left: 214px;
+	top: 111px;
+}
+
+.printerbase svg:nth-child(6) path {
+	stroke: rgb(0, 249, 0) !important;
+}
+
+.printerbase svg:nth-child(7) {
+	left: 212px;
+	top: 113px;
+}
+
+.printerbase svg:nth-child(7) path {
+	stroke: rgb(202, 250, 0) !important;
+}
+
+.printerbase svg:nth-child(8) {
+	left: 210px;
+	top: 115px;
+}
+
+.printerbase svg:nth-child(8) path {
+	stroke: rgb(255, 251, 0) !important;
+}
+
+.printerbase svg:nth-child(9) {
+	left: 208px;
+	top: 117px;
+}
+
+.printerbase svg:nth-child(9) path {
+	stroke: rgb(255, 199, 0) !important;
+}
+
+.printerbase svg:nth-child(10) {
+	left: 206px;
+	top: 119px;
+}
+
+.printerbase svg:nth-child(10) path {
+	stroke: rgb(255, 147, 0) !important;
+}
+
+.printerbase svg:nth-child(11) {
+	left: 204px;
+	top: 121px;
+}
+
+.printerbase svg:nth-child(11) path {
+	stroke: rgb(255, 84, 2) !important;
+}
+
+.printerbase svg:nth-child(12) {
+	left: 202px;
+	top: 123px;
+}
+
+.printerbase svg:nth-child(12) path {
+	stroke: rgb(255, 38, 0) !important;
+}
+
+.printerbase svg:nth-child(13) {
+	left: 202px;
+	top: 123px;
+}
+
+.printerbase svg:nth-child(13) path {
+	stroke: #ff0080 !important;
+}
