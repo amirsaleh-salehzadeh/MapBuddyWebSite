@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Planet Print</title>
 
-<!-- Behavioral Meta Data -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Expires" content="0">
-<meta http-equiv="Cache-Control"
-	content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta name="theme-color" content="#f1fffe">
-<link rel="shortcut icon" href="favicon.ico">
-<!-- Styles -->
-<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="css/page.contents.style.css" />
-<link rel="stylesheet" type="text/css" href="css/demo.css" />
-<link rel="stylesheet" type="text/css" href="css/keyframes.css" />
-<link rel="stylesheet" type="text/css" href="css/sphere.css" />
-<link rel="stylesheet" type="text/css" href="css/3d.print.css" />
-<link rel="stylesheet" type="text/css" href="pater/pater.css" />
-<link rel="stylesheet" type="text/css" href="css/site.style.css" />
+<head>
+	<meta charset="utf-8">
+	<title>Planet Print</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta name="theme-color" content="#f1fffe">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/page.contents.style.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/keyframes.css" />
+	<link rel="stylesheet" type="text/css" href="css/sphere.css" />
+	<link rel="stylesheet" type="text/css" href="css/3d.print.css" />
+	<link rel="stylesheet" type="text/css" href="pater/pater.css" />
+	<link rel="stylesheet" type="text/css" href="css/site.style.css" />
 </head>
+
 <body class="demo-3">
 	<div class="frameLoding">
 		<div class="frame">
@@ -36,12 +35,9 @@
 				<div class="dot-3"></div>
 				<div class="loading">
 					<div class="loading-text">
-						<span class="loading-text-words">L</span> <span
-							class="loading-text-words">O</span> <span
-							class="loading-text-words">A</span> <span
-							class="loading-text-words">D</span> <span
-							class="loading-text-words">I</span> <span
-							class="loading-text-words">N</span> <span
+						<span class="loading-text-words">L</span> <span class="loading-text-words">O</span> <span
+							class="loading-text-words">A</span> <span class="loading-text-words">D</span> <span
+							class="loading-text-words">I</span> <span class="loading-text-words">N</span> <span
 							class="loading-text-words">G</span>
 					</div>
 				</div>
@@ -55,25 +51,12 @@
 		<div class="container-planet-print">
 			<!-- 			<div class="printerbase"></div> -->
 			<!-- 			<div id="circle"></div> -->
-		</div>
+			You Never Get a Second Chance to Make a <br> <strong>Great First Impression </strong> </div>
 	</div>
 	<div id="page-load-container">
 		<div id="header">
-			<img src="img/icons/close.png" width="48px" height="48px"
-				class="new-page-close-button"
+			<img src="img/icons/close.png" width="48px" height="48px" class="new-page-close-button"
 				onclick="$('#page-load-container').removeClass('show')">
-		</div>
-		<div id="MSvideoContainer">
-			<div id="MSvideoContent">
-				<iframe width="100%" height="100%" src="index.html"
-					style="border: none;" frameborder="0" webkitallowfullscreen
-					class="iframes-class" mozallowfullscreen allowfullscreen
-					id="externallinkmb"></iframe>
-			</div>
-			<img src="img/icons/return.png" width="48px" height="48px"
-				class="new-page-close-button"
-				onclick="$('#MSvideoContainer').removeClass('show');"
-				style="display: none; z-index: 1000;">
 		</div>
 		<div class="demo-button" onclick="showMobileViewDemo()">View
 			Demo</div>
@@ -104,38 +87,39 @@
 		<div class="global-menu__wrap">
 			<ul>
 				<li class="global-menu__item global-menu__item--demo-3"
-					onclick="loadPage('landing.html'); $('.hamburger').trigger('click');"><div
-						class="homeIcn"></div> <a href="#"><span>Home</span></a></li>
+					onclick="loadPage('landing.html'); $('.hamburger').trigger('click');">
+					<div class="homeIcn"></div> <a href="#"><span>Home</span></a>
+				</li>
+				<li class="global-menu__item global-menu__item--demo-3" onclick="loadPage('pages/products/products.html')">
+					<div class="solitionsIcn"></div> <a href="#"><span>Features</span></a>
+				</li>
+				<li class="global-menu__item global-menu__item--demo-3" onclick="loadPage('pages/industries/industries.html')">
+					<div class="productsIcn"></div> <a href="#"><span>Solutions</span></a>
+				</li>
 				<li class="global-menu__item global-menu__item--demo-3"
-					onclick="loadPage('pages/products/products.html')"><div
-						class="solitionsIcn"></div> <a href="#"><span>Features</span></a></li>
-				<li class="global-menu__item global-menu__item--demo-3"
-					onclick="loadPage('pages/industries/industries.html')"><div
-						class="productsIcn"></div> <a href="#"><span>Solutions</span></a></li>
-				<li class="global-menu__item global-menu__item--demo-3"
-					onclick="loadPage('services.html'); $('.coming-soon').css('display','block')"><div
-						class="servicesIcn"></div> <a href="#"><span>Services</span></a></li>
-				<li onclick="loadPage('contact.html')"
-					class="global-menu__item global-menu__item--demo-3"><div
-						class="contactsIcn"></div> <a href="#"><span>Contact</span></a></li>
+					onclick="loadPage('services.html'); $('.coming-soon').css('display','block')">
+					<div class="servicesIcn"></div> <a href="#"><span>Services</span></a>
+				</li>
+				<li onclick="loadPage('contact.html')" class="global-menu__item global-menu__item--demo-3">
+					<div class="contactsIcn"></div> <a href="#"><span>Contact</span></a>
+				</li>
 			</ul>
 		</div>
 	</div>
 	<div class="page-background">
 		<svg class="triangles">
-    <polygon class="triangle-a" />
-  </svg>
+			<polygon class="triangle-a" />
+		</svg>
 		<svg class="triangles">
-        <polygon class="triangle-b" />
-  </svg>
+			<polygon class="triangle-b" />
+		</svg>
 	</div>
 
-	<svg class="shape-overlays" viewBox="0 0 100 100"
-		preserveAspectRatio="none">
-					<path class="shape-overlays__path"></path>
-					<path class="shape-overlays__path"></path>
-					<path class="shape-overlays__path"></path>
-				</svg>
+	<svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+		<path class="shape-overlays__path"></path>
+		<path class="shape-overlays__path"></path>
+		<path class="shape-overlays__path"></path>
+	</svg>
 	<div class="footer-copyright">© 2019 Planet Smart Solutions</div>
 </body>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -145,23 +129,21 @@
 <script src="js/easings.js"></script>
 <script src="js/demo5.js"></script>
 <script src="js/site.js"></script>
-<script type="text/javascript"
-	src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-<script type="text/javascript"
-	src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(function () {
 		var tmpAnimation = 0;
 		$(".productsIcn").load("img/icons/features.svg")
 		$(".servicesIcn").load("img/icons/services.svg")
 		$(".contactsIcn").load("img/icons/contact.svg")
 		$(".solitionsIcn").load("img/icons/solutions.svg")
 		$(".homeIcn").load("img/icons/home.svg")
-		$(".title-logo").load("img/logoBG.svg")
-// 		$("#page-load-content").html("")
+		// $(".title-logo").load("img/logoBG.svg")
+		// 		$("#page-load-content").html("")
 		$('.coming-soon').css('display', 'none')
 		// 		$(".printerbase").load("img/planetPrint.svg")
-		$(".demo-button").load("img/icons/demo.svg", function() {
+		$(".demo-button").load("img/icons/demo.svg", function () {
 			$(this).append("<span>View Demo</span>")
 		})
 
@@ -169,10 +151,10 @@
 		// 			$(".sphere").append("<div></div>")
 		// 		}
 	});
-	$(window).bind("resize", function() {
+	$(window).bind("resize", function () {
 		// 		drawBackgroundSvg()
 	});
-	$(window).load(function() {
+	$(window).load(function () {
 		$(".frameLoding").fadeOut(2000);
 		// 		drawBackgroundSvg()
 		setTimeout(removeLoading, 800)
@@ -189,13 +171,14 @@
 	function drawSVG(no) {
 		var paths = $("#path" + no + " path");
 		var tl = new TimelineMax();
-		paths.each(function(i, e) {
+		paths.each(function (i, e) {
 			e.style.strokeDasharray = e.style.strokeDashoffset = e
-					.getTotalLength();
+				.getTotalLength();
 		});
 		tl.staggerTo(paths, 30, {
-			strokeDashoffset : 0
+			strokeDashoffset: 0
 		}, 3);
 	}
 </script>
+
 </html>

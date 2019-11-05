@@ -1,7 +1,12 @@
 .container-planet-print {
-	position: absolute;
-	top: 5%;
-	left: 7%;
+position: absolute;
+    top: 22%;
+    left: 22%;
+    width: 539px;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    filter: drop-shadow(2px 4px 9px black);
 }
 
 .printerbase {
