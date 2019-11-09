@@ -101,7 +101,7 @@ function loadingIntoDiv() {
 
 	$.ajax({
 		type : "GET",
-		url : "img/ambrosia/pizza.svg",
+		url : "planetprint/img/colorfulbg2.svg",
 		dataType : 'html',
 		beforeSend : function() {
 			console.log('loading')

@@ -14,7 +14,6 @@ function loadPage(pageAddress) {
 }
 
 function removeLoading() {
-	$(".page-background").fadeIn(8000)
 	$('.invisible').removeClass("invisible")
 	$(".frameLoding").remove()
 	$('.large-text').fadeIn(2000)

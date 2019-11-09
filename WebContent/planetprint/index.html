@@ -17,7 +17,6 @@
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" type="text/css" href="css/cachu-slider.min.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/page.contents.style.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/keyframes.css" />
 	<link rel="stylesheet" type="text/css" href="css/sphere.css" />
@@ -45,27 +44,80 @@
 		</div>
 	</div>
 	<div class="mainBodyFrame content--demo-3 invisible">
-		<!-- 		<div class="sphere"></div> -->
 		<div class="title-logo"></div>
 		<span class="logo-text">Planet Print</span>
-		<div class="container-planet-print">
-			<!-- 			<div class="printerbase"></div> -->
-			<!-- 			<div id="circle"></div> -->
-			You Never Get a Second Chance to Make a <br> <strong>Great First Impression </strong> </div>
-	</div>
-	<div id="page-load-container">
-		<div id="header">
-			<img src="img/icons/close.png" width="48px" height="48px" class="new-page-close-button"
-				onclick="$('#page-load-container').removeClass('show')">
+		<div class="cachu__container">
+			<div class="cachu__sections">
+				<section class="cachu__section">
+					<div class="page-background">
+						<span>
+							<h1>You Never Get a Second Chance <br><br></h1> <strong id="message-first-impression">To
+								Make a
+								Great First Impression
+							</strong><strong id="hoverme" class="text-box">Tap Me</strong>
+						</span>
+						<div class="mouse_wave" style="opacity: 0;">
+							<h2 class="text-box" style="top: -50%;">We are professional in creating relationships with and
+								satisfying your
+								customers by offering a wide range of <strong>printing, signage, design
+									and branded products</strong></h2><br><br><br><br>
+							<span class="scroll_arrows one"></span>
+							<span class="scroll_arrows two"></span>
+							<span class="scroll_arrows three"></span>
+							<br>
+							Scroll down
+						</div>
+					</div>
+				</section>
+				<section class="cachu__section">
+					<div class="second-sectionf">
+					</div>
+					<h2 class="text-box" style="left: 11%;">
+						<strong class="title">Print Services<br><br></strong>
+						We have gathered highly skilled experts and use the latest
+						technology to <strong>gaurantee</strong> providing the best digital and litho print quality
+						along with
+						screen printing,
+						embroidery, heat press
+						and
+						pad printing.</h2>
+					<div class="second-section-bg">
+						<img src="img/printer.png">
+						<img src="img/design-graphics.png"
+							style="position: absolute; left: -17%; bottom: 0; width: 77%;height: auto;">
+						<div class=" mouse_wave">
+							<span class="scroll_arrows one"></span>
+							<span class="scroll_arrows two"></span>
+							<span class="scroll_arrows three"></span>
+							<br>
+							Scroll down
+						</div>
+					</div>
+					<h2 class="text-box" style="bottom: 0; right: 1%; top: unset; left: unset;z-index: 22;">
+						<strong class="title">Graphics Design<br><br></strong>
+						We have gathered highly skilled experts and use the latest
+						technology to <strong>gaurantee</strong> providing the best digital and litho print quality
+						along with
+						screen printing,
+						embroidery, heat press
+						and
+						pad printing.</h2>
+					<div class="second-section">
+					</div>
+				</section>
+				<section class="cachu__section">
+					<div class="third-section-bg">
+						<img src="img/printer.png">
+					</div>
+					<div class="third-section">
+					</div>
+				</section>
+			</div>
 		</div>
-		<div class="demo-button" onclick="showMobileViewDemo()">View
-			Demo</div>
-		<div id="page-load-content" class="mainBodyFrame">https://codepen.io/JacobStone420/pen/dyEvl</div>
-		<!-- 		<div class="page-load-container title-logo"></div> -->
-		<!-- 		<span class="page-load-container logo-text">Planet</span> <span -->
-		<!-- 			class="page-load-container logo-text small-text">Smart -->
-		<!-- 			Solutions</span> -->
 	</div>
+	<!-- <div id="page-load-container ">
+		<div id="page-load-content" class="mainBodyFrame">https://codepen.io/JacobStone420/pen/dyEvl</div>
+	</div> -->
 	<div class="hamburger hamburger--demo-3 js-hover invisible">
 		<div class="hamburger__line hamburger__line--01">
 			<div class="hamburger__line-in hamburger__line-in--01"></div>
@@ -90,10 +142,12 @@
 					onclick="loadPage('landing.html'); $('.hamburger').trigger('click');">
 					<div class="homeIcn"></div> <a href="#"><span>Home</span></a>
 				</li>
-				<li class="global-menu__item global-menu__item--demo-3" onclick="loadPage('pages/products/products.html')">
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/products/products.html')">
 					<div class="solitionsIcn"></div> <a href="#"><span>Features</span></a>
 				</li>
-				<li class="global-menu__item global-menu__item--demo-3" onclick="loadPage('pages/industries/industries.html')">
+				<li class="global-menu__item global-menu__item--demo-3"
+					onclick="loadPage('pages/industries/industries.html')">
 					<div class="productsIcn"></div> <a href="#"><span>Solutions</span></a>
 				</li>
 				<li class="global-menu__item global-menu__item--demo-3"
@@ -106,15 +160,6 @@
 			</ul>
 		</div>
 	</div>
-	<div class="page-background">
-		<svg class="triangles">
-			<polygon class="triangle-a" />
-		</svg>
-		<svg class="triangles">
-			<polygon class="triangle-b" />
-		</svg>
-	</div>
-
 	<svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
 		<path class="shape-overlays__path"></path>
 		<path class="shape-overlays__path"></path>
@@ -130,7 +175,23 @@
 <script src="js/demo5.js"></script>
 <script src="js/site.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+<script src="js/cachu-slider.min.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		var options = {
+			disableMouseEvents: false, // Disable mousewheel event listening.
+			disableKeyboardEvents: false, // Disable keyboard event listening.
+			disableTouchEvents: false, // Disable event listening on touchable device (Swipe).
+			scrollingLoop: true, // Loop after reaching the end.
+			navigationEnabled: false, // Enable navigation buttons
+			navigationPosition: 'left' // The Navigation's position
+		};
+		var slider = new Cachu(document.querySelector('.cachu__container'),
+			options);
+		slider.run();
+
+	});
+</script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		var tmpAnimation = 0;
@@ -139,20 +200,44 @@
 		$(".contactsIcn").load("img/icons/contact.svg")
 		$(".solitionsIcn").load("img/icons/solutions.svg")
 		$(".homeIcn").load("img/icons/home.svg")
-		// $(".title-logo").load("img/logoBG.svg")
-		// 		$("#page-load-content").html("")
-		$('.coming-soon').css('display', 'none')
-		// 		$(".printerbase").load("img/planetPrint.svg")
-		$(".demo-button").load("img/icons/demo.svg", function () {
-			$(this).append("<span>View Demo</span>")
+		$(".second-section").load("img/colorfulbg2.svg")
+		$(".second-sectionf").load("img/colorfulbg2f.svg")
+		var scratchcnt = 5;
+		$("#hoverme").click(function () {
+			if (scratchcnt <= -1) {
+				return
+			}
+			var filterVal = 'blur(' + scratchcnt + 'px)';
+			$(this).css("opacity", $(this).css("opacity") - 0.07)
+			$(".page-background span strong").css('filter', filterVal)
+				.css('webkitFilter', filterVal)
+				.css('mozFilter', filterVal)
+				.css('oFilter', filterVal)
+				.css('msFilter', filterVal);
+			if (scratchcnt == 0) {
+				TweenMax.fromTo($(".page-background span"), 3,
+					{ scale: 0 },
+					{
+						scale: 1,
+						ease: Bounce.easeOut
+					})
+				TweenMax.to($(".mouse_wave"), 2,
+					{
+						opacity: 1,
+						ease: Bounce.easeOut
+					}, 3)
+				TweenMax.to($(".page-background"), 4,
+					{
+						css: {
+							"background-size": "66%"
+						},
+						ease: Bounce.easeOut
+					}, 3)
+				$("#hoverme").remove()
+			}
+			scratchcnt -= 1
 		})
 
-		// 		for (var i = 0; i < 40; i++) {
-		// 			$(".sphere").append("<div></div>")
-		// 		}
-	});
-	$(window).bind("resize", function () {
-		// 		drawBackgroundSvg()
 	});
 	$(window).load(function () {
 		$(".frameLoding").fadeOut(2000);
@@ -178,6 +263,53 @@
 		tl.staggerTo(paths, 30, {
 			strokeDashoffset: 0
 		}, 3);
+	}
+	$(".cachu__sections")
+		.on('transitionend webkitTransitionEnd oTransitionEnd',
+			function () {
+				var tl = new TimelineLite(), path = $(
+					this).find("svg").find("g")
+					.children();
+				var tl2 = new TimelineLite();
+				tl2.set(".second-section-bg", {
+					bottom: "-100%",
+					ease: Bounce.easeOut
+				});
+				$.each($(path), function (i, el) {
+					tl.set($(this), {
+						x: '+='
+							+ getRandom(-666, 666),
+						y: '+=' + getRandom(-666, 666),
+						rotation: '+=' + getRandom(-777, 777),
+						scale: 0,
+						opacity: 0,
+						ease: Bounce.easeIn
+					});
+				});
+				$(".cachu__section")
+					.each(function () {
+						if ($(this).css("visibility") != "visible")
+							return true
+						if ($(this).css("visibility") == "visible" && $(this).find("div.second-section-bg").length) {
+							var stagger_opts_to = {
+								x: 0,
+								y: 0,
+								opacity: 1,
+								scale: 1,
+								rotation: 0,
+								ease: Power4.easeOut
+							};
+							tl.staggerTo(path, 3,
+								stagger_opts_to,
+								0);
+							tl2.to(".second-section-bg", 2, {
+								bottom: "0"
+							}, 2.8);
+						}
+					})
+			});
+	function getRandom(min, max) {
+		return Math.random() * (max - min) + min;
 	}
 </script>
 
