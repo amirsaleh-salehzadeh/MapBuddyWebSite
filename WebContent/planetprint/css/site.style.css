@@ -12,24 +12,22 @@ html {
 	text-shadow: none;
 	/*     background-image: linear-gradient(to left, #ffffff, #ff008d30, #ffffff); */
 	overflow: hidden !important;
-	background: url(../img/bgplanet.jpeg);
+	/* 	background: url(../img/bgplanet.jpeg); */
+	background: url(../img/planet-background-1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background-repeat: no-repeat;
 }
 
-body,
-.ui-page,
-body.ui-mobile-viewport,
-div.ui-mobile-viewport {
+body, .ui-page, body.ui-mobile-viewport, div.ui-mobile-viewport {
 	overflow-x: hidden;
 	overflow-y: hidden;
 	overflow: hidden;
 }
-
 
 .frameLoding {
 	position: fixed;
@@ -75,9 +73,7 @@ div.ui-mobile-viewport {
 	left: 90px;
 }
 
-.dot-1,
-.dot-2,
-.dot-3 {
+.dot-1, .dot-2, .dot-3 {
 	position: absolute;
 	z-index: 3;
 	width: 30px;
@@ -88,8 +84,10 @@ div.ui-mobile-viewport {
 	border-radius: 50%;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
-	-webkit-animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-	animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+	-webkit-animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+		infinite alternate;
+	animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite
+		alternate;
 }
 
 .dot-2 {
@@ -98,8 +96,10 @@ div.ui-mobile-viewport {
 	height: 60px;
 	top: 80px;
 	left: 80px;
-	-webkit-animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-	animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+	-webkit-animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+		infinite alternate;
+	animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite
+		alternate;
 }
 
 .dot-3 {
@@ -108,8 +108,10 @@ div.ui-mobile-viewport {
 	height: 90px;
 	top: 65px;
 	left: 65px;
-	-webkit-animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-	animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+	-webkit-animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+		infinite alternate;
+	animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite
+		alternate;
 }
 
 .loading {
@@ -246,7 +248,7 @@ div.ui-mobile-viewport {
 	vertical-align: middle;
 	font-size: 22px;
 	line-height: 22px;
-	color: #001d33 !important;
+	color: #ff007d !important;
 	text-decoration: none;
 	font-weight: normal;
 }
@@ -286,17 +288,14 @@ span.logo-text {
 	left: 10%;
 	transform: translateX(-50%) translateY(-50%);
 	z-index: 1;
-
 }
 
-.second-section svg,
-.second-sectionf svg {
+.second-section svg, .second-sectionf svg {
 	width: 100%;
 	height: auto;
 }
 
-.second-section,
-.second-sectionf {
+.second-section, .second-sectionf {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -331,7 +330,6 @@ span.logo-text {
 	background-repeat: no-repeat;
 }
 
-
 .page-background {
 	position: absolute;
 	z-index: 0;
@@ -348,8 +346,7 @@ span.logo-text {
 	color: white;
 }
 
-.page-background span,
-.mouse_wave, h2 {
+.page-background span, .mouse_wave, h2 {
 	position: absolute;
 	left: 1%;
 	top: 13%;
@@ -361,17 +358,15 @@ span.logo-text {
 .page-background span h1 {
 	font-size: 22px;
 	margin: 0;
-
 }
 
 .text-box {
-    background: #411333e0;
-    border-radius: 11px;
-    padding: 7px;
-    border: 1px solid #721c5c;
-    width: 428px;
+	background: #411333e0;
+	border-radius: 11px;
+	padding: 7px;
+	border: 1px solid #721c5c;
+	width: 428px;
 }
-
 
 h2 {
 	font-size: 16px;
@@ -404,28 +399,29 @@ h2 {
 	-ms-transition: opacity .3s;
 	width: 100%;
 	text-align: center;
+	z-index: 10;
 }
 
-.page-background span strong#hoverme::after {
-	position: absolute;
-	content: '';
-	background-image: url(../img/coin.svg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 100%;
-	height: 48px;
-	width: 48px;
-	top: 22px;
-	transform: rotateZ(45deg);
-	left: 0;
-	animation: cubic-bezier(1, 0.01, 1, 1) infinite infinite alternate;
-	animation-name: run;
-	animation-duration: 3s;
-	-webkit-animation: cubic-bezier(1, 0.01, 1, 1) infinite infinite alternate;
-	-webkit-animation-name: run;
-	-webkit-animation-duration: 3s;
-}
-
+/* .page-background span strong#hoverme::after { */
+/* 	position: absolute; */
+/* 	content: ''; */
+/* 	background-image: url(../img/coin.svg); */
+/* 	background-size: cover; */
+/* 	background-repeat: no-repeat; */
+/* 	background-position: 100%; */
+/* 	height: 48px; */
+/* 	width: 48px; */
+/* 	top: 22px; */
+/* 	transform: rotateZ(45deg); */
+/* 	left: 0; */
+/* 	animation: cubic-bezier(1, 0.01, 1, 1) infinite infinite alternate; */
+/* 	animation-name: run; */
+/* 	animation-duration: 3s; */
+/* 	-webkit-animation: cubic-bezier(1, 0.01, 1, 1) infinite infinite */
+/* 		alternate; */
+/* 	-webkit-animation-name: run; */
+/* 	-webkit-animation-duration: 3s; */
+/* } */
 .second-section-bg {
 	position: absolute;
 	z-index: 1;
@@ -435,7 +431,6 @@ h2 {
 	text-align: right;
 	bottom: -100%;
 }
-
 
 .second-section-bg img {
 	height: 80%;
@@ -468,9 +463,7 @@ h2 {
 	margin-top: 1px;
 }
 
-.one,
-.two,
-.three {
+.one, .two, .three {
 	-webkit-animation: mouse-wave 1s infinite;
 	-moz-animation: mouse-wave 1s infinite;
 }
@@ -495,57 +488,88 @@ h2 {
 	margin-top: -6px;
 }
 
+.second-section-text {
+	left: 11%;
+}
 
-
-@media (max-width : 700px) {
+@media ( max-width : 700px) {
 	.mainBodyFrame {
 		height: 94%;
 		width: 90%;
 		top: 3%;
 		left: 5%;
-		box-shadow: 0px 0px 100px -50px #002142;
+		box-shadow: 0px 0px 100px -50px #8A54A2;
+		background: #0b02545c;
 	}
-
+	.text-box {
+		background: #411333ad;
+	}
+	.ui-page {
+		background-position: top;
+	}
+	.page-background span, .text-box, h2, .mouse_wave {
+		width: 98%;
+	}
+	.mouse_wave span.scroll_arrows {
+		width: 16px;
+		margin: 0;
+	}
+	.mouse_wave {
+		text-align: left;
+		color: transparent;
+	}
+	.page-background {
+		/* 		background-size: 100%; */
+		bottom: 0;
+		background-repeat: no-repeat;
+		background-position: 98% 97%;
+		filter: drop-shadow(-33px -33px 35px #ff00b166);
+		color: white;
+	}
+	h2 {
+		font-size: 14px;
+	}
+	.second-section-text {
+		left: 1%;
+		top: 22%;
+	}
+	.second-section, .second-sectionf {
+		top: unset;
+	}
+	.second-section-bg img {
+		width: 80%;
+		height: auto;
+	}
+	.second-section-bg {
+		height: unset;
+	}
+	.second-sectionf .text-box {
+		left: 0 !important;
+	}
+	.third-section-bg img {
+		right: -25%;
+		width: 150% !important;
+	}
 	.global-menu__wrap ul {
 		margin: auto;
 		border-radius: 0 0 0 22px;
 		padding: 0;
 	}
-
 	.global-menu__wrap ul li {
 		padding: 7px;
 		min-width: fit-content;
 	}
-
 	.global-menu__wrap ul li a {
 		font-size: 17px;
 		font-weight: normal;
 	}
-
 	.global-menu__wrap ul li div svg {
 		transform: scale(0.7);
 	}
-
-	div.title-logo {
-		position: absolute;
-		width: 66px;
-		margin: 11px;
-		background-size: contain;
-		top: 7px;
-		left: 7px;
-		margin: 0;
-	}
-
-	.title-logo svg {
-		height: 77px;
-		width: auto;
-	}
-
 	.small-text {
 		font-size: 17px;
 		top: 0;
 	}
-
 	.page-contents {
 		top: 44px;
 		overflow-y: scroll;
@@ -554,14 +578,27 @@ h2 {
 		padding: 0;
 		padding-top: 7px;
 	}
-
 	.menu-bar-icon {
 		display: block;
 	}
-
 	.hamburger {
 		top: 2%;
 		right: 3%;
+		border: none;
+		background-color: transparent;
+	}
+	.hamburger__line-in::before, .hamburger__line-in::after {
+		background-color: #ff56ea;
+	}
+	span.logo-text {
+		text-shadow: 11px 11px 25px #e198e6, 0 40px 60px #d062d2;
+		font-size: 44px;
+		top: 0;
+		left: 0;
+		transform: translateX(0%) translateY(0%);
+	}
+	.page-background span strong {
+		line-height: 33px;
 	}
 }
 

@@ -207,15 +207,15 @@
 }
 
 .shape-overlays__path:nth-of-type(1) {
-	fill: #001d33;
+	fill: #ff00a7;
 }
 
 .shape-overlays__path:nth-of-type(2) {
-	fill: #008eff;
+	fill: #ca54c2;
 }
 
 .shape-overlays__path:nth-of-type(3) {
-	fill: white;
+	fill: #400042;
 }
 
 .shape-overlays__path:nth-of-type(4) {
