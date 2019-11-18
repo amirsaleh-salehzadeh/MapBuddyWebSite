@@ -308,7 +308,7 @@ span.logo-text {
 }
 
 .footer-copyright {
-	font-size: 12px;
+	font-size: 9px;
 	position: fixed;
 	bottom: 2px;
 	left: 11px;
@@ -612,8 +612,8 @@ h2 {
 	bottom: 2px;
 	content: ' ';
 	background-size: 11px 11px;
-	width: 14px;
-	height: 14px;
+    width: 11px;
+    height: 11px;
 	background-size: contain;
 }
 }
