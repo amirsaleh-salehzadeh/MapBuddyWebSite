@@ -18,6 +18,10 @@
 		$(document).ready(function () {
 			windowLayoutFitSize()
 		});
+		function widthCalc() {
+			var x = $(window).width();
+			// x = width - 1.56*x
+		}
 	</script>
 </head>
 
@@ -31,13 +35,13 @@
 				<li><img src="img/icons/contact.svg"><span>Contact Us</span></li>
 			</ul>
 			<ul class="menu-items menu-bottom">
-				<li><img src="img/icons/trophy.svg"><span>Sign Up</span></li>
+				<li id="sign-up-btn"><img src="img/icons/trophy.svg"><span>Sign Up</span></li>
 				<li><img src="img/icons/document.svg"><span>Rules</span></li>
 				<li><img src="img/icons/history.svg"><span>History</span></li>
 				<li><img src="img/icons/select.svg"><span>Resource</span></li>
 				<li><img src="img/icons/information.svg"><span>FAQ's</span></li>
 			</ul>
-			<div class="page-content-area"></div>
+			<div class="page-content"></div>
 		</div>
 	</div>
 </body>
