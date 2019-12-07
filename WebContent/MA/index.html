@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>Math Art</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/math.js"></script>
+	<script>
+		function windowLayoutFitSize() {
+			var frameWidth = $("#main-frame").width();
+			$(".menu-items").each(function () {
+				$(this).css("left", (frameWidth - $(this).width()) / 2)
+			})
+		}
+		$(window).bind('resize', function () {
+			windowLayoutFitSize()
+		});
+		$(document).ready(function () {
+			windowLayoutFitSize()
+		});
+	</script>
+</head>
+
+<body>
+	<div id="main-body">
+		<div id="main-frame">
+			<ul class="menu-items menu-top">
+				<li><img src="img/icons/home.svg"><span>Home</span></li>
+				<li><img src="img/icons/profile.svg"><span>About Us</span></li>
+				<li><img src="img/icons/art-gallery.svg"><span>Gallery</span></li>
+				<li><img src="img/icons/contact.svg"><span>Contact Us</span></li>
+			</ul>
+			<ul class="menu-items menu-bottom">
+				<li><img src="img/icons/trophy.svg"><span>Sign Up</span></li>
+				<li><img src="img/icons/document.svg"><span>Rules</span></li>
+				<li><img src="img/icons/history.svg"><span>History</span></li>
+				<li><img src="img/icons/select.svg"><span>Resource</span></li>
+				<li><img src="img/icons/information.svg"><span>FAQ's</span></li>
+			</ul>
+			<div class="page-content-area"></div>
+		</div>
+	</div>
+</body>
+
+</html>

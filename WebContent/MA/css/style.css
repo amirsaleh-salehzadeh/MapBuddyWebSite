@@ -1,0 +1,105 @@
+	body {
+		font-family: sans-serif !important;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+
+	canvas {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+	}
+
+	#main-body {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		/* background: #174c66; */
+		border: none;
+		z-index: 1;
+	}
+
+	#main-frame {
+		position: absolute;
+		width: 77%;
+		height: 77%;
+		left: 11.5%;
+		top: 11.5%;
+		border-radius: 33px;
+		box-shadow: 0px 0px 99px -33px rgb(54, 100, 122);
+		background: rgb(255, 255, 255);
+	}
+
+	.menu-items {
+		list-style: none;
+		display: flex;
+		position: absolute;
+		margin: auto;
+		padding: 0;
+	}
+
+	.menu-bottom {
+		bottom: 0;
+	}
+
+	.menu-items li {
+		margin: 0px 11px;
+		border-bottom: 1px solid rgb(175, 208, 233);
+		padding: 11px 33px;
+		border-radius: 0 0 22px 22px;
+		cursor: pointer;
+		display: flex;
+		-webkit-transition: transform .2s ease-in, box-shadow .2s ease-in, background .2s ease-in;
+		-moz-transition: transform .2s ease-in, box-shadow .2s ease-in, background .2s ease-in;
+		-o-transition: transform .2s ease-in, box-shadow .2s ease-in, background .2s ease-in;
+		-ms-transition: transform .2s ease-in, box-shadow .2s ease-in, background .2s ease-in;
+		transition: transform .2s ease-in, box-shadow .2s ease-in, background .2s ease-in;
+		background: linear-gradient(0deg, white, transparent);
+	}
+
+	.menu-items li:hover {
+		box-shadow: 0px 11px 22px -22px rgb(54, 100, 122);
+		transform: scale(1.1);
+	}
+
+	.menu-items li img {
+		width: 33px;
+		display: inline-block;
+		padding: 3px;
+	}
+
+	.menu-items li span {
+		color: #174c66;
+		display: inline-block;
+		padding: 11px;
+		line-height: 11px;
+		font-size: 19px;
+	}
+
+	.menu-bottom li {
+		bottom: 0;
+		border-bottom: none;
+		border-radius: 22px 22px 0 0;
+		border-top: 1px solid rgb(175, 208, 233);
+		background: linear-gradient(to bottom, white, transparent);
+	}
+
+	.menu-bottom li:hover {
+		box-shadow: 0px -11px 22px -22px rgb(54, 100, 122);
+	}
+
+	.menu-bottom li img {
+		top: 11px;
+	}
+
+	.page-content-area {
+		height: calc(100% - 124px);
+		margin: 62px 0 62px 0;
+	}

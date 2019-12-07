@@ -89,7 +89,6 @@
 		sortByNameCtrl = document.querySelector('#sort-by-name'),
 		// listjs initiliazation (all mall´s spaces)
 		spacesList = new List('spaces-list', { valueNames: ['list__link', { data: ['level'] }, { data: ['category'] } ]} ),
-
 		// smaller screens:
 		// open search ctrl
 		openSearchCtrl = document.querySelector('button.open-search'),
