@@ -1,5 +1,20 @@
-$(document).ready(function () {
+function windowLayoutFitSize() {
+	var frameWidth = $("#main-frame").width();
+	$(".menu-items").each(function () {
+		$(this).css("left", (frameWidth - $(this).width()) / 2)
+		console.log(frameWidth)
+	})
+}
+$(window).bind('resize', function () {
+	windowLayoutFitSize()
+});
 
+function widthCalc() {
+	var x = $(window).width();
+	// x = width - 1.56*x
+}
+
+$(document).ready(function () {
 	var canvas, ctx, w, h;
 
 	var h = $(window).height();
@@ -142,4 +157,5 @@ $(document).ready(function () {
 	// 	draw();
 	// },30);
 	animate();
+	windowLayoutFitSize()
 });
