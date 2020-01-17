@@ -1,0 +1,73 @@
+
+<div class="page-title">
+	<h2>Artworks</h2>
+</div>
+<div class="photo-viewer"></div>
+<table class="table table-general-style">
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">Full Name</th>
+			<th scope="col">Title</th>
+			<th scope="col">Email</th>
+			<th scope="col">Grade</th>
+			<th scope="col">Status</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for work in works %}
+		<tr class="row-hover"
+			onclick="showDialogPage(this, '{% url 'artwork:work_details' work.id %}')">
+			<th scope="row">{{ work.id }}</th>
+			<td>{{ work.surname }}, {{ work.firstname }}</td>
+			<td>{{ work.worktitle }}
+				<div class="artwork-thumbnail">
+					<img class="img-thumbnail" src='{{ work.workfile.url }}'>
+				</div>
+			</td>
+			<td>{{ work.email }}</td>
+			<td>{{ work.learnergrade }}</td>
+			<td>{{ work.get_status_display }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<script>
+setTimeout(function(){
+	$("tr.row-hover").each(function() {
+		$(this).mouseenter(function() {
+			$(".photo-viewer").html($(this).find(".artwork-thumbnail").html())
+			TweenLite.to(".photo-viewer", .2, {
+				scale: 1,
+				"z-index": 11,
+				opacity: 1,
+				transformOrigin: "center"
+			})
+			TweenLite.to($(this), .2, {
+				scale: 1.02,
+				"z-index": 10,
+				transformOrigin: "center",
+				"box-shadow": "black 0px 0px 33px"
+			})
+		})
+		$(this).mouseleave(function(){
+			$(".photo-viewer").html("")
+			TweenLite.to(".photo-viewer", .2 , {
+				scale: 0,
+				opacity: 0,
+				"z-index": 1,
+				transformOrigin: "center"
+			})
+			TweenLite.to($(this), .2, {
+				scale: 1,
+				"z-index": 1,
+				transformOrigin: "center",
+				"box-shadow": "none"
+			})
+		})
+		$(this).click(function(){
+
+		})
+	})
+}, 200)
+</script>

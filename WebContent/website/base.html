@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MathArt Competition 2020</title>
+<link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/nice-select.min.css" rel="stylesheet">
+<link href="css/buttons.style.css" rel="stylesheet">
+<link href="css/form.style.css" rel="stylesheet">
+<link href="css/table.style.css" rel="stylesheet">
+<link href="css/menu.style.css" rel="stylesheet">
+<link href="css/content.style.css" rel="stylesheet">
+
+<script src="js/jquery/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/GSAP/TweenMax.min.js"></script>
+<script src="js/jquery/jquery.easing.min.js"></script>
+<script src="js/jquery/jquery.nice-select.min.js"></script>
+<script src="js/math.js"></script>
+
+</head>
+<body>
+	<div id="main-body">
+		<div class="full-screen-div"></div>
+		<div class="main-logo" data-href="home.html"
+			data-bg="url(img/bg.png)" onclick="loadContent(this)"></div>
+		<div id="main-frame">
+			<!-- 			<div class="menu-icon"></div> -->
+			<div class="message-box-container">
+				<div class="message-box error-message-box"></div>
+				<div class="message-box success-message-box"></div>
+				<div class="return-button" onclick="toggleMessageBox(null, null)">
+				</div>
+			</div>
+			<div class="menu-items-holder menu-items-holder-top">
+				<ul class="menu-items menu-top">
+					<li class="menu-item" id="about-us"
+						data-href="aboutus.html"><img
+						src="img/icons/about.svg"><span>About Us</span></li>
+					<li class="menu-item" id="gallery"
+						data-href="gallery.html"><img
+						src="img/icons/art-gallery.svg"><span>Gallery</span></li>
+					<li class="menu-item" id="contact-us"
+						data-href="contactus.html"><img
+						src="img/icons/contact.svg"><span>Contact Us</span></li>
+				</ul>
+			</div>
+			<div class="menu-items-holder menu-items-holder-left">
+				<ul class="menu-items menu-top">
+<!-- 					<li class="menu-item" id="about-us" -->
+<!-- 						data-href="home.html"><img -->
+<!-- 						src="img/icons/document.svg"><span>Admin</span></li> -->
+					<li class="menu-item" id="about-us"
+						data-href="history.html"><img
+						src="img/icons/history.svg"><span>History</span></li>
+					<li class="menu-item" id="sign-up"
+						data-href="howtoenter.html"><img
+						src="img/icons/entrance.svg"><span>How to
+							Enter</span></li>
+					<li class="menu-item" id="sign-up"
+						data-href="rules.html"><img
+						src="img/icons/document.svg"><span>Rules</span></li>
+					<li class="menu-item" id="sign-up"
+						data-href="signup_page.html"><img
+						src="img/icons/trophy.svg"><span>Sign Up</span></li>
+					<li class="menu-item" id="contact-us"
+						data-href="faq.html"><img
+						src="img/icons/information.svg"><span>FAQ</span></li>
+				</ul>
+<!-- 				<div id="login-div"></div> -->
+			</div>
+			<div class="page-content"></div>
+		</div>
+<!-- 		<footer class="my-5 pt-5 text-muted text-center text-small"> -->
+<!-- 			<p class="mb-1">&copy; 2019 Company Name</p> -->
+<!-- 			<ul class="list-inline"> -->
+<!-- 				<li class="list-inline-item"><a href="#">Privacy</a></li> -->
+<!-- 				<li class="list-inline-item"><a href="#">Terms</a></li> -->
+<!-- 				<li class="list-inline-item"><a href="#">Support</a></li> -->
+<!-- 			</ul> -->
+<!-- 		</footer> -->
+	</div>
+</body>
+
+</html>
