@@ -38,7 +38,7 @@ function loadContent(liItem) {
 		$(".page-content").prepend($("<div/>").addClass("page-content-area-bg"))
 		tl.play()
 //		if($(liItem).attr("data-bg") != null)
-			$(".page-content-area-bg").css("background-image", "url(../website/img/bg.png)")
+//			$(".page-content-area-bg").css("background-image", "url(../website/img/bg.png)")
 //		else
 //			$(".page-content-area-bg").css("background-image", "none")
 	})
@@ -53,6 +53,37 @@ $(window).bind('resize', function () {
 $(document).ready(function () {
 	windowLayoutFitSize()
 	$(".return-button").load("img/icons/close.svg")
+	$('img.svg').each(function(){
+	    var $img = jQuery(this);
+	    var imgID = $img.attr('id');
+	    var imgClass = $img.attr('class');
+	    var imgURL = $img.attr('src');
+
+	    jQuery.get(imgURL, function(data) {
+	        // Get the SVG tag, ignore the rest
+	        var $svg = jQuery(data).find('svg');
+
+	        // Add replaced image's ID to the new SVG
+	        if(typeof imgID !== 'undefined') {
+	            $svg = $svg.attr('id', imgID);
+	        }
+	        // Add replaced image's classes to the new SVG
+	        if(typeof imgClass !== 'undefined') {
+	            $svg = $svg.attr('class', imgClass+' replaced-svg');
+	        }
+
+	        // Remove any invalid XML tags as per http://validator.w3.org
+	        $svg = $svg.removeAttr('xmlns:a');
+
+	        // Replace image with new SVG
+	        $img.replaceWith($svg);
+
+	        // Add an handler
+	        jQuery('path').each(function() {
+	            jQuery(this).click(function() {alert(jQuery(this).attr('id'));});                       
+	        });
+	    });
+	});
 })
 
 $(window).on("load", function () {

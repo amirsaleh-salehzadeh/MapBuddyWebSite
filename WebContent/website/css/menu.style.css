@@ -7,24 +7,24 @@
 }
 
 .menu-items-holder-left {
-    z-index: 21;
-    left: 77px;
-    top: 55px;
-    padding-top: 155px;
-    border-radius: 33px;
+	z-index: 21;
+	left: 77px;
+	top: 55px;
+	padding-top: 155px;
+	border-radius: 33px;
 }
 
 .menu-items-holder-top {
-    z-index: 21;
-    left: 444px;
-    top: 33px;
-    padding: 11px;
-    border-radius: 0 33px 33px 0;
-    padding-left: 66px;
-    border: 1px solid #e2f1f6;
-    border-left: none;
-    border-bottom: none;
-    border-right: none;
+	z-index: 21;
+	left: 444px;
+	top: 33px;
+	padding: 11px;
+	border-radius: 0 33px 33px 0;
+	padding-left: 66px;
+/* 	border: 1px solid #e2f1f6; */
+/* 	border-left: none; */
+/* 	border-bottom: none; */
+/* 	border-right: none; */
 }
 
 .menu-items-holder-top ul {
@@ -72,15 +72,17 @@
 
 .main-logo {
 	position: absolute;
-    left: 33px;
-    top: 33px;
-    z-index: 1107;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 33px;
-    padding: 22px;
-    cursor: pointer;
-    border: 1px solid #e2f1f6;
+	left: 33px;
+	top: 33px;
+	z-index: 1107;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 33px 0;
+	padding: 22px;
+	cursor: pointer;
+/* 	border: 1px solid #e2f1f6; */
+/* 	border-right: none; */
+/* 	border-bottom: none; */
 }
 
 .main-logo svg {

@@ -184,6 +184,18 @@ p {
     background-image: linear-gradient(0deg, #031925, #24414f, #031925);
 }
 
+.background-area-bg {
+    background-image: url(../img/bg.png);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background-size: 44%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
 #main-frame {
 	position: absolute;
 	width: 100%;
@@ -211,16 +223,16 @@ p {
 /* 	padding: 11px 22px; */
 /* } */
 .page-content-area-bg {
-    background-image: url(img/bg.png);
+/*     background-image: url(img/bg.png); */
     height: 100%;
     width: 100%;
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    background-size: 44%;
-    background-repeat: no-repeat;
-    background-position: center;
+/*     background-size: 44%; */
+/*     background-repeat: no-repeat; */
+/*     background-position: center; */
 
 }
 
@@ -277,4 +289,13 @@ p {
 .full-screen-div img {
 	max-height: 100%;
 	max-width: 100%;
+}
+
+.svg{
+	width: 33px;
+	height: 33px;
+}
+
+.svg * {
+	fill: #e1f0f5 !important;
 }
