@@ -29,6 +29,8 @@ function loadContent(liItem) {
 //		transformOrigin: "left"
 //	}, "-= .4")
 	$(".menu-open").trigger("click")
+	$(".home-page-svg").fadeOut()
+	$(".page-content").fadeIn()
 	$(".page-content-area-bg").remove()
 	$(".page-content-area").remove()
 	$(".page-content").load(url, function (response) {
@@ -44,7 +46,6 @@ function loadContent(liItem) {
 //			$(".page-content-area-bg").css("background-image", "none")
 	})
 	
-	$(".main-logo").load("img/logo.svg")
 }
 
 $(window).bind('resize', function () {
@@ -54,7 +55,11 @@ $(window).bind('resize', function () {
 $(document).ready(function () {
 	windowLayoutFitSize()
 	$(".return-button").load("img/icons/close.svg")
-	$('img.svg').each(function(){
+	$(".home-page-svg").load("img/theme-img.svg")
+	$(".home-page-svg").fadeIn()
+	$(".page-content").fadeOut()
+	$(".main-logo").load("img/logo.svg")
+	$('img.svg').each(function() {
 	    var $img = jQuery(this);
 	    var imgID = $img.attr('id');
 	    var imgClass = $img.attr('class');
@@ -79,10 +84,10 @@ $(document).ready(function () {
 	        // Replace image with new SVG
 	        $img.replaceWith($svg);
 
-	        // Add an handler
-	        jQuery('path').each(function() {
-	            jQuery(this).click(function() {alert(jQuery(this).attr('id'));});                       
-	        });
+//	        // Add an handler
+//	        jQuery('path').each(function() {
+//	            jQuery(this).click(function() {alert(jQuery(this).attr('id'));});                       
+//	        });
 	    });
 	});
 })
@@ -93,9 +98,9 @@ $(window).on("load", function () {
 		transformOrigin: "center"
 	})
 	$(".menu-item").attr("onclick", "loadContent(this)")
-	loadContent($("<li/>").attr({"data-href":"home.html",
-		"data-bg":"url(media/gallery/2019/2019-14.jpg)"}))
-	toggleMessageBox(null, null)
+//	loadContent($("<li/>").attr({"data-href":"home.html",
+//		"data-bg":"url(media/gallery/2019/2019-14.jpg)"}))
+//	toggleMessageBox(null, null)
 })
 
 function dropDownFunction() {

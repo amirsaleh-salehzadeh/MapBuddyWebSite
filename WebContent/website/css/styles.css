@@ -207,14 +207,15 @@ p {
 }
 
 .background-area-bg {
-	background-image: url(../img/bg.png);
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	position: absolute;
-	background-size: 33%;
-	background-repeat: no-repeat;
-	background-position: center;
+    background-image: url(../img/bg.png);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background-size: 33%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(1px) opacity(0.2);
 }
 
 #main-frame {
@@ -226,18 +227,27 @@ p {
 	overflow: hidden;
 }
 
-.page-content {
-	overflow: hidden;
-	color: black;
-	border-radius: 0 22px 0 0;
-	position: fixed;
-	left: 0;
-	margin-left: 22px;
-	perspective: 400px;
-	padding: 22px;
-	top: 13%;
-	right: 0;
-	bottom: 7%;
+.page-content, .home-page-svg {
+    overflow: hidden;
+    color: black;
+    border-radius: 0 22px 0 0;
+    position: fixed;
+    left: 11%;
+    margin-left: 22px;
+    perspective: 400px;
+    padding: 22px;
+    top: 13%;
+    right: 11%;
+    bottom: 7%;
+    background: linear-gradient(45deg, black, transparent, black);
+    border-radius: 44px;
+    box-shadow: 11px 11px 22px black;
+    text-align: center;
+}
+
+.home-page-svg svg {
+    height: 100%;
+    width: auto;
 }
 
 .page-content-area-bg {

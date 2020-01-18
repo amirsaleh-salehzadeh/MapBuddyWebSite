@@ -72,18 +72,20 @@
 }
 
 .main-logo {
-	position: absolute;
-	left: 33px;
-	top: 33px;
-	z-index: 1107;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-radius: 33px 0;
-	padding: 22px;
-	cursor: pointer;
-/* 	border: 1px solid #e2f1f6; */
-/* 	border-right: none; */
-/* 	border-bottom: none; */
+    position: absolute;
+    left: 33px;
+    top: 33px;
+    z-index: 1107;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 33px;
+    padding: 22px;
+    cursor: pointer;
+    /* border: 1px solid #e2f1f6; */
+    /* border-right: none; */
+    /* border-bottom: none; */
+    background: linear-gradient(45deg, black, #151515, black);
+    box-shadow: 11px 11px 22px black;
 }
 
 .main-logo svg {
@@ -103,7 +105,7 @@
 }
 
 .menu-item, .menu-open-button {
-  background: #ff4081;
+  background: linear-gradient(0deg, #ed6623, #fdb713);
   border-radius: 100%;
   width: 80px;
   height: 80px;
@@ -170,11 +172,15 @@
           transform: translate3d(0, 0, 0) rotate(-45deg);
   background: white;
 }
-.menu-open-button svg{width: 55px;
-    height: auto;}
+.menu-open-button svg {
+	width: 55px;
+    height: auto;
+}
+
 .menu-open:checked + .menu-open-button svg {
   display: none;
 }
+
 .menu-item>span{
 	display: none;
 }
