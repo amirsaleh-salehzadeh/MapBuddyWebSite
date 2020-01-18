@@ -17,6 +17,13 @@
 	transition: background .2s ease-in, color .2s ease-in;
 }
 
+.action-button.yellow {
+	background: linear-gradient(0deg, #ed6623, #fdb713);
+}
+.action-button.yellow:hover {
+	background: linear-gradient(0deg, #fdb713, #ed6623);
+}
+
 .action-button.green {
 	background: linear-gradient(0deg, #098c1f, #23af0a);
 	color: rgb(255, 255, 255);

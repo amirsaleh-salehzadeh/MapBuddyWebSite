@@ -5,7 +5,7 @@ function windowLayoutFitSize() {
 	$("#main-body").height($(window).height())
 	var frameHeight = ($(window).height() * .9) - 22
 	var frameWidth = frameHeight + (frameHeight * 13 / 21)
-	$(".page-content").width(frameWidth)
+//	$(".page-content").width(frameWidth)
 // $(".page-content").height(frameHeight)
 	if ($(window).width() > $(window).height()) {
 		isHorizontal = true
@@ -20,14 +20,15 @@ function loadContent(liItem) {
 //	$("#login-div").load('login.html')
 	url = $(liItem).attr("data-href")
 	var tl = new TimelineLite({paused: true,ease: Power4.easeOut})
-	tl.to(".page-content", 1, { 
-		rotationY: -180, 
-		transformOrigin: "left" })
-	.to(".page-content", 1.2, { 
-		left: $(".menu-items-holder-left").width(),
-		rotationY: 0,
-		transformOrigin: "left"
-	}, "-= .4")
+//	tl.to(".page-content", 1, { 
+//		rotationY: -180, 
+//		transformOrigin: "left" })
+//	.to(".page-content", 1.2, { 
+//		left: $(".menu-items-holder-left").width(),
+//		rotationY: 0,
+//		transformOrigin: "left"
+//	}, "-= .4")
+	$(".menu-open").trigger("click")
 	$(".page-content-area-bg").remove()
 	$(".page-content-area").remove()
 	$(".page-content").load(url, function (response) {
@@ -36,7 +37,7 @@ function loadContent(liItem) {
 		$(".page-content").prepend($("<div/>").addClass("page-content-area"))
 		$(".page-content-area").html(response)
 		$(".page-content").prepend($("<div/>").addClass("page-content-area-bg"))
-		tl.play()
+//		tl.play()
 //		if($(liItem).attr("data-bg") != null)
 //			$(".page-content-area-bg").css("background-image", "url(../website/img/bg.png)")
 //		else
@@ -206,4 +207,8 @@ function openFullScreenDiv(htmlContenet) {
 		bottom:0,
 		transformOrigin: "center"
 	})
+}
+
+function hideLoading(){
+	$("#loading-area").fadeOut(1000)
 }

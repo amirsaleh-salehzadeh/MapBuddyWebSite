@@ -14,7 +14,6 @@
 <link href="css/table.style.css" rel="stylesheet">
 <link href="css/menu.style.css" rel="stylesheet">
 <link href="css/content.style.css" rel="stylesheet">
-
 <script src="js/jquery/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script src="js/GSAP/TweenMax.min.js"></script>
@@ -24,49 +23,129 @@
 
 </head>
 <body>
+	<div id="loading-area">
+		<div class="row" style="min-height: 88%;">
+			<div class="col-md-12" style="min-height: 11%;"></div>
+			<div class="col-md-12" style="min-height: 26%;">
+				<h1>GMMDC National</h1>
+				<h1 style="color: #fdba25; font-weight: bold; font-size: 55px;">MathArt</h1>
+			</div>
+			<div class="col-md-12" style="min-height: 26%;">
+				<img src="img/bg.png" height="333" id="loading-image-main"
+					onclick="hideLoading()">
+			</div>
+			<div class="col-md-12" style="min-height: 26%;">
+				<h1>Competition</h1>
+			</div>
+		</div>
+		<div class="row" style="min-height: 26%;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<button class="action-button yellow" onclick="hideLoading()">Enter</button>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
 	<div id="main-body">
-		<div class="background-area-bg"></div>
+		<!-- 		<div class="background-area-bg"></div> -->
 		<div class="full-screen-div"></div>
+		<div>
+			<nav class="menu">
+				<input type="checkbox" href="#" class="menu-open" name="menu-open"
+					id="menu-open" /> <label class="menu-open-button" for="menu-open"><img
+					class="svg" src="img/icons/circuit.svg">
+					<span class="hamburger hamburger-1"></span> <span
+					class="hamburger hamburger-2"></span> <span
+					class="hamburger hamburger-3"></span>
+				</label> <a href="#" class="menu-item" id="about-us"
+					data-href="history.html"><img class="svg"
+					src="img/icons/history.svg"><span>History</span> </a> <a href="#"
+					class="menu-item" id="sign-up" data-href="howtoenter.html"><img
+					class="svg" src="img/icons/entrance.svg"><span>How to
+						Enter</span> </a> <a href="#" class="menu-item" data-href="rules.html"><img
+					class="svg" src="img/icons/document.svg"><span>Rules</span> </a>
+				<a href="#" class="menu-item" id="sign-up"
+					data-href="signup_page.html"><img class="svg"
+					src="img/icons/trophy.svg"><span>Sign Up</span></a><a href="#"
+					class="menu-item" id="contact-us" data-href="faq.html"><img
+					class="svg" src="img/icons/information.svg"><span>FAQ</span>
+				</a> <a href="#" class="menu-item"> <i class="fa fa-cog"></i>
+				</a>
+
+
+			</nav>
+
+
+			<!-- filters -->
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+          
+          <feGaussianBlur in="SourceGraphic" result="blur"
+					stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix"
+					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix"
+					values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
+					result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feBlend in2="shadow" in="goo" result="goo" />
+          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur"
+					stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix"
+					values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
+		</div>
 		<div class="main-logo" data-href="home.html" data-bg=""
 			onclick="loadContent(this)"></div>
-<!-- 		<div id="main-frame"> -->
-			<!-- 			<div class="menu-icon"></div> -->
-			<div class="message-box-container">
-				<div class="message-box error-message-box"></div>
-				<div class="message-box success-message-box"></div>
-				<div class="return-button" onclick="toggleMessageBox(null, null)">
-				</div>
+		<!-- 		<div id="main-frame"> -->
+		<!-- 			<div class="menu-icon"></div> -->
+		<div class="message-box-container">
+			<div class="message-box error-message-box"></div>
+			<div class="message-box success-message-box"></div>
+			<div class="return-button" onclick="toggleMessageBox(null, null)">
 			</div>
-			<div class="menu-items-holder menu-items-holder-top">
-				<ul class="menu-items menu-top">
-					<li class="menu-item" id="about-us" data-href="aboutus.html"><img
-						src="img/icons/about.svg" class="svg"><span>About Us</span></li>
-					<li class="menu-item" id="gallery" data-href="gallery.html"><img class="svg"
-						src="img/icons/art-gallery.svg"><span>Gallery</span></li>
-					<li class="menu-item" id="contact-us" data-href="contactus.html"><img class="svg"
-						src="img/icons/contact.svg"><span>Contact Us</span></li>
-				</ul>
-			</div>
-			<div class="menu-items-holder menu-items-holder-left">
-				<ul class="menu-items menu-top">
-					<!-- 					<li class="menu-item" id="about-us" -->
-					<!-- 						data-href="home.html"><img -->
-					<!-- 						src="img/icons/document.svg"><span>Admin</span></li> -->
-					<li class="menu-item" id="about-us" data-href="history.html"><img class="svg"
-						src="img/icons/history.svg"><span>History</span></li>
-					<li class="menu-item" id="sign-up" data-href="howtoenter.html"><img class="svg"
-						src="img/icons/entrance.svg"><span>How to Enter</span></li>
-					<li class="menu-item" id="sign-up" data-href="rules.html"><img class="svg"
-						src="img/icons/document.svg"><span>Rules</span></li>
-					<li class="menu-item" id="sign-up" data-href="signup_page.html"><img class="svg"
-						src="img/icons/trophy.svg"><span>Sign Up</span></li>
-					<li class="menu-item" id="contact-us" data-href="faq.html"><img class="svg"
-						src="img/icons/information.svg"><span>FAQ</span></li>
-				</ul>
-				<!-- 				<div id="login-div"></div> -->
-			</div>
-			<div class="page-content"></div>
-<!-- 		</div> -->
+		</div>
+		<div class="menu-items-holder menu-items-holder-top">
+			<ul class="menu-items menu-top">
+				<li class="menu-item" id="about-us" data-href="aboutus.html"><img
+					src="img/icons/about.svg" class="svg"><span>About Us</span></li>
+				<li class="menu-item" id="gallery" data-href="gallery.html"><img
+					class="svg" src="img/icons/art-gallery.svg"><span>Gallery</span></li>
+				<li class="menu-item" id="contact-us" data-href="contactus.html"><img
+					class="svg" src="img/icons/contact.svg"><span>Contact
+						Us</span></li>
+			</ul>
+		</div>
+		<!-- 		<div class="menu-items-holder menu-items-holder-left"> -->
+		<!-- 			<ul class="menu-items menu-top"> -->
+		<!-- 									<li class="menu-item" id="about-us" -->
+		<!-- 										data-href="home.html"><img -->
+		<!-- 										src="img/icons/document.svg"><span>Admin</span></li> -->
+		<!-- 				<li class="menu-item" id="about-us" data-href="history.html"><img -->
+		<!-- 					class="svg" src="img/icons/history.svg"><span>History</span></li> -->
+		<!-- 				<li class="menu-item" id="sign-up" data-href="howtoenter.html"><img -->
+		<!-- 					class="svg" src="img/icons/entrance.svg"><span>How to -->
+		<!-- 						Enter</span></li> -->
+		<!-- 				<li class="menu-item" id="sign-up" data-href="rules.html"><img -->
+		<!-- 					class="svg" src="img/icons/document.svg"><span>Rules</span></li> -->
+		<!-- 				<li class="menu-item" id="sign-up" data-href="signup_page.html"><img -->
+		<!-- 					class="svg" src="img/icons/trophy.svg"><span>Sign Up</span></li> -->
+		<!-- 				<li class="menu-item" id="contact-us" data-href="faq.html"><img -->
+		<!-- 					class="svg" src="img/icons/information.svg"><span>FAQ</span></li> -->
+		<!-- 			</ul> -->
+		<!-- 			<!-- 				<div id="login-div"></div> -->
+		-->
+		<!-- 		</div> -->
+		<div class="page-content"></div>
+		<!-- 		</div> -->
 		<!-- 		<footer class="my-5 pt-5 text-muted text-center text-small"> -->
 		<!-- 			<p class="mb-1">&copy; 2019 Company Name</p> -->
 		<!-- 			<ul class="list-inline"> -->

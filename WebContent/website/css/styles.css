@@ -17,6 +17,29 @@ p {
 	text-align: justify;
 }
 
+#loading-area {
+	position: fixed;
+	z-index: 1000000;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-image: linear-gradient(0deg, #171717, #242525, #171717);
+}
+
+#loading-image-main {
+	cursor: pointer;
+	-webkit-transition: transform .3s ease-in;
+	-moz-transition: transform .3s ease-in;
+	-o-transition: transform .3s ease-in;
+	-ms-transition: transform .3s ease-in;
+	transition: transform .3s ease-in;
+	-webkit-transition: transform .3s ease-in;
+}
+
+#loading-image-main:hover {
+	transform: scale(1.1);
+}
+
 ::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 2px white;
 	border-radius: 3px;
@@ -177,23 +200,21 @@ p {
 	right: 0;
 	bottom: 0;
 	top: 0;
-	/* background: #174c66; */
 	border: none;
 	z-index: 1;
 	overflow: hidden;
-    background-image: linear-gradient(0deg, #031925, #24414f, #031925);
+	background-image: linear-gradient(0deg, #171717, #242525, #171717);
 }
 
 .background-area-bg {
-    background-image: url(../img/bg.png);
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    background-size: 33%;
-    background-repeat: no-repeat;
-    background-position: center;
-
+	background-image: url(../img/bg.png);
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	background-size: 33%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #main-frame {
@@ -206,34 +227,26 @@ p {
 }
 
 .page-content {
-    overflow: hidden;
-    color: black;
-    border-radius: 0 22px 0 0;
-    position: fixed;
-    left: 0;
-    margin-left: 22px;
-    perspective: 400px;
-/*     box-shadow: 11px 11px 11px -11px #aeb5d1, inset -11px 11px 11px -11px #aeb5d1; */
-    padding: 22px;
-    height: 89%;
-    top: calc(5.5% + 11px);
+	overflow: hidden;
+	color: black;
+	border-radius: 0 22px 0 0;
+	position: fixed;
+	left: 0;
+	margin-left: 22px;
+	perspective: 400px;
+	padding: 22px;
+	top: 13%;
+	right: 0;
+	bottom: 7%;
 }
 
-/* .page-content-area { */
-/* 	padding: 11px 22px; */
-/* } */
 .page-content-area-bg {
-/*     background-image: url(img/bg.png); */
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-/*     background-size: 44%; */
-/*     background-repeat: no-repeat; */
-/*     background-position: center; */
-
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .page-content-area {
@@ -291,7 +304,7 @@ p {
 	max-width: 100%;
 }
 
-.svg{
+.svg {
 	width: 33px;
 	height: 33px;
 }
