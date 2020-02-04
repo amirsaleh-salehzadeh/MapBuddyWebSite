@@ -1,26 +1,25 @@
 <div class="row report-section">
 	<div class="col-md-12">
-		<img type="file" class="img-fluid" id="workfile"
-			src="{{ work.workfile.url }}">
+		<img type="file" id="workfileCropped" src="{{ work.workfileCropped }}">
 	</div>
 	<div class="col-md-12">
 		<h3>
 			<strong>Artwork </strong>"{{ work.worktitle }}"
 		</h3>
 	</div>
-	<div class="col-md-12">
+	<div class="col-md-12 normaldata">
 		<h5>
-			<strong>By </strong>{{ work.surname }}, {{ work.firstname }}
+			<strong>By </strong>{{ work.owner.last_name }}, {{ work.owner.first_name }}
 		</h5>
 	</div>
 </div>
-<div class="row report-section">
+<div class="row report-section normaldata">
 	<div class="col-md-6">
 		<h6>
 			<strong>Born in </strong>{{ work.dob }}
 		</h6>
 		<h6>
-			<strong>Email </strong>{{ work.email }}, <strong>Cell </strong>{{work.cellphone}}
+			<strong>Email </strong>{{ work.owner.email }}, <strong>Cell </strong>{{work.cellphone}}
 			<h6>
 	</div>
 	<div class="col-md-6">
@@ -71,62 +70,67 @@
 	</div>
 </div>
 
-{%if work.status == 0 %}
-<form method="post" id="" action="/"
-	class="needs-validation form-general-style"
-	enctype="multipart/form-data" novalidate>
-	<div class="row form-section" data-title="Validate the entry format">
-		<div class="col-md-4">
-			<label for="bioapproved">Bio is acceptable</strong> <input
-				type="checkbox" name="bioapproved" id="bioapproved"
-				value="{{ work.bioapproved }}" class="form-control form-input">
-				<input type="hidden" name="id" id="id" value="{{ work.id }}"
+{%if work.status == -1 %}
+<div class="row form-section normaldata"
+	data-title="Eligible/Revision/Reject">
+	<div class="col-md-12" id="">
+		<form method="post" id="entry-approval-form"
+			action="{% url 'artwork:work_detail_update' %}"
+			class="needs-validation form-general-style"
+			enctype="multipart/form-data" novalidate>
+			<div class="row form-section" data-title="Validate the entry format">
+				<div class="col-md-3">
+					<label for="bioapproved">Bio is acceptable</strong> <input
+						type="checkbox" name="bioapproved" id="bioapproved"
+						value="{{ work.bioapproved }}" class="form-control form-input">
+				</div>
+				<div class="col-md-3">
+					<label for="workapproved">Artwork is uploaded properly</strong> <input
+						type="checkbox" name="workapproved" id="workapproved"
+						class="form-control form-input" value="{{ work.workapproved|default_if_none:'on'}}">
+				</div>
+				<div class="col-md-3">
+					<label for="qapproved">All 3 questions are answered</strong>
+						<input type="checkbox" name="qapproved"
+						id="qapproved" value="{{ work.qapproved }}"
+						class="form-control form-input">
+				</div>
+				<div class="col-md-3">
+					<label for="comment1">Comment</strong> <textarea type="checkbox"
+							name="comment1" id="comment1" class="form-control form-input"
+							rows="5" cols="100" placeholder="Any comments"></textarea>
+				</div>
+			</div>
+			<input type="hidden" name="id" id="id" value="{{ work.id }}"
+				class="form-control form-input"> <input type="hidden"
+				name="status" id="status" value="{{ work.status }}"
 				class="form-control form-input">
-		</div>
-		<div class="col-md-4">
-			<label for="bioapproved">Artwork is uploaded properly</strong> <input
-				type="checkbox" name="bioapproved" id="bioapproved"
-				class="form-control form-input" value="{{ work.bioapproved }}">
-		</div>
-		<div class="col-md-4">
-			<label for="bioapproved">Questions are answered</strong> <input
-				type="checkbox" name="bioapproved" id="bioapproved"
-				value="{{ work.workapproved }}" class="form-control form-input">
-		</div>
+			<div class="row form-section" data-title="Decision">
+				<div class="col-md-4">
+					<button class="action-button green" id="approveBTN0">Approve</button>
+				</div>
+				<div class="col-md-4">
+					<button class="action-button orange" id="reviseBTN0">Requires
+						Revision</button>
+				</div>
+				<div class="col-md-4">
+					<button class="action-button red" id="rejectBTN0">Reject</button>
+				</div>
+			</div>
+		</form>
 	</div>
-	<div class="row form-section" data-title="Decision">
-		<div class="col-md-4">
-			<button class="action-button green"
-				onclick="alert('update status to 3')">Approve</button>
-		</div>
-		<div class="col-md-4">
-			<button class="action-button orange"
-				onclick="alert('update status to 1, email to the user, and revise -- hide it for now')">Requires
-				Revision</button>
-		</div>
-		<div class="col-md-4">
-			<button class="action-button red"
-				onclick="alert('update status to 2, visibility to 0')">Reject</button>
-		</div>
-	</div>
-</form>
-
+</div>
 
 
 <!-- 	FORM D1-a -->
 
+{% elif work.status == 3 %}
 
 
-{%elif work.status == 3 %}
-<form method="post" id="" action="/"
-	class="needs-validation form-general-style"
-	enctype="multipart/form-data" novalidate>
-	<div class="row form-section" data-title="Decision">
-		<div class="col-md-12">
-			<button class="action-button green" id="buttonSubmit">Submit</button>
-		</div>
-	</div>
-</form>
+<div class="row form-section evaldata"
+	data-title="Evaluation Form Stage 1">
+	<div class="col-md-10" id="form-d1-a"></div>
+</div>
 
 
 
@@ -134,7 +138,7 @@
 
 
 
-{% elif work.status == 5  %}
+{% elif work.status == 5 %}
 <form method="post" id="" action="/"
 	class="needs-validation form-general-style"
 	enctype="multipart/form-data" novalidate>
@@ -162,3 +166,6 @@
 	</div>
 </form>
 {%endif%}
+
+<script type="text/javascript" src="static/js/work.detail.admin.js">
+	

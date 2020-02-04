@@ -1,0 +1,145 @@
+.navbar-light .navbar-nav .nav-link {
+	color: var(--main-color-green);
+}
+
+.form-control:focus {
+	border-color: var(--main-color-green);
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-header.col {
+	padding: 0 !important;
+}
+
+
+.input-group-addon, .input-group-text {
+	box-shadow: none;
+    border-radius: 2px 0 0 2px;
+    background: none;
+    border-color: transparent;
+    font-size: 16px;
+    padding: 0;
+    min-width: 36px;
+    text-align: center;
+    color: var(--main-color-green);
+}
+
+.input-group-text {
+	padding: 0 11px;
+}
+
+.input-group-addon i {
+    font-size: 22px;
+    color: var(--main-color-green);
+    line-height: 37px;
+}
+
+.navbar .login-form .btn {
+	border-radius: 2px;
+	color: #fff;
+	border-color: var(--main-color-green);
+	background: var(--main-color-green);
+	outline: none;
+}
+
+.navbar .login-form .btn:hover, .navbar .login-form .btn:focus {
+	border-color: var(--main-color-pink);
+	background: var(--main-color-pink);
+}
+
+.navbar-light .navbar-nav .show>.nav-link {
+	color: white !important;
+	border-color: var(--main-color-green);
+	background: var(--main-color-green);
+}
+
+.navbar .search-form {
+	display: inline-block;
+}
+
+.navbar .search-form .btn {
+	margin-left: 4px;
+}
+
+.navbar .search-form .form-control {
+	border-radius: 2px;
+}
+
+.navbar .login-form .input-group {
+	margin-right: 4px;
+	float: left;
+}
+
+.navbar .login-form .form-control {
+	max-width: 158px;
+	border-radius: 0 2px 2px 0;
+}
+
+.navbar .navbar-right .dropdown-toggle::after {
+	display: none;
+}
+
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.navbar .dropdown-menu li a {
+	padding: 6px 20px;
+}
+
+.navbar .navbar-right .dropdown-menu {
+	width: 505px;
+	padding: 20px;
+	left: auto;
+	right: 0;
+	font-size: 14px;
+}
+
+.form-control {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--main-color-green);
+}
+
+.return-button i {
+	font-size: 66px;
+}
+
+
+#form-general-style .text-danger {
+    color: #dc3545 !important;
+    position: absolute;
+    top: -33px;
+}
+
+@media ( min-width : 1200px) {
+	.search-form .input-group {
+		width: 300px;
+		margin-left: 30px;
+	}
+}
+
+@media ( max-width : 768px) {
+	.navbar .navbar-right .dropdown-menu {
+		width: 100%;
+		background: transparent;
+		padding: 10px 20px;
+	}
+	.navbar .input-group {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.navbar .input-group .form-control {
+		max-width: none;
+	}
+	.navbar .login-form .btn {
+		width: 100%;
+	}
+}
+
+.input-group small{
+	position: absolute;
+	top: -31px;
+}

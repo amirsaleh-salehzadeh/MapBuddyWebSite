@@ -3,130 +3,134 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MathArt Competition 2020</title>
-<link href="css/bootstrap/bootstrap.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<link href="css/nice-select.min.css" rel="stylesheet">
-<link href="css/buttons.style.css" rel="stylesheet">
-<link href="css/form.style.css" rel="stylesheet">
-<link href="css/table.style.css" rel="stylesheet">
-<link href="css/menu.style.css" rel="stylesheet">
-<link href="css/content.style.css" rel="stylesheet">
-<script src="js/jquery/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<script src="js/GSAP/TweenMax.min.js"></script>
-<script src="js/jquery/jquery.easing.min.js"></script>
-<script src="js/jquery/jquery.nice-select.min.js"></script>
-<script src="js/math.js"></script>
-
+<title>MathArt Competition</title>
+<link rel="stylesheet" href="static/css/font-awesome/css/all.min.css">
+<link href="static/css/bootstrap/bootstrap.min.css.map" rel="stylesheet">
+<link href="static/css/bootstrap/bootstrap.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<link href="static/css/constants.css" rel="stylesheet">
+<link href="static/css/buttons.style.css"
+	rel="stylesheet">
+<link href="static/css/form.style.css"
+	rel="stylesheet">
+<link href="static/css/table.style.css"
+	rel="stylesheet">
+<link href="static/css/menu.style.css"
+	rel="stylesheet">
+<link href="static/css/home.style.css"
+	rel="stylesheet">
+<link href="static/css/content.style.css"
+	rel="stylesheet">
+<script src="static/js/jquery/jquery-3.4.1.min.js"></script>
+<script src="static/js/bootstrap/bootstrap.min.js"></script>
+<script src="static/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="static/js/GSAP/TweenMax.min.js"></script>
 </head>
+
 <body>
-	<div id="loading-area">
-		<div class="row" style="min-height: 88%;">
-			<div class="col-md-12" style="min-height: 11%;"></div>
-			<div class="col-md-12" style="min-height: 26%;">
-				<h1>GMMDC National</h1>
-				<h1 style="color: #fdba25; font-weight: bold; font-size: 55px;">MathArt</h1>
-			</div>
-			<div class="col-md-12" style="min-height: 26%;">
-				<img src="img/bg.png" height="333" id="loading-image-main"
-					onclick="hideLoading()">
-			</div>
-			<div class="col-md-12" style="min-height: 26%;">
-				<h1>Competition</h1>
+	<div class="full-screen-div"></div>
+	<div class="container">
+		<div class="message-box-container">
+			<div class="message-box error-message-box"></div>
+			<div class="message-box success-message-box"></div>
+			<div class="return-button" onclick="toggleMessageBox(null, null)">
+				<i class="fa fa-times-circle"></i>
 			</div>
 		</div>
-		<div class="row" style="min-height: 26%;">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<button class="action-button yellow" onclick="hideLoading()">Enter</button>
+		<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> <img
+						src="static/img/MAlogo.png" width="30" height="30" alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item menu-item active" data-href-html="home.html"
+							data-href="/home/"><a class="nav-link" href="#"><img
+								class="svg" src="static/img/icons/Home.svg"><span>Home</span></a></li>
+
+						<li class="nav-item menu-item" data-href-html="howtoenter.html"
+							data-href="/howtoenter/" data-color="--main-color-dark-blue"
+							data-color2="--main-color-yellow"><a class="nav-link"
+							href="#"><img class="svg" src="static/img/icons/How.svg"><span>How
+									to Enter</span></a></li>
+
+						<li class="nav-item menu-item" data-href-html="rules.html"
+							data-color="--main-color-yellow" data-href="/rules/"><a
+							class="nav-link" href="#"><img class="svg"
+								src="static/img/icons/Rules.svg"><span>Rules</span></a></li>
+
+						<li class="nav-item menu-item"
+							data-href-html="signup_page_view.html"
+							data-href="/signup_page_view/"><a class="nav-link" href="#"><img
+								class="svg" src="static/img/icons/Enter.svg"><span>Enter
+									Now</span></a></li>
+
+						<li class="nav-item menu-item" data-href-html="history.html"
+							data-color="--main-color-pink" data-href="/history/"><a
+							class="nav-link" href="#"><img class="svg"
+								src="static/img/icons/History.svg"><span>History</span></a></li>
+
+						<li class="nav-item menu-item" data-href-html="faq.html"
+							data-href="/faq/" data-color="--main-color-light-blue"><a
+							class="nav-link" href="#"><img class="svg"
+								src="static/img/icons/FAQ.svg"><span>FAQ's</span></a></li>
+
+
+						<li class="menu-item" data-href-html="contactus.html"
+							data-color="--main-color-dark-blue"
+							data-href="{% url 'artwork:contactus' %}"><a
+							class="nav-link" href="#"><img class="svg"
+								src="static/img/icons/Contact.svg"><span>Contact </span></a></li>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav navbar-nav navbar-right ml-auto" id="login-div">
+				</ul>
 			</div>
-			<div class="col-md-4"></div>
-		</div>
-	</div>
-	<div id="main-body">
-		<div class="background-area-bg"></div>
-		<div class="full-screen-div"></div>
-		<nav class="menu">
-			<input type="checkbox" href="#" class="menu-open" name="menu-open"
-				id="menu-open" /> <label class="menu-open-button" for="menu-open"><img
-				class="svg" src="img/icons/circuit.svg"> <span
-				class="hamburger hamburger-1"></span> <span
-				class="hamburger hamburger-2"></span> <span
-				class="hamburger hamburger-3"></span> </label>
-
-
-			<!-- 				FAQ -->
-			<a href="#" class="menu-item" id="contact-us" data-href="faq.html"><img
-				class="svg" src="img/icons/information.svg"><span>FAQ</span> </a>
-			<!-- CONTACT US -->
-			<a href="#" class="menu-item" data-href="contactus.html"><img
-				class="svg" src="img/icons/contact.svg"><span>Contact</span> </a>
-			<!-- 				ABOUT -->
-			<a href="#" class="menu-item" data-href="aboutus.html"><img
-				class="svg" src="img/icons/about.svg"><span>About Us</span> </a>
-
-			<!-- 				RULES -->
-			<a href="#" class="menu-item" data-href="rules.html"><img
-				class="svg" src="img/icons/document.svg"><span>Rules</span> </a>
-			<!-- HOW TO -->
-			<a href="#" class="menu-item" id="sign-up"
-				data-href="howtoenter.html"><img class="svg"
-				src="img/icons/entrance.svg"><span>How to Enter</span></a>
-
 		</nav>
-
-
-		<div class="main-logo" data-href="home.html" data-bg=""
-			onclick="$('.home-page-svg').fadeIn();$('.page-content').fadeOut()"></div>
-		<!-- 		<div id="main-frame"> -->
-		<!-- 			<div class="menu-icon"></div> -->
-		<!-- 		<div class="message-box-container"> -->
-		<!-- 			<div class="message-box error-message-box"></div> -->
-		<!-- 			<div class="message-box success-message-box"></div> -->
-		<!-- 			<div class="return-button" onclick="toggleMessageBox(null, null)"> -->
-		<!-- 			</div> -->
-		<!-- 		</div> -->
-		<!-- 		<div class="menu-items-holder menu-items-holder-top"> -->
-		<!-- 			<ul class="menu-items menu-top"> -->
-		<!-- 				<li class="menu-item" id="about-us" data-href="aboutus.html"><img -->
-		<!-- 					src="img/icons/about.svg" class="svg"><span>About Us</span></li> -->
-		<!-- 				<li class="menu-item" id="gallery" data-href="gallery.html"><img -->
-		<!-- 					class="svg" src="img/icons/art-gallery.svg"><span>Gallery</span></li> -->
-		<!-- 				<li class="menu-item" id="contact-us" data-href="contactus.html"><img -->
-		<!-- 					class="svg" src="img/icons/contact.svg"><span>Contact -->
-		<!-- 						Us</span></li> -->
-		<!-- 			</ul> -->
-		<!-- 		</div> -->
-		<div class="page-content"></div>
-		<div class="home-page-svg"></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12" id="page-content"></div>
+					</div>
+					<div class="row second-color" id="banner-bottom-1">
+						<div class="col-md-12 banners-text-content">
+							<label for="signupbuttonIdMain">Registration opens in...</label>
+							<div id="signupbuttonIdMain" class="timeCounterDiv">
+								<ul>
+									<li class="date-counter" data-text="DAYS"
+										style="border-left: none;"><span>22</span></li>
+									<li class="date-counter" data-text="HOURS"></li>
+									<li class="date-counter" data-text="MINUTES"></li>
+									<li class="date-counter" data-text="SECONDS"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row " id="banner-bottom-2">
+						<div class="col-md-12 third-color">
+							<span class="social-media-btn"><i class="fa fa-facebook"></i></span>
+							<span class="social-media-btn"><i class="fa fa-youtube"></i></span>
+							<span class="social-media-btn"><i class="fa fa-instagram"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
 </body>
-<!-- filters -->
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-      <filter id="shadowed-goo">
-          
-          <feGaussianBlur in="SourceGraphic" result="blur"
-		stdDeviation="10" />
-          <feColorMatrix in="blur" mode="matrix"
-		values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
-          <feColorMatrix in="shadow" mode="matrix"
-		values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
-          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
-          <feBlend in2="shadow" in="goo" result="goo" />
-          <feBlend in2="goo" in="SourceGraphic" result="mix" />
-      </filter>
-      <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur"
-		stdDeviation="10" />
-          <feColorMatrix in="blur" mode="matrix"
-		values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feBlend in2="goo" in="SourceGraphic" result="mix" />
-      </filter>
-    </defs>
-</svg>
+<script src="static/js/math.js"></script>
 </html>

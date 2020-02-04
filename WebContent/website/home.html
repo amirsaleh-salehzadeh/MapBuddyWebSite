@@ -1,133 +1,133 @@
-<style>
-.landing-page-content {
-	position: absolute;
-	text-align: center;
-	border-radius: 22px;
-	padding: 22px;
-	transition: transform .8s cubic-bezier(0.99, -0.01, 0, 1.1);
-}
-
-.landing-page-content:hover {
-	transform: scale(1.1);
-}
-/* h1, h2, h3, h4, h5, h6, p { */
-/*     color: white; */
-/* } */
-.div-21 {
-	height: 100%;
-	width: 61.76%;
-}
-
-.div-21 ul, .div-5 ul {
-	list-style: none;
-	height: 100%;
-	display: table;
-	background: radial-gradient(#c0c1e8, transparent, transparent);
-}
-
-.div-21 ul li {
-	height: 33%;
-	display: table-row;
-}
-
-.div-13 {
-	left: 61.76%;
-	width: calc(100% - 61.76%);
-	height: calc(100% - 38.09%);
-	padding-top: 44px;
-}
-
-.div-8 {
-	right: 0;
-	/* 	bottom: 0; */
-	/* 	top: calc(100% - 38.09%); */
-	/* 	left: 76.46%; */
-	left: 0;
-	bottom: 22px;
-}
-
-.div-5 {
-	left: 61.76%;
-	right: 0;
-	bottom: 0;
-	width: 14.70%;
-}
-
-#home-theme-img {
-	left: 0;
-	position: absolute;
-	width: 33%;
-	padding: 22px;
-}
-
-#home-4ir-bot-img {
-	position: absolute;
-	left: 0;
-	top: 99px !important;
-}
-</style>
 <script>
-	var countDownDate = new Date("Mar 3, 2020 00:00:00").getTime();
-	var x = setInterval(function() {
-		var now = new Date().getTime();
-		var distance = countDownDate - now;
-		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		var hours = Math.floor((distance % (1000 * 60 * 60 * 24))
-				/ (1000 * 60 * 60));
-		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		$("#signupbuttonid").html(
-				"<strong>" + days + " days, " + hours + " h, " + minutes
-						+ " m, " + seconds + " s </strong>");
-		if (distance < 0) {
-			clearInterval(x);
-			$("#demo").html() = "EXPIRED";
-		}
-	}, 1000);
+	$(document).ready(function() {
+		$("#banner-bottom-1").fadeOut()
+	})
 </script>
-<!-- 34 * 21 -->
-<div class="landing-page-content div-21">
-	<h1
-		style="margin-top: 122px; padding-left: 66px; font-style: italic; font-weight: bold;">
-		<p>2020's Theme</p>
-	</h1>
-	<img alt="" src="img/theme.svg" id="home-theme-img">
+<div class="row main-content-brain">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 brain-holder-div">
+		<img alt="#" src="static/img/MAlogo.png">
+	</div>
+	<div class="col-md-4"></div>
+	<div class="col-md-12">
+		<div class="row" id="banner-bottom-home">
+			<div class="col-md-12 banners-text-content">
+				<label for="timeCounterDivId">Registration opens in...</label>
+			</div>
+			<div class="col-md-12 timeCounterDiv" style="text-align: center;"
+				id="timeCounterDivId">
+				<ul>
+					<li class="date-counter" data-text="DAYS"
+						style="border-left: none;"><span>22</span></li>
+					<li class="date-counter" data-text="HOURS"></li>
+					<li class="date-counter" data-text="MINUTES"></li>
+					<li class="date-counter" data-text="SECONDS"></li>
+				</ul>
+				<!-- 				<img alt="" src="static/img/graphics/Big Buttons/Enterbutton.svg" -->
+				<!-- 					class="enter-now-btn-svg hover-btn-effect"> -->
+			</div>
+		</div>
+	</div>
 </div>
-<div class="landing-page-content div-13">
-	<img alt="" src="img/4irrobot.png" id="home-4ir-bot-img">
-	<h5>
-		To promote STEAM education in South African learners, towards the 4th
-		Industrial Revolution<br> <br>
-	</h5>
 </div>
-<div class="landing-page-content div-8">
-	<h4 style="font-style: italic;">Registration Opens in</h4>
-	<h3 style="font-style: italic;">
-		<span id="signupbuttonid"></span>
-		<h3 style="font-style: italic;">
 
-			<!-- 	<h5>Deadline</h5> -->
-			<!-- 	<h5>Registration Opens in</h5> -->
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 comp-theme">2020 theme is</div>
+	<div class="col-md-4"></div>
 </div>
-<div class="landing-page-content div-5">
-	<ul>
-		<li><strong>Works:</strong>{{ num_works }}</li>
-		<li><strong>Schools:</strong>{{ num_schools }}</li>
-	</ul>
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 my-universe">
+		<srong>'My Universe'</srong>
+	</div>
+	<div class="col-md-4"></div>
 </div>
-<script>
-	setTimeout(function() {
-		$(".landing-page-content").each(
-				function() {
-					$(this).css("line-height", $(this).height())
-					var div = $(this)
-					div.find("img").css(
-							"top", div.height() / 2 - ($("#home-theme-img").height() / 2))
-				})
-		$("#home-theme-img").css({
-			top:$(".div-21").find("h1").position.top,
-			left:"33px"
-		})
-		$("#home-4ir-bot-img").css("width", $(".div-13").width() -44)
-	}, 500)
-</script>
+<br>
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 social-media-btn youtube-btn">
+		<img src="static/img/graphics/Big Buttons/Youtubebutton.png"
+			class="hover-btn-effect">
+	</div>
+	<div class="col-md-4"></div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 mid-div-container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 mid-div-icons" style="text-align: center;">
+				<img src="static/img/graphics/Homepage icons/Circlehead.svg" alt="">What
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-2"></div>
+			<div class="col-md-8">MathArt challenges you to use both sides
+				of your brain to make an original artwork that connects Mathematics
+				in a visual and creative way to the theme of the competition. This
+				year's theme is "My Universe"</div>
+			<div class="col-md-2"></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mid-div-icons">
+						<img src="static/img/graphics/Homepage icons/Circlecalendar.svg"
+							alt="">When
+					</div>
+					<div class="col-md-12">
+						<strong>Registration opens:</strong> 3 March 2020 </br> <strong>Entries
+							close:</strong> 29 April 2020 at 5pm.
+					</div>
+				</div>
+				<br>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mid-div-icons">
+						<img src="static/img/graphics/Homepage icons/Circlestudents.svg"
+							alt="">Who
+					</div>
+					<div class="col-md-12">All learners from Grade 7 to 12.</div>
+				</div>
+			</div>
+			<br>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mid-div-icons">
+						<img src="static/img/graphics/Homepage icons/Circlefree.svg"
+							alt="">How Much
+					</div>
+					<div class="col-md-12">Entry is FREE</div>
+				</div>
+				<br>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mid-div-icons">
+						<img
+							src="static/img/graphics/Homepage icons/Circleinformation.svg"
+							alt="">Why
+					</div>
+					<div class="col-md-12">Promoting STEAM education because
+						creative problem-solving is essential for the 4IR.</div>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 social-media-btn youtube-btn">
+		<img src="static/img/graphics/Big Buttons/GMMDC button.png"
+			class="hover-btn-effect">
+	</div>
+	<div class="col-md-4"></div>
+</div>
