@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<title>JumpTrak</title>
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font-awesome/css/all.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+		$("#register-form").hide()
+	})
+</script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-light">
+			<a class="navbar-brand" href="#"> <img src="img/logo_footer.png"
+				style="width: auto; height: 66px;" alt="">
+			</a>
+		</nav>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form method="post" action="#" id="login-form"
+					enctype="multipart/form-data" novalidate>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<br>
+							<h2>Login</h2>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<div class="input-group-prepend">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="email" class="form-control"
+									placeholder="Email or username" autocomplete="off"
+									id="username" name="username">
+							</div>
+						</div>
+						<br>
+
+						<div class="form-group col-sm-12">
+							<div class="input-group-prepend">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+									type="password" class="form-control" id="password1"
+									name="password1" placeholder="Password" data-toggle="tooltip"
+									title="Password must be at least 8 charachters, including numbers and charachters.">
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row form-group">
+						<div class="input-group col-md-6">
+							<button class="btn btn-primary btn-block btn-success"
+								type="button" id="register-btn"
+								onclick='$("#register-form").hide();$("#login-form").show();'>Login</button>
+						</div>
+						<div class="input-group col-md-6">
+							<button class="btn btn-link btn-block" type="button"
+								id="register-btn"
+								onclick='$("#register-form").show();$("#login-form").hide();'>Register
+								now</button>
+						</div>
+					</div>
+				</form>
+				<form method="post" action="#" id="register-form"
+					enctype="multipart/form-data">
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<br>
+							<h2>Register</h2>
+							<hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<label for="region-dropdown">Register as a</label> <select
+								class="form-control form-input disabled" id="region-dropdown"
+								onchange="getSchoolVal(3)">
+								<option value="" selected="selected">Business Owner</option>
+								<option value="">Learner</option>
+								<option value="">Teacher</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<div class="input-group-prepend">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="email" class="form-control"
+									placeholder="Email or username" autocomplete="off"
+									id="username" name="username">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<div class="input-group-prepend">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+									type="password" class="form-control" id="password1"
+									name="password1" placeholder="Password" data-toggle="tooltip"
+									title="Password must be at least 8 charachters, including numbers and charachters.">
+							</div>
+						</div>
+						<div class="form-group col-sm-12">
+							<div class="input-group-prepend">
+								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+									type="password" class="form-control" id="password2"
+									name="password2" placeholder="re-password">
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row form-group">
+						<div class="input-group col-md-6">
+							<button class="btn btn-primary btn-block btn-success"
+								type="button" id="register-btn"
+								onclick='$("#register-form").hide();$("#login-form").show();'>Login</button>
+						</div>
+						<div class="input-group col-md-6">
+							<button class="btn btn-link btn-block" type="button"
+								id="register-btn"
+								onclick='$("#register-form").show();$("#login-form").hide();'>Register
+								now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+</body>
+
+</html>
