@@ -2,7 +2,7 @@
 
 <head>
 <title>JumpTrak</title>
-<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
 <script src="js/jquery.min.js"></script>
@@ -13,7 +13,9 @@
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip()
 		})
-		$("#register-form").hide()
+		$(".nav-tabs a").click(function() {
+			$(this).tab('show');
+		});
 	})
 </script>
 </head>
@@ -25,75 +27,46 @@
 				style="width: auto; height: 66px;" alt="">
 			</a>
 		</nav>
-		<div class="row" id="login-form">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<form method="post" action="#" enctype="multipart/form-data"
-					novalidate>
-					<div class="row">
-						<div class="form-group col-sm-12">
-							<br>
-							<h2>Login</h2>
-							<hr>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="email" class="form-control"
-									placeholder="Email or username" autocomplete="off"
-									id="username" name="username">
-							</div>
-						</div>
-						<br>
-
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-									type="password" class="form-control" id="password1"
-									name="password1" placeholder="Password" data-toggle="tooltip"
-									title="Password must be at least 8 charachters, including numbers and charachters.">
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="row form-group">
-						<div class="input-group col-md-6">
-							<button class="btn btn-primary btn-block btn-success"
-								type="button" id="register-btn"
-								onclick='$("#register-form").hide();$("#login-form").show();'>Login</button>
-						</div>
-						<div class="input-group col-md-6">
-							<button class="btn btn-link btn-block" type="button"
-								id="register-btn"
-								onclick='$("#register-form").show();$("#login-form").hide();'>Register
-								now</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
 		<div class="row" id="register-form">
-			<div class="col-md-3"></div>
-			<div class="col-md-6">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
 				<form method="post" action="#" enctype="multipart/form-data">
 					<div class="row">
 						<div class="form-group col-sm-12">
 							<br>
-							<h2>Register</h2>
+							<h2>Business Owner</h2>
+							<h6>(Callback from the confirmation email)</h6>
 							<hr>
 						</div>
 					</div>
-					<div class="row">
-						<div class="form-group col-sm-6">
-							<label for="region-dropdown">Register as a</label> <select
-								class="form-control form-input disabled" id="region-dropdown"
-								onchange="getSchoolVal(3)">
-								<option value="0" selected="selected">Business Owner</option>
-								<option value="1">Learner</option>
-								<option value="2">Teacher</option>
-							</select>
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#home">Profile</a></li>
+						<li><a href="#menu1">My Organisations</a></li>
+						<li><a href="#menu2">My Schools</a></li>
+						<li><a href="#menu3">Menu 3</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="home" class="tab-pane fade in active">
+							<h3>HOME</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+								sed do eiusmod tempor incididunt ut labore et dolore magna
+								aliqua.</p>
+						</div>
+						<div id="menu1" class="tab-pane fade">
+							<h3>Menu 1</h3>
+							<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
+						<div id="menu2" class="tab-pane fade">
+							<h3>Menu 2</h3>
+							<p>Sed ut perspiciatis unde omnis iste natus error sit
+								voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+						</div>
+						<div id="menu3" class="tab-pane fade">
+							<h3>Menu 3</h3>
+							<p>Eaque ipsa quae ab illo inventore veritatis et quasi
+								architecto beatae vitae dicta sunt explicabo.</p>
 						</div>
 					</div>
 					<div class="row">
@@ -109,8 +82,8 @@
 							<div class="input-group-prepend">
 								<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
 								<input type="email" class="form-control"
-									placeholder="Landline or cellphone Number (can be expanded by a phone book)" autocomplete="off"
-									id="username" name="username">
+									placeholder="Landline or cellphone Number (can be expanded by a phone book)"
+									autocomplete="off" id="username" name="username">
 							</div>
 						</div>
 						<div class="form-group col-sm-6">
@@ -139,12 +112,12 @@
 						<div class="input-group col-md-6">
 							<button class="btn btn-block btn-outline-info" type="button"
 								id="register-btn"
-								onclick='window.location.replace("businessowner.html")'>Next</button>
+								onclick='$("#register-form").hide();$("#login-form").show();'>Next</button>
 						</div>
 					</div>
 				</form>
 			</div>
-			<div class="col-md-3"></div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 </body>
