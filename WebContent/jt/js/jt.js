@@ -31,7 +31,6 @@ function toggleConfirmationBox(callback) {
 function openFullScreenDiv(htmlContenet) {
 	$(".full-screen-div").html(htmlContenet)
 	$(".full-screen-div").css("display", "block")
-	$(this).find(".close-button").load('static/img/icons/close.svg')
 	$(".dialog-popup-content").append(
 			$("<div/>").addClass("close-button").attr("onclick",
 					"closeFullScreenDiv()"))
@@ -45,7 +44,18 @@ function openFullScreenDiv(htmlContenet) {
 	})
 }
 
-function showDialogPage(element, url) {
+function closeFullScreenDiv() {
+	TweenLite.to(".full-screen-div", .333, {
+		scale : 0,
+		transformOrigin : "center",
+		onComplete : function() {
+			$(".full-screen-div").html("")
+		}
+
+	})
+}
+
+function showDialogPage(url) {
 	$("<div/>").load(
 			url,
 			function(response) {
