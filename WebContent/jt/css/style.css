@@ -205,7 +205,8 @@
 	transform: scale(1.1);
 }
 
-@media ( max-width : 768px) {
+
+@media ( max-width : 768px){
 	.navbar .navbar-right .dropdown-menu {
 		width: 100%;
 		background: transparent;

@@ -11,7 +11,7 @@ function toggleMessageBox(messageText, isError) {
 	}
 }
 var func = function() {
-	window.location.replace("businessowner.html")
+	window.location.replace("regWizard.html")
 }
 function register() {
 	toggleConfirmationBox(func, "A confirmation email has been sent to you")
@@ -63,4 +63,10 @@ function showDialogPage(url) {
 						+ response + "</div>")
 			})
 	return -1
+}
+
+function gradeChose(radioBTN) {
+	$('.btn-outline-secondary.btn-group').removeClass('active');
+	if (radioBTN != null)
+		$('#currentlearnergrade').val($(radioBTN).val())
 }

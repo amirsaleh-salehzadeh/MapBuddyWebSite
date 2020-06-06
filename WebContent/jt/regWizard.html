@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>JumpTrak</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font-awesome/css/all.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/jt.js"></script>
+<script src="js/GSAP/TweenMax.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+		$(".nav-tabs a").click(function() {
+			$(this).tab('show');
+		});
+	})
+</script>
+<style type="text/css">
+.progress {
+	list-style: none;
+	margin: 11px;
+	padding: 0;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	background-color: transparent;
+	color: #849397;
+	font-size: 19px;
+}
+
+.progress>li {
+	position: relative;
+	display: table-cell;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.progress>li:before {
+	content: attr(data-step);
+	display: block;
+	margin: 0 auto;
+	background: #DFE3E4;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	margin-bottom: 0.25em;
+	line-height: 3em;
+	border-radius: 100%;
+	position: relative;
+	z-index: 1000;
+}
+
+.progress>li:after {
+	content: '';
+	position: absolute;
+	display: block;
+	background: #DFE3E4;
+	width: 100%;
+	height: 0.5em;
+	top: 1.25em;
+	left: 50%;
+	margin-left: 1.5em\9;
+	z-index: -1;
+}
+
+.progress>li:last-child:after {
+	display: none;
+}
+
+.progress>li.is-complete {
+	color: #2ECC71;
+}
+
+.progress>li.is-complete:before, .progress>li.is-complete:after {
+	color: #FFF;
+	background: #2ECC71;
+}
+
+.progress>li.is-active {
+	color: #3498DB;
+}
+
+.progress>li.is-active:before {
+	color: #FFF;
+	background: #3498DB;
+}
+
+.progress__last:after {
+	display: none !important;
+}
+
+/**
+ * Size Extensions
+ */
+.progress--medium {
+	font-size: 1.5em;
+}
+
+.progress--large {
+	font-size: 2em;
+}
+
+/**
+ * Some Generic Stylings
+ */
+.progress {
+	margin-bottom: 3em;
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="full-screen-div"></div>
+		<nav class="navbar navbar-light">
+			<a class="navbar-brand" href="#"> <img src="img/logo_footer.png"
+				style="width: auto; height: 66px;" alt="">
+			</a>
+		</nav>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 text-left">
+				<hr>
+				<h5>Only a few steps, then, we can get you going</h5>
+				<hr>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<ol class="progress">
+					<li class="is-active" data-step="1">Account Type</li>
+					<li class="" data-step="2">Contact</li>
+					<li class="" data-step="3">Payment</li>
+					<li data-step="4" class="progress__last">Confirm</li>
+				</ol>
+
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
+					data-toggle="buttons">
+					<label class="btn btn-outline-secondary btn-group btn-group-sm">
+						<input type="radio" name="learnergradeRadio" value="Grade 7"
+						onclick="gradeChose(this)"><i
+						class="fa fa-chalkboard-teacher">&nbsp;&nbsp;&nbsp;</i>Primary or
+						High School Teacher
+					</label>
+				</div>
+				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
+					data-toggle="buttons">
+					<label class="btn btn-outline-secondary btn-group btn-group-sm">
+						<input type="radio" name="learnergradeRadio" value="Grade 8"
+						onclick="gradeChose(this)"><i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Guardian
+						of a Learner
+					</label>
+				</div>
+				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
+					data-toggle="buttons">
+					<label class="btn btn-outline-secondary btn-group btn-group-sm">
+						<input type="radio" name="learnergradeRadio" value="Grade 9"
+						onclick="gradeChose(this)"><i class="fa fa-user-tie">&nbsp;&nbsp;&nbsp;</i>Business
+						Owner
+					</label>
+				</div>
+				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
+					data-toggle="buttons">
+					<label class="btn btn-outline-secondary btn-group btn-group-sm">
+						<input type="radio" name="learnergradeRadio" value="Grade 10"
+						onclick=""><i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>Individual
+						Use
+					</label>
+				</div>
+				<div class="col-md-6 btn-group btn-group-toggle btn-sm"
+					data-toggle="buttons">
+					<label class="btn btn-outline-secondary btn-group btn-group-sm">
+						<input type="radio" name="learnergradeRadio" value="Grade 11"
+						onclick="gradeChose(this)"><i class="fa fa-user-shield">&nbsp;&nbsp;&nbsp;</i>Representative
+						of a Tertiary Education institution
+					</label>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4">
+				<button class="btn btn-link btn-block text-left">Skip
+					Registration Wizard and Go to Account Settings</button>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-outline-primary btn-block">Next</button>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<hr>
+	</div>
+</body>
+
+</html>

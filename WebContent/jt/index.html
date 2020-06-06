@@ -17,6 +17,13 @@
 			$('[data-toggle="tooltip"]').tooltip()
 		})
 		$("#register-form").hide()
+		$("#qrcode").hide()
+		$("#region-dropdown").on("change", function() {
+			if (parseInt($(this).val()) > 1)
+				$("#qrcode").fadeIn()
+			else
+				$("#qrcode").fadeOut()
+		})
 	})
 </script>
 </head>
@@ -71,9 +78,10 @@
 						<div class="form-group col-sm-12">
 							<div class="input-group-prepend">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="email" class="form-control" onchange="alert('Validate the username uniqueness.')"
+								<input type="email" class="form-control"
+									onchange="alert('Validate the username uniqueness.')"
 									placeholder="Email or username" autocomplete="off"
-									id="username" name="username">
+									id="username" name="username" required="required">
 							</div>
 						</div>
 						<br>
@@ -91,22 +99,39 @@
 						<div class="input-group col-md-6">
 							<button class="btn btn-primary btn-block btn-success"
 								type="button" id="register-btn"
-								onclick='$("#register-form").hide();$("#login-form").show();'>Login</button>
+								onclick='$("#register-form").hide();$("#login-form").show();'>
+								<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Login
+							</button>
 						</div>
 						<div class="input-group col-md-6">
 							<button class="btn btn-link btn-block" type="button"
 								id="register-btn"
 								onclick='$("#register-form").show();$("#login-form").hide();'>Register
-								now</button>
+								Now</button>
+						</div>
+						<div class="input-group col-md-6">
+							<button class="btn btn-link btn-block text-left" type="button"
+								id="register-btn"
+								onclick='$("#register-form").show();$("#login-form").hide();'>Forgot
+								your password?</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
+
+
+
+		<!-- 		REGISTER -->
+
+
+
 		<div class="row" id="register-form">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
-				<form method="post" action="#" enctype="multipart/form-data">
+				<form method="post" action="#"
+					class="was-validated form-general-style"
+					enctype="multipart/form-data" novalidate>
 					<div class="row">
 						<div class="form-group col-sm-12">
 							<br>
@@ -130,17 +155,17 @@
 						<div class="form-group col-sm-12">
 							<div class="input-group-prepend">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="email" class="form-control"
-									placeholder="Email or username" autocomplete="off"
+								<input type="email" class="form-control" required
+									placeholder="Select a username" autocomplete="off"
 									id="username" name="username">
 							</div>
 						</div>
-						<div class="form-group col-sm-12">
+						<div class="form-group col-sm-12" id="qrcode">
 							<div class="input-group-prepend">
 								<span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-								<input type="email" class="form-control"
-									placeholder="Invitation Key" autocomplete="off"
-									id="username" name="username"><i class="fa fa-camera"></i>
+								<input type="text" class="form-control is-invalid"
+									placeholder="Invitation Key" autocomplete="off" name="username"><i
+									class="fa fa-camera"></i>
 							</div>
 						</div>
 						<!-- 						<div class="form-group col-sm-6"> -->
@@ -172,7 +197,9 @@
 						<div class="input-group col-md-6">
 							<button class="btn btn-primary btn-block btn-success"
 								type="button" id="register-btn"
-								onclick='$("#register-form").hide();$("#login-form").show();'>Login</button>
+								onclick='$("#register-form").hide();$("#login-form").show();'>
+								<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Login
+							</button>
 						</div>
 						<div class="input-group col-md-6">
 							<button class="btn btn-block btn-outline-info" type="button"
