@@ -1,3 +1,35 @@
+function loadContent(url) {
+	$("div#page-content").hide()
+	$(".frameLoding").fadeIn()
+	$(".menu-item").removeClass("active")
+	$(".page-content-area-bg").remove()
+	$(".page-content-area").remove()
+	$.ajax({
+		url : url,
+		cache : false,
+		success : function(response) {
+			var tl = new TimelineLite({
+				paused : true,
+				ease : Power4.easeOut
+			})
+			tl.to("#page-content", 1, {
+				opacity : 0
+			}).to("#page-content", 1.2, {
+				opacity : 1
+			}, "-= .4")
+			$("#page-content").fadeIn()
+			$("#page-content").html("")
+			$("#page-content").prepend(
+					$("<div/>").addClass("page-content-area"))
+			$(".page-content-area").html(response)
+			$("#page-content").prepend(
+					$("<div/>").addClass("page-content-area-bg"))
+			tl.play()
+			$(".frameLoding").fadeOut()
+		}
+	})
+}
+
 // SHOWS/HIDES THE MESSAGE BOX,
 // INPUT: 1- gets a text message and boolean (True pops the error message. False
 // pops the success message)
@@ -10,13 +42,10 @@ function toggleMessageBox(messageText, isError) {
 		$("#success-message-modal").modal("show")
 	}
 }
-var func = function() {
-	window.location.replace("regWizard.html")
-}
-function register() {
-	toggleConfirmationBox(func, "A confirmation email has been sent to you")
-}
 
+// Toggles a confirmation box,
+// The inputs, include a string showing the message, a callback function and
+// respective the parameters required for the callback function
 function toggleConfirmationBox(callback) {
 	$(".confirmation-message-content").html(arguments[1])
 	$("#confirmation-box-modal").modal("show")
@@ -26,6 +55,14 @@ function toggleConfirmationBox(callback) {
 		callback(args)
 		$("#confirmation-box-modal").modal("hide")
 	})
+}
+
+var funcRegWizard = function() {
+	loadContent("OTPReceived.html")
+}
+
+function register() {
+	toggleConfirmationBox(funcRegWizard, "An OTP (One-Time-Password) has been sent to you")
 }
 
 function openFullScreenDiv(htmlContenet) {
@@ -70,3 +107,13 @@ function gradeChose(radioBTN) {
 	if (radioBTN != null)
 		$('#currentlearnergrade').val($(radioBTN).val())
 }
+
+
+
+$(document).ready(function() {
+	TweenLite.to(".full-screen-div", .333, {
+		scale : 0,
+		transformOrigin : "center"
+	})
+	loadContent("login.html")
+})

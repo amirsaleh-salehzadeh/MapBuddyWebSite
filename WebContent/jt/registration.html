@@ -1,0 +1,102 @@
+<div class="row" id="register-form">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form method="post" action="#"
+			class="was-validated form-general-style"
+			enctype="multipart/form-data" novalidate>
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<hr>
+					<h2>Register</h2>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<label class="col-sm-4 control-label" for="country-dropdown">Country</label>
+					<div class="col-sm-12 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+							<select class="form-control form-input disabled selectpicker"
+								id="country-dropdown" data-live-search="true">
+								<option value="0" selected="selected" disabled="disabled">Select
+									Country</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col-sm-12">
+					<label class="col-sm-4 control-label" for="country-dropdown">Email</label>
+					<div class="col-sm-12 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+							<input name="email" placeholder="E-Mail Address"
+								class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="col-sm-12 text-center">
+					<span class="text-center">Or</span>
+				</div>
+				<br>
+				<div class="form-group col-sm-4">
+					<label class="col-sm-4 control-label" for="areaCode">Code</label>
+					<div class="input-group-prepend">
+						<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+						<input type="text" class="form-control is-invalid disabled"
+							placeholder="Area Code" autocomplete="off" id="areaCode">
+					</div>
+				</div>
+				<div class="form-group col-sm-8">
+					<label class="col-sm-8 control-label" for="phoneno">Cellphone
+						Number</label>
+					<div class="input-group-prepend">
+						<input type="text" class="form-control is-invalid" id="phoneno"
+							placeholder="Cellphone Number" autocomplete="off"
+							name="cellphone">
+					</div>
+				</div>
+				<hr>
+			</div>
+			<br>
+			<div class="row">
+				<div class="input-group col-md-6">
+					<button class="btn btn-primary btn-block btn-success" type="button"
+						id="register-btn" onclick='loadContent("registration.html")'>
+						<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Login
+					</button>
+				</div>
+				<div class="input-group col-md-6">
+					<button class="btn btn-block btn-outline-info" type="button"
+						id="register-btn" onclick='register()'>Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-4"></div>
+</div>
+<script>
+	$('#country-dropdown').selectpicker()
+	$(document).ready(
+			function() {
+				$.getJSON("json/country-codes.json", function(data) {
+					var items = [];
+					$.each(data, function(i, j) {
+						$("#country-dropdown").append(
+								$("<option/>").attr("value", j["dial_code"])
+										.text(j["name"]))
+						if (i == (data.length - 1)) {
+							$("#country-dropdown").selectpicker("refresh")
+							$("#country-dropdown").on(
+									"change",
+									function() {
+										$("#areaCode").val(
+												$("#country-dropdown").val())
+									})
+						}
+
+					})
+				})
+			})
+</script>

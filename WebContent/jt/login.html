@@ -1,0 +1,55 @@
+<div class="row" id="login-form">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form method="post" action="#" enctype="multipart/form-data"
+			novalidate>
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<br>
+					<h2>Login</h2>
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<div class="input-group-prepend">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input type="email" class="form-control"
+							onchange="alert('Validate the username uniqueness.')"
+							placeholder="Email or username" autocomplete="off" id="username"
+							name="username" required="required">
+					</div>
+				</div>
+				<br>
+				<div class="form-group col-sm-12">
+					<div class="input-group-prepend">
+						<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+							type="password" class="form-control" id="password1"
+							name="password1" placeholder="Password" data-toggle="tooltip"
+							title="Password must be at least 8 charachters, including numbers and charachters.">
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row form-group">
+				<div class="input-group col-md-12">
+					<button class="btn btn-primary btn-block btn-success" type="button"
+						id="register-btn" onclick='loadContent("login.html")'>
+						<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Login
+					</button>
+				</div>
+				<div class="input-group col-md-12">
+					<button class="btn btn-link btn-block text-left" type="button"
+						id="register-btn"
+						onclick='$("#register-form").show();$("#login-form").hide();'>Forgot
+						your password?</button>
+				</div>
+				<div class="input-group col-md-12">
+					<button class="btn btn-link btn-block" type="button"
+						id="register-btn" onclick='loadContent("registration.html")'>New
+						User? Register Now</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

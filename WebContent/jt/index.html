@@ -7,25 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<script src="js/jt.js"></script>
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		})
-		$("#register-form").hide()
-		$("#qrcode").hide()
-		$("#region-dropdown").on("change", function() {
-			if (parseInt($(this).val()) > 1)
-				$("#qrcode").fadeIn()
-			else
-				$("#qrcode").fadeOut()
-		})
-	})
-</script>
+<link href="css/bootstrap/bootstrap-select.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container-fluid">
@@ -47,7 +29,7 @@
 					<div class="modal-footer col-md-12">
 						<button type="button" class="btn btn-success"
 							id="confirmation-box-btn">
-							<i class="fa fa-check-circle">&nbsp;&nbsp;&nbsp;</i>Ok
+							<i class="fa fa-check-circle">&nbsp;&nbsp;&nbsp;</i>Confirm
 						</button>
 						<button type="button" class="btn btn-outline-warning"
 							data-dismiss="modal">
@@ -62,64 +44,9 @@
 				style="width: auto; height: 66px;" alt="">
 			</a>
 		</nav>
-		<div class="row" id="login-form">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<form method="post" action="#" enctype="multipart/form-data"
-					novalidate>
-					<div class="row">
-						<div class="form-group col-sm-12">
-							<br>
-							<h2>Login</h2>
-							<hr>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="email" class="form-control"
-									onchange="alert('Validate the username uniqueness.')"
-									placeholder="Email or username" autocomplete="off"
-									id="username" name="username" required="required">
-							</div>
-						</div>
-						<br>
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-									type="password" class="form-control" id="password1"
-									name="password1" placeholder="Password" data-toggle="tooltip"
-									title="Password must be at least 8 charachters, including numbers and charachters.">
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="row form-group">
-						<div class="input-group col-md-6">
-							<button class="btn btn-primary btn-block btn-success"
-								type="button" id="register-btn"
-								onclick='$("#register-form").hide();$("#login-form").show();'>
-								<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Login
-							</button>
-						</div>
-						<div class="input-group col-md-6">
-							<button class="btn btn-link btn-block" type="button"
-								id="register-btn"
-								onclick='$("#register-form").show();$("#login-form").hide();'>Register
-								Now</button>
-						</div>
-						<div class="input-group col-md-6">
-							<button class="btn btn-link btn-block text-left" type="button"
-								id="register-btn"
-								onclick='$("#register-form").show();$("#login-form").hide();'>Forgot
-								your password?</button>
-						</div>
-					</div>
-				</form>
-			</div>
+		<div class="row">
+			<div class="col-md-12" id="page-content"></div>
 		</div>
-
 
 
 		<!-- 		REGISTER -->
@@ -151,47 +78,6 @@
 							</select>
 						</div>
 					</div>
-					<div class="row">
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="email" class="form-control" required
-									placeholder="Select a username" autocomplete="off"
-									id="username" name="username">
-							</div>
-						</div>
-						<div class="form-group col-sm-12" id="qrcode">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-								<input type="text" class="form-control is-invalid"
-									placeholder="Invitation Key" autocomplete="off" name="username"><i
-									class="fa fa-camera"></i>
-							</div>
-						</div>
-						<!-- 						<div class="form-group col-sm-6"> -->
-						<!-- 							<div class="input-group-prepend"> -->
-						<!-- 								<span class="input-group-addon"><i class="fa fa-mobile"></i></span> -->
-						<!-- 								<input type="email" class="form-control" -->
-						<!-- 									placeholder="Landline or cellphone Number (can be expanded by a phone book)" autocomplete="off" -->
-						<!-- 									id="username" name="username"> -->
-						<!-- 							</div> -->
-						<!-- 						</div> -->
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-									type="password" class="form-control" id="password1"
-									name="password1" placeholder="Password" data-toggle="tooltip"
-									title="Password must be at least 8 charachters, including numbers and charachters.">
-							</div>
-						</div>
-						<div class="form-group col-sm-12">
-							<div class="input-group-prepend">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-									type="password" class="form-control" id="password2"
-									name="password2" placeholder="re-password">
-							</div>
-						</div>
-					</div>
 					<hr>
 					<div class="row form-group">
 						<div class="input-group col-md-6">
@@ -212,5 +98,25 @@
 		</div>
 	</div>
 </body>
-
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/GSAP/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/bootstrap/bootstrap-select.min.js"
+	type="text/javascript"></script>
+<script src="js/jt.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+		$("#register-form").hide()
+		$("#qrcode").hide()
+		$("#region-dropdown").on("change", function() {
+			if (parseInt($(this).val()) > 1)
+				$("#qrcode").fadeIn()
+			else
+				$("#qrcode").fadeOut()
+		})
+	})
+</script>
 </html>
