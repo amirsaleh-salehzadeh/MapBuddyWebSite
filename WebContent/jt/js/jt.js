@@ -26,6 +26,9 @@ function loadContent(url) {
 					$("<div/>").addClass("page-content-area-bg"))
 			tl.play()
 			$(".frameLoding").fadeOut()
+		},
+		complete : function() {
+			$('[data-toggle="tooltip"]').tooltip()
 		}
 	})
 }
@@ -62,7 +65,8 @@ var funcRegWizard = function() {
 }
 
 function register() {
-	toggleConfirmationBox(funcRegWizard, "An OTP (One-Time-Password) has been sent to you")
+	toggleConfirmationBox(funcRegWizard,
+			"An OTP (One-Time-Password) has been sent to you")
 }
 
 function openFullScreenDiv(htmlContenet) {
@@ -107,8 +111,6 @@ function gradeChose(radioBTN) {
 	if (radioBTN != null)
 		$('#currentlearnergrade').val($(radioBTN).val())
 }
-
-
 
 $(document).ready(function() {
 	TweenLite.to(".full-screen-div", .333, {

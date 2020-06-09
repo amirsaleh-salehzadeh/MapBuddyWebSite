@@ -10,6 +10,73 @@
 <link href="css/bootstrap/bootstrap-select.min.css" rel="stylesheet" />
 </head>
 <body>
+	<div class="frameLoding">
+		<div class="frame">
+			<div class="center">
+				<div class="dot-1"></div>
+				<div class="dot-2"></div>
+				<div class="dot-3"></div>
+				<div class="loading">
+					<div class="loading-text">
+						<span class="loading-text-words">L</span> <span
+							class="loading-text-words">O</span> <span
+							class="loading-text-words">A</span> <span
+							class="loading-text-words">D</span> <span
+							class="loading-text-words">I</span> <span
+							class="loading-text-words">N</span> <span
+							class="loading-text-words">G</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="full-screen-div"></div>
+	<div class="modal fade" id="success-message-modal" tabindex="-1"
+		role="dialog" aria-labelledby="success-message-modal"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content card text-white bg-success">
+				<div class="modal-header card-header">
+					<h5 class="modal-title text-white" id="exampleModalLabel">
+						<i class="fa fa-thumbs-up">&nbsp;&nbsp;&nbsp;</i>Succeed
+					</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body success-message-content">body</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light" data-dismiss="modal">
+						<i class="fa fa-times-circle">&nbsp;&nbsp;&nbsp;</i>Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="error-message-modal" tabindex="-1"
+		role="dialog" aria-labelledby="success-message-modal"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content card text-white bg-danger">
+				<div class="modal-header card-header">
+					<h5 class="modal-title text-white" id="exampleModalLabel">
+						<i class="fa fa-thumbs-down">&nbsp;&nbsp;&nbsp;</i>Failed
+					</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body error-message-content">body</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-light" data-dismiss="modal">
+						<i class="fa fa-times-circle">&nbsp;&nbsp;&nbsp;</i>Close
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container-fluid">
 		<div class="modal fade" id="confirmation-box-modal" tabindex="-1"
 			role="dialog" aria-labelledby="confirmation-box-modal"
@@ -106,9 +173,6 @@
 <script src="js/jt.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		})
 		$("#register-form").hide()
 		$("#qrcode").hide()
 		$("#region-dropdown").on("change", function() {

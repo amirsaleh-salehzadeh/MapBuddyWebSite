@@ -1,113 +1,117 @@
 <div class="row">
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
 		<hr>
 		<div class="form-group">
-			<label class="col-md-12 control-label">OTP
+			<label class="col-md-6 control-label" for="">OTP
 				(One-Time-Password)</label>
-			<div class="col-md-12 inputGroupContainer">
+			<div class="col-md-6 inputGroupContainer">
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-key"></i></span> <input
-						name="phone" placeholder="01234" class="form-control" type="text">
+						id="" name="phone" placeholder="01234" class="form-control"
+						type="text">
 				</div>
 			</div>
 		</div>
 		<hr>
-		<div class="row tab-content" id="div1">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<h6></h6>
+		<h6>Are you a</h6>
+		<div class="row">
+			<div class="col-md-6 btn-group btn-group-toggle btn-sm"
+				data-toggle="buttons">
+				<label class="btn btn-outline-secondary btn-group btn-group-sm">
+					<input type="radio" name="learnergradeRadio" value="Grade 9"
+					onclick="gradeChose(this)"><i class="fa fa-user-tie">&nbsp;&nbsp;&nbsp;</i>Business
+					Owner
+				</label>
+			</div>
+			<div class="col-md-6 btn-group btn-group-toggle btn-sm"
+				data-toggle="buttons">
+				<label class="btn btn-outline-secondary btn-group btn-group-sm">
+					<input type="radio" name="learnergradeRadio" value="Grade 7"
+					onclick="gradeChose(this)"><i
+					class="fa fa-chalkboard-teacher">&nbsp;&nbsp;&nbsp;</i>Primary or
+					High School Teacher
+				</label>
+			</div>
+			<div class="col-md-7 btn-group btn-group-toggle btn-sm"
+				data-toggle="buttons">
+				<label class="btn btn-outline-secondary btn-group btn-group-sm">
+					<input type="radio" name="learnergradeRadio" value="Grade 11"
+					onclick="gradeChose(this)"><i class="fa fa-user-shield">&nbsp;&nbsp;&nbsp;</i>Representative
+					of a Tertiary Education institution
+				</label>
+			</div>
+			<div class="col-md-6 btn-group btn-group-toggle btn-sm"
+				data-toggle="buttons">
+				<label class="btn btn-outline-secondary btn-group btn-group-sm">
+					<input type="radio" name="learnergradeRadio" value="Grade 8"
+					onclick="gradeChose(this)"><i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Guardian
+					of a Learner
+				</label>
+			</div>
+			<div class="col-md-6 btn-group btn-group-toggle btn-sm"
+				data-toggle="buttons">
+				<label class="btn btn-outline-secondary btn-group btn-group-sm">
+					<input type="radio" name="learnergradeRadio" value="Grade 10"
+					onclick=""><i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>(On
+					behalf) Learner
+				</label>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label class="col-md-12 control-label">Username</label>
+						<div class="input-group-prepend">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="email" class="form-control" required
+								data-toggle="tooltip"
+								title="Currently, your email address/phone
+					number is set as the username that can be used to login to JumpTrak. Do you want to select a different username."
+								placeholder="Select a username" autocomplete="off" id="username"
+								name="username" value="me@mail.com">
+						</div>
+					</div>
+				</div>
 				<br>
-				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
-					data-toggle="buttons">
-					<label class="btn btn-outline-secondary btn-group btn-group-sm">
-						<input type="radio" name="learnergradeRadio" value="Grade 7"
-						onclick="gradeChose(this)"><i
-						class="fa fa-chalkboard-teacher">&nbsp;&nbsp;&nbsp;</i>Primary or
-						High School Teacher
-					</label>
-				</div>
-				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
-					data-toggle="buttons">
-					<label class="btn btn-outline-secondary btn-group btn-group-sm">
-						<input type="radio" name="learnergradeRadio" value="Grade 8"
-						onclick="gradeChose(this)"><i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Guardian
-						of a Learner
-					</label>
-				</div>
-				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
-					data-toggle="buttons">
-					<label class="btn btn-outline-secondary btn-group btn-group-sm">
-						<input type="radio" name="learnergradeRadio" value="Grade 9"
-						onclick="gradeChose(this)"><i class="fa fa-user-tie">&nbsp;&nbsp;&nbsp;</i>Business
-						Owner
-					</label>
-				</div>
-				<div class="col-md-4 btn-group btn-group-toggle btn-sm"
-					data-toggle="buttons">
-					<label class="btn btn-outline-secondary btn-group btn-group-sm">
-						<input type="radio" name="learnergradeRadio" value="Grade 10"
-						onclick=""><i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>Individual
-						Use
-					</label>
-				</div>
-				<div class="col-md-6 btn-group btn-group-toggle btn-sm"
-					data-toggle="buttons">
-					<label class="btn btn-outline-secondary btn-group btn-group-sm">
-						<input type="radio" name="learnergradeRadio" value="Grade 11"
-						onclick="gradeChose(this)"><i class="fa fa-user-shield">&nbsp;&nbsp;&nbsp;</i>Representative
-						of a Tertiary Education institution
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="form-group col-sm-12">
-					<small class="text-danger question2">The username already
-						exist</small>
-					<div class="input-group-prepend">
-						<span class="input-group-addon"><i class="fa fa-user"></i></span>
-						<input type="email" class="form-control" required
-							placeholder="Select a username" autocomplete="off" id="username"
-							name="username">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label class="col-md-12 control-label">Password</label>
+						<div class="input-group-prepend">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+								type="password" class="form-control" id="password1"
+								name="password1" placeholder="Password" data-toggle="tooltip"
+								title="Password must be at least 8 charachters, including numbers and charachters.">
+						</div>
 					</div>
-				</div>
-				<div class="form-group col-sm-12" id="qrcode">
-					<div class="input-group-prepend">
-						<span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-						<input type="text" class="form-control is-invalid"
-							placeholder="Invitation Key" autocomplete="off" name="username"><i
-							class="fa fa-camera"></i>
+					<div class="form-group col-sm-6">
+						<label class="col-md-12 control-label">Re-type Password</label>
+						<div class="input-group-prepend">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span>
+							<input type="password" class="form-control" id="password2"
+								name="password2" placeholder="re-password">
+						</div>
 					</div>
-				</div>
-				<div class="form-group col-sm-12">
-					<div class="input-group-prepend">
-						<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-							type="password" class="form-control" id="password1"
-							name="password1" placeholder="Password" data-toggle="tooltip"
-							title="Password must be at least 8 charachters, including numbers and charachters.">
-					</div>
-				</div>
-				<div class="form-group col-sm-12">
-					<div class="input-group-prepend">
-						<span class="input-group-addon"><i class="fa fa-key"></i></span><input
-							type="password" class="form-control" id="password2"
-							name="password2" placeholder="re-password">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-group col-md-6">
-					<button class="btn btn-block btn-link" type="button"
-						id="register-btn" onclick='register()'>Re-send OTP</button>
-				</div>
-				<div class="input-group col-md-6">
-					<button class="btn btn-primary btn-block btn-success" type="button"
-						id="register-btn" onclick='loadContent("personalProfile.html")'>
-						<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Enter
-					</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4"></div>
+		<div class="row">
+			<div class="input-group col-md-6">
+				<button class="btn btn-block btn-link" type="button"
+					id="register-btn" onclick='loadContent("OTPReceived.html")'>Re-send
+					OTP</button>
+			</div>
+			<div class="input-group col-md-6">
+				<button class="btn btn-primary btn-block btn-success" type="button"
+					id="register-btn" onclick='loadContent("personalProfile.html")'>
+					<i class="fa fa-sign-in-alt">&nbsp;&nbsp;&nbsp;</i>Confirm
+				</button>
+			</div>
+		</div>
+		<!-- 			</div> -->
+		<!-- 		</div> -->
+		<div class="col-md-3"></div>
 	</div>
 </div>
