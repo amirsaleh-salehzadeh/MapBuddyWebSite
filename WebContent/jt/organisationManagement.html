@@ -43,7 +43,7 @@
 	top: 1.25em;
 	left: 50%;
 	margin-left: 1.5em\9;
-	z-index: -1;
+	z-index: 0;
 }
 
 .progress>li:last-child:after {
@@ -90,8 +90,10 @@
 	margin-bottom: 3em;
 }
 </style>
+
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
 		<br>
 		<div class="row">
 			<div class="form-group col-sm-12 text-center">
@@ -101,34 +103,450 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8" style="overflow-x: auto;">
+			<div class="col-md-12" style="overflow-x: auto;">
 				<ol class="progress" style="min-width: 555px;">
-					<li class="is-active" data-step="1">Identify your organisation</li>
+					<li class="is-active" data-step="1">Identify the organisation</li>
 					<li data-step="2">Identify schools/institutes</li>
-					<li data-step="3">Identify the staff and instructors</li>
+					<li data-step="3">Identify the staff/instructors</li>
 					<li data-step="4">Identify the learners</li>
 					<li data-step="5" class="progress__last">Done!</li>
 				</ol>
 			</div>
-			<div class="col-md-2"></div>
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="form-group col-sm-6">
-				<label class="col-md-4 control-label" for="country-dropdown">Country</label>
-				<div class="col-md-12 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"><i class="fa fa-globe"></i></span>
-						<select class="form-control form-input disabled selectpicker"
-							id="country-dropdown" data-live-search="true">
-							<option value="0" selected="selected" disabled="disabled">Select
-								Country</option>
-						</select>
+			<div class="col-md-12 tab-content" id="div1">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">Organisation
+							Name</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+							<input type="text" placeholder="Organisation name,"
+								class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">Organisation
+							Registration Number</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-gavel"></i></span>
+							<input type="text" placeholder="Organisation Registration Number"
+								class="form-control">
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="accordion" id="accordionExample">
+							<div class="card">
+								<div class="card-header" id="headingOne" data-toggle="collapse"
+									data-target="#collapseOne" aria-expanded="false"
+									aria-controls="collapseOne">
+									<i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Contact Details
+								</div>
+								<div id="collapseOne" class="collapse"
+									aria-labelledby="headingOne" data-parent="#accordionExample">
+									<div class="card-body">
+										<div class="row">
+											<!-- Text input-->
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">E-Mail</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-envelope"></i></span> <input name="email"
+															placeholder="E-Mail Address" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Phone #</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-mobile"></i></span> <input name="phone"
+															placeholder="(845)555-1212" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-12">
+												<label class="col-md-12 control-label">Address</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="address"
+															placeholder="Address" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Suburb</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="address"
+															placeholder="Address" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">City</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="city"
+															placeholder="city" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Select Basic -->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Zip Code</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="zip"
+															placeholder="Zip Code" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Website name</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-globe"></i></span> <input name="website"
+															placeholder="Website or domain name" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit"
+								class="btn btn-outline-primary btn-sm btn-block">
+								<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
+								Continue Later
+							</button>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-success btn-sm btn-block"
+								onclick="goFromTo(1,2,'The company is registered. Please wait for us to verify your organisation. We will contact you shortly')">
+								<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span> Save and
+								Continue
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 tab-content" id="div2">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">School
+							Name</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-school"></i></span>
+							<input type="text" placeholder="Organisation Registration Number"
+								class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">National
+							Number</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-school"></i></span>
+							<input type="text" placeholder="School's NATEMIS Number"
+								class="form-control">
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">Province</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-map"></i></span>
+							<select class="form-control"><option>Western
+									Cape</option></select>
+						</div>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label" for="country-dropdown">Workbook
+							Language</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-language"></i></span>
+							<select class="form-control"><option>English</option>
+								<option>Afrikaans</option></select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label class="col-md-12 control-label" for="country-dropdown">Grades</label>
+						<div class="slider-wrapper slider-primary slider-strips">
+							<input class="input-range" type="text" data-slider-step="1"
+								data-slider-value="0, 12" data-slider-min="0"
+								data-slider-max="12" data-slider-range="true"
+								data-slider-tooltip_split="true" data-tooltip="always" />
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="accordion" id="accordionExample">
+							<div class="card">
+								<div class="card-header" id="headingOne" data-toggle="collapse"
+									data-target="#collapseOne" aria-expanded="false"
+									aria-controls="collapseOne">
+									<i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Contact Details
+								</div>
+								<div id="collapseOne" class="collapse"
+									aria-labelledby="headingOne" data-parent="#accordionExample">
+									<div class="card-body">
+										<div class="row">
+											<!-- Text input-->
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">E-Mail</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-envelope"></i></span> <input name="email"
+															placeholder="E-Mail Address" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+
+
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Phone #</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-mobile"></i></span> <input name="phone"
+															placeholder="(845)555-1212" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Representative
+													Person</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-mobile"></i></span> <input name="phone"
+															placeholder="i.e. Mr Joe Smith" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+
+
+											<div class="form-group col-md-12">
+												<label class="col-md-12 control-label">Address</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="address"
+															placeholder="Address" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Suburb</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="address"
+															placeholder="Address" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">City</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="city"
+															placeholder="city" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Select Basic -->
+
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Zip Code</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-home"></i></span> <input name="zip"
+															placeholder="Zip Code" class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+
+											<!-- Text input-->
+											<div class="form-group col-md-6">
+												<label class="col-md-12 control-label">Website name</label>
+												<div class="col-md-12 inputGroupContainer">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+															class="fa fa-globe"></i></span> <input name="website"
+															placeholder="Website or domain name" class="form-control"
+															type="text">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit"
+								class="btn btn-outline-primary btn-sm btn-block">
+								<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
+								Continue Later
+							</button>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-success btn-sm btn-block"
+								onclick="goFromTo(2,3,'The company is registered. Please wait for us to verify your organisation. We will contact you shortly')">
+								<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span> Save and
+								Continue
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 tab-content" id="div3">
+				<div class="row">
+					<!-- Button -->
+					<div class="form-group col-md-6">div3</div>
+				</div>
+				<div class="row">
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit"
+								class="btn btn-outline-primary btn-sm btn-block">
+								<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
+								Continue Later
+							</button>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label"></label>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-success btn-sm btn-block"
+								onclick="goFromTo(3,4,'The company is registered. Please wait for us to verify your organisation. We will contact you shortly')">
+								<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span> Save and
+								Continue
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-3"></div>
 </div>
+<script>
+	function goFromTo(from, to, message) {
+		toggleMessageBox(message, false)
+		$("#testBTN").prepend(
+				$("<span/>").addClass("spinner-border spinner-border-sm").prop(
+						"role", "status"))
+		$("li[data-step='" + from + "']").removeClass("is-active")
+		$("li[data-step='" + from + "']").addClass("is-complete")
+		$("li[data-step='" + to + "']").addClass("is-active")
+		$("#div" + to).show()
+		$("#div" + from).hide()
+	}
+	$(document).ready(function() {
+		$(".tab-content").hide()
+		$("#div1").show()
+		$('.input-range').each(function() {
+			var value = $(this).attr('data-slider-value');
+			var separator = value.indexOf(',');
+			if (separator !== -1) {
+				value = value.split(',');
+				value.forEach(function(item, i, arr) {
+					arr[i] = parseFloat(item);
+				});
+			} else {
+				value = parseFloat(value);
+			}
+			$(this).slider({
+				formatter : function(value) {
+					console.log(value);
+					return '$' + value;
+				},
+				min : parseFloat($(this).attr('data-slider-min')),
+				max : parseFloat($(this).attr('data-slider-max')),
+				range : $(this).attr('data-slider-range'),
+				value : value,
+				tooltip_split : $(this).attr('data-slider-tooltip_split'),
+				tooltip : $(this).attr('data-slider-tooltip')
+			});
+		});
+
+	});
+</script>
