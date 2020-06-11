@@ -1,0 +1,175 @@
+<div class="col-md-12 tab-content" id="div1">
+	<div class="row">
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">Organisation
+				Name</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-sitemap"></i></span>
+				<input type="text" placeholder="Organisation name,"
+					class="form-control">
+			</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="sel1">Province</label> <select class="form-control"
+				id="sel1">
+				<option>Western Cape</option>
+				<option>Eastern Cape</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">Organisation
+				Registration Number</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-gavel"></i></span> <input
+					type="text" placeholder="Organisation Registration Number"
+					class="form-control">
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="accordion" id="accordionExample">
+				<div class="card">
+					<div class="card-header show" id="headingOne"
+						data-toggle="collapse" data-target="#collapseOne"
+						aria-expanded="false" aria-controls="collapseOne">
+						<i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Contact Details
+					</div>
+					<div id="collapseOne" class="collapse show"
+						aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">
+							<div class="row">
+								<!-- Text input-->
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">E-Mail</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-envelope"></i></span> <input name="email"
+												placeholder="E-Mail Address" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Phone #</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-mobile"></i></span> <input name="phone"
+												placeholder="(845)555-1212" class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-12">
+									<label class="col-md-12 control-label">Address</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="address" placeholder="Address"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Suburb</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="address" placeholder="Address"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">City</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="city" placeholder="city" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Select Basic -->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Zip Code</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="zip" placeholder="Zip Code" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Website name</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+											<input name="website" placeholder="Website or domain name"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<button class="btn btn-success btn-sm btn-block">
+				<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i>Add Contact
+			</button>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit" class="btn btn-link btn-sm btn-block">
+					<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
+					Continue Later
+				</button>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+		<div class="form-group col-md-4">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit"
+					class="btn btn-outline-success btn-sm btn-block"
+					onclick="goFromTo(1,2,'The company is registered. Please wait for us to verify your organisation. We will contact you shortly','createSchool.html')">
+					<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span>Save and Continue
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

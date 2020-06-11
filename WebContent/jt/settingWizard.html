@@ -1,0 +1,163 @@
+<style type="text/css">
+.progress {
+	list-style: none;
+	margin: 11px;
+	padding: 0;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	background-color: transparent;
+	color: #849397;
+	font-size: 19px;
+}
+
+.progress>li {
+	position: relative;
+	display: table-cell;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.progress>li:before {
+	content: attr(data-step);
+	display: block;
+	margin: 0 auto;
+	background: #DFE3E4;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	margin-bottom: 0.25em;
+	line-height: 3em;
+	border-radius: 100%;
+	position: relative;
+	z-index: 1000;
+}
+
+.progress>li:after {
+	content: '';
+	position: absolute;
+	display: block;
+	background: #DFE3E4;
+	width: 100%;
+	height: 0.5em;
+	top: 1.25em;
+	left: 50%;
+	margin-left: 1.5em\9;
+	z-index: 0;
+}
+
+.progress>li:last-child:after {
+	display: none;
+}
+
+.progress>li.is-complete {
+	color: #2ECC71;
+}
+
+.progress>li.is-complete:before, .progress>li.is-complete:after {
+	color: #FFF;
+	background: #2ECC71;
+}
+
+.progress>li.is-active {
+	color: #3498DB;
+}
+
+.progress>li.is-active:before {
+	color: #FFF;
+	background: #3498DB;
+}
+
+.progress__last:after {
+	display: none !important;
+}
+
+/**
+ * Size Extensions
+ */
+.progress--medium {
+	font-size: 1.5em;
+}
+
+.progress--large {
+	font-size: 2em;
+}
+
+/**
+ * Some Generic Stylings
+ */
+.progress {
+	margin-bottom: 3em;
+}
+</style>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<br>
+		<div class="row">
+			<div class="form-group col-sm-12 text-center">
+				<h4>
+					<i class="fa fa-sitemap">&nbsp;&nbsp;&nbsp;</i>Setting Wizard
+				</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="overflow-x: auto;">
+				<ol class="progress" style="min-width: 555px;">
+					<li class="is-active" data-step="1" onclick="goTo(1, null, 'createOrganisation.html')">Identify the organisation</li>
+					<li data-step="2" onclick="goTo(2, null, 'createSchool.html')">Identify schools/institutes</li>
+					<li data-step="3" onclick="goTo(3, null, 'createStaff.html')">Identify the staff/instructors</li>
+					<li data-step="4">Identify the learners</li>
+					<li data-step="5" class="progress__last">Done!</li>
+				</ol>
+			</div>
+		</div>
+		<hr>
+		<div class="row" id="divContents"></div>
+	</div>
+	<div class="col-md-3"></div>
+</div>
+<script>
+	function goTo(to, message, url) {
+		if (message != null)
+			toggleMessageBox(message, false)
+		$(".progress li").removeClass("is-active")
+		$(".progress li").removeClass("is-complete")
+		$(".progress li").each(function(i, k) {
+			if (i < to && to != 1)
+				$(this).addClass("is-complete")
+		})
+		$("li[data-step='" + to + "']").addClass("is-active")
+		$("li[data-step='" + to + "']").removeClass("is-complete")
+		$("#divContents").load(url)
+	}
+	$(document).ready(function() {
+		$(".tab-content").hide()
+		$("#divContents").load("createOrganisation.html")
+		// 		$('.input-range').each(function() {
+		// 			var value = $(this).attr('data-slider-value');
+		// 			var separator = value.indexOf(',');
+		// 			if (separator !== -1) {
+		// 				value = value.split(',');
+		// 				value.forEach(function(item, i, arr) {
+		// 					arr[i] = parseFloat(item);
+		// 				});
+		// 			} else {
+		// 				value = parseFloat(value);
+		// 			}
+		// 			$(this).slider({
+		// 				formatter : function(value) {
+		// 					console.log(value);
+		// 					return '$' + value;
+		// 				},
+		// 				min : parseFloat($(this).attr('data-slider-min')),
+		// 				max : parseFloat($(this).attr('data-slider-max')),
+		// 				range : $(this).attr('data-slider-range'),
+		// 				value : value,
+		// 				tooltip_split : $(this).attr('data-slider-tooltip_split'),
+		// 				tooltip : $(this).attr('data-slider-tooltip')
+		// 			});
+		// 		});
+
+	});
+</script>

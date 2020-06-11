@@ -1,0 +1,270 @@
+<style>
+.sliders {
+	padding: 15px 0 30px 0;
+}
+</style>
+<div class="col-md-12 tab-content" id="div2">
+	<div class="row">
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">School
+				Name</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-school"></i></span>
+				<input type="text" placeholder="Organisation Registration Number"
+					class="form-control">
+			</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">National
+				Number</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-school"></i></span>
+				<input type="text" placeholder="School's NATEMIS Number"
+					class="form-control">
+			</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">Province</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-map"></i></span> <select
+					class="form-control"><option>Western Cape</option></select>
+			</div>
+		</div>
+		<div class="form-group col-md-6">
+			<label class="col-md-12 control-label" for="country-dropdown">Workbook
+				Language</label>
+			<div class="col-md-12 input-group">
+				<span class="input-group-addon"><i class="fa fa-language"></i></span>
+				<select class="form-control"><option>English</option>
+					<option>Afrikaans</option></select>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="bootstrap-slider">
+				<span class="filter-label col-md-12">Grade Range: <span
+					class="filter-selection"></span></span> <b class="filter-min">0</b> <input
+					id="filter-grade" type="text" class="bootstrap-slider" value=""
+					data-filter-group="grade"> <b class="filter-max">12</b>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="accordion" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingOne" data-toggle="collapse"
+						data-target="#collapseOne" aria-expanded="false"
+						aria-controls="collapseOne">
+						<i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Contact Details
+					</div>
+					<div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+						data-parent="#accordionExample">
+						<div class="card-body">
+							<div class="row">
+								<!-- Text input-->
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">E-Mail</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-envelope"></i></span> <input name="email"
+												placeholder="E-Mail Address" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Phone #</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-mobile"></i></span> <input name="phone"
+												placeholder="(845)555-1212" class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Representative
+										Person</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="fa fa-mobile"></i></span> <input name="phone"
+												placeholder="i.e. Mr Joe Smith" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+
+								<div class="form-group col-md-12">
+									<label class="col-md-12 control-label">Address</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="address" placeholder="Address"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Suburb</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="address" placeholder="Address"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">City</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="city" placeholder="city" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Select Basic -->
+
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Zip Code</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-home"></i></span>
+											<input name="zip" placeholder="Zip Code" class="form-control"
+												type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-md-6">
+									<label class="col-md-12 control-label">Website name</label>
+									<div class="col-md-12 inputGroupContainer">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+											<input name="website" placeholder="Website or domain name"
+												class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<button class="btn btn-success btn-sm btn-block">
+				<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i>Add Contact
+			</button>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit" class="btn btn-link btn-sm btn-block">
+					<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
+					Continue Later
+				</button>
+			</div>
+		</div>
+		<div class="form-group col-md-4">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit"
+					onclick="goTo(1,null,'createOrganisation.html')"
+					class="btn btn-outline-primary btn-sm btn-block">
+					<span class="fa fa-backward">&nbsp;&nbsp;&nbsp;</span>Back
+				</button>
+			</div>
+		</div>
+		<div class="form-group col-md-4">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit" class="btn btn-success btn-sm btn-block"
+					onclick="goTo(3,'The school added.','createStaff.html')">
+					<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span>Save and Continue
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+//External js: jquery, isotope.pkgd.js, bootstrap.min.js, bootstrap-slider.js
+$(document).ready( function() {
+  var buttonFilters = {};
+  var buttonFilter = '*';
+  var rangeFilters = {
+      'grade': {'min':0, 'max': 12}
+    };
+
+  var $grid = $('.grid').isotope({
+    itemSelector: '.item',
+    layout: 'masonry',
+    // use filter function
+    filter: function() {
+      var $this = $(this);
+      var grade = $this.attr('data-grade');
+      var isInGradeRange = (rangeFilters['grade'].min <= grade && rangeFilters['grade'].max >= grade);
+      return $this.is( buttonFilter ) && (isInHeightRange && isInGradeRange);
+    }
+  });
+
+  var $gradeSlider = $('#filter-grade').slider({ tooltip_split: true, min: 0,  max: 12, range: true, value: [0, 12] });
+
+  function updateRangeSlider(slider, slideEvt) {
+    var sldmin = +slideEvt.value[0],
+        sldmax = +slideEvt.value[1],
+        filterGroup = slider.attr('data-filter-group'),
+        currentSelection = sldmin + ' - ' + sldmax;
+      slider.siblings('.filter-label').find('.filter-selection').text(currentSelection);
+      console.log('Filtergroup: '+ filterGroup);
+      rangeFilters[filterGroup] = {
+        min: sldmin || 0,
+        max: sldmax || 100000
+      };
+      $grid.isotope();
+  }
+  $gradeSlider.on('slideStop', function(slideEvt){
+    var $this =$(this);
+    updateRangeSlider($this, slideEvt);
+  });
+
+});
+
+// Flatten object by concatting values
+function concatValues( obj ) {
+  var value = '';
+  for ( var prop in obj ) {
+    value += obj[ prop ];
+  }
+  return value;
+}
+</script>
