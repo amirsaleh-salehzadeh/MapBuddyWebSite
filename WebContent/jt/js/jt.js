@@ -72,16 +72,6 @@ function showDialogPage(url) {
 	return -1
 }
 
-var funcRegWizard = function() {
-	loadContent("OTPReceived.html")
-}
-
-function register() {
-	toggleConfirmationBox(funcRegWizard,
-			"An OTP (One-Time-Password) has been sent to you")
-}
-
-
 function openFullScreenDiv(htmlContenet) {
 	$(".full-screen-div").html(htmlContenet)
 	$(".full-screen-div").css("display", "block")
@@ -114,6 +104,15 @@ function gradeChose(radioBTN) {
 	$('.btn-outline-secondary.btn-group').removeClass('active');
 	if (radioBTN != null)
 		$('#currentlearnergrade').val($(radioBTN).val())
+}
+
+var funcRegWizard = function() {
+	loadContent("OTPReceived.html")
+}
+
+function register() {
+	toggleConfirmationBox(funcRegWizard,
+			"An OTP (One-Time-Password) has been sent to you")
 }
 
 $(document).ready(function() {
