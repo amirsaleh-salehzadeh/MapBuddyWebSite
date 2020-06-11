@@ -4,12 +4,35 @@
 		<form method="post" action="#" enctype="multipart/form-data"
 			novalidate>
 			<br>
+			<div class="row form-group">
+				<div class="input-group col-md-12">
+					<button class="btn btn-link btn-block" type="button"
+						id="register-btn" onclick='loadContent("registration.html")'>Not
+						registered yet? Register Now</button>
+				</div>
+				<br>
+				<div class="col-md-9 input-group-prepend">
+					<label for="invitKey" class="col-md-12">Do you have an
+						invitation code from an institute?</label> <span class="input-group-addon"><i
+						class="fa fa-qrcode">&nbsp;&nbsp;&nbsp;</i></span> <input type="text"
+						class="form-control" data-toggle="tooltip" id="invitKey"
+						title="If you have an invitation code from any institute, please insert the code here."
+						placeholder="Invitation Key" autocomplete="off" name="username">
+				</div>
+				<div class="col-md-3">
+					<button class="btn btn-primary btn-sm btn-block"
+						onclick="toggleMessageBox('A request has been sent to the institute.', false)">
+						<i class="fa fa-file-signature">&nbsp;&nbsp;&nbsp;</i>Join
+					</button>
+				</div>
+			</div>
+			<hr>
 			<div class="row">
 				<div class="form-group col-sm-12">
 					<h2>Login</h2>
 				</div>
 			</div>
-			<hr>
+			<br>
 			<div class="row">
 				<div class="form-group col-sm-12">
 					<div class="input-group-prepend">
@@ -43,11 +66,6 @@
 						id="register-btn"
 						onclick='$("#register-form").show();$("#login-form").hide();'>Forgot
 						your password?</button>
-				</div>
-				<div class="input-group col-md-12">
-					<button class="btn btn-link btn-block" type="button"
-						id="register-btn" onclick='loadContent("registration.html")'>New
-						User? Register Now</button>
 				</div>
 			</div>
 		</form>

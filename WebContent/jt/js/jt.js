@@ -1,3 +1,4 @@
+//Loads a URL into the main DIV area
 function loadContent(url) {
 	$("div#page-content").hide()
 	$(".frameLoding").fadeIn()
@@ -33,7 +34,7 @@ function loadContent(url) {
 	})
 }
 
-// SHOWS/HIDES THE MESSAGE BOX,
+// SHOWS/HIDES THE ERROR OR SUCCESS MESSAGE DIALOG BOX,
 // INPUT: 1- gets a text message and boolean (True pops the error message. False
 // pops the success message)
 function toggleMessageBox(messageText, isError) {
@@ -60,6 +61,17 @@ function toggleConfirmationBox(callback) {
 	})
 }
 
+//OPENS A POPUP DIALOG DIV SHOWING THE CONTENT OF A URL
+function showDialogPage(url) {
+	$("<div/>").load(
+			url,
+			function(response) {
+				openFullScreenDiv("<div class='dialog-popup-content'>"
+						+ response + "</div>")
+			})
+	return -1
+}
+
 var funcRegWizard = function() {
 	loadContent("OTPReceived.html")
 }
@@ -68,6 +80,7 @@ function register() {
 	toggleConfirmationBox(funcRegWizard,
 			"An OTP (One-Time-Password) has been sent to you")
 }
+
 
 function openFullScreenDiv(htmlContenet) {
 	$(".full-screen-div").html(htmlContenet)
@@ -96,15 +109,6 @@ function closeFullScreenDiv() {
 	})
 }
 
-function showDialogPage(url) {
-	$("<div/>").load(
-			url,
-			function(response) {
-				openFullScreenDiv("<div class='dialog-popup-content'>"
-						+ response + "</div>")
-			})
-	return -1
-}
 
 function gradeChose(radioBTN) {
 	$('.btn-outline-secondary.btn-group').removeClass('active');
