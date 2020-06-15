@@ -12,53 +12,6 @@
 			</div>
 			<hr>
 			<div class="row">
-				<h6>Are you a</h6>
-				<div class="row">
-					<div class="col-md-12 btn-group btn-group-toggle btn-sm"
-						data-toggle="buttons">
-						<label class="btn btn-outline-secondary btn-group btn-group-sm">
-							<input type="radio" name="learnergradeRadio" value="Grade 9"
-							onclick="gradeChose(this)"><i class="fa fa-user-tie">&nbsp;&nbsp;&nbsp;</i>Business
-							Owner
-						</label>
-					</div>
-					<div class="col-md-12 btn-group btn-group-toggle btn-sm"
-						data-toggle="buttons">
-						<label class="btn btn-outline-secondary btn-group btn-group-sm">
-							<input type="radio" name="learnergradeRadio" value="Grade 7"
-							onclick="gradeChose(this)"><i
-							class="fa fa-chalkboard-teacher">&nbsp;&nbsp;&nbsp;</i>Primary or
-							High School Teacher
-						</label>
-					</div>
-					<div class="col-md-12 btn-group btn-group-toggle btn-sm"
-						data-toggle="buttons">
-						<label class="btn btn-outline-secondary btn-group btn-group-sm">
-							<input type="radio" name="learnergradeRadio" value="Grade 11"
-							onclick="gradeChose(this)"><i class="fa fa-user-shield">&nbsp;&nbsp;&nbsp;</i>Representative
-							of a Tertiary Education institution
-						</label>
-					</div>
-					<div class="col-md-12 btn-group btn-group-toggle btn-sm"
-						data-toggle="buttons">
-						<label class="btn btn-outline-secondary btn-group btn-group-sm">
-							<input type="radio" name="learnergradeRadio" value="Grade 8"
-							onclick="gradeChose(this)"><i class="fa fa-users">&nbsp;&nbsp;&nbsp;</i>Guardian
-							of a Learner
-						</label>
-					</div>
-					<div class="col-md-12 btn-group btn-group-toggle btn-sm"
-						data-toggle="buttons">
-						<label class="btn btn-outline-secondary btn-group btn-group-sm">
-							<input type="radio" name="learnergradeRadio" value="Grade 10"
-							onclick=""><i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>(On
-							behalf) Learner
-						</label>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class="row">
 				<div class="form-group col-md-12">
 					<label class="col-md-4 control-label" for="country-dropdown">Country</label>
 					<div class="col-md-12 inputGroupContainer">
@@ -72,6 +25,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<hr>
+			<div class="row">
 				<div class="form-group col-sm-12">
 					<label class="col-sm-4 control-label" for="country-dropdown">Email</label>
 					<div class="col-sm-12 inputGroupContainer">
@@ -91,7 +47,7 @@
 					<label class="col-sm-4 control-label" for="areaCode">Code</label>
 					<div class="input-group-prepend">
 						<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
-						<input type="text" class="form-control is-invalid disabled"
+						<input type="text" class="form-control disabled"
 							placeholder="Area Code" autocomplete="off" id="areaCode">
 					</div>
 				</div>
@@ -105,6 +61,26 @@
 					</div>
 				</div>
 				<hr>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="form-group col-sm-12">
+					<label class="col-md-12 control-label">Password</label>
+					<div class="input-group-prepend">
+						<span class="input-group-addon"><i class="fa fa-key"></i></span><input
+							type="password" class="form-control" id="password1"
+							name="password1" placeholder="Password" data-toggle="tooltip"
+							title="Password must be at least 8 charachters, including numbers and charachters.">
+					</div>
+				</div>
+				<div class="form-group col-sm-12">
+					<label class="col-md-12 control-label">Re-type Password</label>
+					<div class="input-group-prepend">
+						<span class="input-group-addon"><i class="fa fa-key"></i></span> <input
+							type="password" class="form-control" id="password2"
+							name="password2" placeholder="re-password">
+					</div>
+				</div>
 			</div>
 			<hr>
 			<div class="row">
@@ -134,6 +110,8 @@
 								$("<option/>").attr("value", j["dial_code"])
 										.text(j["name"]))
 						if (i == (data.length - 1)) {
+							$("#country-dropdown").val("+27")
+							$("#areaCode").val("+27")
 							$("#country-dropdown").selectpicker("refresh")
 							$("#country-dropdown").on(
 									"change",

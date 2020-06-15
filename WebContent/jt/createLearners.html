@@ -1,37 +1,167 @@
-
 <div class="col-md-12 tab-content" id="div3">
 	<div class="row">
-		<!-- Button -->
-		<div class="form-group col-md-6">div3</div>
+		<div class="form-group col-md-12">
+			<span class="text-secondary"> If you want us to import and
+				integrate the information of your staff/instructors with JumpTrak
+				please
+				<button class="btn btn-link" href="#">Contact Us</button>
+			</span>
+		</div>
+	</div>
+	<div class="separator">Or</div>
+	<div class="row">
+		<div class="form-group col-md-12">
+			<p class="text-secondary">
+			<div class="form-group text-secondary">
+				<label for="exampleFormControlFile1">Download an excel file
+					template that can be used to import a list of instructors. Please
+					fill the forms in the file and upload it here </label> <input type="file"
+					class="form-control-file" id="exampleFormControlFile1">
+			</div>
+		</div>
+	</div>
+	<div class="separator">Or</div>
+	<div class="row">
+		<div class="form-group col-md-12">
+			<button class="btn btn-outline-success btn-block col-md-3"
+				data-toggle="collapse" href="#multiCollapseExample1" role="button"
+				aria-expanded="false" aria-controls="multiCollapseExample1">
+				<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i>Add Staff
+			</button>
+		</div>
 	</div>
 	<div class="row">
-		<div class="form-group col-md-4">
+		<div class="col-md-12 collapse multi-collapse"
+			id="multiCollapseExample1">
+			<div class="card card-body">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label">First Name</label>
+						<div class="col-md-12 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input name="first_name" placeholder="First Name"
+									class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group col-md-6">
+						<label class="col-md-12 control-label">Last Name</label>
+						<div class="col-md-12 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input name="last_name" placeholder="Last Name"
+									class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="dob">Date of Birth</label>
+						<div class="col-md-12 input-group">
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+							<input type="date" class="form-control" id="dob" name="dob">
+						</div>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="gender">Gender</label>
+						<div class="col-md-12 input-group">
+							<i class="fa fa-venus-mars"></i><select id="gender"
+								class="form-control"><option>Male</option>
+								<option>Female</option></select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label class="control-label"></label>
+						<div class="">
+							<button type="submit" class="btn btn-success btn-sm btn-block">
+								<span class="fa fa-plus">&nbsp;&nbsp;&nbsp;</span>Add
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">First</th>
+						<th scope="col">Last</th>
+						<th scope="col">Role</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>Teacher</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>Teacher</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>the Bird</td>
+						<td>Manager</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="form-group col-md-3">
 			<label class="control-label"></label>
 			<div class="">
-				<button type="submit"
-					class="btn btn-link btn-sm btn-block">
+				<button type="submit" class="btn btn-link btn-sm btn-block">
 					<span class="fa fa-forward">&nbsp;&nbsp;&nbsp;</span>Skip and
 					Continue Later
 				</button>
 			</div>
 		</div>
-		<div class="form-group col-md-4">
+		<div class="form-group col-md-3">
 			<label class="control-label"></label>
 			<div class="">
-				<button type="submit"
-					onclick="goTo(3,null,'createOrganisation.html')"
+				<button type="submit" onclick="goTo(2,null,'createSchool.html')"
 					class="btn btn-outline-primary btn-sm btn-block">
 					<span class="fa fa-backward">&nbsp;&nbsp;&nbsp;</span>Back
 				</button>
 			</div>
 		</div>
-		<div class="form-group col-md-4">
+		<div class="form-group col-md-3">
 			<label class="control-label"></label>
 			<div class="">
-				<button type="submit" class="btn btn-success btn-sm btn-block"
-					onclick="goFromTo(2,3,'The school added.','createStaff.html')">
-					<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span>Save and
-					Continue
+				<button type="submit"
+					class="btn btn-outline-success btn-sm btn-block"
+					onclick="goTo(4,'The school added.','createLearners.html')">
+					<span class="fa fa-school">&nbsp;&nbsp;&nbsp;</span>Save & New
+					School
+				</button>
+			</div>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label"></label>
+			<div class="">
+				<button type="submit"
+					class="btn btn-outline-success btn-sm btn-block"
+					onclick="goTo(5,'The school added.','createLearners.html')">
+					<span class="fa fa-save">&nbsp;&nbsp;&nbsp;</span>Save & Continue
 				</button>
 			</div>
 		</div>
